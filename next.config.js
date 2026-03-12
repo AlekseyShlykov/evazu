@@ -14,6 +14,9 @@ const nextConfig = {
     basePath: `/${repoSubpath}`,
     assetPrefix: `/${repoSubpath}/`,
   }),
+  env: {
+    NEXT_PUBLIC_BASE_PATH: repoSubpath ? `/${repoSubpath}` : '',
+  },
   images: {
     unoptimized: true,
   },

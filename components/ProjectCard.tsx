@@ -49,7 +49,7 @@ export function ProjectCard({
           />
         ) : (
           <img
-            src={`/images/${encodeURIComponent(image!)}`}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(image!)}`}
             alt=""
             className={`w-full max-w-full ${aspectClass} object-cover block`}
             loading="lazy"

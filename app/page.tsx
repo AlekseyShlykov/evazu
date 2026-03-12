@@ -44,7 +44,7 @@ function AnimationBlock({
   }
   if (item.type === 'driveVideo') {
     const thumbUrl = item.previewImage
-      ? `/images/${encodeURIComponent(item.previewImage)}`
+      ? `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(item.previewImage)}`
       : item.googleDriveFileId
         ? `https://drive.google.com/thumbnail?id=${item.googleDriveFileId}&sz=w640`
         : null;

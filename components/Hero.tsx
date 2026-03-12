@@ -44,7 +44,7 @@ export function Hero() {
           </div>
           <div className="min-w-0">
             <img
-              src={`/images/${encodeURIComponent(heroImage)}`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
               alt=""
               className="w-full max-w-full aspect-square object-cover rounded-sm"
             />
