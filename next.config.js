@@ -5,7 +5,7 @@
 //
 // GitHub Pages: if the site is served at https://<user>.github.io/<repo-name>/,
 // set repoSubpath to your repo name (e.g. 'evazu'). Leave empty for user/org root.
-const repoSubpath = '';
+const repoSubpath = 'evazu';
 
 const nextConfig = {
   output: 'export',
