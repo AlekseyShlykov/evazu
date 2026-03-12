@@ -70,33 +70,14 @@ The project uses static export only:
 2. Run `npm run build`.
 3. Deploy the contents of `out/` to the `gh-pages` branch or the `docs/` folder (see GitHub Pages settings).
 
-### 4. GitHub Actions (optional)
+### 4. GitHub Actions (автодеплой)
 
-Example workflow to build and push to `gh-pages`:
+В репозитории есть workflow **`.github/workflows/deploy.yml`**: при каждом пуше в `main` он собирает сайт и выкладывает его в ветку `gh-pages`. Чтобы сайт открывался:
 
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-```
-
-If you use a repo subpath, set `repoSubpath` in `next.config.js` before building (see "Repo subpath" above).
+1. В репозитории: **Settings → Pages → Build and deployment**
+2. **Source:** Deploy from a branch
+3. **Branch:** `gh-pages` / folder **`/ (root)`**
+4. Save. После первого успешного запуска workflow сайт будет доступен по адресу GitHub Pages (см. ниже).
 
 ## Project structure
 
@@ -126,6 +107,29 @@ All artwork and project visuals use a white placeholder component (`PlaceholderI
 3. Либо добавьте в `lib/data.ts` пути к картинкам для проектов и используйте их в `ProjectCard` и других компонентах.
 
 При деплое на GitHub Pages с `repoSubpath` пути вида `/images/...` автоматически превратятся в `/<repo-name>/images/...` — ничего менять не нужно.
+
+---
+
+## Как запустить сайт на GitHub Pages
+
+1. **Репозиторий на GitHub**  
+   Создайте репозиторий (например `evazu`), залейте туда код.
+
+2. **Подставьте правильный путь в конфиг**  
+   В `next.config.js` задайте `repoSubpath`:
+   - Сайт будет по адресу **`https://<ваш-логин>.github.io/evazu/`** → напишите:  
+     `const repoSubpath = 'evazu';`
+   - Сайт будет по адресу **`https://<ваш-логин>.github.io/`** (только для репозитория `<логин>.github.io`) → оставьте:  
+     `const repoSubpath = '';`
+
+3. **Включите GitHub Pages**  
+   В репозитории: **Settings → Pages**.  
+   В разделе **Build and deployment** выберите **Source: Deploy from a branch**.  
+   В **Branch** выберите ветку **`gh-pages`**, папку **`/ (root)`**. Сохраните.
+
+4. **Запустите деплой**  
+   Сделайте пуш в ветку `main` (или вручную запустите workflow **Actions → Deploy to GitHub Pages → Run workflow**).  
+   Workflow соберёт проект и зальёт результат в ветку `gh-pages`. Через 1–2 минуты сайт откроется по адресу, указанному в настройках Pages.
 
 ## Превью для видео с Google Drive (2D Animation)
 
