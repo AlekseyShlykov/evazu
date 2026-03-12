@@ -31,7 +31,7 @@ export function Header() {
           {t.hero.name}
         </Link>
         <div className="flex items-center gap-2 md:gap-4 min-w-0 shrink">
-          <ul className="flex flex-wrap items-center justify-end gap-1 md:gap-2 text-sm min-w-0">
+          <ul className="hidden md:flex flex-wrap items-center justify-end gap-1 md:gap-2 text-sm min-w-0">
             {navKeys.map((key) => (
               <li key={key}>
                 <Link
