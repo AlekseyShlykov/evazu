@@ -1,4 +1,4 @@
-# Ekaterina Zueva — Portfolio
+# Ekaterina Zueva — Portfolio 
 
 A minimal, single-page portfolio and commission landing page for illustrator, graphic designer, and 2D animator Ekaterina Zueva. Built with Next.js and Tailwind CSS.
 
