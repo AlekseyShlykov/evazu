@@ -76,8 +76,8 @@ The project uses static export only:
 
 1. В репозитории: **Settings → Pages → Build and deployment**
 2. **Source:** выберите **Deploy from a branch** (не «GitHub Actions» — наш workflow пушит в ветку, а не в Pages через Actions).
-3. **Branch:** `gh-pages` / folder **`/ (root)`**
-4. Save. После первого успешного запуска workflow сайт будет доступен по адресу GitHub Pages (см. ниже).
+3. **Branch:** обязательно **`gh-pages`** (не `main`!). Если выбрана `main`, будет показываться README, а не сайт. Папка: **`/ (root)`**.
+4. Save. После первого успешного запуска workflow сайт будет доступен по адресу вида `https://<логин>.github.io/evazu/` (не путать с адресом репозитория github.com/...).
 
 ## Project structure
 
