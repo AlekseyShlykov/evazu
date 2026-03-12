@@ -75,7 +75,7 @@ The project uses static export only:
 В репозитории есть workflow **`.github/workflows/deploy.yml`**: при каждом пуше в `main` он собирает сайт и выкладывает его в ветку `gh-pages`. Чтобы сайт открывался:
 
 1. В репозитории: **Settings → Pages → Build and deployment**
-2. **Source:** Deploy from a branch
+2. **Source:** выберите **Deploy from a branch** (не «GitHub Actions» — наш workflow пушит в ветку, а не в Pages через Actions).
 3. **Branch:** `gh-pages` / folder **`/ (root)`**
 4. Save. После первого успешного запуска workflow сайт будет доступен по адресу GitHub Pages (см. ниже).
 
