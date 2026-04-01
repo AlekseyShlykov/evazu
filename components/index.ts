@@ -9,3 +9,5 @@ export { PlaceholderImage } from './PlaceholderImage';
 export { AnimationVideoCard } from './AnimationVideoCard';
 export { DriveVideoCard } from './DriveVideoCard';
 export { EmbedDriveCard } from './EmbedDriveCard';
+export { CaseStudyModal } from './CaseStudyModal';
+export type { CaseStudy, CaseStudySection } from './CaseStudyModal';

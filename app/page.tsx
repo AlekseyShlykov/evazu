@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import {
   Hero,
   SectionTitle,
@@ -9,11 +10,13 @@ import {
   AnimationVideoCard,
   DriveVideoCard,
   EmbedDriveCard,
+  CaseStudyModal,
 } from '@/components';
 import { site, illustrationProjects, animationItems, brandingProjects, ruIllustrationHrefs, ruAnimationHrefs, ruBrandingHrefs } from '@/lib/data';
 import type { AnimationItem } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations, type Locale } from '@/lib/translations';
+import { caseStudies } from '@/lib/caseStudies';
 
 function AnimationBlock({
   item,
@@ -94,9 +97,16 @@ function AnimationBlock({
 export default function HomePage() {
   const { locale } = useLanguage();
   const t = translations[locale];
+  const [openCaseStudy, setOpenCaseStudy] = useState<string | null>(null);
 
   return (
     <div className="w-full min-w-0 max-w-full overflow-x-hidden">
+      {openCaseStudy && caseStudies[openCaseStudy] && (
+        <CaseStudyModal
+          study={caseStudies[openCaseStudy][locale]}
+          onClose={() => setOpenCaseStudy(null)}
+        />
+      )}
       <Hero />
 
       <section id="services" className="py-section">
@@ -210,6 +220,7 @@ export default function HomePage() {
                         ? `https://drive.google.com/thumbnail?id=${project.googleDriveFileId}&sz=w640`
                         : undefined
                   }
+                  onClick={i === 0 ? () => setOpenCaseStudy('tea-branding') : undefined}
                 />
               );
             })}
