@@ -157,6 +157,13 @@ export default function HomePage() {
                 category={t.categoryIllustration}
                 aspectRatio="wide"
                 image={project.image}
+                onClick={
+                  i === 0 ? () => setOpenCaseStudy('brutalist-belgrade')
+                  : i === 1 ? () => setOpenCaseStudy('belgrade-stories')
+                  : i === 2 ? () => setOpenCaseStudy('foxy-roasters')
+                  : i === 3 ? () => setOpenCaseStudy('yerevan')
+                  : undefined
+                }
               />
             ))}
           </div>

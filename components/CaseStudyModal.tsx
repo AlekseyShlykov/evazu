@@ -3,12 +3,14 @@
 import { useEffect, useRef, useCallback } from 'react';
 
 export interface CaseStudySection {
-  type: 'heading' | 'paragraph' | 'image' | 'link';
+  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'link';
   text?: string;
   src?: string;
   alt?: string;
   href?: string;
   label?: string;
+  images?: { src: string; alt?: string }[];
+  columns?: number;
 }
 
 export interface CaseStudy {
@@ -100,6 +102,20 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
                     className="w-full rounded-lg"
                     loading="lazy"
                   />
+                );
+              case 'imageGrid':
+                return (
+                  <div key={i} className={`grid gap-4 ${section.columns === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2'}`}>
+                    {section.images?.map((img, j) => (
+                      <img
+                        key={j}
+                        src={img.src.startsWith('/') ? `${basePath}${img.src}` : img.src}
+                        alt={img.alt || ''}
+                        className="w-full rounded-lg"
+                        loading="lazy"
+                      />
+                    ))}
+                  </div>
                 );
               case 'link':
                 return (
