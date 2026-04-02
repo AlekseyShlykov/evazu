@@ -9,13 +9,14 @@ const locales: { code: Locale; label: string }[] = [
   { code: 'fr', label: 'FR' },
 ];
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ onLocaleChange }: { onLocaleChange?: () => void } = {}) {
   const { locale, setLocale } = useLanguage();
 
   const handleLocaleClick = (code: Locale) => (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setLocale(code);
+    onLocaleChange?.();
   };
 
   return (

@@ -59,7 +59,7 @@ export default function HomePage() {
                 {t.hero.greeting}
               </p>
             </div>
-            <div className="min-w-0 w-64 md:w-72 shrink-0">
+            <div className="hidden md:block min-w-0 w-64 md:w-72 shrink-0">
               <img
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
                 alt=""
@@ -67,6 +67,13 @@ export default function HomePage() {
               />
             </div>
           </div>
+        </div>
+        <div className="mt-8 px-3 w-full max-w-[100vw] box-border md:hidden">
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
+            alt=""
+            className="w-full aspect-square object-cover rounded-sm"
+          />
         </div>
       </section>
 
