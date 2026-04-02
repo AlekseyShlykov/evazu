@@ -1,5 +1,6 @@
 export { Header } from './Header';
 export { Hero } from './Hero';
+export { Footer } from './Footer';
 export { LanguageSwitcher } from './LanguageSwitcher';
 export { SectionTitle } from './SectionTitle';
 export { ServiceCard } from './ServiceCard';

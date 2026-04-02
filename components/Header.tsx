@@ -5,13 +5,13 @@ import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
-const navKeys = ['services', 'illustration', 'animation', 'design', 'contact'] as const;
+const navKeys = ['illustration', 'animation', 'design', 'services', 'about'] as const;
 const navHrefs: Record<(typeof navKeys)[number], string> = {
-  services: '#services',
-  illustration: '#illustration',
-  animation: '#animation',
-  design: '#branding',
-  contact: '#contact',
+  illustration: '/illustration',
+  animation: '/animation',
+  design: '/design',
+  services: '/services',
+  about: '/about',
 };
 
 export function Header() {
@@ -25,7 +25,7 @@ export function Header() {
         aria-label="Main navigation"
       >
         <Link
-          href="#home"
+          href="/"
           className="text-lg font-semibold text-neutral-900 hover:text-accent transition-colors shrink-0 min-w-0"
         >
           {t.hero.name}

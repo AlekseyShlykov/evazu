@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 import { LanguageProvider } from './LanguageContext';
 import { LocaleContent } from './LocaleContent';
 
@@ -37,6 +38,7 @@ export default function RootLayout({
           <main className="min-h-screen w-full max-w-[100vw] overflow-x-hidden pt-16 box-border">
             <LocaleContent>{children}</LocaleContent>
           </main>
+          <Footer />
         </LanguageProvider>
       </body>
     </html>
