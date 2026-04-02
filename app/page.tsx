@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ContactCard, SectionTitle, CaseStudyModal } from '@/components';
+import { ContactCard, SectionTitle, CaseStudyModal, ProjectHoverCard } from '@/components';
 import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -37,7 +37,6 @@ const featuredProjects = [
 export default function HomePage() {
   const { locale } = useLanguage();
   const t = translations[locale];
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const [openCaseStudy, setOpenCaseStudy] = useState<string | null>(null);
 
   return (
@@ -62,7 +61,7 @@ export default function HomePage() {
             </div>
             <div className="min-w-0 w-64 md:w-72 shrink-0">
               <img
-                src={`${basePath}/images/${encodeURIComponent(heroImage)}`}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
                 alt=""
                 className="w-full aspect-square object-cover rounded-sm"
               />
@@ -81,24 +80,12 @@ export default function HomePage() {
                   ? t.illustrationProjectTitles[project.titleIndex]
                   : t.brandingProjectTitles[project.titleIndex];
               return (
-                <button
+                <ProjectHoverCard
                   key={project.caseStudyId}
-                  type="button"
+                  title={title}
+                  image={project.image}
                   onClick={() => setOpenCaseStudy(project.caseStudyId)}
-                  className="group relative block w-full rounded-lg overflow-hidden aspect-[2/1.35] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
-                >
-                  <img
-                    src={`${basePath}/images/${encodeURIComponent(project.image)}`}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end justify-start p-6">
-                    <h3 className="text-white text-lg md:text-xl font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
-                      {title}
-                    </h3>
-                  </div>
-                </button>
+                />
               );
             })}
           </div>

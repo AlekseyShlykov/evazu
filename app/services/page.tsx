@@ -1,6 +1,6 @@
 'use client';
 
-import { SectionTitle, ServiceCard } from '@/components';
+import { SectionTitle, ServiceCard, ContactCard } from '@/components';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 
@@ -45,6 +45,13 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-16 md:py-24 bg-neutral-100 border-t border-neutral-200">
+        <div className="mx-auto max-w-content px-4 md:px-6">
+          <SectionTitle id="contact">{t.sectionTitles.contact}</SectionTitle>
+          <ContactCard />
         </div>
       </section>
     </div>

@@ -174,11 +174,6 @@ const belgradeCaseEn: CaseStudy = {
       text: 'This project started during the international online art challenge Inktober. It takes place every October and brings together artists from all over the world to draw daily throughout the month. Each year, an official prompt list is provided \u2014 31 words, one for each day of October.',
     },
     {
-      type: 'image',
-      src: '/images/inktober.png',
-      alt: 'Inktober prompt list',
-    },
-    {
       type: 'paragraph',
       text: 'Inspired by the prompts, I created sketches and told short stories connected to my life in Serbia and Belgrade. The result was a series of illustrations with accompanying text \u2014 an improvised comic.',
     },
@@ -196,11 +191,6 @@ const belgradeCaseRu: CaseStudy = {
     {
       type: 'paragraph',
       text: '\u042d\u0442\u043e\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 \u043d\u0430\u0447\u0430\u043b\u0441\u044f \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u043e\u0433\u043e \u043e\u043d\u043b\u0430\u0439\u043d-\u0447\u0435\u043b\u043b\u0435\u043d\u0434\u0436\u0430 Inktober. \u041e\u043d \u043f\u0440\u043e\u0445\u043e\u0434\u0438\u0442 \u043a\u0430\u0436\u0434\u044b\u0439 \u043e\u043a\u0442\u044f\u0431\u0440\u044c \u0438 \u043e\u0431\u044a\u0435\u0434\u0438\u043d\u044f\u0435\u0442 \u0445\u0443\u0434\u043e\u0436\u043d\u0438\u043a\u043e\u0432 \u0441\u043e \u0432\u0441\u0435\u0433\u043e \u043c\u0438\u0440\u0430, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0440\u0438\u0441\u0443\u044e\u0442 \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u0432 \u0442\u0435\u0447\u0435\u043d\u0438\u0435 \u043c\u0435\u0441\u044f\u0446\u0430. \u041a\u0430\u0436\u0434\u044b\u0439 \u0433\u043e\u0434 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0435\u0442\u0441\u044f \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u043f\u0438\u0441\u043e\u043a \u043f\u0440\u043e\u043c\u043f\u0442\u043e\u0432 \u2014 31 \u0441\u043b\u043e\u0432\u043e, \u043f\u043e \u043e\u0434\u043d\u043e\u043c\u0443 \u043d\u0430 \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u043e\u043a\u0442\u044f\u0431\u0440\u044f.',
-    },
-    {
-      type: 'image',
-      src: '/images/inktober.png',
-      alt: '\u0421\u043f\u0438\u0441\u043e\u043a \u043f\u0440\u043e\u043c\u043f\u0442\u043e\u0432 Inktober',
     },
     {
       type: 'paragraph',

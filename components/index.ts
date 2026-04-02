@@ -5,6 +5,8 @@ export { LanguageSwitcher } from './LanguageSwitcher';
 export { SectionTitle } from './SectionTitle';
 export { ServiceCard } from './ServiceCard';
 export { ProjectCard } from './ProjectCard';
+export { ProjectHoverCard } from './ProjectHoverCard';
+export type { ProjectHoverCardProps } from './ProjectHoverCard';
 export { ContactCard } from './ContactCard';
 export { PlaceholderImage } from './PlaceholderImage';
 export { AnimationVideoCard } from './AnimationVideoCard';

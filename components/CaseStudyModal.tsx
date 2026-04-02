@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 
 export interface CaseStudySection {
   type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'link';
@@ -23,9 +23,47 @@ interface CaseStudyModalProps {
   onClose: () => void;
 }
 
+function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { e.stopPropagation(); onClose(); }
+    };
+    document.addEventListener('keydown', handler, true);
+    return () => document.removeEventListener('keydown', handler, true);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[300] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 cursor-zoom-out"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={alt || 'Image preview'}
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute top-4 right-4 z-10 rounded-full bg-black/50 p-2 text-white hover:bg-black/70 transition-colors"
+        aria-label="Close image"
+      >
+        <svg width="24" height="24" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <path d="M5 5l10 10M15 5L5 15" />
+        </svg>
+      </button>
+      <img
+        src={src}
+        alt={alt}
+        className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
 export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [lightboxSrc, setLightboxSrc] = useState<{ src: string; alt: string } | null>(null);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -49,6 +87,20 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
 
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
+  const resolveImgSrc = (src: string) =>
+    src.startsWith('/') ? `${basePath}${src}` : src;
+
+  const clickableImg = (src: string, alt: string, className: string, key?: string | number) => (
+    <img
+      key={key}
+      src={resolveImgSrc(src)}
+      alt={alt}
+      className={`${className} cursor-zoom-in`}
+      loading="lazy"
+      onClick={() => setLightboxSrc({ src: resolveImgSrc(src), alt })}
+    />
+  );
+
   return (
     <div
       ref={overlayRef}
@@ -58,6 +110,14 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
       aria-modal="true"
       aria-label={study.title}
     >
+      {lightboxSrc && (
+        <ImageLightbox
+          src={lightboxSrc.src}
+          alt={lightboxSrc.alt}
+          onClose={() => setLightboxSrc(null)}
+        />
+      )}
+
       <div
         ref={contentRef}
         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl"
@@ -78,43 +138,29 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           </button>
         </div>
 
-        <div className="px-6 py-8 md:px-10 md:py-10 space-y-6">
+        <div className="px-6 py-8 md:px-10 md:py-10 space-y-6 text-left">
           {study.sections.map((section, i) => {
             switch (section.type) {
               case 'heading':
                 return (
-                  <h3 key={i} className="text-lg font-semibold text-neutral-900 mt-4">
+                  <h3 key={i} className="text-base font-semibold text-neutral-900 leading-relaxed">
                     {section.text}
                   </h3>
                 );
               case 'paragraph':
                 return (
-                  <p key={i} className="text-neutral-700 leading-relaxed whitespace-pre-line">
+                  <p key={i} className="text-base text-neutral-700 leading-relaxed whitespace-pre-line">
                     {section.text}
                   </p>
                 );
               case 'image':
-                return (
-                  <img
-                    key={i}
-                    src={section.src?.startsWith('/') ? `${basePath}${section.src}` : section.src}
-                    alt={section.alt || ''}
-                    className="w-full rounded-lg"
-                    loading="lazy"
-                  />
-                );
+                return clickableImg(section.src!, section.alt || '', 'w-full max-w-full rounded-lg', i);
               case 'imageGrid':
                 return (
-                  <div key={i} className={`grid gap-4 ${section.columns === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2'}`}>
-                    {section.images?.map((img, j) => (
-                      <img
-                        key={j}
-                        src={img.src.startsWith('/') ? `${basePath}${img.src}` : img.src}
-                        alt={img.alt || ''}
-                        className="w-full rounded-lg"
-                        loading="lazy"
-                      />
-                    ))}
+                  <div key={i} className={`grid w-full gap-4 ${section.columns === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2'}`}>
+                    {section.images?.map((img, j) =>
+                      clickableImg(img.src, img.alt || '', 'w-full rounded-lg', j)
+                    )}
                   </div>
                 );
               case 'link':
@@ -124,7 +170,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
                     href={section.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-accent hover:underline font-medium"
+                    className="inline-flex items-center gap-1 text-left text-base text-accent hover:underline font-medium"
                   >
                     {section.label || section.href} →
                   </a>
