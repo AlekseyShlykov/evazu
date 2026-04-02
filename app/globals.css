@@ -26,3 +26,40 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes mobile-nav-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-nav-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-backdrop-animate {
+  animation: mobile-nav-backdrop-in 0.22s ease-out both;
+}
+
+.mobile-nav-panel-animate {
+  animation: mobile-nav-panel-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-backdrop-animate,
+  .mobile-nav-panel-animate {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

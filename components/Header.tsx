@@ -107,19 +107,21 @@ export function Header() {
       {portalReady &&
         mobileOpen &&
         createPortal(
-          <div
-            className="fixed inset-0 z-[150] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 md:hidden"
-            onClick={closeMobile}
-            role="presentation"
-          >
+          <div className="fixed inset-0 z-[150] md:hidden" role="presentation">
             <div
-              id="mobile-nav-panel"
-              className="relative w-[90vw] max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-xl bg-white shadow-2xl"
-              role="dialog"
-              aria-modal="true"
-              aria-label="Menu"
-              onClick={(e) => e.stopPropagation()}
-            >
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm mobile-nav-backdrop-animate"
+              aria-hidden
+              onClick={closeMobile}
+            />
+            <div className="pointer-events-none absolute left-0 right-0 top-0 flex justify-center">
+              <div
+                id="mobile-nav-panel"
+                className="pointer-events-auto mobile-nav-panel-animate w-[90vw] max-h-[min(90dvh,90vh)] overflow-y-auto overflow-x-hidden rounded-b-2xl bg-white pt-[env(safe-area-inset-top,0px)] shadow-2xl"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Menu"
+                onClick={(e) => e.stopPropagation()}
+              >
               <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-neutral-200 bg-white/95 px-4 py-4 backdrop-blur supports-[backdrop-filter]:bg-white/90">
                 <span className="text-lg font-semibold text-neutral-900 truncate min-w-0 pr-2">{t.hero.name}</span>
                 <button
@@ -151,6 +153,7 @@ export function Header() {
                   </p>
                   <LanguageSwitcher onLocaleChange={closeMobile} />
                 </div>
+              </div>
               </div>
             </div>
           </div>,
