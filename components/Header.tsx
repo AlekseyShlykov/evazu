@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -34,19 +35,12 @@ export function Header() {
   const { locale } = useLanguage();
   const t = translations[locale];
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navBarRef = useRef<HTMLElement>(null);
-  const [navBarHeight, setNavBarHeight] = useState(57);
+  const [portalReady, setPortalReady] = useState(false);
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
   useEffect(() => {
-    const el = navBarRef.current;
-    if (!el) return;
-    const measure = () => setNavBarHeight(el.offsetHeight);
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    return () => ro.disconnect();
+    setPortalReady(true);
   }, []);
 
   useEffect(() => {
@@ -69,7 +63,6 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full max-w-[100vw] border-b border-neutral-200 bg-neutral-50/95 backdrop-blur supports-[backdrop-filter]:bg-neutral-50/80">
       <nav
-        ref={navBarRef}
         className="mx-auto flex max-w-content min-w-0 items-center justify-between gap-2 md:gap-4 px-4 py-4 md:px-6"
         aria-label="Main navigation"
       >
@@ -111,44 +104,51 @@ export function Header() {
         </div>
       </nav>
 
-      {mobileOpen && (
-        <>
+      {portalReady &&
+        mobileOpen &&
+        createPortal(
           <div
-            className="fixed inset-x-0 bottom-0 z-40 bg-black/40 md:hidden"
-            style={{ top: navBarHeight }}
-            aria-hidden
-            onClick={closeMobile}
-          />
-          <div
+            className="fixed inset-0 z-[150] flex min-h-[100dvh] flex-col bg-neutral-50 md:hidden"
             id="mobile-nav-panel"
-            className="fixed left-0 right-0 bottom-0 z-[45] overflow-y-auto bg-neutral-50 border-t border-neutral-200 shadow-lg md:hidden px-4 py-6"
-            style={{ top: navBarHeight }}
             role="dialog"
             aria-modal="true"
             aria-label="Menu"
           >
-            <ul className="flex flex-col gap-1 text-base">
-              {navKeys.map((key) => (
-                <li key={key}>
-                  <Link
-                    href={navHrefs[key]}
-                    className="block rounded-lg px-3 py-3 text-neutral-800 hover:bg-neutral-200/60 transition-colors"
-                    onClick={closeMobile}
-                  >
-                    {t.nav[key]}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 pt-6 border-t border-neutral-200">
-              <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
-                {t.sectionTitles.languages}
-              </p>
-              <LanguageSwitcher onLocaleChange={closeMobile} />
+            <div className="flex shrink-0 items-center justify-between gap-3 border-b border-neutral-200 px-4 py-4">
+              <span className="text-lg font-semibold text-neutral-900 truncate min-w-0">{t.hero.name}</span>
+              <button
+                type="button"
+                onClick={closeMobile}
+                className="shrink-0 rounded-md p-2 text-neutral-700 hover:bg-neutral-200/80 hover:text-neutral-900 transition-colors"
+                aria-label="Close menu"
+              >
+                <MenuIcon open />
+              </button>
             </div>
-          </div>
-        </>
-      )}
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-6">
+              <ul className="flex flex-col gap-1 text-base">
+                {navKeys.map((key) => (
+                  <li key={key}>
+                    <Link
+                      href={navHrefs[key]}
+                      className="block rounded-lg px-3 py-3 text-neutral-800 hover:bg-neutral-200/60 transition-colors"
+                      onClick={closeMobile}
+                    >
+                      {t.nav[key]}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 pt-6 border-t border-neutral-200">
+                <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
+                  {t.sectionTitles.languages}
+                </p>
+                <LanguageSwitcher onLocaleChange={closeMobile} />
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
     </header>
   );
 }
