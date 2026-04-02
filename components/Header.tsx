@@ -108,42 +108,49 @@ export function Header() {
         mobileOpen &&
         createPortal(
           <div
-            className="fixed inset-0 z-[150] flex min-h-[100dvh] flex-col bg-neutral-50 md:hidden"
-            id="mobile-nav-panel"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Menu"
+            className="fixed inset-0 z-[150] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 md:hidden"
+            onClick={closeMobile}
+            role="presentation"
           >
-            <div className="flex shrink-0 items-center justify-between gap-3 border-b border-neutral-200 px-4 py-4">
-              <span className="text-lg font-semibold text-neutral-900 truncate min-w-0">{t.hero.name}</span>
-              <button
-                type="button"
-                onClick={closeMobile}
-                className="shrink-0 rounded-md p-2 text-neutral-700 hover:bg-neutral-200/80 hover:text-neutral-900 transition-colors"
-                aria-label="Close menu"
-              >
-                <MenuIcon open />
-              </button>
-            </div>
-            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-6">
-              <ul className="flex flex-col gap-1 text-base">
-                {navKeys.map((key) => (
-                  <li key={key}>
-                    <Link
-                      href={navHrefs[key]}
-                      className="block rounded-lg px-3 py-3 text-neutral-800 hover:bg-neutral-200/60 transition-colors"
-                      onClick={closeMobile}
-                    >
-                      {t.nav[key]}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8 pt-6 border-t border-neutral-200">
-                <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
-                  {t.sectionTitles.languages}
-                </p>
-                <LanguageSwitcher onLocaleChange={closeMobile} />
+            <div
+              id="mobile-nav-panel"
+              className="relative w-[90vw] max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-xl bg-white shadow-2xl"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Menu"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-neutral-200 bg-white/95 px-4 py-4 backdrop-blur supports-[backdrop-filter]:bg-white/90">
+                <span className="text-lg font-semibold text-neutral-900 truncate min-w-0 pr-2">{t.hero.name}</span>
+                <button
+                  type="button"
+                  onClick={closeMobile}
+                  className="shrink-0 rounded-full p-2 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-colors"
+                  aria-label="Close menu"
+                >
+                  <MenuIcon open />
+                </button>
+              </div>
+              <div className="px-4 pt-5 pb-8">
+                <ul className="flex flex-col gap-1 text-base">
+                  {navKeys.map((key) => (
+                    <li key={key}>
+                      <Link
+                        href={navHrefs[key]}
+                        className="block rounded-lg px-3 py-3 text-neutral-800 hover:bg-neutral-100 transition-colors"
+                        onClick={closeMobile}
+                      >
+                        {t.nav[key]}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 border-t border-neutral-200 pt-6">
+                  <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
+                    {t.sectionTitles.languages}
+                  </p>
+                  <LanguageSwitcher onLocaleChange={closeMobile} />
+                </div>
               </div>
             </div>
           </div>,
