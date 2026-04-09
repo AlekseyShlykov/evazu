@@ -19,7 +19,7 @@ export default function AboutPage() {
               <img
                 src={`${basePath}/images/${encodeURIComponent(heroImage)}`}
                 alt=""
-                className="w-full aspect-square object-cover rounded-sm"
+                className="w-full aspect-square object-cover rounded-lg"
               />
             </div>
             <div>

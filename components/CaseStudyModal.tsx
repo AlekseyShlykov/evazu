@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useCallback, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useCallback, useState } from 'react';
 
 export interface CaseStudySection {
   type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'link';
@@ -21,6 +22,82 @@ export interface CaseStudy {
 interface CaseStudyModalProps {
   study: CaseStudy;
   onClose: () => void;
+}
+
+/** |aspectRatio − 1| ≤ tolerance counts as square (two per row). */
+const SQUARE_ASPECT_TOLERANCE = 0.12;
+
+function isSquareAspect(naturalWidth: number, naturalHeight: number): boolean {
+  if (naturalWidth <= 0 || naturalHeight <= 0) return false;
+  const r = naturalWidth / naturalHeight;
+  return Math.abs(r - 1) <= SQUARE_ASPECT_TOLERANCE;
+}
+
+function CaseStudyAspectImage({
+  src,
+  alt,
+  onClick,
+}: {
+  src: string;
+  alt: string;
+  onClick: () => void;
+}) {
+  const [span, setSpan] = useState<'square' | 'wide' | null>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  const applySpan = (img: HTMLImageElement) => {
+    const { naturalWidth: w, naturalHeight: h } = img;
+    if (w > 0 && h > 0) {
+      setSpan(isSquareAspect(w, h) ? 'square' : 'wide');
+    }
+  };
+
+  useLayoutEffect(() => {
+    const el = imgRef.current;
+    if (el?.complete && el.naturalWidth > 0) applySpan(el);
+  }, [src]);
+
+  const colClass = span === 'square' ? 'col-span-1' : 'col-span-2';
+
+  return (
+    <div className={`min-w-0 ${colClass}`}>
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
+        loading="lazy"
+        onLoad={(e) => applySpan(e.currentTarget)}
+        onClick={onClick}
+      />
+    </div>
+  );
+}
+
+function CaseStudyImageRun({
+  images,
+  resolveImgSrc,
+  onImageClick,
+}: {
+  images: { src: string; alt: string }[];
+  resolveImgSrc: (src: string) => string;
+  onImageClick: (resolvedSrc: string, alt: string) => void;
+}) {
+  return (
+    <div className="grid w-full grid-cols-2 gap-4">
+      {images.map((img, j) => {
+        const resolved = resolveImgSrc(img.src);
+        return (
+          <CaseStudyAspectImage
+            key={`${img.src}-${j}`}
+            src={resolved}
+            alt={img.alt}
+            onClick={() => onImageClick(resolved, img.alt)}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
@@ -90,16 +167,73 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
   const resolveImgSrc = (src: string) =>
     src.startsWith('/') ? `${basePath}${src}` : src;
 
-  const clickableImg = (src: string, alt: string, className: string, key?: string | number) => (
-    <img
-      key={key}
-      src={resolveImgSrc(src)}
-      alt={alt}
-      className={`${className} cursor-zoom-in`}
-      loading="lazy"
-      onClick={() => setLightboxSrc({ src: resolveImgSrc(src), alt })}
-    />
-  );
+  const sectionNodes: ReactNode[] = [];
+  let si = 0;
+  while (si < study.sections.length) {
+    const section = study.sections[si];
+    if (section.type === 'image') {
+      const run: { src: string; alt: string }[] = [];
+      const start = si;
+      while (si < study.sections.length && study.sections[si].type === 'image') {
+        const im = study.sections[si];
+        run.push({ src: im.src!, alt: im.alt || '' });
+        si++;
+      }
+      sectionNodes.push(
+        <CaseStudyImageRun
+          key={`case-images-${start}`}
+          images={run}
+          resolveImgSrc={resolveImgSrc}
+          onImageClick={(resolved, alt) => setLightboxSrc({ src: resolved, alt })}
+        />,
+      );
+      continue;
+    }
+    if (section.type === 'imageGrid') {
+      sectionNodes.push(
+        <CaseStudyImageRun
+          key={`case-grid-${si}`}
+          images={(section.images || []).map((img) => ({ src: img.src, alt: img.alt || '' }))}
+          resolveImgSrc={resolveImgSrc}
+          onImageClick={(resolved, alt) => setLightboxSrc({ src: resolved, alt })}
+        />,
+      );
+      si++;
+      continue;
+    }
+    switch (section.type) {
+      case 'heading':
+        sectionNodes.push(
+          <h3 key={si} className="text-base font-semibold text-neutral-900 leading-relaxed">
+            {section.text}
+          </h3>,
+        );
+        break;
+      case 'paragraph':
+        sectionNodes.push(
+          <p key={si} className="text-base text-neutral-700 leading-relaxed whitespace-pre-line">
+            {section.text}
+          </p>,
+        );
+        break;
+      case 'link':
+        sectionNodes.push(
+          <a
+            key={si}
+            href={section.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-left text-base text-accent hover:underline font-medium"
+          >
+            {section.label || section.href} →
+          </a>,
+        );
+        break;
+      default:
+        break;
+    }
+    si++;
+  }
 
   return (
     <div
@@ -122,7 +256,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
         ref={contentRef}
         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl"
       >
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur px-6 py-4">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur px-6 py-4 md:px-10">
           <h2 className="text-lg md:text-xl font-semibold text-neutral-900 pr-8 line-clamp-2">
             {study.title}
           </h2>
@@ -138,48 +272,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           </button>
         </div>
 
-        <div className="px-6 py-8 md:px-10 md:py-10 space-y-6 text-left">
-          {study.sections.map((section, i) => {
-            switch (section.type) {
-              case 'heading':
-                return (
-                  <h3 key={i} className="text-base font-semibold text-neutral-900 leading-relaxed">
-                    {section.text}
-                  </h3>
-                );
-              case 'paragraph':
-                return (
-                  <p key={i} className="text-base text-neutral-700 leading-relaxed whitespace-pre-line">
-                    {section.text}
-                  </p>
-                );
-              case 'image':
-                return clickableImg(section.src!, section.alt || '', 'w-full max-w-full rounded-lg', i);
-              case 'imageGrid':
-                return (
-                  <div key={i} className={`grid w-full gap-4 ${section.columns === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2'}`}>
-                    {section.images?.map((img, j) =>
-                      clickableImg(img.src, img.alt || '', 'w-full rounded-lg', j)
-                    )}
-                  </div>
-                );
-              case 'link':
-                return (
-                  <a
-                    key={i}
-                    href={section.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-left text-base text-accent hover:underline font-medium"
-                  >
-                    {section.label || section.href} →
-                  </a>
-                );
-              default:
-                return null;
-            }
-          })}
-        </div>
+        <div className="px-6 py-8 md:px-10 md:py-10 space-y-6 text-left">{sectionNodes}</div>
       </div>
     </div>
   );

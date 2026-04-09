@@ -63,7 +63,7 @@ export default function HomePage() {
               <img
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
                 alt=""
-                className="w-full aspect-square object-cover rounded-sm"
+                className="w-full aspect-square object-cover rounded-lg"
               />
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function HomePage() {
           <img
             src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
             alt=""
-            className="w-full aspect-square object-cover rounded-sm"
+            className="w-full aspect-square object-cover rounded-lg"
           />
         </div>
       </section>
