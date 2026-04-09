@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Commissioner } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { LanguageProvider } from './LanguageContext';
 import { LocaleContent } from './LocaleContent';
 
-const inter = Inter({
-  subsets: ['latin'],
+const commissioner = Commissioner({
+  subsets: ['latin', 'latin-ext', 'cyrillic'],
   variable: '--font-sans',
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} font-sans antialiased bg-neutral-50 text-neutral-900 min-h-screen`}
+        className={`${commissioner.variable} font-sans antialiased bg-neutral-50 text-neutral-900 min-h-screen`}
       >
         <LanguageProvider>
           <a
