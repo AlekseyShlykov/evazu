@@ -12,6 +12,8 @@ export interface CaseStudySection {
   label?: string;
   images?: { src: string; alt?: string }[];
   columns?: number;
+  /** If true, every image stays one column (two per row) regardless of aspect ratio */
+  fixedTwoColumns?: boolean;
 }
 
 export interface CaseStudy {
@@ -74,26 +76,48 @@ function CaseStudyAspectImage({
   );
 }
 
+function CaseStudyFixedCellImage({
+  src,
+  alt,
+  onClick,
+}: {
+  src: string;
+  alt: string;
+  onClick: () => void;
+}) {
+  return (
+    <div className="min-w-0 col-span-1">
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
+        loading="lazy"
+        onClick={onClick}
+      />
+    </div>
+  );
+}
+
 function CaseStudyImageRun({
   images,
   resolveImgSrc,
   onImageClick,
+  fixedTwoColumns = false,
 }: {
   images: { src: string; alt: string }[];
   resolveImgSrc: (src: string) => string;
   onImageClick: (resolvedSrc: string, alt: string) => void;
+  fixedTwoColumns?: boolean;
 }) {
   return (
     <div className="grid w-full grid-cols-2 gap-4">
       {images.map((img, j) => {
         const resolved = resolveImgSrc(img.src);
-        return (
-          <CaseStudyAspectImage
-            key={`${img.src}-${j}`}
-            src={resolved}
-            alt={img.alt}
-            onClick={() => onImageClick(resolved, img.alt)}
-          />
+        const onClick = () => onImageClick(resolved, img.alt);
+        return fixedTwoColumns ? (
+          <CaseStudyFixedCellImage key={`${img.src}-${j}`} src={resolved} alt={img.alt} onClick={onClick} />
+        ) : (
+          <CaseStudyAspectImage key={`${img.src}-${j}`} src={resolved} alt={img.alt} onClick={onClick} />
         );
       })}
     </div>
@@ -196,6 +220,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           images={(section.images || []).map((img) => ({ src: img.src, alt: img.alt || '' }))}
           resolveImgSrc={resolveImgSrc}
           onImageClick={(resolved, alt) => setLightboxSrc({ src: resolved, alt })}
+          fixedTwoColumns={section.fixedTwoColumns === true}
         />,
       );
       si++;

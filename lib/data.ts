@@ -98,7 +98,7 @@ export const illustrationProjects = [
     image: 'belgrade.webp',
   },
   {
-    title: 'Illustrated stories inspired by Belgrade',
+    title: 'Illustrated Stories in Comic Style',
     href: 'https://www.notion.so/Illustrated-stories-inspired-by-Belgrade-14db2b33972b81839965e7e19016830b?pvs=21',
     image: 'Stories Belgrade.webp',
   },
