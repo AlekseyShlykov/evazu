@@ -212,48 +212,28 @@ const brutalistBelgradeEn: CaseStudy = {
       text: 'I am deeply impressed by the scale, diversity, and experimental, bold character of the architecture in many parts of Belgrade. Through style, color, and composition, I tried to capture my emotions, the unique atmosphere, character, and individuality of these buildings. Each illustration is based on research, on-site exploration, and photo documentation.',
     },
     {
-      type: 'paragraph',
-      text: 'The illustrations were created digitally in Adobe Photoshop.',
+      type: 'image',
+      src: '/images/BB 1.jpg',
+      alt: 'Brutalist architecture in Belgrade — illustration',
     },
     {
       type: 'image',
-      src: '/images/BB_1.jpg',
-      alt: 'Buildings in the Banica neighborhood',
-    },
-    {
-      type: 'heading',
-      text: 'Buildings in the Banica neighborhood',
+      src: '/images/BB 2.jpg',
+      alt: 'Brutalist architecture in Belgrade — illustration',
     },
     {
       type: 'image',
-      src: '/images/BB_2.jpg',
-      alt: 'Buildings in the Banica neighborhood',
-    },
-    {
-      type: 'heading',
-      text: 'Buildings in the Banica neighborhood',
-    },
-    {
-      type: 'image',
-      src: '/images/BB_3.jpg',
-      alt: 'One of The Five Solitaires',
-    },
-    {
-      type: 'heading',
-      text: 'One of The Five Solitaires',
+      src: '/images/BB 3.jpg',
+      alt: 'Brutalist architecture in Belgrade — illustration',
     },
     {
       type: 'heading',
       text: 'Sketches and photographs: the materials I worked with',
     },
     {
-      type: 'paragraph',
-      text: 'For the buildings in Banica, I went there with my camera to find the perfect angles. Later, I reworked these angles in an illustrative style, adding details and atmosphere. For the high-rises, I took the photo spontaneously, although I had been observing these buildings for a long time. When I found the perfect angle, I quickly captured it on my phone camera.',
-    },
-    {
       type: 'image',
-      src: '/images/BB_4.jpg',
-      alt: 'Sketches and photographs',
+      src: '/images/BB 4.jpg',
+      alt: 'Sketches and photographs — reference materials',
     },
   ],
 };
@@ -266,48 +246,28 @@ const brutalistBelgradeRu: CaseStudy = {
       text: 'Меня глубоко впечатляют масштаб, разнообразие и экспериментальный, смелый характер архитектуры во многих районах Белграда. Через стиль, цвет и композицию я старалась передать свои эмоции, уникальную атмосферу, характер и индивидуальность этих зданий. Каждая иллюстрация основана на исследовании, изучении на месте и фотодокументации.',
     },
     {
-      type: 'paragraph',
-      text: 'Иллюстрации были созданы в цифровом формате в Adobe Photoshop.',
+      type: 'image',
+      src: '/images/BB 1.jpg',
+      alt: 'Бруталистская архитектура Белграда — иллюстрация',
     },
     {
       type: 'image',
-      src: '/images/BB_1.jpg',
-      alt: 'Здания в районе Баница',
-    },
-    {
-      type: 'heading',
-      text: 'Здания в районе Баница',
+      src: '/images/BB 2.jpg',
+      alt: 'Бруталистская архитектура Белграда — иллюстрация',
     },
     {
       type: 'image',
-      src: '/images/BB_2.jpg',
-      alt: 'Здания в районе Баница',
-    },
-    {
-      type: 'heading',
-      text: 'Здания в районе Баница',
-    },
-    {
-      type: 'image',
-      src: '/images/BB_3.jpg',
-      alt: 'Один из Пяти Солитёров',
-    },
-    {
-      type: 'heading',
-      text: 'Один из Пяти Солитёров',
+      src: '/images/BB 3.jpg',
+      alt: 'Бруталистская архитектура Белграда — иллюстрация',
     },
     {
       type: 'heading',
       text: 'Эскизы и фотографии: материалы, с которыми я работала',
     },
     {
-      type: 'paragraph',
-      text: 'Для зданий в Банице я ходила туда с камерой, чтобы найти идеальные ракурсы. Позже я переработала эти ракурсы в иллюстративном стиле, добавив детали и атмосферу. Фотографию высоток я сделала спонтанно, хотя наблюдала за этими зданиями давно. Когда нашла идеальный ракурс, быстро сфотографировала на камеру телефона.',
-    },
-    {
       type: 'image',
-      src: '/images/BB_4.jpg',
-      alt: 'Эскизы и фотографии',
+      src: '/images/BB 4.jpg',
+      alt: 'Эскизы и фотографии — референсы',
     },
   ],
 };
@@ -412,6 +372,16 @@ const foxyRoastersEn: CaseStudy = {
       type: 'paragraph',
       text: 'Each postcard includes a small, custom-designed illustration placed in the stamp area.',
     },
+    {
+      type: 'image',
+      src: '/images/FR5.jpg',
+      alt: 'Foxy Roasters — stamp area illustration detail',
+    },
+    {
+      type: 'image',
+      src: '/images/\u0444\u043e\u0442\u043e 2.jpg',
+      alt: 'Printed postcards and stickers — photo',
+    },
   ],
 };
 
@@ -458,6 +428,16 @@ const foxyRoastersRu: CaseStudy = {
     {
       type: 'paragraph',
       text: '\u041a\u0430\u0436\u0434\u0430\u044f \u043e\u0442\u043a\u0440\u044b\u0442\u043a\u0430 \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u043c\u0430\u043b\u0435\u043d\u044c\u043a\u0443\u044e \u0430\u0432\u0442\u043e\u0440\u0441\u043a\u0443\u044e \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u044e, \u0440\u0430\u0437\u043c\u0435\u0449\u0451\u043d\u043d\u0443\u044e \u0432 \u043e\u0431\u043b\u0430\u0441\u0442\u0438 \u043c\u0430\u0440\u043a\u0438.',
+    },
+    {
+      type: 'image',
+      src: '/images/FR5.jpg',
+      alt: '\u0414\u0435\u0442\u0430\u043b\u044c \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0432 \u0437\u043e\u043d\u0435 \u043c\u0430\u0440\u043a\u0438',
+    },
+    {
+      type: 'image',
+      src: '/images/\u0444\u043e\u0442\u043e 2.jpg',
+      alt: '\u0424\u043e\u0442\u043e \u043d\u0430\u043f\u0435\u0447\u0430\u0442\u0430\u043d\u043d\u044b\u0445 \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u043a \u0438 \u0441\u0442\u0438\u043a\u0435\u0440\u043e\u0432',
     },
   ],
 };

@@ -103,7 +103,7 @@ export const illustrationProjects = [
     image: 'Stories Belgrade.webp',
   },
   {
-    title: 'Illustrations for Foxy Roasters — a coffee roaster and a cozy coffee shop',
+    title: 'Illustrations & Design for Foxy Roasters — gift sets, postcards, and stickers',
     href: 'https://www.notion.so/Illustrations-for-Foxy-Roasters-a-coffee-roaster-and-a-cozy-coffee-shop-305b2b33972b8079a197c7d929da137e?pvs=21',
     image: 'Foxy Roasters.webp',
   },

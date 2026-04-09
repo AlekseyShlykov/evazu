@@ -54,7 +54,7 @@ export const translations = {
     illustrationProjectTitles: [
       'A series of illustrations about the brutalist architecture of Belgrade',
       'Illustrated stories inspired by Belgrade',
-      'Illustrations for Foxy Roasters — a coffee roaster and a cozy coffee shop',
+      'Illustrations & Design for Foxy Roasters — gift sets, postcards, and stickers',
       'An illustration inspired by Yerevan',
       'Illustrations for a project dedicated to Chinese Tea',
       'Music Visuals Design by Ekaterina Zueva',
@@ -154,7 +154,7 @@ export const translations = {
     illustrationProjectTitles: [
       'Серия иллюстраций про бруталистскую архитектуру Белграда',
       'Комиксные иллюстрации и истории, вдохновленные Белградом',
-      'Иллюстрации для Foxy Roasters — обжарщика кофе, а также уютной кофейни',
+      'Иллюстрации и дизайн для Foxy Roasters — подарочные наборы, открытки и стикеры',
       'Иллюстрация, посвященная Еревану',
       'Иллюстрации для проекта, посвященного китайскому чаю',
       'Music Visuals Design by Ekaterina Zueva',
@@ -257,7 +257,7 @@ export const translations = {
     illustrationProjectTitles: [
       'Série d\'illustrations sur l\'architecture brutaliste de Belgrade',
       'Histoires illustrées inspirées de Belgrade',
-      'Illustrations pour Foxy Roasters — torréfacteur et café',
+      'Illustrations et design pour Foxy Roasters — coffrets, cartes postales et stickers',
       'Une illustration inspirée d\'Erevan',
       'Illustrations pour un projet dédié au thé chinois',
       'Music Visuals Design by Ekaterina Zueva',
