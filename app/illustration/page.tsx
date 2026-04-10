@@ -24,15 +24,6 @@ export default function IllustrationPage() {
       <section className="py-section">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle>{t.sectionTitles.illustration}</SectionTitle>
-          <p className="text-neutral-600 text-lg md:text-xl mb-8 max-w-6xl">
-            {t.portfolioIntro}
-          </p>
-          <p className="text-sm text-neutral-500 mb-4">{t.portfolioNote}</p>
-          <ul className="text-sm text-neutral-600 mb-6 space-y-1 list-disc list-inside max-w-4xl">
-            {t.portfolioIllustrationIntro.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
           <div className="grid gap-6 sm:grid-cols-2">
             {illustrationProjects.map((project, i) => (
               <ProjectCard

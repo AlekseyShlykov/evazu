@@ -24,12 +24,6 @@ export default function DesignPage() {
       <section className="py-section">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle>{t.sectionTitles.branding}</SectionTitle>
-          <p className="text-sm text-neutral-500 mb-4">{t.portfolioNote}</p>
-          <ul className="text-sm text-neutral-600 mb-6 space-y-1 list-disc list-inside max-w-4xl">
-            {t.portfolioBrandingIntro.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
           <div className="grid gap-6 sm:grid-cols-2">
             {brandingProjects.map((project, i) => {
               const href = locale === 'ru' && ruBrandingHrefs[i] != null ? ruBrandingHrefs[i]! : project.href;

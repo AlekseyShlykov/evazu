@@ -62,35 +62,6 @@ export const services = [
   },
 ];
 
-export const portfolioIntro =
-  'In over 10 years of work, I have completed more than 60 commercial projects. Including personal projects, the number exceeds 100. Below, I share some of my favorite cases.';
-
-export const portfolioNote =
-  'Each preview includes a link to a dedicated page where you can learn more about the project and my work on it.';
-
-export const portfolioIllustrationIntro = [
-  'Commercial illustration (for brands, advertising, and media, websites)',
-  'Specialized illustration (games, podcasts, music covers)',
-  'Applied illustration (diagrams and visual guides for instructions)',
-  'Artistic and personal projects',
-];
-
-export const portfolioAnimationIntro = [
-  'Music videos',
-  'Animation for web resources (app openers, short animations for illustrations and logos)',
-  'Independent and festival projects',
-];
-
-export const portfolioBrandingIntro = [
-  'Development of a brand book (brand platform, values, mission, etc.)',
-  'Design of logos, corporate identity, and additional graphics',
-  'Creation of guidelines, including branded assets, layout rules, and all necessary instructions',
-  'Print materials: design, layout, and preparation for printing',
-  'Packaging design',
-  'Digital Design in Figma (website banners, social media graphics, icons, and other web visuals)',
-  'Presentation design for various purposes (product presentations, pitch decks, etc.)',
-];
-
 export const illustrationProjects = [
   {
     title: 'A series of illustrations about the brutalist architecture of Belgrade',
