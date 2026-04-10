@@ -10,7 +10,7 @@ export function ContactCard() {
 
   return (
     <div className="w-full rounded-2xl border border-neutral-200 bg-white p-8 md:p-10 shadow-sm">
-      <p className="text-neutral-600 text-lg mb-8 max-w-2xl">
+      <p className="text-neutral-600 text-lg mb-8 w-full max-w-none">
         {t.intro}
       </p>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
