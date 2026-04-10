@@ -20,6 +20,8 @@ export interface CaseStudySection {
   vimeoId?: string;
   /** iframe title (accessibility) */
   iframeTitle?: string;
+  /** If true (type image), span full modal width instead of half when image reads as square */
+  fullWidth?: boolean;
 }
 
 export interface CaseStudy {
@@ -45,10 +47,12 @@ function CaseStudyAspectImage({
   src,
   alt,
   onClick,
+  fullWidth,
 }: {
   src: string;
   alt: string;
   onClick: () => void;
+  fullWidth?: boolean;
 }) {
   const [span, setSpan] = useState<'square' | 'wide' | null>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -65,7 +69,7 @@ function CaseStudyAspectImage({
     if (el?.complete && el.naturalWidth > 0) applySpan(el);
   }, [src]);
 
-  const colClass = span === 'square' ? 'col-span-1' : 'col-span-2';
+  const colClass = fullWidth ? 'col-span-2' : span === 'square' ? 'col-span-1' : 'col-span-2';
 
   return (
     <div className={`min-w-0 ${colClass}`}>
@@ -111,7 +115,7 @@ function CaseStudyImageRun({
   fixedTwoColumns = false,
   singleColumn = false,
 }: {
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; fullWidth?: boolean }[];
   resolveImgSrc: (src: string) => string;
   onImageClick: (resolvedSrc: string, alt: string) => void;
   fixedTwoColumns?: boolean;
@@ -146,7 +150,13 @@ function CaseStudyImageRun({
         return fixedTwoColumns ? (
           <CaseStudyFixedCellImage key={`${img.src}-${j}`} src={resolved} alt={img.alt} onClick={onClick} />
         ) : (
-          <CaseStudyAspectImage key={`${img.src}-${j}`} src={resolved} alt={img.alt} onClick={onClick} />
+          <CaseStudyAspectImage
+            key={`${img.src}-${j}`}
+            src={resolved}
+            alt={img.alt}
+            onClick={onClick}
+            fullWidth={img.fullWidth === true}
+          />
         );
       })}
     </div>
@@ -225,11 +235,11 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
   while (si < study.sections.length) {
     const section = study.sections[si];
     if (section.type === 'image') {
-      const run: { src: string; alt: string }[] = [];
+      const run: { src: string; alt: string; fullWidth?: boolean }[] = [];
       const start = si;
       while (si < study.sections.length && study.sections[si].type === 'image') {
         const im = study.sections[si];
-        run.push({ src: im.src!, alt: im.alt || '' });
+        run.push({ src: im.src!, alt: im.alt || '', fullWidth: im.fullWidth });
         si++;
       }
       sectionNodes.push(

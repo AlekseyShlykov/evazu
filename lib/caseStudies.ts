@@ -98,12 +98,12 @@ const teaBrandingEn: CaseStudy = {
     },
     {
       type: 'heading',
-      text: 'Video',
+      text: 'Video!',
     },
     {
       type: 'vimeo',
       vimeoId: '787983811',
-      iframeTitle: 'Tea with logo',
+      iframeTitle: 'Te with logo',
     },
     {
       type: 'image',
@@ -210,12 +210,12 @@ const teaBrandingRu: CaseStudy = {
     },
     {
       type: 'heading',
-      text: 'Видео',
+      text: 'Видео!',
     },
     {
       type: 'vimeo',
       vimeoId: '787983811',
-      iframeTitle: 'Чай с логотипом',
+      iframeTitle: 'Te with logo',
     },
     {
       type: 'image',
@@ -409,6 +409,7 @@ const yerevanEn: CaseStudy = {
       type: 'image',
       src: '/images/Yerevan1.jpg',
       alt: 'Yerevan illustration',
+      fullWidth: true,
     },
     {
       type: 'paragraph',
@@ -429,6 +430,7 @@ const yerevanRu: CaseStudy = {
       type: 'image',
       src: '/images/Yerevan1.jpg',
       alt: 'Иллюстрация Еревана',
+      fullWidth: true,
     },
     {
       type: 'paragraph',
