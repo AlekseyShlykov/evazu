@@ -9,7 +9,7 @@ export function ContactCard() {
   const t = translations[locale].contact;
 
   return (
-    <div className="rounded-2xl border border-neutral-200 bg-white p-8 md:p-10 shadow-sm max-w-3xl">
+    <div className="w-full rounded-2xl border border-neutral-200 bg-white p-8 md:p-10 shadow-sm">
       <p className="text-neutral-600 text-lg mb-8 max-w-2xl">
         {t.intro}
       </p>
