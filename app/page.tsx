@@ -29,7 +29,7 @@ const featuredProjects = [
   {
     titleIndex: 0,
     titleSource: 'branding' as const,
-    image: 'tea branding.webp',
+    image: 'TW1.jpg',
     caseStudyId: 'tea-branding',
   },
 ];

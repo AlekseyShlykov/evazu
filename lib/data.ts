@@ -108,9 +108,9 @@ export const illustrationProjects = [
     image: 'Foxy Roasters.webp',
   },
   {
-    title: 'An illustration inspired by Yerevan',
+    title: 'Yerevan',
     href: 'https://www.notion.so/An-illustration-inspired-by-Yerevan-14db2b33972b817fbc22fb57d7748cab?pvs=21',
-    image: 'Yerevan.webp',
+    image: 'Yerevan1.jpg',
   },
   {
     title: 'Illustrations for a project dedicated to Chinese Tea',
@@ -178,9 +178,9 @@ export const learnWithMochiDriveUrl =
 
 export const brandingProjects = [
   {
-    title: 'Branding and visual identity for Chinese tea gift sets',
+    title: 'Visual identity for Chinese tea sets',
     href: 'https://www.notion.so/Branding-and-visual-identity-for-Chinese-tea-gift-sets-14db2b33972b81e09e44d8f7cc8db433?pvs=21',
-    image: 'tea branding.webp',
+    image: 'TW1.jpg',
   },
   {
     title: 'Channel design and creative concepts for the workplace culture media Provodnik',

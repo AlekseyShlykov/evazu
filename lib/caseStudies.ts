@@ -2,129 +2,225 @@ import type { CaseStudy } from '@/components/CaseStudyModal';
 import type { Locale } from './translations';
 
 const teaBrandingEn: CaseStudy = {
-  title: 'Branding and visual identity for Chinese tea gift sets',
+  title: 'Visual identity for Chinese tea sets',
   sections: [
     {
       type: 'paragraph',
-      text: 'Task: To develop a visual identity for Chinese tea gift sets. These are not just gift sets or tea assortments, but a comprehensive introduction to the world of Chinese tea. Each set includes everything necessary for a tea ceremony: teaware, tea, basic accessories, a video tutorial with a tea master, and simple, visually engaging information about tea types and brewing methods. The goal is to make the process approachable and enjoyable, even for beginners.',
-    },
-    {
-      type: 'paragraph',
-      text: 'Traditional Chinese tea as a part of modern life: friendly, open, and accessible to everyone.',
-    },
-    {
-      type: 'heading',
-      text: 'Collection and Analysis of Information',
-    },
-    {
-      type: 'paragraph',
-      text: 'To begin, I created a brief with questions to clarify the brand\u2019s character, values, and vision. I also conducted a competitor analysis and compiled an overview of general information, forming the brand platform that we would rely on moving forward.',
-    },
-    {
-      type: 'link',
-      href: 'https://docs.google.com/document/d/1z3EjvNP7t-3ffDZFngWVL_DxCi11OhF7iC5OgyEPqxA/edit?usp=sharing',
-      label: 'Brand platform document',
-    },
-    {
-      type: 'heading',
-      text: 'Sketches',
-    },
-    {
-      type: 'paragraph',
-      text: 'Next, I moved on to sketches. Here are my initial drafts, alongside competitor logos for easy comparison.',
+      text: 'The task was to develop a visual identity for Chinese tea sets \u2014 not just gift sets or tea assortments, but a comprehensive introduction to the world of Chinese tea. Each set includes everything needed for a tea ceremony: teaware, tea, basic accessories, a video tutorial with a tea master, and simple, visually engaging information about tea types and brewing methods.',
     },
     {
       type: 'image',
-      src: '/images/tea1.png',
-      alt: 'Logo sketches and competitor analysis for Chinese tea branding',
+      src: '/images/TW1.jpg',
+      alt: 'Chinese tea set visual identity \u2014 overview',
+    },
+    {
+      type: 'paragraph',
+      text: 'To begin, I created a brief with questions to clarify the brand\u2019s character, values, and vision. Next, I moved on to sketches. Here are my initial drafts.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW2.jpg',
+      alt: 'Early sketches for the Chinese tea brand',
+    },
+    {
+      type: 'paragraph',
+      text: 'For the logo, I chose the image of a gaiwan (a lidded bowl traditionally used to brew Chinese tea). I arranged the brand name so that it looks as if the gaiwan is speaking \u2014 a lively, friendly character inviting viewers into its world. I selected a minimal color palette and simple yet elegant fonts from Paratype (open license).',
+    },
+    {
+      type: 'image',
+      src: '/images/TW3.jpg',
+      alt: 'Logo and typography for the Chinese tea brand',
+    },
+    {
+      type: 'paragraph',
+      text: 'The visual identity is centered around illustration. One of my references was traditional Chinese shadow theater: silhouettes and light textures with splashes of color form the foundation of the visual style. Another source of inspiration came from the names of Chinese teas, which are often vivid and highly illustrative, such as \u201cGolden Eyebrows\u201d, \u201cWhite Peony,\u201d or \u201cBig Red Robe.\u201d',
+    },
+    {
+      type: 'image',
+      src: '/images/TW1.jpg',
+      alt: 'Chinese tea set visual identity \u2014 illustration style',
+    },
+    {
+      type: 'image',
+      src: '/images/TW4.jpg',
+      alt: 'Illustrations for Chinese tea visual identity',
+    },
+    {
+      type: 'image',
+      src: '/images/TW5.jpg',
+      alt: 'Illustrations and applications for Chinese tea brand',
+    },
+    {
+      type: 'paragraph',
+      text: 'I created a leaflet that describes the main types of Chinese tea. The printed leaflet folds accordion-style, making it compact enough to fit into any box.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW6.jpg',
+      alt: 'Leaflet about Chinese tea types \u2014 spread',
+    },
+    {
+      type: 'image',
+      src: '/images/TW7.jpg',
+      alt: 'Accordion-fold leaflet for tea sets',
+    },
+    {
+      type: 'paragraph',
+      text: 'The set also includes a quick guide with basic brewing instructions. I developed a layout with a clear, visually engaging structure and simple line-drawn schematic illustrations.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW8.jpg',
+      alt: 'Brewing guide with schematic illustrations',
+    },
+    {
+      type: 'paragraph',
+      text: 'We also created an adapted version of the guide for online use, presented as straightforward infographics.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW9.jpg',
+      alt: 'Online brewing guide as infographics',
+    },
+    {
+      type: 'paragraph',
+      text: 'Using the brand\u2019s core illustration, I created a variety of supplementary graphics.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW10.jpg',
+      alt: 'Supplementary brand graphics',
+    },
+    {
+      type: 'image',
+      src: '/images/TW11.jpg',
+      alt: 'Additional graphics for Chinese tea brand',
     },
     {
       type: 'heading',
-      text: 'Development of Visual Identity and Its Application to Various Media',
+      text: 'Video',
     },
     {
-      type: 'paragraph',
-      text: 'The second option struck the right balance between friendliness and the aesthetic side of tea culture, so I proceeded with it.',
+      type: 'vimeo',
+      vimeoId: '787983811',
+      iframeTitle: 'Tea with logo',
     },
     {
-      type: 'paragraph',
-      text: 'The next stages included:\n\u2022 Developing the logo\n\u2022 Packaging for three types of sets (mini, midi, and premium configurations with a basic set, additional elements, and exclusive artisanal teaware)\n\u2022 Creating a brewing guide and a leaflet describing tea types\n\u2022 Designing additional graphics and illustrations as a core element of the visual identity, adapting them for both physical and digital media',
-    },
-    {
-      type: 'paragraph',
-      text: 'For the logo, I chose the image of a gaiwan (a lidded bowl traditionally used to brew Chinese tea). I arranged the brand name to make it look as though the gaiwan was speaking \u2014 a lively, friendly character inviting viewers into its world.',
-    },
-    {
-      type: 'paragraph',
-      text: 'A silhouette filled with subtle texture adds warmth to the logo. It feels modern, slightly comic-like, yet also rooted in tradition, evoking associations with ceramics, clay, handcraftsmanship, and the material\u2019s natural warmth.',
-    },
-    {
-      type: 'paragraph',
-      text: 'While texture isn\u2019t a mandatory attribute, the logo\u2019s strength lies in its shape and silhouette. However, when more detail is used in illustrations, texture becomes an additional tool for setting the mood. I applied the same approach to the illustrations.',
+      type: 'image',
+      src: '/images/TW12.jpg',
+      alt: 'Chinese tea set visual identity \u2014 final application',
     },
   ],
 };
 
 const teaBrandingRu: CaseStudy = {
-  title: '\u0411\u0440\u0435\u043d\u0434\u0438\u043d\u0433 \u0438 \u0444\u0438\u0440\u043c\u0435\u043d\u043d\u044b\u0439 \u0441\u0442\u0438\u043b\u044c \u0434\u043b\u044f \u043f\u043e\u0434\u0430\u0440\u043e\u0447\u043d\u044b\u0445 \u043d\u0430\u0431\u043e\u0440\u043e\u0432 \u0441 \u043a\u0438\u0442\u0430\u0439\u0441\u043a\u0438\u043c \u0447\u0430\u0435\u043c',
+  title: 'Фирменный стиль для наборов китайского чая',
   sections: [
     {
       type: 'paragraph',
-      text: '\u0417\u0430\u0434\u0430\u0447\u0430: \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u0444\u0438\u0440\u043c\u0435\u043d\u043d\u044b\u0439 \u0441\u0442\u0438\u043b\u044c \u0434\u043b\u044f \u043d\u0430\u0431\u043e\u0440\u043e\u0432 \u0441 \u043a\u0438\u0442\u0430\u0439\u0441\u043a\u0438\u043c \u0447\u0430\u0435\u043c. \u041d\u0435 \u043f\u0440\u043e\u0441\u0442\u043e \u043f\u043e\u0434\u0430\u0440\u043e\u0447\u043d\u044b\u0435 \u043d\u0430\u0431\u043e\u0440\u044b \u0438\u043b\u0438 \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442\u044b \u0447\u0430\u044f, \u0430 \u043f\u043e\u043b\u043d\u043e\u0446\u0435\u043d\u043d\u044b\u0439 \u043f\u0435\u0440\u0432\u044b\u0439 \u0448\u0430\u0433 \u0432 \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u0435 \u0442\u0435\u043c\u044b. \u041f\u043e\u043b\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442 \u0434\u043b\u044f \u0447\u0430\u0435\u043f\u0438\u0442\u0438\u044f, \u043f\u043e\u0441\u0443\u0434\u0430, \u0447\u0430\u0439, \u0431\u0430\u0437\u043e\u0432\u044b\u0435 \u0430\u043a\u0441\u0435\u0441\u0441\u0443\u0430\u0440\u044b, \u0432\u0438\u0434\u0435\u043e\u0443\u0440\u043e\u043a, \u0437\u0430\u043f\u0438\u0441\u0430\u043d\u043d\u044b\u0439 \u0441 \u043c\u0430\u0441\u0442\u0435\u0440\u043e\u043c, \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u0442\u0438\u043f\u0430\u0445 \u0447\u0430\u044f \u0438 \u0441\u043f\u043e\u0441\u043e\u0431\u0435 \u0437\u0430\u0432\u0430\u0440\u0438\u0432\u0430\u043d\u0438\u044f, \u043f\u043e\u0434\u0430\u043d\u043d\u0430\u044f \u0432 \u043f\u0440\u043e\u0441\u0442\u043e\u043c \u0438 \u043d\u0430\u0433\u043b\u044f\u0434\u043d\u043e\u043c \u0432\u0438\u0434\u0435, \u0442\u0430\u043a, \u0447\u0442\u043e\u0431\u044b \u0431\u044b\u043b\u043e \u043f\u0440\u043e\u0441\u0442\u043e \u0438 \u043d\u0435 \u0441\u0442\u0440\u0430\u0448\u043d\u043e \u0434\u0430\u0436\u0435 \u043d\u043e\u0432\u0438\u0447\u043a\u0443.',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0422\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u044b\u0439 \u043a\u0438\u0442\u0430\u0439\u0441\u043a\u0438\u0439 \u0447\u0430\u0439, \u043a\u0430\u043a \u0447\u0430\u0441\u0442\u044c \u0441\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u0439 \u0436\u0438\u0437\u043d\u0438. \u0414\u0440\u0443\u0436\u0435\u043b\u044e\u0431\u043d\u043e, \u043e\u0442\u043a\u0440\u044b\u0442\u043e, \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e \u0434\u043b\u044f \u0432\u0441\u0435\u0445.',
-    },
-    {
-      type: 'heading',
-      text: '\u0421\u0431\u043e\u0440 \u0438 \u0430\u043d\u0430\u043b\u0438\u0437 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0414\u043b\u044f \u043d\u0430\u0447\u0430\u043b\u0430 \u044f \u0441\u043e\u0441\u0442\u0430\u0432\u0438\u043b\u0430 \u0431\u0440\u0438\u0444 \u0432\u043e\u043f\u0440\u043e\u0441\u043e\u0432, \u0447\u0442\u043e\u0431\u044b \u043f\u0440\u043e\u044f\u0441\u043d\u0438\u0442\u044c \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440, \u0446\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u0431\u0440\u0435\u043d\u0434\u0430, \u0435\u0433\u043e \u0432\u0438\u0434\u0435\u043d\u0438\u0435, \u0430 \u0442\u0430\u043a\u0436\u0435 \u043f\u0440\u043e\u0432\u0435\u043b\u0430 \u0430\u043d\u0430\u043b\u0438\u0437 \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u043e\u0432 \u0438 \u0441\u0434\u0435\u043b\u0430\u043b\u0430 \u0441\u0432\u043e\u0434\u043a\u0443 \u0441 \u043e\u0431\u0449\u0435\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0435\u0439, \u043f\u043e \u0441\u0443\u0442\u0438 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u043e\u0439 \u0431\u0440\u0435\u043d\u0434\u0430, \u043d\u0430 \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u043c\u044b \u0432 \u0434\u0430\u043b\u044c\u043d\u0435\u0439\u0448\u0435\u043c \u0431\u0443\u0434\u0435\u043c \u043e\u043f\u0438\u0440\u0430\u0442\u044c\u0441\u044f:',
-    },
-    {
-      type: 'link',
-      href: 'https://docs.google.com/document/d/1z3EjvNP7t-3ffDZFngWVL_DxCi11OhF7iC5OgyEPqxA/edit?usp=sharing',
-      label: '\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442 \u0441 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u043e\u0439 \u0431\u0440\u0435\u043d\u0434\u0430',
-    },
-    {
-      type: 'heading',
-      text: '\u042d\u0441\u043a\u0438\u0437\u044b',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0414\u0430\u043b\u0435\u0435 \u044f \u043f\u0435\u0440\u0435\u0448\u043b\u0430 \u043a \u044d\u0441\u043a\u0438\u0437\u0430\u043c, \u0438 \u0432\u043e\u0442 \u043c\u043e\u0438 \u043f\u0435\u0440\u0432\u044b\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b, \u0432\u043c\u0435\u0441\u0442\u0435 \u0441 \u043b\u043e\u0433\u043e\u0442\u0438\u043f\u0430\u043c\u0438 \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u043e\u0432, \u0434\u0430\u043d\u043d\u044b\u043c\u0438 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u0442\u043e\u0442\u044b \u043d\u0430\u0433\u043b\u044f\u0434\u043d\u043e\u0433\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044f.',
+      text: 'Задача — разработать фирменный стиль для наборов китайского чая: это не только подарочные наборы или ассортименты, а полноценное знакомство с миром китайского чая. В каждый набор входит всё необходимое для чайной церемонии: посуда, чай, базовые аксессуары, видеоурок с чайным мастером и простая, наглядная информация о сортах чая и способах заваривания.',
     },
     {
       type: 'image',
-      src: '/images/tea1.png',
-      alt: '\u042d\u0441\u043a\u0438\u0437\u044b \u043b\u043e\u0433\u043e\u0442\u0438\u043f\u043e\u0432 \u0438 \u0430\u043d\u0430\u043b\u0438\u0437 \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u043e\u0432',
+      src: '/images/TW1.jpg',
+      alt: 'Фирменный стиль для наборов китайского чая — общий вид',
+    },
+    {
+      type: 'paragraph',
+      text: 'Сначала я составила бриф с вопросами, чтобы прояснить характер бренда, его ценности и видение. Затем перешла к эскизам. Вот мои первые наброски.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW2.jpg',
+      alt: 'Первые эскизы для бренда китайского чая',
+    },
+    {
+      type: 'paragraph',
+      text: 'Для логотипа я выбрала образ гайвани (чашки с крышкой, в которой традиционно заваривают китайский чай). Название бренда расположено так, как будто гайвань говорит — живой, дружелюбный персонаж, приглашающий в свой мир. Выбрала минимальную цветовую палитру и простые, но изящные шрифты Paratype (открытая лицензия).',
+    },
+    {
+      type: 'image',
+      src: '/images/TW3.jpg',
+      alt: 'Логотип и типографика бренда китайского чая',
+    },
+    {
+      type: 'paragraph',
+      text: 'В основе фирменного стиля — иллюстрация. Один из референсов — традиционный китайский теневой театр: силуэты, лёгкие текстуры и всплески цвета составляют основу визуального стиля. Ещё источник вдохновения — названия китайских чаёв: они часто образны и очень «иллюстративны», например «Золотые брови», «Белый пион» или «Большой красный халат».',
+    },
+    {
+      type: 'image',
+      src: '/images/TW1.jpg',
+      alt: 'Фирменный стиль — иллюстративный стиль',
+    },
+    {
+      type: 'image',
+      src: '/images/TW4.jpg',
+      alt: 'Иллюстрации для фирменного стиля китайского чая',
+    },
+    {
+      type: 'image',
+      src: '/images/TW5.jpg',
+      alt: 'Иллюстрации и применения бренда',
+    },
+    {
+      type: 'paragraph',
+      text: 'Я создала лифлет, который описывает основные типы китайского чая. Печатный лифлет складывается «гармошкой», так что компактно помещается в любую коробку.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW6.jpg',
+      alt: 'Лифлет о сортах китайского чая',
+    },
+    {
+      type: 'image',
+      src: '/images/TW7.jpg',
+      alt: 'Лифлет-гармошка для наборов',
+    },
+    {
+      type: 'paragraph',
+      text: 'В набор также входит краткий гайд с базовыми инструкциями по завариванию. Я разработала вёрстку с понятной, наглядной структурой и простыми схематичными линейными иллюстрациями.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW8.jpg',
+      alt: 'Гайд по завариванию со схематичными иллюстрациями',
+    },
+    {
+      type: 'paragraph',
+      text: 'Мы также сделали адаптированную версию гайда для онлайна — в виде простых инфографик.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW9.jpg',
+      alt: 'Онлайн-гайд в формате инфографики',
+    },
+    {
+      type: 'paragraph',
+      text: 'На основе ключевой иллюстрации бренда я создала разнообразную дополнительную графику.',
+    },
+    {
+      type: 'image',
+      src: '/images/TW10.jpg',
+      alt: 'Дополнительная графика бренда',
+    },
+    {
+      type: 'image',
+      src: '/images/TW11.jpg',
+      alt: 'Ещё графика для бренда китайского чая',
     },
     {
       type: 'heading',
-      text: '\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0444\u0438\u0440\u043c\u0435\u043d\u043d\u043e\u0433\u043e \u0441\u0442\u0438\u043b\u044f \u0438 \u0435\u0433\u043e \u0430\u0434\u0430\u043f\u0442\u0430\u0446\u0438\u044f \u043f\u043e\u0434 \u0440\u0430\u0437\u043d\u044b\u0435 \u043d\u043e\u0441\u0438\u0442\u0435\u043b\u0438',
+      text: 'Видео',
     },
     {
-      type: 'paragraph',
-      text: '\u0412\u0442\u043e\u0440\u043e\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u043f\u043e\u043a\u0430\u0437\u0430\u043b\u0441\u044f \u043d\u0430\u0438\u0431\u043e\u043b\u0435\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u043c \u0434\u043b\u044f \u0431\u0430\u043b\u0430\u043d\u0441\u0430 \u043c\u0435\u0436\u0434\u0443 \u0434\u0440\u0443\u0436\u0435\u043b\u044e\u0431\u043d\u043e\u0441\u0442\u044c\u044e \u0438 \u044d\u0441\u0442\u0435\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0441\u0442\u043e\u0440\u043e\u043d\u043e\u0439 \u0447\u0430\u0435\u043f\u0438\u0442\u0438\u044f. \u042f \u043d\u0430\u0447\u0430\u043b\u0430 \u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u0441 \u043d\u0438\u043c.',
+      type: 'vimeo',
+      vimeoId: '787983811',
+      iframeTitle: 'Чай с логотипом',
     },
     {
-      type: 'paragraph',
-      text: '\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0435 \u044d\u0442\u0430\u043f\u044b:\n\u2022 \u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u043b\u043e\u0433\u043e\u0442\u0438\u043f\u0430\n\u2022 \u0423\u043f\u0430\u043a\u043e\u0432\u043a\u0438 \u0434\u043b\u044f 3 \u0442\u0438\u043f\u043e\u0432 \u043d\u0430\u0431\u043e\u0440\u043e\u0432 (\u043a\u043e\u043c\u043f\u043b\u0435\u043a\u0442\u0430\u0446\u0438\u044f \u043c\u0438\u043d\u0438, \u043c\u0438\u0434\u0438 \u0438 \u043b\u044e\u043a\u0441, \u0441 \u043c\u0438\u043d\u0438\u043c\u0430\u043b\u044c\u043d\u044b\u043c \u0431\u0430\u0437\u043e\u0432\u044b\u043c \u043d\u0430\u0431\u043e\u0440\u043e\u043c, \u0441 \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u043c\u0438 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430\u043c\u0438 \u0438 \u0441 \u043e\u0441\u043e\u0431\u043e\u0439 \u0430\u0432\u0442\u043e\u0440\u0441\u043a\u043e\u0439 \u043a\u0435\u0440\u0430\u043c\u0438\u043a\u043e\u0439 \u0434\u043b\u044f \u0447\u0430\u0435\u043f\u0438\u0442\u0438\u044f)\n\u2022 \u0421\u0431\u043e\u0440\u043a\u0430 \u0438\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438 \u0434\u043b\u044f \u0437\u0430\u0432\u0430\u0440\u0438\u0432\u0430\u043d\u0438\u044f, \u0438 \u043b\u0438\u0444\u043b\u0435\u0442\u0430 \u0441 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u044f\u043c\u0438 \u0442\u0438\u043f\u043e\u0432 \u0447\u0430\u044f\n\u2022 \u0421\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u0433\u0440\u0430\u0444\u0438\u043a\u0438, \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0439 \u043a\u0430\u043a \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0433\u043e \u043f\u0440\u0438\u0451\u043c\u0430 \u0434\u043b\u044f \u0444\u0438\u0440\u043c\u0435\u043d\u043d\u043e\u0433\u043e \u0441\u0442\u0438\u043b\u044f, \u0438 \u0430\u0434\u0430\u043f\u0442\u0430\u0446\u0438\u044f \u0438\u0445 \u0434\u043b\u044f \u043b\u044e\u0431\u044b\u0445 \u043d\u043e\u0441\u0438\u0442\u0435\u043b\u0435\u0439, \u0444\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0438 \u0434\u0438\u0434\u0436\u0438\u0442\u0430\u043b',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0414\u043b\u044f \u043b\u043e\u0433\u043e\u0442\u0438\u043f\u0430 \u044f \u0432\u044b\u0431\u0440\u0430\u043b\u0430 \u043e\u0431\u0440\u0430\u0437 \u0433\u0430\u0439\u0432\u0430\u043d\u0438 (\u0447\u0430\u0448\u043a\u0438 \u0441 \u043a\u0440\u044b\u0448\u043a\u043e\u0439, \u0432 \u043a\u043e\u0442\u043e\u0440\u043e\u0439 \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u043e\u043d\u043d\u043e \u0437\u0430\u0432\u0430\u0440\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u043a\u0438\u0442\u0430\u0439\u0441\u043a\u0438\u0439 \u0447\u0430\u0439). \u0418 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0431\u0440\u0435\u043d\u0434\u0430 \u044f \u0440\u0430\u0441\u043f\u043e\u043b\u043e\u0436\u0438\u043b\u0430 \u0442\u0430\u043a, \u0447\u0442\u043e\u0431\u044b \u044d\u0442\u043e \u0432\u044b\u0433\u043b\u044f\u0434\u0435\u043b\u043e, \u043a\u0430\u043a \u0431\u0443\u0434\u0442\u043e \u0433\u0430\u0439\u0432\u0430\u043d\u044c \u0433\u043e\u0432\u043e\u0440\u0438\u0442. \u0416\u0438\u0432\u043e\u0439, \u0434\u0440\u0443\u0436\u0435\u043b\u044e\u0431\u043d\u044b\u0439 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u0436, \u043a\u0430\u043a \u0431\u044b \u043f\u0440\u0438\u0433\u043b\u0430\u0448\u0430\u044e\u0449\u0438\u0439 \u0437\u0440\u0438\u0442\u0435\u043b\u044f \u0432 \u0441\u0432\u043e\u0439 \u043c\u0438\u0440.',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0421\u0438\u043b\u0443\u044d\u0442\u043d\u0430\u044f \u0437\u0430\u043b\u0438\u0432\u043a\u0430 \u0441 \u043b\u0451\u0433\u043a\u043e\u0439 \u0442\u0435\u043a\u0441\u0442\u0443\u0440\u043e\u0439 \u0434\u043e\u0431\u0430\u0432\u043b\u044f\u0435\u0442 \u00ab\u043b\u0430\u043c\u043f\u043e\u0432\u043e\u0441\u0442\u0438\u00bb \u043b\u043e\u0433\u043e\u0442\u0438\u043f\u0443. \u041e\u043d \u043e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0441\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0439, \u0434\u0430\u0436\u0435 \u043d\u0435\u043c\u043d\u043e\u0433\u043e \u043a\u043e\u043c\u0438\u043a\u0441\u043d\u044b\u0439, \u043d\u043e \u043f\u0440\u0438 \u044d\u0442\u043e\u043c \u0438 \u043e\u0442\u0441\u044b\u043b\u0430\u044e\u0449\u0438\u0439 \u043d\u0430\u0441 \u043a \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u0438. \u041a \u043a\u0435\u0440\u0430\u043c\u0438\u043a\u0435, \u0433\u043b\u0438\u043d\u0435, \u0440\u043e\u0441\u043f\u0438\u0441\u0438, \u0440\u0443\u043a\u043e\u0442\u0432\u043e\u0440\u043d\u043e\u0441\u0442\u0438 \u0438 \u0442\u0435\u043f\u043b\u043e\u0442\u0435 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u0430.',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0422\u0435\u043a\u0441\u0442\u0443\u0440\u0430 \u0432 \u0434\u0430\u043d\u043d\u043e\u043c \u0441\u043b\u0443\u0447\u0430\u0435 \u043d\u0435 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u0430\u0442\u0440\u0438\u0431\u0443\u0442, \u0433\u043b\u0430\u0432\u043d\u043e\u0435, \u0447\u0442\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0432 \u043b\u043e\u0433\u043e\u0442\u0438\u043f\u0435 \u2014 \u044d\u0442\u043e \u0444\u043e\u0440\u043c\u0430, \u0441\u0438\u043b\u0443\u044d\u0442. \u041e\u0434\u043d\u0430\u043a\u043e \u043f\u0440\u0438 \u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u043e\u043c \u0443\u0440\u043e\u0432\u043d\u0435 \u0434\u0435\u0442\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438 \u0438 \u0432 \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u044f\u0445 \u0442\u0435\u043a\u0441\u0442\u0443\u0440\u0430 \u043c\u043e\u0436\u0435\u0442 \u0441\u0442\u0430\u0442\u044c \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u043c \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u043e\u043c, \u0441\u043e\u0437\u0434\u0430\u044e\u0449\u0438\u043c \u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440\u0443. \u0422\u043e\u0442 \u0436\u0435 \u043f\u0440\u0438\u0435\u043c \u044f \u0432 \u0438\u0442\u043e\u0433\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0430 \u0438 \u0432 \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u044f\u0445.',
+      type: 'image',
+      src: '/images/TW12.jpg',
+      alt: 'Фирменный стиль — финальное применение',
     },
   ],
 };
@@ -310,26 +406,18 @@ const yerevanEn: CaseStudy = {
   title: 'Yerevan',
   sections: [
     {
-      type: 'paragraph',
-      text: 'In 2022, I spent three months living in Yerevan. It was my first time visiting Armenia and my first experience living in another country for such an extended period. Yerevan left a vivid and lasting impression on me.',
-    },
-    {
-      type: 'paragraph',
-      text: 'The illustration depicts a specific location in the city that, during one of my walks, inspired me to capture it in a particular style. I aimed to combine detailed linework with soft color washes, reflecting both the character of the place and the spirit of the city, as well as my personal impressions.',
-    },
-    {
       type: 'image',
-      src: '/images/Yerevan.jpg',
+      src: '/images/Yerevan1.jpg',
       alt: 'Yerevan illustration',
     },
     {
       type: 'paragraph',
-      text: 'This illustration was created digitally. Below, you can find sketches, process stages, and my reference material.',
+      text: 'I lived in Yerevan for some time and really loved the city. This illustration shows a place I wanted to capture, along with its atmosphere.\n\nProcess, sketches, and references below.',
     },
     {
       type: 'image',
-      src: '/images/Yerevan 2.jpg',
-      alt: 'Yerevan sketches and process',
+      src: '/images/Yerevan2.jpg',
+      alt: 'Yerevan — process, sketches, and references',
     },
   ],
 };
@@ -338,26 +426,18 @@ const yerevanRu: CaseStudy = {
   title: 'Ереван',
   sections: [
     {
-      type: 'paragraph',
-      text: 'В 2022 году я три месяца жила в Ереване. Это был мой первый визит в Армению и первый опыт жизни в другой стране на такой продолжительный срок. Ереван оставил яркое и запоминающееся впечатление.',
-    },
-    {
-      type: 'paragraph',
-      text: 'Иллюстрация изображает конкретное место в городе, которое во время одной из прогулок вдохновило меня запечатлеть его в определённом стиле. Я стремилась сочетать детальную графику с мягкими цветовыми заливками, отражая характер места и дух города, а также мои личные впечатления.',
-    },
-    {
       type: 'image',
-      src: '/images/Yerevan.jpg',
+      src: '/images/Yerevan1.jpg',
       alt: 'Иллюстрация Еревана',
     },
     {
       type: 'paragraph',
-      text: 'Эта иллюстрация создана в цифровом формате. Ниже вы можете увидеть эскизы, этапы работы и мои референсы.',
+      text: 'Я какое-то время жила в Ереване и очень полюбила город. На иллюстрации — место, которое я захотела запечатлеть, и его атмосфера.\n\nНиже — процесс, эскизы и референсы.',
     },
     {
       type: 'image',
-      src: '/images/Yerevan 2.jpg',
-      alt: 'Эскизы и процесс работы',
+      src: '/images/Yerevan2.jpg',
+      alt: 'Ереван — процесс, эскизы и референсы',
     },
   ],
 };
@@ -393,9 +473,12 @@ const foxyRoastersEn: CaseStudy = {
       text: 'I also designed several types of stickers and postcards and prepared print-ready layouts.',
     },
     {
-      type: 'image',
-      src: '/images/FR 4.jpg',
-      alt: 'Stickers and postcards design',
+      type: 'imageGrid',
+      images: [
+        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04381.jpg', alt: 'Foxy Roasters stickers — sheet 1' },
+        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04382.jpg', alt: 'Foxy Roasters stickers — sheet 2' },
+      ],
+      singleColumn: true,
     },
     {
       type: 'image',
@@ -408,7 +491,7 @@ const foxyRoastersEn: CaseStudy = {
     },
     {
       type: 'image',
-      src: '/images/FR5.jpg',
+      src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04383.jpg',
       alt: 'Foxy Roasters — stamp area illustration detail',
     },
     {
@@ -450,9 +533,12 @@ const foxyRoastersRu: CaseStudy = {
       text: '\u0422\u0430\u043a\u0436\u0435 \u044f \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043b\u0430 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0432\u0438\u0434\u043e\u0432 \u0441\u0442\u0438\u043a\u0435\u0440\u043e\u0432 \u0438 \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u043a \u0438 \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u0438\u043b\u0430 \u043c\u0430\u043a\u0435\u0442\u044b \u043a \u043f\u0435\u0447\u0430\u0442\u0438.',
     },
     {
-      type: 'image',
-      src: '/images/FR 4.jpg',
-      alt: '\u0414\u0438\u0437\u0430\u0439\u043d \u0441\u0442\u0438\u043a\u0435\u0440\u043e\u0432 \u0438 \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u043a',
+      type: 'imageGrid',
+      images: [
+        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04381.jpg', alt: '\u0421\u0442\u0438\u043a\u0435\u0440\u044b Foxy Roasters \u2014 \u043b\u0438\u0441\u0442 1' },
+        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04382.jpg', alt: '\u0421\u0442\u0438\u043a\u0435\u0440\u044b Foxy Roasters \u2014 \u043b\u0438\u0441\u0442 2' },
+      ],
+      singleColumn: true,
     },
     {
       type: 'image',
@@ -465,7 +551,7 @@ const foxyRoastersRu: CaseStudy = {
     },
     {
       type: 'image',
-      src: '/images/FR5.jpg',
+      src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04383.jpg',
       alt: '\u0414\u0435\u0442\u0430\u043b\u044c \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0432 \u0437\u043e\u043d\u0435 \u043c\u0430\u0440\u043a\u0438',
     },
     {

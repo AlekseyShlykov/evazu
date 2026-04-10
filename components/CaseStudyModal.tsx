@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useRef, useCallback, useState } from 'react';
 
 export interface CaseStudySection {
-  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'link';
+  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'link' | 'vimeo';
   text?: string;
   src?: string;
   alt?: string;
@@ -14,6 +14,12 @@ export interface CaseStudySection {
   columns?: number;
   /** If true, every image stays one column (two per row) regardless of aspect ratio */
   fixedTwoColumns?: boolean;
+  /** If true with imageGrid, stack images vertically at full width */
+  singleColumn?: boolean;
+  /** Vimeo video ID for type "vimeo" */
+  vimeoId?: string;
+  /** iframe title (accessibility) */
+  iframeTitle?: string;
 }
 
 export interface CaseStudy {
@@ -103,12 +109,35 @@ function CaseStudyImageRun({
   resolveImgSrc,
   onImageClick,
   fixedTwoColumns = false,
+  singleColumn = false,
 }: {
   images: { src: string; alt: string }[];
   resolveImgSrc: (src: string) => string;
   onImageClick: (resolvedSrc: string, alt: string) => void;
   fixedTwoColumns?: boolean;
+  singleColumn?: boolean;
 }) {
+  if (singleColumn) {
+    return (
+      <div className="flex w-full flex-col gap-4">
+        {images.map((img, j) => {
+          const resolved = resolveImgSrc(img.src);
+          const onClick = () => onImageClick(resolved, img.alt);
+          return (
+            <div key={`${img.src}-${j}`} className="min-w-0 w-full">
+              <img
+                src={resolved}
+                alt={img.alt}
+                className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
+                loading="lazy"
+                onClick={onClick}
+              />
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
   return (
     <div className="grid w-full grid-cols-2 gap-4">
       {images.map((img, j) => {
@@ -221,7 +250,26 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           resolveImgSrc={resolveImgSrc}
           onImageClick={(resolved, alt) => setLightboxSrc({ src: resolved, alt })}
           fixedTwoColumns={section.fixedTwoColumns === true}
+          singleColumn={section.singleColumn === true}
         />,
+      );
+      si++;
+      continue;
+    }
+    if (section.type === 'vimeo' && section.vimeoId) {
+      const vid = section.vimeoId;
+      const iframeTitle = section.iframeTitle || 'Vimeo video';
+      const src = `https://player.vimeo.com/video/${vid}?badge=0&autopause=0&muted=1&loop=1`;
+      sectionNodes.push(
+        <div key={`case-vimeo-${si}`} className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop: '56.25%' }}>
+          <iframe
+            src={src}
+            title={iframeTitle}
+            className="absolute inset-0 h-full w-full border-0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>,
       );
       si++;
       continue;
