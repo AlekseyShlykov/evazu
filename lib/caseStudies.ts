@@ -444,6 +444,158 @@ const yerevanRu: CaseStudy = {
   ],
 };
 
+const belgradeAtmosphereEn: CaseStudy = {
+  title: 'Belgrade Atmosphere, Illustration Series',
+  sections: [
+    {
+      type: 'paragraph',
+      text: 'This series can be seen as a continuation of my work on Belgrade architecture, but the focus here is broader than individual buildings. It captures sketches from the streets and suburbs, aiming to convey the beauty of everyday life and moments full of energy, with the distinct vibe of Belgrade that I grew fond of.',
+    },
+    {
+      type: 'image',
+      src: '/images/BA1.jpg',
+      alt: 'Belgrade Atmosphere — illustration',
+    },
+    {
+      type: 'image',
+      src: '/images/BA2.jpg',
+      alt: 'Belgrade Atmosphere — illustration',
+    },
+    {
+      type: 'image',
+      src: '/images/BA3.jpg',
+      alt: 'Belgrade Atmosphere — illustration',
+    },
+    {
+      type: 'image',
+      src: '/images/BA4.jpg',
+      alt: 'Belgrade Atmosphere — illustration',
+    },
+    {
+      type: 'image',
+      src: '/images/BA5.jpg',
+      alt: 'Belgrade Atmosphere — illustration',
+    },
+    {
+      type: 'paragraph',
+      text: 'I wanted to bring these stories to life not only digitally, but also physically. So I created a series of postcards, for anyone who would like to keep a small piece of Belgrade seen through my eyes.',
+    },
+    {
+      type: 'image',
+      src: '/images/BA6.jpg',
+      alt: 'Belgrade Atmosphere — postcards',
+    },
+    {
+      type: 'paragraph',
+      text: 'I created them as static images, adding subtle animation to enhance the sense of atmosphere.',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1180511669',
+      iframeTitle: 'Suburban bus stop',
+      vimeoPaddingTop: '70.69%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1180515350',
+      iframeTitle: 'The Spirit of Christmas Past',
+      vimeoPaddingTop: '74.06%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'Also on Instagram:',
+    },
+    {
+      type: 'link',
+      label: 'Instagram reel — suburban bus stop',
+      href: 'https://www.instagram.com/reel/DJOfA_qCrUF/?igsh=bnd1YjAzZms0MjMy',
+    },
+    {
+      type: 'link',
+      label: 'Instagram reel — The Spirit of Christmas Past',
+      href: 'https://www.instagram.com/reel/DK_2BfrIqKr/?igsh=cTk1bjFrbTJtb2py',
+    },
+  ],
+};
+
+const belgradeAtmosphereRu: CaseStudy = {
+  title: 'Белградская атмосфера, иллюстрационная серия',
+  sections: [
+    {
+      type: 'paragraph',
+      text: 'Эту серию можно воспринимать как продолжение моей работы над архитектурой Белграда, но здесь фокус шире, чем отдельные здания. Это зарисовки с улиц и из пригородов: я хотела передать красоту повседневной жизни и моменты, полные энергии, с характерной атмосферой Белграда, к которой я успела привыкнуть.',
+    },
+    {
+      type: 'image',
+      src: '/images/BA1.jpg',
+      alt: 'Белградская атмосфера — иллюстрация',
+    },
+    {
+      type: 'image',
+      src: '/images/BA2.jpg',
+      alt: 'Белградская атмосфера — иллюстрация',
+    },
+    {
+      type: 'image',
+      src: '/images/BA3.jpg',
+      alt: 'Белградская атмосфера — иллюстрация',
+    },
+    {
+      type: 'image',
+      src: '/images/BA4.jpg',
+      alt: 'Белградская атмосфера — иллюстрация',
+    },
+    {
+      type: 'image',
+      src: '/images/BA5.jpg',
+      alt: 'Белградская атмосфера — иллюстрация',
+    },
+    {
+      type: 'paragraph',
+      text: 'Я хотела оживить эти истории не только в цифре, но и в реальности. Поэтому сделала серию открыток — для всех, кто хотел бы сохранить маленький кусочек Белграда, увиденного моими глазами.',
+    },
+    {
+      type: 'image',
+      src: '/images/BA6.jpg',
+      alt: 'Белградская атмосфера — открытки',
+    },
+    {
+      type: 'paragraph',
+      text: 'Я создала их как статичные изображения, добавив лёгкую анимацию, чтобы усилить ощущение атмосферы.',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1180511669',
+      iframeTitle: 'Автобусная остановка в пригороде',
+      vimeoPaddingTop: '70.69%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1180515350',
+      iframeTitle: 'The Spirit of Christmas Past',
+      vimeoPaddingTop: '74.06%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'Также в Instagram:',
+    },
+    {
+      type: 'link',
+      label: 'Рилс — автобусная остановка в пригороде',
+      href: 'https://www.instagram.com/reel/DJOfA_qCrUF/?igsh=bnd1YjAzZms0MjMy',
+    },
+    {
+      type: 'link',
+      label: 'Рилс — The Spirit of Christmas Past',
+      href: 'https://www.instagram.com/reel/DK_2BfrIqKr/?igsh=cTk1bjFrbTJtb2py',
+    },
+  ],
+};
+
 const foxyRoastersEn: CaseStudy = {
   title: 'Illustrations & Design for Foxy Roasters',
   sections: [
@@ -574,6 +726,11 @@ export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
     en: belgradeCaseEn,
     ru: belgradeCaseRu,
     fr: belgradeCaseEn,
+  },
+  'belgrade-atmosphere': {
+    en: belgradeAtmosphereEn,
+    ru: belgradeAtmosphereRu,
+    fr: belgradeAtmosphereEn,
   },
   'brutalist-belgrade': {
     en: brutalistBelgradeEn,

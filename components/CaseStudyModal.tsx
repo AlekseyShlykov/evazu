@@ -20,6 +20,10 @@ export interface CaseStudySection {
   vimeoId?: string;
   /** iframe title (accessibility) */
   iframeTitle?: string;
+  /** Responsive wrapper padding-top, e.g. "70.69%" when Vimeo embed uses a non-16:9 ratio */
+  vimeoPaddingTop?: string;
+  /** When true, add autoplay=1 (still uses muted=1 for typical browser policy) */
+  vimeoAutoplay?: boolean;
   /** If true (type image), span full modal width instead of half when image reads as square */
   fullWidth?: boolean;
 }
@@ -269,9 +273,11 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
     if (section.type === 'vimeo' && section.vimeoId) {
       const vid = section.vimeoId;
       const iframeTitle = section.iframeTitle || 'Vimeo video';
-      const src = `https://player.vimeo.com/video/${vid}?badge=0&autopause=0&muted=1&loop=1`;
+      const autoplay = section.vimeoAutoplay === true ? '&autoplay=1' : '';
+      const src = `https://player.vimeo.com/video/${vid}?badge=0&autopause=0&muted=1&loop=1${autoplay}`;
+      const paddingTop = section.vimeoPaddingTop ?? '56.25%';
       sectionNodes.push(
-        <div key={`case-vimeo-${si}`} className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop: '56.25%' }}>
+        <div key={`case-vimeo-${si}`} className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop }}>
           <iframe
             src={src}
             title={iframeTitle}

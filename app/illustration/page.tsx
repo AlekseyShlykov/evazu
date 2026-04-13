@@ -39,6 +39,7 @@ export default function IllustrationPage() {
                   : i === 2 ? () => setOpenCaseStudy('foxy-roasters')
                   : i === 3 ? () => setOpenCaseStudy('yerevan')
                   : i === 4 ? () => setOpenCaseStudy('tea-branding')
+                  : i === 5 ? () => setOpenCaseStudy('belgrade-atmosphere')
                   : undefined
                 }
               />

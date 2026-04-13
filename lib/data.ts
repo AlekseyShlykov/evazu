@@ -89,6 +89,11 @@ export const illustrationProjects = [
     image: 'Chinese tea.webp',
   },
   {
+    title: 'Belgrade Atmosphere, Illustration Series',
+    href: 'https://www.notion.so/Belgrade-Atmosphere-Illustration-Series-by-Ekaterina-Zueva?pvs=21',
+    image: 'BA2.jpg',
+  },
+  {
     title: 'Music Visuals Design by Ekaterina Zueva',
     href: 'https://www.notion.so/Music-Visuals-Design-by-Ekaterina-Zueva-19930e5485884177b52f4472709efeb2?pvs=21',
     image: 'Musicals.webp',
@@ -226,6 +231,7 @@ export const ruIllustrationHrefs: (string | null)[] = [
   'https://ekaterinazueva.notion.site/Foxy-Roasters-305b2b33972b80ff8b5ec2e3d7a8b30c?pvs=25',
   'https://ekaterinazueva.notion.site/105b2b33972b80068d9cc96c4f693703?pvs=25',
   'https://ekaterinazueva.notion.site/265de66fe8bc45b6aeb50c94d472f9ae?pvs=25',
+  null,
   null,
   'https://ekaterinazueva.notion.site/nekorobka-b4ed62aec5474c0ab94e9447c13191ed?pvs=25',
 ];
