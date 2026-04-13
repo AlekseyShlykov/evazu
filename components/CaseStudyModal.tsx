@@ -4,13 +4,15 @@ import type { ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useRef, useCallback, useState } from 'react';
 
 export interface CaseStudySection {
-  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'link' | 'vimeo';
+  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo';
   text?: string;
   src?: string;
   alt?: string;
   href?: string;
   label?: string;
   images?: { src: string; alt?: string }[];
+  /** For type imageHalf: one image at 50% width centered, or two images side by side (~half width each) */
+  imageHalfLayout?: 'single' | 'pair';
   columns?: number;
   /** If true, every image stays one column (two per row) regardless of aspect ratio */
   fixedTwoColumns?: boolean;
@@ -238,6 +240,47 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
   let si = 0;
   while (si < study.sections.length) {
     const section = study.sections[si];
+    if (section.type === 'imageHalf') {
+      const layout = section.imageHalfLayout;
+      if (layout === 'single' && section.src) {
+        const resolved = resolveImgSrc(section.src);
+        const alt = section.alt || '';
+        sectionNodes.push(
+          <div key={`case-image-half-${si}`} className="flex w-full justify-center">
+            <img
+              src={resolved}
+              alt={alt}
+              className="h-auto w-full max-w-[50%] rounded-lg cursor-zoom-in object-contain"
+              loading="lazy"
+              onClick={() => setLightboxSrc({ src: resolved, alt })}
+            />
+          </div>,
+        );
+      } else if (layout === 'pair' && section.images && section.images.length >= 2) {
+        const imgs = section.images.slice(0, 2);
+        sectionNodes.push(
+          <div key={`case-image-half-pair-${si}`} className="grid w-full grid-cols-2 gap-4">
+            {imgs.map((img, ji) => {
+              const resolved = resolveImgSrc(img.src);
+              const alt = img.alt || '';
+              return (
+                <div key={`${img.src}-${ji}`} className="min-w-0 flex justify-center">
+                  <img
+                    src={resolved}
+                    alt={alt}
+                    className="h-auto w-full max-w-full rounded-lg cursor-zoom-in object-contain"
+                    loading="lazy"
+                    onClick={() => setLightboxSrc({ src: resolved, alt })}
+                  />
+                </div>
+              );
+            })}
+          </div>,
+        );
+      }
+      si++;
+      continue;
+    }
     if (section.type === 'image') {
       const run: { src: string; alt: string; fullWidth?: boolean }[] = [];
       const start = si;
