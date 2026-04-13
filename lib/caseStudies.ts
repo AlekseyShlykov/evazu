@@ -504,17 +504,13 @@ const belgradeAtmosphereEn: CaseStudy = {
       vimeoAutoplay: true,
     },
     {
-      type: 'paragraph',
-      text: 'Also on Instagram:',
-    },
-    {
       type: 'link',
-      label: 'Instagram reel — suburban bus stop',
+      label: 'Instagram reel',
       href: 'https://www.instagram.com/reel/DJOfA_qCrUF/?igsh=bnd1YjAzZms0MjMy',
     },
     {
       type: 'link',
-      label: 'Instagram reel — The Spirit of Christmas Past',
+      label: 'Instagram reel',
       href: 'https://www.instagram.com/reel/DK_2BfrIqKr/?igsh=cTk1bjFrbTJtb2py',
     },
   ],
@@ -580,17 +576,13 @@ const belgradeAtmosphereRu: CaseStudy = {
       vimeoAutoplay: true,
     },
     {
-      type: 'paragraph',
-      text: 'Также в Instagram:',
-    },
-    {
       type: 'link',
-      label: 'Рилс — автобусная остановка в пригороде',
+      label: 'Instagram reel',
       href: 'https://www.instagram.com/reel/DJOfA_qCrUF/?igsh=bnd1YjAzZms0MjMy',
     },
     {
       type: 'link',
-      label: 'Рилс — The Spirit of Christmas Past',
+      label: 'Instagram reel',
       href: 'https://www.instagram.com/reel/DK_2BfrIqKr/?igsh=cTk1bjFrbTJtb2py',
     },
   ],
@@ -598,7 +590,6 @@ const belgradeAtmosphereRu: CaseStudy = {
 
 const musicVisualsEn: CaseStudy = {
   title: 'Music Visuals Design',
-  contentMaxWidthClass: 'max-w-6xl',
   sections: [
     {
       type: 'paragraph',
@@ -729,7 +720,6 @@ const musicVisualsEn: CaseStudy = {
 
 const musicVisualsRu: CaseStudy = {
   title: 'Music Visuals Design',
-  contentMaxWidthClass: 'max-w-6xl',
   sections: [
     {
       type: 'paragraph',
