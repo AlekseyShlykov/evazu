@@ -1,7 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import { useEffect, useLayoutEffect, useRef, useCallback, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useCallback, useState } from 'react';
 
 export interface CaseStudySection {
   type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo';
@@ -28,6 +28,8 @@ export interface CaseStudySection {
   vimeoAutoplay?: boolean;
   /** If true (type image), span full modal width instead of half when image reads as square */
   fullWidth?: boolean;
+  /** With type image + fullWidth: show in a wide 2:1 frame (object-cover) for a rectangular banner */
+  imageWideBanner?: boolean;
 }
 
 export interface CaseStudy {
@@ -38,6 +40,47 @@ export interface CaseStudy {
 interface CaseStudyModalProps {
   study: CaseStudy;
   onClose: () => void;
+}
+
+/** All images in a case study in on-screen order (for lightbox navigation). */
+function collectCaseStudyImages(
+  study: CaseStudy,
+  resolveImgSrc: (src: string) => string,
+): { src: string; alt: string }[] {
+  const items: { src: string; alt: string }[] = [];
+  let si = 0;
+  while (si < study.sections.length) {
+    const section = study.sections[si];
+    if (section.type === 'imageHalf') {
+      const layout = section.imageHalfLayout;
+      if (layout === 'single' && section.src) {
+        items.push({ src: resolveImgSrc(section.src), alt: section.alt || '' });
+      } else if (layout === 'pair' && section.images) {
+        for (const img of section.images.slice(0, 2)) {
+          items.push({ src: resolveImgSrc(img.src), alt: img.alt || '' });
+        }
+      }
+      si++;
+      continue;
+    }
+    if (section.type === 'image') {
+      while (si < study.sections.length && study.sections[si].type === 'image') {
+        const im = study.sections[si];
+        items.push({ src: resolveImgSrc(im.src!), alt: im.alt || '' });
+        si++;
+      }
+      continue;
+    }
+    if (section.type === 'imageGrid') {
+      for (const img of section.images || []) {
+        items.push({ src: resolveImgSrc(img.src), alt: img.alt || '' });
+      }
+      si++;
+      continue;
+    }
+    si++;
+  }
+  return items;
 }
 
 /** |aspectRatio − 1| ≤ tolerance counts as square (two per row). */
@@ -54,11 +97,13 @@ function CaseStudyAspectImage({
   alt,
   onClick,
   fullWidth,
+  wideBanner,
 }: {
   src: string;
   alt: string;
   onClick: () => void;
   fullWidth?: boolean;
+  wideBanner?: boolean;
 }) {
   const [span, setSpan] = useState<'square' | 'wide' | null>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -76,6 +121,24 @@ function CaseStudyAspectImage({
   }, [src]);
 
   const colClass = fullWidth ? 'col-span-2' : span === 'square' ? 'col-span-1' : 'col-span-2';
+
+  if (wideBanner === true && fullWidth === true) {
+    return (
+      <div className="min-w-0 col-span-2">
+        <div className="aspect-[2/1] w-full overflow-hidden rounded-lg">
+          <img
+            ref={imgRef}
+            src={src}
+            alt={alt}
+            className="h-full w-full object-cover cursor-zoom-in"
+            loading="lazy"
+            onLoad={(e) => applySpan(e.currentTarget)}
+            onClick={onClick}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`min-w-0 ${colClass}`}>
@@ -121,7 +184,7 @@ function CaseStudyImageRun({
   fixedTwoColumns = false,
   singleColumn = false,
 }: {
-  images: { src: string; alt: string; fullWidth?: boolean }[];
+  images: { src: string; alt: string; fullWidth?: boolean; imageWideBanner?: boolean }[];
   resolveImgSrc: (src: string) => string;
   onImageClick: (resolvedSrc: string, alt: string) => void;
   fixedTwoColumns?: boolean;
@@ -162,6 +225,7 @@ function CaseStudyImageRun({
             alt={img.alt}
             onClick={onClick}
             fullWidth={img.fullWidth === true}
+            wideBanner={img.imageWideBanner === true}
           />
         );
       })}
@@ -169,22 +233,63 @@ function CaseStudyImageRun({
   );
 }
 
-function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+function CaseStudyImageGalleryLightbox({
+  items,
+  index,
+  onClose,
+  onIndexChange,
+}: {
+  items: { src: string; alt: string }[];
+  index: number;
+  onClose: () => void;
+  onIndexChange: (next: number) => void;
+}) {
+  const n = items.length;
+  const safeIndex = n === 0 ? 0 : Math.min(Math.max(0, index), n - 1);
+  const current = items[safeIndex];
+
+  const goPrev = useCallback(() => {
+    if (n <= 1) return;
+    onIndexChange((safeIndex - 1 + n) % n);
+  }, [n, onIndexChange, safeIndex]);
+
+  const goNext = useCallback(() => {
+    if (n <= 1) return;
+    onIndexChange((safeIndex + 1) % n);
+  }, [n, onIndexChange, safeIndex]);
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { e.stopPropagation(); onClose(); }
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        onClose();
+        return;
+      }
+      if (n <= 1) return;
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        e.stopPropagation();
+        onIndexChange((safeIndex - 1 + n) % n);
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        e.stopPropagation();
+        onIndexChange((safeIndex + 1) % n);
+      }
     };
     document.addEventListener('keydown', handler, true);
     return () => document.removeEventListener('keydown', handler, true);
-  }, [onClose]);
+  }, [onClose, onIndexChange, n, safeIndex]);
+
+  if (!current) return null;
 
   return (
     <div
-      className="fixed inset-0 z-[300] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 cursor-zoom-out"
+      className="fixed inset-0 z-[300] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-8 cursor-zoom-out"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label={alt || 'Image preview'}
+      aria-label={current.alt || 'Image preview'}
     >
       <button
         type="button"
@@ -196,10 +301,49 @@ function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClos
           <path d="M5 5l10 10M15 5L5 15" />
         </svg>
       </button>
+
+      {n > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
+            className="absolute left-2 md:left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-3 text-white hover:bg-black/70 transition-colors md:p-3.5"
+            aria-label="Previous image"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M15 6l-6 6 6 6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+            className="absolute right-2 md:right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-3 text-white hover:bg-black/70 transition-colors md:p-3.5"
+            aria-label="Next image"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+          <div
+            className="pointer-events-none absolute bottom-4 left-1/2 z-10 -translate-x-1/2 rounded-full bg-black/50 px-3 py-1 text-sm text-white/90 tabular-nums"
+            aria-live="polite"
+          >
+            {safeIndex + 1} / {n}
+          </div>
+        </>
+      )}
+
       <img
-        src={src}
-        alt={alt}
-        className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl"
+        key={current.src}
+        src={current.src}
+        alt={current.alt}
+        className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl cursor-default"
         onClick={(e) => e.stopPropagation()}
       />
     </div>
@@ -209,7 +353,7 @@ function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClos
 export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [lightboxSrc, setLightboxSrc] = useState<{ src: string; alt: string } | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -236,6 +380,24 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
   const resolveImgSrc = (src: string) =>
     src.startsWith('/') ? `${basePath}${src}` : src;
 
+  const imageGallery = useMemo(() => {
+    const resolve = (src: string) => (src.startsWith('/') ? `${basePath}${src}` : src);
+    return collectCaseStudyImages(study, resolve);
+  }, [study, basePath]);
+
+  useEffect(() => {
+    setLightboxIndex(null);
+  }, [study]);
+
+  const openLightbox = useCallback(
+    (resolvedSrc: string, alt: string) => {
+      let idx = imageGallery.findIndex((g) => g.src === resolvedSrc && g.alt === alt);
+      if (idx < 0) idx = imageGallery.findIndex((g) => g.src === resolvedSrc);
+      setLightboxIndex(idx >= 0 ? idx : 0);
+    },
+    [imageGallery],
+  );
+
   const sectionNodes: ReactNode[] = [];
   let si = 0;
   while (si < study.sections.length) {
@@ -252,7 +414,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
               alt={alt}
               className="h-auto w-full max-w-[50%] rounded-lg cursor-zoom-in object-contain"
               loading="lazy"
-              onClick={() => setLightboxSrc({ src: resolved, alt })}
+              onClick={() => openLightbox(resolved, alt)}
             />
           </div>,
         );
@@ -270,7 +432,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
                     alt={alt}
                     className="h-auto w-full max-w-full rounded-lg cursor-zoom-in object-contain"
                     loading="lazy"
-                    onClick={() => setLightboxSrc({ src: resolved, alt })}
+                    onClick={() => openLightbox(resolved, alt)}
                   />
                 </div>
               );
@@ -282,11 +444,16 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
       continue;
     }
     if (section.type === 'image') {
-      const run: { src: string; alt: string; fullWidth?: boolean }[] = [];
+      const run: { src: string; alt: string; fullWidth?: boolean; imageWideBanner?: boolean }[] = [];
       const start = si;
       while (si < study.sections.length && study.sections[si].type === 'image') {
         const im = study.sections[si];
-        run.push({ src: im.src!, alt: im.alt || '', fullWidth: im.fullWidth });
+        run.push({
+          src: im.src!,
+          alt: im.alt || '',
+          fullWidth: im.fullWidth,
+          imageWideBanner: im.imageWideBanner,
+        });
         si++;
       }
       sectionNodes.push(
@@ -294,7 +461,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           key={`case-images-${start}`}
           images={run}
           resolveImgSrc={resolveImgSrc}
-          onImageClick={(resolved, alt) => setLightboxSrc({ src: resolved, alt })}
+          onImageClick={(resolved, alt) => openLightbox(resolved, alt)}
         />,
       );
       continue;
@@ -305,7 +472,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           key={`case-grid-${si}`}
           images={(section.images || []).map((img) => ({ src: img.src, alt: img.alt || '' }))}
           resolveImgSrc={resolveImgSrc}
-          onImageClick={(resolved, alt) => setLightboxSrc({ src: resolved, alt })}
+          onImageClick={(resolved, alt) => openLightbox(resolved, alt)}
           fixedTwoColumns={section.fixedTwoColumns === true}
           singleColumn={section.singleColumn === true}
         />,
@@ -376,11 +543,12 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
       aria-modal="true"
       aria-label={study.title}
     >
-      {lightboxSrc && (
-        <ImageLightbox
-          src={lightboxSrc.src}
-          alt={lightboxSrc.alt}
-          onClose={() => setLightboxSrc(null)}
+      {lightboxIndex !== null && imageGallery.length > 0 && (
+        <CaseStudyImageGalleryLightbox
+          items={imageGallery}
+          index={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onIndexChange={setLightboxIndex}
         />
       )}
 

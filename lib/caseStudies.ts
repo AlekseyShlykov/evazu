@@ -602,10 +602,11 @@ const musicVisualsEn: CaseStudy = {
       alt: 'Music visuals \u2014 cover artwork',
     },
     {
-      type: 'imageHalf',
-      imageHalfLayout: 'single',
+      type: 'image',
       src: '/images/COV2.jpg',
       alt: 'Music visuals \u2014 cover artwork',
+      fullWidth: true,
+      imageWideBanner: true,
     },
     {
       type: 'imageGrid',
@@ -651,9 +652,10 @@ const musicVisualsEn: CaseStudy = {
       text: 'More artworks for the band Marsohod 1',
     },
     {
-      type: 'imageGrid',
-      images: [{ src: '/images/COV12.jpg', alt: 'Marsohod 1 \u2014 artwork' }],
-      singleColumn: true,
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      src: '/images/COV12.jpg',
+      alt: 'Marsohod 1 \u2014 artwork',
     },
     {
       type: 'paragraph',
@@ -668,9 +670,10 @@ const musicVisualsEn: CaseStudy = {
       fixedTwoColumns: true,
     },
     {
-      type: 'imageGrid',
-      images: [{ src: '/images/COV15.jpg', alt: 'Marsohod 1 \u2014 collage artwork' }],
-      singleColumn: true,
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      src: '/images/COV15.jpg',
+      alt: 'Marsohod 1 \u2014 collage artwork',
     },
     {
       type: 'imageGrid',
@@ -728,10 +731,11 @@ const musicVisualsRu: CaseStudy = {
       alt: '\u041c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u0438\u0437\u0443\u0430\u043b\u0438\u043a\u0430 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430',
     },
     {
-      type: 'imageHalf',
-      imageHalfLayout: 'single',
+      type: 'image',
       src: '/images/COV2.jpg',
       alt: '\u041c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u0438\u0437\u0443\u0430\u043b\u0438\u043a\u0430 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430',
+      fullWidth: true,
+      imageWideBanner: true,
     },
     {
       type: 'imageGrid',
@@ -777,9 +781,10 @@ const musicVisualsRu: CaseStudy = {
       text: '\u0415\u0449\u0451 \u0440\u0430\u0431\u043e\u0442\u044b \u0434\u043b\u044f \u0433\u0440\u0443\u043f\u043f\u044b Marsohod 1',
     },
     {
-      type: 'imageGrid',
-      images: [{ src: '/images/COV12.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' }],
-      singleColumn: true,
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      src: '/images/COV12.jpg',
+      alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442',
     },
     {
       type: 'paragraph',
@@ -794,9 +799,10 @@ const musicVisualsRu: CaseStudy = {
       fixedTwoColumns: true,
     },
     {
-      type: 'imageGrid',
-      images: [{ src: '/images/COV15.jpg', alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436' }],
-      singleColumn: true,
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      src: '/images/COV15.jpg',
+      alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436',
     },
     {
       type: 'imageGrid',
