@@ -40,6 +40,7 @@ export default function IllustrationPage() {
                   : i === 3 ? () => setOpenCaseStudy('yerevan')
                   : i === 4 ? () => setOpenCaseStudy('tea-branding')
                   : i === 5 ? () => setOpenCaseStudy('belgrade-atmosphere')
+                  : i === 6 ? () => setOpenCaseStudy('music-visuals')
                   : undefined
                 }
               />

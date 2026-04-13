@@ -31,6 +31,8 @@ export interface CaseStudySection {
 export interface CaseStudy {
   title: string;
   sections: CaseStudySection[];
+  /** Modal content width, e.g. max-w-6xl for image-heavy cases (default max-w-4xl) */
+  contentMaxWidthClass?: string;
 }
 
 interface CaseStudyModalProps {
@@ -343,7 +345,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
 
       <div
         ref={contentRef}
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl"
+        className={`relative w-full ${study.contentMaxWidthClass ?? 'max-w-4xl'} max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl`}
       >
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur px-6 py-4 md:px-10">
           <h2 className="text-lg md:text-xl font-semibold text-neutral-900 pr-8 line-clamp-2">

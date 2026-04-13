@@ -94,7 +94,7 @@ export const illustrationProjects = [
     image: 'BA2.jpg',
   },
   {
-    title: 'Music Visuals Design by Ekaterina Zueva',
+    title: 'Music Visuals Design',
     href: 'https://www.notion.so/Music-Visuals-Design-by-Ekaterina-Zueva-19930e5485884177b52f4472709efeb2?pvs=21',
     image: 'Musicals.webp',
   },

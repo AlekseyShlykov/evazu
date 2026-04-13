@@ -36,7 +36,7 @@ export const translations = {
       'Yerevan',
       'Illustrations for a project dedicated to Chinese Tea',
       'Belgrade Atmosphere, Illustration Series',
-      'Music Visuals Design by Ekaterina Zueva',
+      'Music Visuals Design',
       'Illustrated Infographics for the nekorobka Project',
     ],
     animationTitles: {
@@ -118,7 +118,7 @@ export const translations = {
       'Ереван',
       'Иллюстрации для проекта, посвященного китайскому чаю',
       'Белградская атмосфера, иллюстрационная серия',
-      'Music Visuals Design by Ekaterina Zueva',
+      'Music Visuals Design',
       'Иллюстрированная инфографика для проекта nekorobka',
     ],
     animationTitles: {
@@ -200,7 +200,7 @@ export const translations = {
       'Erevan',
       'Illustrations pour un projet dédié au thé chinois',
       'Belgrade Atmosphere, série d\'illustrations',
-      'Music Visuals Design by Ekaterina Zueva',
+      'Music Visuals Design',
       'Infographies illustrées pour le projet nekorobka',
     ],
     animationTitles: {

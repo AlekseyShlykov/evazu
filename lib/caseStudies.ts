@@ -596,6 +596,268 @@ const belgradeAtmosphereRu: CaseStudy = {
   ],
 };
 
+const musicVisualsEn: CaseStudy = {
+  title: 'Music Visuals Design',
+  contentMaxWidthClass: 'max-w-6xl',
+  sections: [
+    {
+      type: 'paragraph',
+      text: 'I often collaborate with musicians, creating covers, album designs, and artwork. Here I\u2019ve collected some of my favorite projects. Working on covers gives me a lot of creative freedom, so I like to experiment with different techniques.',
+    },
+    {
+      type: 'image',
+      src: '/images/COV1.jpg',
+      alt: 'Music visuals \u2014 cover artwork',
+      fullWidth: true,
+    },
+    {
+      type: 'image',
+      src: '/images/COV2.jpg',
+      alt: 'Music visuals \u2014 cover artwork',
+      fullWidth: true,
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV3.jpg', alt: 'Music visuals \u2014 cover artwork' },
+        { src: '/images/COV4.jpg', alt: 'Music visuals \u2014 cover artwork' },
+      ],
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'Cover artwork for a podcast about the Russian underground music scene.',
+    },
+    {
+      type: 'image',
+      src: '/images/COV6.jpg',
+      alt: 'Podcast cover \u2014 Russian underground music',
+      fullWidth: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'A print-ready album cover and a series of artworks for the band Marsohod 1. Besides the cover, I created an illustration for this album on a sheet approximately 1 meter by 1.5 meters, which was later used for promotional visuals and merchandise.',
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV7.jpg', alt: 'Marsohod 1 \u2014 album artwork' },
+        { src: '/images/COV8.jpg', alt: 'Marsohod 1 \u2014 album artwork' },
+      ],
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV9.jpg', alt: 'Marsohod 1 \u2014 artwork' },
+        { src: '/images/COV10.jpg', alt: 'Marsohod 1 \u2014 artwork' },
+        { src: '/images/COV11.jpg', alt: 'Marsohod 1 \u2014 artwork' },
+      ],
+      singleColumn: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'More artworks for the band Marsohod 1',
+    },
+    {
+      type: 'imageGrid',
+      images: [{ src: '/images/COV12.jpg', alt: 'Marsohod 1 \u2014 artwork' }],
+      singleColumn: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'This is photogram, I\u2019ve made in my bathroom',
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV13.jpg', alt: 'Photogram' },
+        { src: '/images/COV14.jpg', alt: 'Photogram' },
+      ],
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'imageGrid',
+      images: [{ src: '/images/COV15.jpg', alt: 'Marsohod 1 \u2014 collage artwork' }],
+      singleColumn: true,
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV16.jpg', alt: 'Marsohod 1 \u2014 collage' },
+        { src: '/images/COV17.jpg', alt: 'Marsohod 1 \u2014 collage' },
+      ],
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'The most part of the work was done in material using collage technique.',
+    },
+    {
+      type: 'imageGrid',
+      images: [{ src: '/images/COV18.jpg', alt: 'Marsohod 1 \u2014 collage artwork' }],
+      singleColumn: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'Covers for the musician Dmitry Rakov.',
+    },
+    {
+      type: 'image',
+      src: '/images/COV19.jpg',
+      alt: 'Dmitry Rakov \u2014 cover',
+      fullWidth: true,
+    },
+    {
+      type: 'image',
+      src: '/images/COV20.jpg',
+      alt: 'Dmitry Rakov \u2014 cover',
+      fullWidth: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'I also occasionally create covers as part of a personal challenge, inspired by songs I love. This one is dedicated to \u201cThe Sleepless\u201d by Red Snapper.',
+    },
+    {
+      type: 'image',
+      src: '/images/COV21.jpg',
+      alt: 'Cover inspired by Red Snapper \u2014 The Sleepless',
+      fullWidth: true,
+    },
+  ],
+};
+
+const musicVisualsRu: CaseStudy = {
+  title: 'Music Visuals Design',
+  contentMaxWidthClass: 'max-w-6xl',
+  sections: [
+    {
+      type: 'paragraph',
+      text: '\u042f \u0447\u0430\u0441\u0442\u043e \u0441\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u0447\u0430\u044e \u0441 \u043c\u0443\u0437\u044b\u043a\u0430\u043d\u0442\u0430\u043c\u0438: \u0434\u0435\u043b\u0430\u044e \u043e\u0431\u043b\u043e\u0436\u043a\u0438, \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435 \u0430\u043b\u044c\u0431\u043e\u043c\u043e\u0432 \u0438 \u0430\u0440\u0442. \u0417\u0434\u0435\u0441\u044c \u0441\u043e\u0431\u0440\u0430\u043b\u0430 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0438\u0437 \u043b\u044e\u0431\u0438\u043c\u044b\u0445 \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432. \u0420\u0430\u0431\u043e\u0442\u0430 \u043d\u0430\u0434 \u043e\u0431\u043b\u043e\u0436\u043a\u0430\u043c\u0438 \u0434\u0430\u0451\u0442 \u043c\u043d\u043e\u0433\u043e \u0442\u0432\u043e\u0440\u0447\u0435\u0441\u043a\u043e\u0439 \u0441\u0432\u043e\u0431\u043e\u0434\u044b, \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u044f \u043b\u044e\u0431\u043b\u044e \u044d\u043a\u0441\u043f\u0435\u0440\u0438\u043c\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0441 \u0440\u0430\u0437\u043d\u044b\u043c\u0438 \u0442\u0435\u0445\u043d\u0438\u043a\u0430\u043c\u0438.',
+    },
+    {
+      type: 'image',
+      src: '/images/COV1.jpg',
+      alt: '\u041c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u0438\u0437\u0443\u0430\u043b\u0438\u043a\u0430 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430',
+      fullWidth: true,
+    },
+    {
+      type: 'image',
+      src: '/images/COV2.jpg',
+      alt: '\u041c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u0438\u0437\u0443\u0430\u043b\u0438\u043a\u0430 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430',
+      fullWidth: true,
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV3.jpg', alt: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430' },
+        { src: '/images/COV4.jpg', alt: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430' },
+      ],
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'paragraph',
+      text: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430 \u0434\u043b\u044f \u043f\u043e\u0434\u043a\u0430\u0441\u0442\u0430 \u043e \u0440\u0443\u0441\u0441\u043a\u043e\u0439 \u043f\u043e\u0434\u043f\u043e\u043b\u044c\u043d\u043e\u0439 \u043c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0441\u0446\u0435\u043d\u0435.',
+    },
+    {
+      type: 'image',
+      src: '/images/COV6.jpg',
+      alt: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430 \u043f\u043e\u0434\u043a\u0430\u0441\u0442\u0430',
+      fullWidth: true,
+    },
+    {
+      type: 'paragraph',
+      text: '\u041c\u0430\u043a\u0435\u0442 \u043e\u0431\u043b\u043e\u0436\u043a\u0438 \u0430\u043b\u044c\u0431\u043e\u043c\u0430 \u043a \u043f\u0435\u0447\u0430\u0442\u0438 \u0438 \u0441\u0435\u0440\u0438\u044f \u0440\u0430\u0431\u043e\u0442 \u0434\u043b\u044f \u0433\u0440\u0443\u043f\u043f\u044b Marsohod 1. \u041f\u043e\u043c\u0438\u043c\u043e \u043e\u0431\u043b\u043e\u0436\u043a\u0438 \u044f \u0441\u043e\u0437\u0434\u0430\u043b\u0430 \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u044e \u043d\u0430 \u043b\u0438\u0441\u0442\u0435 \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e 1 \u043d\u0430 1,5 \u043c\u0435\u0442\u0440\u0430 \u2014 \u043f\u043e\u0442\u043e\u043c \u043e\u043d\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0430\u0441\u044c \u0432 \u043f\u0440\u043e\u043c\u043e-\u0432\u0438\u0437\u0443\u0430\u043b\u0430\u0445 \u0438 \u043c\u0435\u0440\u0447\u0435.',
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV7.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
+        { src: '/images/COV8.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
+      ],
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV9.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
+        { src: '/images/COV10.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
+        { src: '/images/COV11.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
+      ],
+      singleColumn: true,
+    },
+    {
+      type: 'paragraph',
+      text: '\u0415\u0449\u0451 \u0440\u0430\u0431\u043e\u0442\u044b \u0434\u043b\u044f \u0433\u0440\u0443\u043f\u043f\u044b Marsohod 1',
+    },
+    {
+      type: 'imageGrid',
+      images: [{ src: '/images/COV12.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' }],
+      singleColumn: true,
+    },
+    {
+      type: 'paragraph',
+      text: '\u042d\u0442\u043e \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u043c\u043c\u0430, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u044f \u0441\u0434\u0435\u043b\u0430\u043b\u0430 \u0443 \u0441\u0435\u0431\u044f \u0432 \u0432\u0430\u043d\u043d\u043e\u0439.',
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV13.jpg', alt: '\u0424\u043e\u0442\u043e\u0433\u0440\u0430\u043c\u043c\u0430' },
+        { src: '/images/COV14.jpg', alt: '\u0424\u043e\u0442\u043e\u0433\u0440\u0430\u043c\u043c\u0430' },
+      ],
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'imageGrid',
+      images: [{ src: '/images/COV15.jpg', alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436' }],
+      singleColumn: true,
+    },
+    {
+      type: 'imageGrid',
+      images: [
+        { src: '/images/COV16.jpg', alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436' },
+        { src: '/images/COV17.jpg', alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436' },
+      ],
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'paragraph',
+      text: '\u0411\u043e\u043b\u044c\u0448\u0443\u044e \u0447\u0430\u0441\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u044b \u044f \u0434\u0435\u043b\u0430\u043b\u0430 \u0432 \u043c\u0430\u0442\u0435\u0440\u0438\u0438, \u0432 \u0442\u0435\u0445\u043d\u0438\u043a\u0435 \u043a\u043e\u043b\u043b\u0430\u0436\u0430.',
+    },
+    {
+      type: 'imageGrid',
+      images: [{ src: '/images/COV18.jpg', alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436' }],
+      singleColumn: true,
+    },
+    {
+      type: 'paragraph',
+      text: '\u041e\u0431\u043b\u043e\u0436\u043a\u0438 \u0434\u043b\u044f \u043c\u0443\u0437\u044b\u043a\u0430\u043d\u0442\u0430 \u0414\u043c\u0438\u0442\u0440\u0438\u044f \u0420\u0430\u043a\u043e\u0432\u0430.',
+    },
+    {
+      type: 'image',
+      src: '/images/COV19.jpg',
+      alt: '\u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0420\u0430\u043a\u043e\u0432 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430',
+      fullWidth: true,
+    },
+    {
+      type: 'image',
+      src: '/images/COV20.jpg',
+      alt: '\u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0420\u0430\u043a\u043e\u0432 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430',
+      fullWidth: true,
+    },
+    {
+      type: 'paragraph',
+      text: '\u0418\u043d\u043e\u0433\u0434\u0430 \u044f \u0434\u0435\u043b\u0430\u044e \u043e\u0431\u043b\u043e\u0436\u043a\u0438 \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 \u043b\u0438\u0447\u043d\u043e\u0433\u043e \u0447\u0435\u043b\u043b\u0435\u043d\u0434\u0436\u0430, \u0432\u0434\u043e\u0445\u043d\u043e\u0432\u043b\u0451\u043d\u043d\u043e\u0433\u043e \u043b\u044e\u0431\u0438\u043c\u044b\u043c\u0438 \u0442\u0440\u0435\u043a\u0430\u043c\u0438. \u042d\u0442\u0430 \u2014 \u043f\u043e\u0441\u0432\u044f\u0449\u0435\u043d\u0430 \u0442\u0440\u0435\u043a\u0443 The Sleepless \u0433\u0440\u0443\u043f\u043f\u044b Red Snapper.',
+    },
+    {
+      type: 'image',
+      src: '/images/COV21.jpg',
+      alt: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430 \u043f\u043e \u043c\u043e\u0442\u0438\u0432\u0430\u043c Red Snapper \u2014 The Sleepless',
+      fullWidth: true,
+    },
+  ],
+};
+
 const foxyRoastersEn: CaseStudy = {
   title: 'Illustrations & Design for Foxy Roasters',
   sections: [
@@ -746,5 +1008,10 @@ export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
     en: foxyRoastersEn,
     ru: foxyRoastersRu,
     fr: foxyRoastersEn,
+  },
+  'music-visuals': {
+    en: musicVisualsEn,
+    ru: musicVisualsRu,
+    fr: musicVisualsEn,
   },
 };
