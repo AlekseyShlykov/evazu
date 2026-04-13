@@ -28,6 +28,7 @@ export function AnimationVideoCard({
           alt=""
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-200"
           loading="lazy"
+          decoding="async"
           onError={() => setThumbError(true)}
         />
       ) : (

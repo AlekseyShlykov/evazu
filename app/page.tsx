@@ -1,11 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { ContactCard, SectionTitle, CaseStudyModal, ProjectHoverCard } from '@/components';
+import dynamic from 'next/dynamic';
+import { ContactCard, SectionTitle, ProjectHoverCard } from '@/components';
 import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { caseStudies } from '@/lib/caseStudies';
+
+const CaseStudyModal = dynamic(
+  () => import('@/components/CaseStudyModal').then((m) => m.CaseStudyModal),
+  { ssr: false },
+);
 
 const featuredProjects = [
   {
@@ -64,6 +70,10 @@ export default function HomePage() {
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
                 alt=""
                 className="w-full aspect-square object-cover rounded-lg"
+                fetchPriority="high"
+                decoding="async"
+                width={288}
+                height={288}
               />
             </div>
           </div>
@@ -73,6 +83,8 @@ export default function HomePage() {
             src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
             alt=""
             className="w-full aspect-square object-cover rounded-lg"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
       </section>
@@ -99,7 +111,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="py-16 md:py-24 bg-neutral-100 border-t border-neutral-200">
+      <section id="contact" className="py-16 md:py-24 bg-neutral-100 border-t border-neutral-200 content-auto">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle id="contact">{t.sectionTitles.contact}</SectionTitle>
           <ContactCard />

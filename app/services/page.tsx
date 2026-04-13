@@ -34,7 +34,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-section bg-white border-y border-neutral-100">
+      <section className="py-section bg-white border-y border-neutral-100 content-auto">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle>{t.sectionTitles.howIWork}</SectionTitle>
           <div className="space-y-10 max-w-6xl">
@@ -48,7 +48,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="contact" className="py-16 md:py-24 bg-neutral-100 border-t border-neutral-200">
+      <section id="contact" className="py-16 md:py-24 bg-neutral-100 border-t border-neutral-200 content-auto">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle id="contact">{t.sectionTitles.contact}</SectionTitle>
           <ContactCard />

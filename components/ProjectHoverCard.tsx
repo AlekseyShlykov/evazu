@@ -51,6 +51,7 @@ export function ProjectHoverCard({
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
+          decoding="async"
           referrerPolicy="no-referrer"
         />
       ) : (
@@ -59,6 +60,7 @@ export function ProjectHoverCard({
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
+          decoding="async"
         />
       )
     ) : (

@@ -1,11 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { SectionTitle, ProjectCard, CaseStudyModal } from '@/components';
+import dynamic from 'next/dynamic';
+import { SectionTitle, ProjectCard } from '@/components';
 import { illustrationProjects, ruIllustrationHrefs } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { caseStudies } from '@/lib/caseStudies';
+
+const CaseStudyModal = dynamic(
+  () => import('@/components/CaseStudyModal').then((m) => m.CaseStudyModal),
+  { ssr: false },
+);
 
 export default function IllustrationPage() {
   const { locale } = useLanguage();

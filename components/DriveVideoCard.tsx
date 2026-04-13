@@ -35,6 +35,7 @@ export function DriveVideoCard({
           alt=""
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-200"
           loading="lazy"
+          decoding="async"
           referrerPolicy="no-referrer"
           onError={() => setThumbError(true)}
         />

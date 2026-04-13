@@ -31,6 +31,7 @@ export function EmbedDriveCard({
           className="w-full h-full border-0"
           allow="autoplay"
           allowFullScreen
+          loading="lazy"
         />
       </div>
     </ProjectHoverCard>

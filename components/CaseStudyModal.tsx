@@ -132,6 +132,7 @@ function CaseStudyAspectImage({
             alt={alt}
             className="h-full w-full object-cover cursor-zoom-in"
             loading="lazy"
+            decoding="async"
             onLoad={(e) => applySpan(e.currentTarget)}
             onClick={onClick}
           />
@@ -148,6 +149,7 @@ function CaseStudyAspectImage({
         alt={alt}
         className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
         loading="lazy"
+        decoding="async"
         onLoad={(e) => applySpan(e.currentTarget)}
         onClick={onClick}
       />
@@ -171,6 +173,7 @@ function CaseStudyFixedCellImage({
         alt={alt}
         className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
         loading="lazy"
+        decoding="async"
         onClick={onClick}
       />
     </div>
@@ -203,6 +206,7 @@ function CaseStudyImageRun({
                 alt={img.alt}
                 className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
                 loading="lazy"
+                decoding="async"
                 onClick={onClick}
               />
             </div>
@@ -414,6 +418,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
               alt={alt}
               className="h-auto w-full max-w-[50%] rounded-lg cursor-zoom-in object-contain"
               loading="lazy"
+              decoding="async"
               onClick={() => openLightbox(resolved, alt)}
             />
           </div>,
@@ -432,6 +437,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
                     alt={alt}
                     className="h-auto w-full max-w-full rounded-lg cursor-zoom-in object-contain"
                     loading="lazy"
+                    decoding="async"
                     onClick={() => openLightbox(resolved, alt)}
                   />
                 </div>

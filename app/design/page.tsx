@@ -1,11 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { SectionTitle, ProjectCard, EmbedDriveCard, CaseStudyModal } from '@/components';
+import dynamic from 'next/dynamic';
+import { SectionTitle, ProjectCard, EmbedDriveCard } from '@/components';
 import { brandingProjects, ruBrandingHrefs } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { caseStudies } from '@/lib/caseStudies';
+
+const CaseStudyModal = dynamic(
+  () => import('@/components/CaseStudyModal').then((m) => m.CaseStudyModal),
+  { ssr: false },
+);
 
 export default function DesignPage() {
   const { locale } = useLanguage();
