@@ -312,7 +312,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
             href={section.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-left text-base text-accent hover:underline font-medium"
+            className="flex w-fit max-w-full items-center gap-1 text-left text-base text-accent hover:underline font-medium"
           >
             {section.label || section.href} →
           </a>,
