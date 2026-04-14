@@ -16,14 +16,14 @@ export function ContactFormspree() {
 
   if (state.succeeded) {
     return (
-      <p className="text-base font-medium text-neutral-800" role="status">
+      <p className="w-full text-base font-medium text-neutral-800" role="status">
         {t.formThanks}
       </p>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl space-y-5">
+    <form onSubmit={handleSubmit} className="w-full min-w-0 space-y-5">
       <div>
         <label htmlFor="contact-form-email" className="mb-2 block text-xs font-medium uppercase tracking-wider text-neutral-500">
           {t.formEmailLabel}
