@@ -163,29 +163,9 @@ export const brandingProjects = [
     image: 'N0.jpg',
   },
   {
-    title: 'Channel design and creative concepts for the workplace culture media Provodnik',
-    href: 'https://www.notion.so/Channel-design-and-creative-concepts-for-the-workplace-culture-media-Provodnik-14db2b33972b81ae992eca9f253cce6b?pvs=21',
-    image: 'channel_design.webp',
-  },
-  {
-    title: 'Style for a YouTube channel about healthy workplace culture',
-    href: 'https://www.notion.so/Style-for-a-YouTube-channel-about-healthy-workplace-culture-14db2b33972b81f9a07acea114721a16?pvs=21',
-    image: 'YouTube style.webp',
-  },
-  {
-    title: 'Design for the Easy Code project',
-    href: 'https://www.notion.so/Design-for-the-Easy-Code-project-14db2b33972b8137b685c60a8be0ef58?pvs=21',
-    image: 'Easy Code.webp',
-  },
-  {
-    title: 'Web service with a Hobby-Finding test',
-    href: 'https://www.notion.so/Web-service-with-a-Hobby-Finding-test-14db2b33972b816eaac8d3b1da788369?pvs=21',
-    vimeoId: '845340641',
-  },
-  {
-    title: 'Presentations',
-    href: 'https://drive.google.com/file/d/1QVhZGg9LyuqdDs1e4Dtthz0RRsztH_P7/view?usp=sharing',
-    embedDriveId: '1QVhZGg9LyuqdDs1e4Dtthz0RRsztH_P7',
+    title: 'Illustrations & Design for Foxy Roasters — gift sets, postcards, and stickers',
+    href: 'https://www.notion.so/Illustrations-for-Foxy-Roasters-a-coffee-roaster-and-a-cozy-coffee-shop-305b2b33972b8079a197c7d929da137e?pvs=21',
+    image: 'Foxy Roasters.webp',
   },
 ];
 
@@ -245,9 +225,5 @@ export const ruAnimationHrefs: string[] = [
 export const ruBrandingHrefs: string[] = [
   'https://ekaterinazueva.notion.site/12eb2b33972b80cda8fde10509921267?pvs=25',
   'https://ekaterinazueva.notion.site/Nekorobka-12eb2b33972b806ab1d9c3e18c2a8845?pvs=25',
-  'https://ekaterinazueva.notion.site/131b2b33972b808e91c1fcd5b7a2223f?pvs=25',
-  'https://ekaterinazueva.notion.site/Youtube-12eb2b33972b8009b501d79da280043b?pvs=25',
-  'https://ekaterinazueva.notion.site/Easy-Code-12eb2b33972b805ba69ae1959f94b5fe?pvs=25',
-  'https://ekaterinazueva.notion.site/afdb213a53bb4ab3bcbb72245ef461b8?pvs=25',
-  'https://ekaterinazueva.notion.site/131b2b33972b8097ac54e94bfd430f34?pvs=25',
+  'https://ekaterinazueva.notion.site/Foxy-Roasters-305b2b33972b80ff8b5ec2e3d7a8b30c?pvs=25',
 ];

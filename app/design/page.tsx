@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { SectionTitle, ProjectCard, EmbedDriveCard } from '@/components';
+import { SectionTitle, ProjectCard } from '@/components';
 import { brandingProjects, ruBrandingHrefs } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -33,35 +33,22 @@ export default function DesignPage() {
           <div className="grid gap-6 sm:grid-cols-2">
             {brandingProjects.map((project, i) => {
               const href = locale === 'ru' && ruBrandingHrefs[i] != null ? ruBrandingHrefs[i]! : project.href;
-              return 'embedDriveId' in project && project.embedDriveId ? (
-                <EmbedDriveCard
-                  key={project.href}
-                  title={t.brandingProjectTitles[i] ?? project.title}
-                  href={href}
-                  embedDriveId={project.embedDriveId}
-                  category={t.categoryBrandingDesign}
-                />
-              ) : (
+              return (
                 <ProjectCard
                   key={project.href}
                   title={t.brandingProjectTitles[i] ?? project.title}
                   href={href}
                   category={t.categoryBrandingDesign}
                   aspectRatio="wide"
-                  image={'image' in project ? project.image : undefined}
-                  thumbnailUrl={
-                    'vimeoId' in project && project.vimeoId
-                      ? `https://vumbnail.com/${project.vimeoId}.jpg`
-                      : 'googleDriveFileId' in project && project.googleDriveFileId
-                        ? `https://drive.google.com/thumbnail?id=${project.googleDriveFileId}&sz=w640`
-                        : undefined
-                  }
+                  image={project.image}
                   onClick={
                     i === 0
                       ? () => setOpenCaseStudy('tea-branding')
                       : i === 1
                         ? () => setOpenCaseStudy('nekorobka-hobby-kits')
-                        : undefined
+                        : i === 2
+                          ? () => setOpenCaseStudy('foxy-roasters')
+                          : undefined
                   }
                 />
               );
