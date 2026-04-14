@@ -11,9 +11,8 @@ export const site = {
   email: 'evazu.art@gmail.com',
   telegram: 'https://t.me/Evazu_K',
   telegramLabel: 'Telegram',
-  // Fiverr: placeholder — замените на реальную ссылку на профиль
-  fiverrUrl: '#',
-  fiverrLabel: 'Fiverr',
+  instagram: 'https://www.instagram.com/katya_evazu/',
+  instagramLabel: '@katya_evazu',
 };
 
 export const aboutIntro = [

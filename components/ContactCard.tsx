@@ -3,6 +3,7 @@
 import { site } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
+import { ContactFormspree } from './ContactFormspree';
 
 export function ContactCard() {
   const { locale } = useLanguage();
@@ -39,18 +40,22 @@ export function ContactCard() {
           </span>
         </a>
         <a
-          href={site.fiverrUrl}
+          href={site.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col rounded-xl border border-neutral-200 bg-neutral-50/50 p-5 transition-colors hover:border-accent hover:bg-accent/5 sm:col-span-2 lg:col-span-1"
+          className="group flex flex-col rounded-xl border border-neutral-200 bg-neutral-50/50 p-5 transition-colors hover:border-accent hover:bg-accent/5"
         >
           <span className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-1">
-            {t.fiverr}
+            {t.instagram}
           </span>
-          <span className="text-base font-medium text-neutral-900 group-hover:text-accent">
-            {site.fiverrLabel} →
+          <span className="text-base font-medium text-neutral-900 group-hover:text-accent break-all">
+            {site.instagramLabel} →
           </span>
         </a>
+      </div>
+      <div className="mt-10 border-t border-neutral-200 pt-10">
+        <h2 className="mb-6 text-sm font-medium uppercase tracking-wider text-neutral-500">{t.formTitle}</h2>
+        <ContactFormspree />
       </div>
     </div>
   );
