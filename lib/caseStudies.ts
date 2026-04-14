@@ -1202,6 +1202,118 @@ const nekorobkaHobbyKitsRu: CaseStudy = {
   ],
 };
 
+const nekorobkaInfographicsSeries1: { src: string; alt: string }[] = [
+  { src: '/images/I1.jpg', alt: 'Infographic — benefits of hobbies, 1 of 6' },
+  { src: '/images/I2.jpg', alt: 'Infographic — benefits of hobbies, 2 of 6' },
+  { src: '/images/I3.jpg', alt: 'Infographic — benefits of hobbies, 3 of 6' },
+  { src: '/images/I4.jpg', alt: 'Infographic — benefits of hobbies, 4 of 6' },
+  { src: '/images/I5.jpg', alt: 'Infographic — benefits of hobbies, 5 of 6' },
+  { src: '/images/I6.jpg', alt: 'Infographic — benefits of hobbies, 6 of 6' },
+];
+
+const nekorobkaInfographicsSeries2: { src: string; alt: string }[] = [
+  { src: '/images/I7.jpg', alt: 'Infographic — hobbies of literary characters, 1 of 6' },
+  { src: '/images/I8.jpg', alt: 'Infographic — hobbies of literary characters, 2 of 6' },
+  { src: '/images/I9.jpg', alt: 'Infographic — hobbies of literary characters, 3 of 6' },
+  { src: '/images/I10.jpg', alt: 'Infographic — hobbies of literary characters, 4 of 6' },
+  { src: '/images/I11.jpg', alt: 'Infographic — hobbies of literary characters, 5 of 6' },
+  { src: '/images/I12.jpg', alt: 'Infographic — hobbies of literary characters, 6 of 6' },
+];
+
+const nekorobkaInfographicsSeries1Ru: { src: string; alt: string }[] = [
+  { src: '/images/I1.jpg', alt: 'Инфографика — польза хобби, 1 из 6' },
+  { src: '/images/I2.jpg', alt: 'Инфографика — польза хобби, 2 из 6' },
+  { src: '/images/I3.jpg', alt: 'Инфографика — польза хобби, 3 из 6' },
+  { src: '/images/I4.jpg', alt: 'Инфографика — польза хобби, 4 из 6' },
+  { src: '/images/I5.jpg', alt: 'Инфографика — польза хобби, 5 из 6' },
+  { src: '/images/I6.jpg', alt: 'Инфографика — польза хобби, 6 из 6' },
+];
+
+const nekorobkaInfographicsSeries2Ru: { src: string; alt: string }[] = [
+  { src: '/images/I7.jpg', alt: 'Инфографика — хобби литературных персонажей, 1 из 6' },
+  { src: '/images/I8.jpg', alt: 'Инфографика — хобби литературных персонажей, 2 из 6' },
+  { src: '/images/I9.jpg', alt: 'Инфографика — хобби литературных персонажей, 3 из 6' },
+  { src: '/images/I10.jpg', alt: 'Инфографика — хобби литературных персонажей, 4 из 6' },
+  { src: '/images/I11.jpg', alt: 'Инфографика — хобби литературных персонажей, 5 из 6' },
+  { src: '/images/I12.jpg', alt: 'Инфографика — хобби литературных персонажей, 6 из 6' },
+];
+
+const nekorobkaInfographicsEn: CaseStudy = {
+  title: 'Illustrated Infographics for the nekorobka Project',
+  sections: [
+    {
+      type: 'image',
+      src: '/images/Infographics.webp',
+      alt: 'Illustrated infographics for the nekorobka project — cover',
+      fullWidth: true,
+      imageWideBanner: true,
+    },
+    {
+      type: 'paragraph',
+      text:
+        'At the startup nekorobka, we developed kits for various hobbies. These weren’t just simple boxes, but a complete first step into exploring a hobby that our potential clients might have known little about or only heard of before. We approached each hobby with great depth and took on the task of making it more accessible and appealing.\nAs part of this effort, I created infographics like this one, presenting interesting and useful facts in a simple format with memorable visuals.',
+    },
+    {
+      type: 'heading',
+      text: 'Series 1: The benefits of hobbies',
+    },
+    {
+      type: 'imageGrid',
+      images: nekorobkaInfographicsSeries1,
+      columns: 2,
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'heading',
+      text: 'Series 2: Hobbies of literary characters',
+    },
+    {
+      type: 'imageGrid',
+      images: nekorobkaInfographicsSeries2,
+      columns: 2,
+      fixedTwoColumns: true,
+    },
+  ],
+};
+
+const nekorobkaInfographicsRu: CaseStudy = {
+  title: 'Иллюстрированная инфографика для проекта nekorobka',
+  sections: [
+    {
+      type: 'image',
+      src: '/images/Infographics.webp',
+      alt: 'Иллюстрированная инфографика для проекта nekorobka — обложка',
+      fullWidth: true,
+      imageWideBanner: true,
+    },
+    {
+      type: 'paragraph',
+      text:
+        'В стартапе nekorobka мы делали наборы для разных хобби. Это были не просто коробки, а полноценный первый шаг в знакомство с увлечением, о котором потенциальные клиенты могли знать мало или только слышать. Мы углублялись в каждое хобби и старались сделать его понятнее и привлекательнее.\nВ рамках этого я делала инфографику в таком формате: интересные и полезные факты — просто и с запоминающимися иллюстрациями.',
+    },
+    {
+      type: 'heading',
+      text: 'Серия 1: польза хобби',
+    },
+    {
+      type: 'imageGrid',
+      images: nekorobkaInfographicsSeries1Ru,
+      columns: 2,
+      fixedTwoColumns: true,
+    },
+    {
+      type: 'heading',
+      text: 'Серия 2: хобби литературных персонажей',
+    },
+    {
+      type: 'imageGrid',
+      images: nekorobkaInfographicsSeries2Ru,
+      columns: 2,
+      fixedTwoColumns: true,
+    },
+  ],
+};
+
 export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
   'tea-branding': {
     en: teaBrandingEn,
@@ -1242,5 +1354,10 @@ export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
     en: nekorobkaHobbyKitsEn,
     ru: nekorobkaHobbyKitsRu,
     fr: nekorobkaHobbyKitsEn,
+  },
+  'nekorobka-infographics': {
+    en: nekorobkaInfographicsEn,
+    ru: nekorobkaInfographicsRu,
+    fr: nekorobkaInfographicsEn,
   },
 };

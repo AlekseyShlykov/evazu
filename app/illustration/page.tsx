@@ -47,6 +47,7 @@ export default function IllustrationPage() {
                   : i === 4 ? () => setOpenCaseStudy('tea-branding')
                   : i === 5 ? () => setOpenCaseStudy('belgrade-atmosphere')
                   : i === 6 ? () => setOpenCaseStudy('music-visuals')
+                  : i === 7 ? () => setOpenCaseStudy('nekorobka-infographics')
                   : undefined
                 }
               />
