@@ -56,7 +56,13 @@ export default function DesignPage() {
                         ? `https://drive.google.com/thumbnail?id=${project.googleDriveFileId}&sz=w640`
                         : undefined
                   }
-                  onClick={i === 0 ? () => setOpenCaseStudy('tea-branding') : undefined}
+                  onClick={
+                    i === 0
+                      ? () => setOpenCaseStudy('tea-branding')
+                      : i === 1
+                        ? () => setOpenCaseStudy('nekorobka-hobby-kits')
+                        : undefined
+                  }
                 />
               );
             })}

@@ -159,6 +159,11 @@ export const brandingProjects = [
     image: 'TW1.jpg',
   },
   {
+    title: 'Nekorobka hobby kits',
+    href: 'https://www.notion.so/Nekorobka-hobby-kits-14db2b33972b81debef9fc75d541b8d0?pvs=21',
+    image: 'N0.jpg',
+  },
+  {
     title: 'Channel design and creative concepts for the workplace culture media Provodnik',
     href: 'https://www.notion.so/Channel-design-and-creative-concepts-for-the-workplace-culture-media-Provodnik-14db2b33972b81ae992eca9f253cce6b?pvs=21',
     image: 'channel_design.webp',
@@ -177,11 +182,6 @@ export const brandingProjects = [
     title: 'Web service with a Hobby-Finding test',
     href: 'https://www.notion.so/Web-service-with-a-Hobby-Finding-test-14db2b33972b816eaac8d3b1da788369?pvs=21',
     vimeoId: '845340641',
-  },
-  {
-    title: 'Nekorobka hobby kits',
-    href: 'https://www.notion.so/Nekorobka-hobby-kits-14db2b33972b81debef9fc75d541b8d0?pvs=21',
-    image: 'nekorobka.webp',
   },
   {
     title: 'Presentations',
@@ -245,10 +245,10 @@ export const ruAnimationHrefs: string[] = [
 
 export const ruBrandingHrefs: string[] = [
   'https://ekaterinazueva.notion.site/12eb2b33972b80cda8fde10509921267?pvs=25',
+  'https://ekaterinazueva.notion.site/Nekorobka-12eb2b33972b806ab1d9c3e18c2a8845?pvs=25',
   'https://ekaterinazueva.notion.site/131b2b33972b808e91c1fcd5b7a2223f?pvs=25',
   'https://ekaterinazueva.notion.site/Youtube-12eb2b33972b8009b501d79da280043b?pvs=25',
   'https://ekaterinazueva.notion.site/Easy-Code-12eb2b33972b805ba69ae1959f94b5fe?pvs=25',
   'https://ekaterinazueva.notion.site/afdb213a53bb4ab3bcbb72245ef461b8?pvs=25',
-  'https://ekaterinazueva.notion.site/Nekorobka-12eb2b33972b806ab1d9c3e18c2a8845?pvs=25',
   'https://ekaterinazueva.notion.site/131b2b33972b8097ac54e94bfd430f34?pvs=25',
 ];

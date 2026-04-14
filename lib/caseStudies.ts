@@ -966,6 +966,242 @@ const foxyRoastersRu: CaseStudy = {
   ],
 };
 
+const nekorobkaHobbyKitsEn: CaseStudy = {
+  title: 'Nekorobka hobby kits',
+  sections: [
+    {
+      type: 'image',
+      src: '/images/N0.jpg',
+      alt: 'Nekorobka hobby kits — cover',
+      fullWidth: true,
+      imageWideBanner: true,
+    },
+    {
+      type: 'paragraph',
+      text:
+        'In 2020, I joined a startup focused on developing hobby kits. Each kit was designed as a complete first step into a new hobby, packed in a box and including all the necessary materials, a video lesson, clear instructions, and access to a support chat.\nOur goal was to popularize the idea of having hobbies, encourage people to try different ones, overcome the fear of experimenting, and broaden their horizons.',
+    },
+    {
+      type: 'image',
+      src: '/images/N1.jpg',
+      alt: 'Nekorobka hobby kits',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'I joined the project as a founding designer, developing its visual identity and creating illustrations, packaging, and supporting materials. We released nine kits, developed a web service to help users find the perfect hobby, and sold over 10,000 kits.',
+    },
+    {
+      type: 'image',
+      src: '/images/N5.jpg',
+      alt: 'Nekorobka hobby kits — packaging',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'The challenge was to create a system that could support a wide range of hobby kits, each with its own character, while maintaining a cohesive product experience. Some experts wanted to design their own kits — in these cases, I guided the visual direction, coordinated the process, and finalized the designs to ensure consistency. 7 out of 9 kits were designed by me.',
+    },
+    {
+      type: 'heading',
+      text: 'Tie-dye kit',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'From the start, I knew the design needed to feature vibrant paint splashes blending into one another, evoking creative associations.',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'The final design, which was printed, was hand-drawn by me on paper, then scanned, processed, and prepared for print.',
+    },
+    {
+      type: 'image',
+      src: '/images/N2.jpg',
+      alt: 'Tie-dye kit — design',
+    },
+    {
+      type: 'paragraph',
+      text: 'We also created a mini kit, whose design was based on the main version.',
+    },
+    {
+      type: 'image',
+      src: '/images/N3.jpg',
+      alt: 'Tie-dye mini kit',
+    },
+    {
+      type: 'heading',
+      text: 'Polymer clay kit',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'This kit invites users to create decorative elements for a cup using polymer clay. The elements are various sweets, so I used photos provided by the expert, the colors of the clay, and the theme of sweets as references.',
+    },
+    {
+      type: 'image',
+      src: '/images/N4.jpg',
+      alt: 'Polymer clay kit — design',
+    },
+    {
+      type: 'heading',
+      text: 'Additional graphics, materials and photo',
+    },
+    {
+      type: 'image',
+      src: '/images/N6.jpg',
+      alt: 'Nekorobka — additional graphics and materials',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'We also needed a variety of additional graphics to support social media content, marketplace profiles, online channels, and printed materials such as gift certificates.',
+    },
+    {
+      type: 'image',
+      src: '/images/N7.jpg',
+      alt: 'Nekorobka — graphics and photo',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'To diversify our social media presence, I created simple entertaining animations.',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1182644854',
+      iframeTitle: 'mini soap video',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1182642161',
+      iframeTitle: 'Nekorobka certificate',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+  ],
+};
+
+const nekorobkaHobbyKitsRu: CaseStudy = {
+  title: 'Nekorobka наборы для хобби',
+  sections: [
+    {
+      type: 'image',
+      src: '/images/N0.jpg',
+      alt: 'Nekorobka — обложка набора',
+      fullWidth: true,
+      imageWideBanner: true,
+    },
+    {
+      type: 'paragraph',
+      text:
+        'В 2020 году я присоединилась к стартапу, который разрабатывал наборы для хобби. Каждый набор задумывался как полноценный первый шаг в новое увлечение: в коробке — все нужные материалы, видеоурок, понятные инструкции и доступ в чат поддержки.\nНаша цель — популяризировать идею хобби, побуждать пробовать разные занятия, преодолевать страх эксперимента и расширять горизонты.',
+    },
+    {
+      type: 'image',
+      src: '/images/N1.jpg',
+      alt: 'Nekorobka — наборы для хобби',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Я вошла в проект как дизайнер-основательница: разрабатывала визуальную айдентику, иллюстрации, упаковку и сопутствующие материалы. Мы выпустили девять наборов, сделали веб-сервис для подбора хобби и продали более 10 000 наборов.',
+    },
+    {
+      type: 'image',
+      src: '/images/N5.jpg',
+      alt: 'Nekorobka — упаковка',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Задача была построить систему, которая выдержит множество разных наборов с собственным характером и при этом сохранит цельный продуктовый опыт. Часть экспертов хотела оформлять наборы сама — тогда я направляла визуально, координировала процесс и доводила макеты до единого стиля. Семь из девяти наборов спроектировала я.',
+    },
+    {
+      type: 'heading',
+      text: 'Набор tie-dye',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'С самого начала было ясно: в дизайне должны быть яркие всплески краски, перетекающие друг в друга, с ассоциациями на творчество и эксперимент.',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Финальный дизайн для печати я нарисовала от руки на бумаге, затем отсканировала, обработала и подготовила к производству.',
+    },
+    {
+      type: 'image',
+      src: '/images/N2.jpg',
+      alt: 'Набор tie-dye — дизайн',
+    },
+    {
+      type: 'paragraph',
+      text: 'Мы также сделали мини-набор — визуально он опирается на основную версию.',
+    },
+    {
+      type: 'image',
+      src: '/images/N3.jpg',
+      alt: 'Мини-набор tie-dye',
+    },
+    {
+      type: 'heading',
+      text: 'Набор с полимерной глиной',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'В этом наборе пользователь лепит из полимерной глины декоративные элементы для кружки — в виде разных сладостей. Я опиралась на фото от эксперта, на цвета глины и на тему сладостей.',
+    },
+    {
+      type: 'image',
+      src: '/images/N4.jpg',
+      alt: 'Набор с полимерной глиной — дизайн',
+    },
+    {
+      type: 'heading',
+      text: 'Дополнительная графика, материалы и фото',
+    },
+    {
+      type: 'image',
+      src: '/images/N6.jpg',
+      alt: 'Nekorobka — дополнительная графика и материалы',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Нужна была разнообразная графика для соцсетей, карточек на маркетплейсах, онлайн-каналов и печатных материалов — например, подарочных сертификатов.',
+    },
+    {
+      type: 'image',
+      src: '/images/N7.jpg',
+      alt: 'Nekorobka — графика и фото',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Чтобы разнообразить присутствие в соцсетях, я делала простые развлекательные анимации.',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1182644854',
+      iframeTitle: 'mini soap video',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1182642161',
+      iframeTitle: 'Nekorobka certificate',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+  ],
+};
+
 export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
   'tea-branding': {
     en: teaBrandingEn,
@@ -1001,5 +1237,10 @@ export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
     en: musicVisualsEn,
     ru: musicVisualsRu,
     fr: musicVisualsEn,
+  },
+  'nekorobka-hobby-kits': {
+    en: nekorobkaHobbyKitsEn,
+    ru: nekorobkaHobbyKitsRu,
+    fr: nekorobkaHobbyKitsEn,
   },
 };
