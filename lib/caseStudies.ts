@@ -970,13 +970,6 @@ const nekorobkaHobbyKitsEn: CaseStudy = {
   title: 'Nekorobka hobby kits',
   sections: [
     {
-      type: 'image',
-      src: '/images/N0.jpg',
-      alt: 'Nekorobka hobby kits — cover',
-      fullWidth: true,
-      imageWideBanner: true,
-    },
-    {
       type: 'paragraph',
       text:
         'In 2020, I joined a startup focused on developing hobby kits. Each kit was designed as a complete first step into a new hobby, packed in a box and including all the necessary materials, a video lesson, clear instructions, and access to a support chat.\nOur goal was to popularize the idea of having hobbies, encourage people to try different ones, overcome the fear of experimenting, and broaden their horizons.',
@@ -1068,18 +1061,21 @@ const nekorobkaHobbyKitsEn: CaseStudy = {
         'To diversify our social media presence, I created simple entertaining animations.',
     },
     {
-      type: 'vimeo',
-      vimeoId: '1182644854',
-      iframeTitle: 'mini soap video',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '1182642161',
-      iframeTitle: 'Nekorobka certificate',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
+      type: 'vimeoRow',
+      vimeoItems: [
+        {
+          vimeoId: '1182644854',
+          iframeTitle: 'mini soap video',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+        {
+          vimeoId: '1182642161',
+          iframeTitle: 'Nekorobka certificate',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+      ],
     },
   ],
 };
@@ -1087,13 +1083,6 @@ const nekorobkaHobbyKitsEn: CaseStudy = {
 const nekorobkaHobbyKitsRu: CaseStudy = {
   title: 'Nekorobka наборы для хобби',
   sections: [
-    {
-      type: 'image',
-      src: '/images/N0.jpg',
-      alt: 'Nekorobka — обложка набора',
-      fullWidth: true,
-      imageWideBanner: true,
-    },
     {
       type: 'paragraph',
       text:
@@ -1186,18 +1175,21 @@ const nekorobkaHobbyKitsRu: CaseStudy = {
         'Чтобы разнообразить присутствие в соцсетях, я делала простые развлекательные анимации.',
     },
     {
-      type: 'vimeo',
-      vimeoId: '1182644854',
-      iframeTitle: 'mini soap video',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '1182642161',
-      iframeTitle: 'Nekorobka certificate',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
+      type: 'vimeoRow',
+      vimeoItems: [
+        {
+          vimeoId: '1182644854',
+          iframeTitle: 'mini soap video',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+        {
+          vimeoId: '1182642161',
+          iframeTitle: 'Nekorobka certificate',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+      ],
     },
   ],
 };
@@ -1242,13 +1234,6 @@ const nekorobkaInfographicsEn: CaseStudy = {
   title: 'Illustrated Infographics for the nekorobka Project',
   sections: [
     {
-      type: 'image',
-      src: '/images/Infographics.webp',
-      alt: 'Illustrated infographics for the nekorobka project — cover',
-      fullWidth: true,
-      imageWideBanner: true,
-    },
-    {
       type: 'paragraph',
       text:
         'At the startup nekorobka, we developed kits for various hobbies. These weren’t just simple boxes, but a complete first step into exploring a hobby that our potential clients might have known little about or only heard of before. We approached each hobby with great depth and took on the task of making it more accessible and appealing.\nAs part of this effort, I created infographics like this one, presenting interesting and useful facts in a simple format with memorable visuals.',
@@ -1279,13 +1264,6 @@ const nekorobkaInfographicsEn: CaseStudy = {
 const nekorobkaInfographicsRu: CaseStudy = {
   title: 'Иллюстрированная инфографика для проекта nekorobka',
   sections: [
-    {
-      type: 'image',
-      src: '/images/Infographics.webp',
-      alt: 'Иллюстрированная инфографика для проекта nekorobka — обложка',
-      fullWidth: true,
-      imageWideBanner: true,
-    },
     {
       type: 'paragraph',
       text:

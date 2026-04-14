@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useCallback, useState } from 'react';
 
 export interface CaseStudySection {
-  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo';
+  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow';
   text?: string;
   src?: string;
   alt?: string;
@@ -26,6 +26,13 @@ export interface CaseStudySection {
   vimeoPaddingTop?: string;
   /** When true, add autoplay=1 (still uses muted=1 for typical browser policy) */
   vimeoAutoplay?: boolean;
+  /** For type vimeoRow: multiple Vimeo embeds in one row (e.g. two square videos side by side) */
+  vimeoItems?: {
+    vimeoId: string;
+    iframeTitle?: string;
+    vimeoPaddingTop?: string;
+    vimeoAutoplay?: boolean;
+  }[];
   /** If true (type image), span full modal width instead of half when image reads as square */
   fullWidth?: boolean;
   /** With type image + fullWidth: show in a wide 2:1 frame (object-cover) for a rectangular banner */
@@ -482,6 +489,34 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           fixedTwoColumns={section.fixedTwoColumns === true}
           singleColumn={section.singleColumn === true}
         />,
+      );
+      si++;
+      continue;
+    }
+    if (section.type === 'vimeoRow' && section.vimeoItems && section.vimeoItems.length > 0) {
+      sectionNodes.push(
+        <div key={`case-vimeo-row-${si}`} className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+          {section.vimeoItems.map((item, vi) => {
+            const vid = item.vimeoId;
+            const iframeTitle = item.iframeTitle || 'Vimeo video';
+            const autoplay = item.vimeoAutoplay === true ? '&autoplay=1' : '';
+            const src = `https://player.vimeo.com/video/${vid}?badge=0&autopause=0&muted=1&loop=1${autoplay}`;
+            const paddingTop = item.vimeoPaddingTop ?? '56.25%';
+            return (
+              <div key={`${vid}-${vi}`} className="min-w-0">
+                <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop }}>
+                  <iframe
+                    src={src}
+                    title={iframeTitle}
+                    className="absolute inset-0 h-full w-full border-0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>,
       );
       si++;
       continue;
