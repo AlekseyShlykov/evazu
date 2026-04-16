@@ -105,7 +105,15 @@ export const illustrationProjects = [
 ];
 
 export type AnimationItem =
-  | { type: 'video'; vimeoId: string; projectHref?: string; projectTitle?: string; caseStudyId?: string }
+  | {
+      type: 'video';
+      vimeoId: string;
+      projectHref?: string;
+      projectTitle?: string;
+      caseStudyId?: string;
+      /** Optional cover in public/images (filename); overrides Vimeo thumbnail */
+      coverImage?: string;
+    }
   | { type: 'driveVideo'; driveUrl: string; title: string; copyright?: string; googleDriveFileId?: string; projectHref?: string; previewImage?: string }
   | { type: 'project'; title: string; href: string }
   | { type: 'copyright'; text: string }
@@ -116,6 +124,7 @@ export const animationItems: AnimationItem[] = [
     type: 'video',
     vimeoId: '845322690',
     caseStudyId: 'hobby-matching-animation',
+    coverImage: 'Result mokup.jpg',
     projectHref:
       'https://ekaterinazueva.notion.site/Nekorobka-animation-for-a-web-service-with-a-hobby-matching-test-14db2b33972b8142b3efca6356c3f70c?pvs=25',
   },

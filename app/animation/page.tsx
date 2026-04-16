@@ -40,6 +40,7 @@ function AnimationPageContent() {
               vimeoId={item.vimeoId}
               projectTitle={t.animationTitles.nekorobka}
               projectHref={item.projectHref}
+              coverImage={item.coverImage}
               onOpenCaseStudy={() => openCaseStudyModal(caseStudyId)}
             />
           </div>

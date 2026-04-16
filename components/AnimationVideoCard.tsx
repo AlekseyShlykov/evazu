@@ -7,6 +7,8 @@ interface AnimationVideoCardProps {
   vimeoId: string;
   projectTitle?: string;
   projectHref?: string;
+  /** Filename in public/images — used as card cover instead of Vimeo thumbnail */
+  coverImage?: string;
   /** Opens in-site case study modal instead of external link */
   onOpenCaseStudy?: () => void;
 }
@@ -15,10 +17,15 @@ export function AnimationVideoCard({
   vimeoId,
   projectTitle,
   projectHref,
+  coverImage,
   onOpenCaseStudy,
 }: AnimationVideoCardProps) {
   const vimeoUrl = `https://vimeo.com/${vimeoId}`;
-  const thumbnailUrl = `https://vumbnail.com/${vimeoId}.jpg`;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const localCover = coverImage
+    ? `${basePath}/images/${encodeURIComponent(coverImage)}`
+    : null;
+  const thumbnailUrl = localCover ?? `https://vumbnail.com/${vimeoId}.jpg`;
   const [thumbError, setThumbError] = useState(false);
   const cardHref = projectHref ?? vimeoUrl;
   const title = projectTitle ?? `Vimeo ${vimeoId}`;

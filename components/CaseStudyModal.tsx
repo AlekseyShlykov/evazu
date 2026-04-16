@@ -39,6 +39,10 @@ export interface CaseStudySection {
   imageWideBanner?: boolean;
   /** For type nativeVideo: path under public/ (e.g. /images/clip.mp4) */
   videoSrc?: string;
+  /** Muted autoplay is required by browsers for autoPlay to work */
+  videoAutoplay?: boolean;
+  videoLoop?: boolean;
+  videoMuted?: boolean;
 }
 
 export interface CaseStudy {
@@ -545,6 +549,9 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
     }
     if (section.type === 'nativeVideo' && section.videoSrc) {
       const resolved = resolveImgSrc(section.videoSrc);
+      const autoplay = section.videoAutoplay === true;
+      const loop = section.videoLoop === true;
+      const muted = autoplay ? section.videoMuted !== false : section.videoMuted === true;
       sectionNodes.push(
         <div key={`case-native-video-${si}`} className="min-w-0 w-full overflow-hidden rounded-lg bg-neutral-100">
           <video
@@ -552,7 +559,10 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
             controls
             playsInline
             className="h-auto w-full max-w-full"
-            preload="metadata"
+            preload={autoplay ? 'auto' : 'metadata'}
+            autoPlay={autoplay}
+            loop={loop}
+            muted={muted}
           />
         </div>,
       );

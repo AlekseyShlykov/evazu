@@ -97,10 +97,6 @@ const teaBrandingEn: CaseStudy = {
       alt: 'Additional graphics for Chinese tea brand',
     },
     {
-      type: 'heading',
-      text: 'Video!',
-    },
-    {
       type: 'vimeo',
       vimeoId: '787983811',
       iframeTitle: 'Te with logo',
@@ -207,10 +203,6 @@ const teaBrandingRu: CaseStudy = {
       type: 'image',
       src: '/images/TW11.jpg',
       alt: 'Ещё графика для бренда китайского чая',
-    },
-    {
-      type: 'heading',
-      text: 'Видео!',
     },
     {
       type: 'vimeo',
@@ -1319,10 +1311,6 @@ const hobbyMatchingAnimationEn: CaseStudy = {
       vimeoAutoplay: true,
     },
     {
-      type: 'heading',
-      text: 'GIF',
-    },
-    {
       type: 'paragraph',
       text:
         'I also created several simple animations to provide guidance and illustrate how the test works.',
@@ -1330,15 +1318,14 @@ const hobbyMatchingAnimationEn: CaseStudy = {
     {
       type: 'image',
       src: '/images/GIF.gif',
-      alt: 'UI guidance animation (GIF)',
-    },
-    {
-      type: 'heading',
-      text: 'MP4',
+      alt: 'UI guidance animations in the test interface',
     },
     {
       type: 'nativeVideo',
       videoSrc: '/images/MP4.mp4',
+      videoAutoplay: true,
+      videoLoop: true,
+      videoMuted: true,
     },
   ],
 };
@@ -1401,10 +1388,6 @@ const hobbyMatchingAnimationRu: CaseStudy = {
       vimeoAutoplay: true,
     },
     {
-      type: 'heading',
-      text: 'GIF',
-    },
-    {
       type: 'paragraph',
       text:
         'Я также сделала несколько простых анимаций — для подсказок и чтобы наглядно показать, как устроен тест.',
@@ -1412,15 +1395,14 @@ const hobbyMatchingAnimationRu: CaseStudy = {
     {
       type: 'image',
       src: '/images/GIF.gif',
-      alt: 'Анимация подсказок в интерфейсе (GIF)',
-    },
-    {
-      type: 'heading',
-      text: 'MP4',
+      alt: 'Анимации подсказок в интерфейсе теста',
     },
     {
       type: 'nativeVideo',
       videoSrc: '/images/MP4.mp4',
+      videoAutoplay: true,
+      videoLoop: true,
+      videoMuted: true,
     },
   ],
 };
