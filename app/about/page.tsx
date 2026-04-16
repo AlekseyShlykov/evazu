@@ -1,6 +1,6 @@
 'use client';
 
-import { SectionTitle, ContactCard } from '@/components';
+import { SectionTitle, ContactCard, NewsletterSubscribe } from '@/components';
 import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -78,6 +78,16 @@ export default function AboutPage() {
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle id="contact">{t.sectionTitles.contact}</SectionTitle>
           <ContactCard />
+        </div>
+      </section>
+
+      <section id="newsletter" className="py-16 md:py-24 bg-white border-t border-neutral-200">
+        <div className="mx-auto max-w-content px-4 md:px-6">
+          <SectionTitle>{t.sectionTitles.newsletter}</SectionTitle>
+          <div className="w-full rounded-2xl border border-neutral-200 bg-white p-8 md:p-10 shadow-sm">
+            <p className="text-neutral-600 text-lg mb-8 leading-relaxed">{t.newsletter.intro}</p>
+            <NewsletterSubscribe />
+          </div>
         </div>
       </section>
     </div>
