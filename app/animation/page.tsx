@@ -35,7 +35,7 @@ function AnimationPageContent() {
       <section className="py-section">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle>{t.sectionTitles.animation}</SectionTitle>
-          <div className="mx-auto w-full max-w-xl">
+          <div className="grid gap-6 sm:grid-cols-2">
             <AnimationVideoCard
               vimeoId={item.vimeoId}
               projectTitle={t.animationTitles.nekorobka}
