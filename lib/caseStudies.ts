@@ -1261,6 +1261,170 @@ const nekorobkaInfographicsEn: CaseStudy = {
   ],
 };
 
+const hobbyMatchingAnimationEn: CaseStudy = {
+  title: 'Animation for a hobby matching test',
+  sections: [
+    {
+      type: 'paragraph',
+      text:
+        'This case was created for Nekorobka, a company that develops hobby kits.',
+    },
+    {
+      type: 'link',
+      label: 'Nekorobka hobby kits — full case study',
+      href: 'https://www.notion.so/Nekorobka-hobby-kits-14db2b33972b81debef9fc75d541b8d0?pvs=21',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'We developed a web service for hobby matching that includes a test based on the “Big Five Personality Traits” model. In addition to the kits, this self-assessment test was designed to help people who are unsure which hobby to try.',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'My task was to create a character that would become the “face” of the test: approachable, friendly, and with subtle references to popular culture. The character acts as a guide throughout the test, making the experience more engaging and easier to navigate.',
+    },
+    {
+      type: 'heading',
+      text: 'T1',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '845322690',
+      iframeTitle: 'Hello',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'paragraph',
+      text:
+        'The final character I designed is aligned with the website’s color palette and drawing style. Its outline complements the text blocks, while the subtle gradient fills echo the colorful elements and buttons of the interface.',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '845353993',
+      iframeTitle: 'Hobby imp',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '845346353',
+      iframeTitle: 'Info',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '845340641',
+      iframeTitle: 'The result',
+      vimeoPaddingTop: '52.08%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'heading',
+      text: 'GIF',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'I also created several simple animations to provide guidance and illustrate how the test works.',
+    },
+    {
+      type: 'image',
+      src: '/images/GIF.gif',
+      alt: 'UI guidance animation (GIF)',
+    },
+    {
+      type: 'heading',
+      text: 'MP4',
+    },
+    {
+      type: 'nativeVideo',
+      videoSrc: '/images/MP4.mp4',
+    },
+  ],
+};
+
+const hobbyMatchingAnimationRu: CaseStudy = {
+  title: 'Анимация для теста по подбору хобби',
+  sections: [
+    {
+      type: 'paragraph',
+      text:
+        'Этот кейс сделан для Nekorobka — компании, которая разрабатывает наборы для хобби.',
+    },
+    {
+      type: 'link',
+      label: 'Nekorobka наборы для хобби — полный кейс',
+      href: 'https://ekaterinazueva.notion.site/Nekorobka-12eb2b33972b806ab1d9c3e18c2a8845?pvs=25',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Мы разработали веб-сервис для подбора хобби с тестом на основе модели «Большой пятёрки» (Big Five). Помимо наборов, этот тест самооценки помогал тем, кто не уверен, какое хобби попробовать.',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Моя задача — создать персонажа, который станет «лицом» теста: дружелюбного, понятного, с лёгкими отсылками к поп-культуре. Персонаж ведёт пользователя по тесту и делает опыт живее и проще в навигации.',
+    },
+    {
+      type: 'heading',
+      text: 'T1',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '845322690',
+      iframeTitle: 'Hello',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Финальный персонаж согласован с цветовой палитрой и стилем отрисовки сайта. Контур хорошо сочетается с текстовыми блоками, а мягкие градиентные заливки перекликаются с цветными элементами и кнопками интерфейса.',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '845353993',
+      iframeTitle: 'Hobby imp',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '845346353',
+      iframeTitle: 'Info',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '845340641',
+      iframeTitle: 'The result',
+      vimeoPaddingTop: '52.08%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'heading',
+      text: 'GIF',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Я также сделала несколько простых анимаций — для подсказок и чтобы наглядно показать, как устроен тест.',
+    },
+    {
+      type: 'image',
+      src: '/images/GIF.gif',
+      alt: 'Анимация подсказок в интерфейсе (GIF)',
+    },
+    {
+      type: 'heading',
+      text: 'MP4',
+    },
+    {
+      type: 'nativeVideo',
+      videoSrc: '/images/MP4.mp4',
+    },
+  ],
+};
+
 const nekorobkaInfographicsRu: CaseStudy = {
   title: 'Иллюстрированная инфографика для проекта nekorobka',
   sections: [
@@ -1337,5 +1501,10 @@ export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
     en: nekorobkaInfographicsEn,
     ru: nekorobkaInfographicsRu,
     fr: nekorobkaInfographicsEn,
+  },
+  'hobby-matching-animation': {
+    en: hobbyMatchingAnimationEn,
+    ru: hobbyMatchingAnimationRu,
+    fr: hobbyMatchingAnimationEn,
   },
 };

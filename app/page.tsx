@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { ContactCard, SectionTitle, ProjectHoverCard } from '@/components';
 import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { caseStudies } from '@/lib/caseStudies';
+import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
 const CaseStudyModal = dynamic(
   () => import('@/components/CaseStudyModal').then((m) => m.CaseStudyModal),
@@ -40,17 +41,17 @@ const featuredProjects = [
   },
 ];
 
-export default function HomePage() {
+function HomePageContent() {
   const { locale } = useLanguage();
   const t = translations[locale];
-  const [openCaseStudy, setOpenCaseStudy] = useState<string | null>(null);
+  const { openCaseStudy, openCaseStudyModal, closeCaseStudyModal } = useCaseStudyModalUrl();
 
   return (
     <div className="w-full min-w-0 max-w-full overflow-x-hidden">
       {openCaseStudy && caseStudies[openCaseStudy] && (
         <CaseStudyModal
           study={caseStudies[openCaseStudy][locale]}
-          onClose={() => setOpenCaseStudy(null)}
+          onClose={closeCaseStudyModal}
         />
       )}
 
@@ -103,7 +104,7 @@ export default function HomePage() {
                   key={project.caseStudyId}
                   title={title}
                   image={project.image}
-                  onClick={() => setOpenCaseStudy(project.caseStudyId)}
+                  onClick={() => openCaseStudyModal(project.caseStudyId)}
                 />
               );
             })}
@@ -118,5 +119,13 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={<div className="min-h-[50vh]" aria-hidden />}>
+      <HomePageContent />
+    </Suspense>
   );
 }

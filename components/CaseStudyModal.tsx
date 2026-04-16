@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useCallback, useState } from 'react';
 
 export interface CaseStudySection {
-  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow';
+  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow' | 'nativeVideo';
   text?: string;
   src?: string;
   alt?: string;
@@ -37,6 +37,8 @@ export interface CaseStudySection {
   fullWidth?: boolean;
   /** With type image + fullWidth: show in a wide 2:1 frame (object-cover) for a rectangular banner */
   imageWideBanner?: boolean;
+  /** For type nativeVideo: path under public/ (e.g. /images/clip.mp4) */
+  videoSrc?: string;
 }
 
 export interface CaseStudy {
@@ -535,6 +537,22 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
             className="absolute inset-0 h-full w-full border-0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>,
+      );
+      si++;
+      continue;
+    }
+    if (section.type === 'nativeVideo' && section.videoSrc) {
+      const resolved = resolveImgSrc(section.videoSrc);
+      sectionNodes.push(
+        <div key={`case-native-video-${si}`} className="min-w-0 w-full overflow-hidden rounded-lg bg-neutral-100">
+          <video
+            src={resolved}
+            controls
+            playsInline
+            className="h-auto w-full max-w-full"
+            preload="metadata"
           />
         </div>,
       );

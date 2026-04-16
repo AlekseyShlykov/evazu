@@ -7,12 +7,15 @@ interface AnimationVideoCardProps {
   vimeoId: string;
   projectTitle?: string;
   projectHref?: string;
+  /** Opens in-site case study modal instead of external link */
+  onOpenCaseStudy?: () => void;
 }
 
 export function AnimationVideoCard({
   vimeoId,
   projectTitle,
   projectHref,
+  onOpenCaseStudy,
 }: AnimationVideoCardProps) {
   const vimeoUrl = `https://vimeo.com/${vimeoId}`;
   const thumbnailUrl = `https://vumbnail.com/${vimeoId}.jpg`;
@@ -21,7 +24,12 @@ export function AnimationVideoCard({
   const title = projectTitle ?? `Vimeo ${vimeoId}`;
 
   return (
-    <ProjectHoverCard title={title} href={cardHref} aspectRatio="wide">
+    <ProjectHoverCard
+      title={title}
+      href={cardHref}
+      aspectRatio="wide"
+      onClick={onOpenCaseStudy}
+    >
       {!thumbError ? (
         <img
           src={thumbnailUrl}

@@ -40,7 +40,7 @@ export const translations = {
       'Illustrated Infographics for the nekorobka Project',
     ],
     animationTitles: {
-      nekorobka: 'Nekorobka: animation for a web service with a hobby matching test',
+      nekorobka: 'Animation for a hobby matching test',
       learnWithMochi: 'Animated opening for Learn With Mochi app',
       shcha7sec: 'Short videos for the Shcha7sec festival',
       allstations: 'Animation for a music video by ALLSTATIONS',
@@ -126,7 +126,7 @@ export const translations = {
       'Иллюстрированная инфографика для проекта nekorobka',
     ],
     animationTitles: {
-      nekorobka: 'Nekorobka, анимация для веб-сервиса с тестом по подбору хобби',
+      nekorobka: 'Анимация для теста по подбору хобби',
       learnWithMochi: 'Анимационный опенинг для приложения Learn With Mochi',
       shcha7sec: 'Короткие ролики для фестивалей shcha7sec',
       allstations: 'Анимация для клипа группы ALLSTATIONS',
@@ -212,7 +212,7 @@ export const translations = {
       'Infographies illustrées pour le projet nekorobka',
     ],
     animationTitles: {
-      nekorobka: 'Nekorobka : animation pour un service web avec test de loisirs',
+      nekorobka: 'Animation pour un test de mise en correspondance des loisirs',
       learnWithMochi: 'Générique animé pour l\'app Learn With Mochi',
       shcha7sec: 'Courtes vidéos pour le festival Shcha7sec',
       allstations: 'Animation pour un clip du groupe ALLSTATIONS',

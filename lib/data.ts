@@ -105,7 +105,7 @@ export const illustrationProjects = [
 ];
 
 export type AnimationItem =
-  | { type: 'video'; vimeoId: string; projectHref?: string; projectTitle?: string }
+  | { type: 'video'; vimeoId: string; projectHref?: string; projectTitle?: string; caseStudyId?: string }
   | { type: 'driveVideo'; driveUrl: string; title: string; copyright?: string; googleDriveFileId?: string; projectHref?: string; previewImage?: string }
   | { type: 'project'; title: string; href: string }
   | { type: 'copyright'; text: string }
@@ -114,42 +114,12 @@ export type AnimationItem =
 export const animationItems: AnimationItem[] = [
   {
     type: 'video',
-    vimeoId: '845353993',
-    projectTitle: 'Nekorobka: animation for a web service with a hobby matching test',
-    projectHref: 'https://ekaterinazueva.notion.site/Nekorobka-animation-for-a-web-service-with-a-hobby-matching-test-14db2b33972b8142b3efca6356c3f70c?pvs=25',
-  },
-  // Learn with Mochi
-  {
-    type: 'driveVideo',
-    driveUrl: 'https://drive.google.com/file/d/1PowczA7HCLDmQjKxnjI8YmBAbA5TRrI2/view?usp=sharing',
-    title: 'Animated opening for Learn With Mochi app',
-    copyright: 'All rights and characters reserved to Learn with Mochi company. Unauthorized copying, downloading, or use prohibited.',
-    googleDriveFileId: '1PowczA7HCLDmQjKxnjI8YmBAbA5TRrI2',
-    previewImage: 'learn-with-mochi-preview.png',
-    projectHref: 'https://ekaterinazueva.notion.site/Animated-opening-for-Learn-With-Mochi-app-14db2b33972b81528702fdc8a261b7bb?pvs=25',
-  },
-  {
-    type: 'video',
-    vimeoId: '841664288',
-    projectTitle: 'Short videos for the Shcha7sec festival',
-    projectHref: 'https://www.notion.so/Short-videos-for-the-Shcha7sec-festival-14db2b33972b8124b966ff72f74cd32a?pvs=21',
-  },
-  {
-    type: 'video',
-    vimeoId: '380339662',
-    projectTitle: 'Animation for a music video by ALLSTATIONS',
+    vimeoId: '845322690',
+    caseStudyId: 'hobby-matching-animation',
     projectHref:
-      'https://www.notion.so/Animation-for-a-music-video-by-ALLSTATIONS-14db2b33972b816d884ef6d13d6b599e?pvs=21',
-  },
-  {
-    type: 'link',
-    label: 'More Animation Projects on a Separate Page: Animation',
-    href: 'https://www.notion.so/Animation-352de9a9021f40389183818bfe41bf3d?pvs=21',
+      'https://ekaterinazueva.notion.site/Nekorobka-animation-for-a-web-service-with-a-hobby-matching-test-14db2b33972b8142b3efca6356c3f70c?pvs=25',
   },
 ];
-
-export const learnWithMochiDriveUrl =
-  'https://drive.google.com/file/d/1PowczA7HCLDmQjKxnjI8YmBAbA5TRrI2/view?usp=sharing';
 
 export const brandingProjects = [
   {
@@ -213,13 +183,6 @@ export const ruIllustrationHrefs: (string | null)[] = [
   null,
   null,
   'https://ekaterinazueva.notion.site/nekorobka-b4ed62aec5474c0ab94e9447c13191ed?pvs=25',
-];
-
-export const ruAnimationHrefs: string[] = [
-  'https://ekaterinazueva.notion.site/Nekorobka-12eb2b33972b8020b2ecf32fb62ba635?pvs=25',
-  'https://ekaterinazueva.notion.site/Learn-With-Mochi-12eb2b33972b8027a4becdcded21bb10?pvs=25',
-  'https://ekaterinazueva.notion.site/shcha7sec-12eb2b33972b801f9b8bf00dbc409e07?pvs=25',
-  'https://ekaterinazueva.notion.site/ALLSTATIONS-12eb2b33972b8023ab03f171e24ee949?pvs=25',
 ];
 
 export const ruBrandingHrefs: string[] = [

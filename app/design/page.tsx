@@ -1,29 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { SectionTitle, ProjectCard } from '@/components';
 import { brandingProjects, ruBrandingHrefs } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { caseStudies } from '@/lib/caseStudies';
+import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
 const CaseStudyModal = dynamic(
   () => import('@/components/CaseStudyModal').then((m) => m.CaseStudyModal),
   { ssr: false },
 );
 
-export default function DesignPage() {
+function DesignPageContent() {
   const { locale } = useLanguage();
   const t = translations[locale];
-  const [openCaseStudy, setOpenCaseStudy] = useState<string | null>(null);
+  const { openCaseStudy, openCaseStudyModal, closeCaseStudyModal } = useCaseStudyModalUrl();
 
   return (
     <div className="w-full min-w-0 max-w-full overflow-x-hidden">
       {openCaseStudy && caseStudies[openCaseStudy] && (
         <CaseStudyModal
           study={caseStudies[openCaseStudy][locale]}
-          onClose={() => setOpenCaseStudy(null)}
+          onClose={closeCaseStudyModal}
         />
       )}
 
@@ -43,11 +44,11 @@ export default function DesignPage() {
                   image={project.image}
                   onClick={
                     i === 0
-                      ? () => setOpenCaseStudy('tea-branding')
+                      ? () => openCaseStudyModal('tea-branding')
                       : i === 1
-                        ? () => setOpenCaseStudy('nekorobka-hobby-kits')
+                        ? () => openCaseStudyModal('nekorobka-hobby-kits')
                         : i === 2
-                          ? () => setOpenCaseStudy('foxy-roasters')
+                          ? () => openCaseStudyModal('foxy-roasters')
                           : undefined
                   }
                 />
@@ -57,5 +58,13 @@ export default function DesignPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function DesignPage() {
+  return (
+    <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
+      <DesignPageContent />
+    </Suspense>
   );
 }
