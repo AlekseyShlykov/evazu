@@ -8,6 +8,7 @@ export { ProjectCard } from './ProjectCard';
 export { ProjectHoverCard } from './ProjectHoverCard';
 export type { ProjectHoverCardProps } from './ProjectHoverCard';
 export { ContactCard } from './ContactCard';
+export { NewsletterSubscribe } from './NewsletterSubscribe';
 export { PlaceholderImage } from './PlaceholderImage';
 export { AnimationVideoCard } from './AnimationVideoCard';
 export { DriveVideoCard } from './DriveVideoCard';

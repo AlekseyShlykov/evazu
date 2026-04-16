@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import { ContactCard, SectionTitle, ProjectHoverCard } from '@/components';
+import { ContactCard, NewsletterSubscribe, SectionTitle, ProjectHoverCard } from '@/components';
 import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -108,6 +108,16 @@ function HomePageContent() {
                 />
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section id="newsletter" className="py-16 md:py-24 bg-neutral-50 border-t border-neutral-200">
+        <div className="mx-auto max-w-content px-4 md:px-6">
+          <SectionTitle>{t.sectionTitles.newsletter}</SectionTitle>
+          <div className="w-full max-w-2xl rounded-2xl border border-neutral-200 bg-white p-8 md:p-10 shadow-sm">
+            <p className="text-neutral-600 text-lg mb-8 leading-relaxed">{t.newsletter.intro}</p>
+            <NewsletterSubscribe />
           </div>
         </div>
       </section>

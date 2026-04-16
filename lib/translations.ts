@@ -21,6 +21,7 @@ export const translations = {
       tools: 'Tools',
       languages: 'Languages',
       selectedProjects: 'Selected Projects',
+      newsletter: 'Newsletter',
       contact: 'Contact',
     },
     services: [
@@ -81,6 +82,15 @@ export const translations = {
       formSending: 'Sending…',
       formThanks: 'Thank you for your message. I will get back to you as soon as I can.',
     },
+    newsletter: {
+      intro:
+        "I share my process, updates, and new work here. Subscribe if you'd like to stay in touch.",
+      emailLabel: 'Your email',
+      emailPlaceholder: 'you@example.com',
+      submit: 'Subscribe',
+      sending: 'Subscribing…',
+      thanks: "Thank you — you're subscribed.",
+    },
     about: {
       tagline: 'Illustrator, 2D Animator, Graphic Designer',
       bio: "Hi, I'm Ekaterina Zueva, also working under the name Katya Evazu.\n\nI'm an illustrator, and I also work in 2D animation and graphic design. I create both standalone images and complete visual solutions — from individual illustrations to fully realized products.\n\nI help find the right visual language for a variety of projects: creating illustrations for brands, digital products, packaging, and print materials, as well as independent works. I collaborate on music projects and educational formats — explaining complex ideas visually and producing expressive illustrations for texts and longreads. At the same time, I develop my own personal projects.\n\nMy work is based on attention and immersion. I dive deep into each task to create an illustration or complete product with its own voice, atmosphere, and story. I work with both traditional and digital techniques, selecting the form that best fits the project.",
@@ -107,6 +117,7 @@ export const translations = {
       tools: 'Софт',
       languages: 'Язык',
       selectedProjects: 'Избранные проекты',
+      newsletter: 'Рассылка',
       contact: 'Контакты',
     },
     services: [
@@ -167,6 +178,15 @@ export const translations = {
       formSending: 'Отправка…',
       formThanks: 'Спасибо за сообщение. Отвечу, как только смогу.',
     },
+    newsletter: {
+      intro:
+        'Здесь я делюсь процессом, новостями и свежими работами. Подпишитесь, если хотите быть на связи.',
+      emailLabel: 'Ваш email',
+      emailPlaceholder: 'you@example.com',
+      submit: 'Подписаться',
+      sending: 'Отправка…',
+      thanks: 'Спасибо — вы в списке рассылки.',
+    },
     about: {
       tagline: 'Иллюстратор, 2D аниматор, графический дизайнер',
       bio: 'Привет, я Екатерина Зуева, также работаю под именем Katya Evazu.\n\nЯ иллюстратор, а также работаю в 2D-анимации и графическом дизайне. Создаю как отдельные изображения, так и комплексные визуальные решения — от иллюстраций до полностью реализованных продуктов.\n\nЯ помогаю найти правильный визуальный язык для различных проектов: создаю иллюстрации для брендов, цифровых продуктов, упаковки и печатных материалов, а также независимые работы. Сотрудничаю в музыкальных проектах и образовательных форматах — объясняю сложные идеи визуально и создаю выразительные иллюстрации для текстов и лонгридов. Параллельно развиваю собственные авторские проекты.\n\nМоя работа основана на внимании и погружении. Я глубоко вникаю в каждую задачу, чтобы создать иллюстрацию или готовый продукт со своим голосом, атмосферой и историей. Работаю как в традиционных, так и в цифровых техниках, выбирая форму, которая лучше всего подходит проекту.',
@@ -193,6 +213,7 @@ export const translations = {
       tools: 'Outils',
       languages: 'Langues',
       selectedProjects: 'Projets sélectionnés',
+      newsletter: 'Lettre d’information',
       contact: 'Contact',
     },
     services: [
@@ -252,6 +273,15 @@ export const translations = {
       formSend: 'Envoyer',
       formSending: 'Envoi…',
       formThanks: 'Merci pour votre message. Je vous répondrai dès que possible.',
+    },
+    newsletter: {
+      intro:
+        'Je partage ici mon processus, des nouvelles et de nouveaux travaux. Abonnez-vous si vous souhaitez rester en contact.',
+      emailLabel: 'Votre e-mail',
+      emailPlaceholder: 'vous@exemple.com',
+      submit: 'S’abonner',
+      sending: 'Envoi…',
+      thanks: 'Merci — inscription enregistrée.',
     },
     about: {
       tagline: 'Illustratrice, Animatrice 2D, Graphiste',
