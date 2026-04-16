@@ -4,8 +4,10 @@
 // HTML/CSS/JS and can be served from any static host (e.g. GitHub Pages).
 //
 // GitHub Pages: if the site is served at https://<user>.github.io/<repo-name>/,
-// set repoSubpath to your repo name (e.g. 'evazu'). Leave empty for user/org root.
-const repoSubpath = 'evazu';
+// set repoSubpath to your repo name (e.g. 'evazu'). Leave empty for:
+// - Pages at https://<user>.github.io/ (user/org site repo), or
+// - a custom domain (e.g. evazu.art) where the site is served from the domain root.
+const repoSubpath = '';
 
 const nextConfig = {
   output: 'export',
