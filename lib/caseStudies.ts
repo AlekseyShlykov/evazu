@@ -1263,8 +1263,8 @@ const hobbyMatchingAnimationEn: CaseStudy = {
     },
     {
       type: 'link',
-      label: 'Nekorobka hobby kits — full case study',
-      href: 'https://www.notion.so/Nekorobka-hobby-kits-14db2b33972b81debef9fc75d541b8d0?pvs=21',
+      label: 'Nekorobka hobby kits',
+      href: 'https://evazu.art/design/?case=nekorobka-hobby-kits',
     },
     {
       type: 'paragraph',
@@ -1336,8 +1336,8 @@ const hobbyMatchingAnimationRu: CaseStudy = {
     },
     {
       type: 'link',
-      label: 'Nekorobka наборы для хобби — полный кейс',
-      href: 'https://ekaterinazueva.notion.site/Nekorobka-12eb2b33972b806ab1d9c3e18c2a8845?pvs=25',
+      label: 'Nekorobka наборы для хобби',
+      href: 'https://evazu.art/design/?case=nekorobka-hobby-kits',
     },
     {
       type: 'paragraph',
