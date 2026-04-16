@@ -1277,10 +1277,6 @@ const hobbyMatchingAnimationEn: CaseStudy = {
         'My task was to create a character that would become the “face” of the test: approachable, friendly, and with subtle references to popular culture. The character acts as a guide throughout the test, making the experience more engaging and easier to navigate.',
     },
     {
-      type: 'heading',
-      text: 'T1',
-    },
-    {
       type: 'vimeo',
       vimeoId: '845322690',
       iframeTitle: 'Hello',
@@ -1352,10 +1348,6 @@ const hobbyMatchingAnimationRu: CaseStudy = {
       type: 'paragraph',
       text:
         'Моя задача — создать персонажа, который станет «лицом» теста: дружелюбного, понятного, с лёгкими отсылками к поп-культуре. Персонаж ведёт пользователя по тесту и делает опыт живее и проще в навигации.',
-    },
-    {
-      type: 'heading',
-      text: 'T1',
     },
     {
       type: 'vimeo',
