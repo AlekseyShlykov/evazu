@@ -1435,14 +1435,6 @@ const learnWithMochiAnimationEn: CaseStudy = {
         'Learn with Mochi company made educational kits for children, teaching the basics of programming through simple and usually engaging stories.\n\nMy task was to create an animated opening for the app, using the company\u2019s existing characters, from scripting to the final implementation.',
     },
     {
-      type: 'vimeo',
-      vimeoId: '1183729388',
-      iframeTitle: 'LWM app opening',
-      vimeoPaddingTop: '75%',
-      vimeoMuted: false,
-      vimeoLoop: false,
-    },
-    {
       type: 'nativeVideo',
       videoSrc: '/images/LWM меньше.mp4',
       videoMuted: true,
@@ -1457,14 +1449,6 @@ const learnWithMochiAnimationRu: CaseStudy = {
       type: 'paragraph',
       text:
         'Компания Learn with Mochi выпускала обучающие наборы для детей: основы программирования через простые и обычно увлекательные истории.\n\nМоя задача — сделать анимационный опенинг для приложения на базе уже существующих персонажей компании: от сценария до финальной реализации.',
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '1183729388',
-      iframeTitle: 'LWM app opening',
-      vimeoPaddingTop: '75%',
-      vimeoMuted: false,
-      vimeoLoop: false,
     },
     {
       type: 'nativeVideo',
