@@ -136,12 +136,20 @@ export const animationItems: AnimationItem[] = [
     vimeoId: '710275696',
     caseStudyId: 'home-personal-project',
     animationTitleKey: 'homePersonalProject',
+    coverImage: 'Home.jpg',
   },
   {
     type: 'video',
     vimeoId: '1184035324',
     caseStudyId: 'logo-social-media-animation',
     animationTitleKey: 'logoSocialMediaAnimation',
+    coverImage: 'LOGO FB anima 5s.jpg',
+  },
+  {
+    type: 'video',
+    vimeoId: '1183729388',
+    caseStudyId: 'learn-with-mochi-animation',
+    animationTitleKey: 'learnWithMochi',
   },
 ];
 
