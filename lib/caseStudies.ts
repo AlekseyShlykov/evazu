@@ -1326,6 +1326,106 @@ const hobbyMatchingAnimationEn: CaseStudy = {
   ],
 };
 
+const homePersonalProjectEn: CaseStudy = {
+  title: 'Home. Personal project',
+  sections: [
+    {
+      type: 'paragraph',
+      text: 'A personal project reflecting on the idea of home. Created in Yerevan in spring 2022.',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '710275696',
+      iframeTitle: 'Home',
+      vimeoMuted: false,
+      vimeoLoop: false,
+    },
+  ],
+};
+
+const homePersonalProjectRu: CaseStudy = {
+  title: 'Home. Личный проект',
+  sections: [
+    {
+      type: 'paragraph',
+      text: 'Личный проект о идее дома. Создан в Ереване весной 2022 года.',
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '710275696',
+      iframeTitle: 'Home',
+      vimeoMuted: false,
+      vimeoLoop: false,
+    },
+  ],
+};
+
+const logoSocialMediaAnimationEn: CaseStudy = {
+  title: 'Logo & Social Media Animation',
+  sections: [
+    {
+      type: 'vimeo',
+      vimeoId: '1184035324',
+      iframeTitle: 'The Fennec Box logo',
+      vimeoPaddingTop: '75%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '787983811',
+      iframeTitle: 'Te with logo',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1182644854',
+      iframeTitle: 'mini soap video',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1182642161',
+      iframeTitle: 'Nekorobka certificate',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+  ],
+};
+
+const logoSocialMediaAnimationRu: CaseStudy = {
+  title: 'Анимация логотипа и соцсетей',
+  sections: [
+    {
+      type: 'vimeo',
+      vimeoId: '1184035324',
+      iframeTitle: 'The Fennec Box logo',
+      vimeoPaddingTop: '75%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '787983811',
+      iframeTitle: 'Te with logo',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1182644854',
+      iframeTitle: 'mini soap video',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1182642161',
+      iframeTitle: 'Nekorobka certificate',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+  ],
+};
+
 const hobbyMatchingAnimationRu: CaseStudy = {
   title: 'Анимация для теста по подбору хобби',
   sections: [
@@ -1480,5 +1580,15 @@ export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
     en: hobbyMatchingAnimationEn,
     ru: hobbyMatchingAnimationRu,
     fr: hobbyMatchingAnimationEn,
+  },
+  'home-personal-project': {
+    en: homePersonalProjectEn,
+    ru: homePersonalProjectRu,
+    fr: homePersonalProjectEn,
+  },
+  'logo-social-media-animation': {
+    en: logoSocialMediaAnimationEn,
+    ru: logoSocialMediaAnimationRu,
+    fr: logoSocialMediaAnimationEn,
   },
 };

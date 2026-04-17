@@ -111,6 +111,8 @@ export type AnimationItem =
       projectHref?: string;
       projectTitle?: string;
       caseStudyId?: string;
+      /** Key into translations[locale].animationTitles */
+      animationTitleKey?: keyof (typeof import('./translations').translations)['en']['animationTitles'];
       /** Optional cover in public/images (filename); overrides Vimeo thumbnail */
       coverImage?: string;
     }
@@ -124,9 +126,22 @@ export const animationItems: AnimationItem[] = [
     type: 'video',
     vimeoId: '845322690',
     caseStudyId: 'hobby-matching-animation',
+    animationTitleKey: 'nekorobka',
     coverImage: 'Result mokup.jpg',
     projectHref:
       'https://ekaterinazueva.notion.site/Nekorobka-animation-for-a-web-service-with-a-hobby-matching-test-14db2b33972b8142b3efca6356c3f70c?pvs=25',
+  },
+  {
+    type: 'video',
+    vimeoId: '710275696',
+    caseStudyId: 'home-personal-project',
+    animationTitleKey: 'homePersonalProject',
+  },
+  {
+    type: 'video',
+    vimeoId: '1184035324',
+    caseStudyId: 'logo-social-media-animation',
+    animationTitleKey: 'logoSocialMediaAnimation',
   },
 ];
 

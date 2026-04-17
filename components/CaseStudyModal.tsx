@@ -26,12 +26,18 @@ export interface CaseStudySection {
   vimeoPaddingTop?: string;
   /** When true, add autoplay=1 (still uses muted=1 for typical browser policy) */
   vimeoAutoplay?: boolean;
+  /** Default true: add muted=1 (browser autoplay). Set false for narrative embeds. */
+  vimeoMuted?: boolean;
+  /** Default true: add loop=1. Set false for one-shot films. */
+  vimeoLoop?: boolean;
   /** For type vimeoRow: multiple Vimeo embeds in one row (e.g. two square videos side by side) */
   vimeoItems?: {
     vimeoId: string;
     iframeTitle?: string;
     vimeoPaddingTop?: string;
     vimeoAutoplay?: boolean;
+    vimeoMuted?: boolean;
+    vimeoLoop?: boolean;
   }[];
   /** If true (type image), span full modal width instead of half when image reads as square */
   fullWidth?: boolean;
@@ -48,6 +54,21 @@ export interface CaseStudySection {
 export interface CaseStudy {
   title: string;
   sections: CaseStudySection[];
+}
+
+function buildVimeoEmbedSrc(
+  vid: string,
+  opts: { autoplay?: boolean; muted?: boolean; loop?: boolean } = {},
+) {
+  const useMuted = opts.muted !== false;
+  const useLoop = opts.loop !== false;
+  const params = new URLSearchParams();
+  params.set('badge', '0');
+  params.set('autopause', '0');
+  if (useMuted) params.set('muted', '1');
+  if (useLoop) params.set('loop', '1');
+  if (opts.autoplay) params.set('autoplay', '1');
+  return `https://player.vimeo.com/video/${vid}?${params.toString()}`;
 }
 
 interface CaseStudyModalProps {
@@ -505,8 +526,11 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           {section.vimeoItems.map((item, vi) => {
             const vid = item.vimeoId;
             const iframeTitle = item.iframeTitle || 'Vimeo video';
-            const autoplay = item.vimeoAutoplay === true ? '&autoplay=1' : '';
-            const src = `https://player.vimeo.com/video/${vid}?badge=0&autopause=0&muted=1&loop=1${autoplay}`;
+            const src = buildVimeoEmbedSrc(vid, {
+              autoplay: item.vimeoAutoplay === true,
+              muted: item.vimeoMuted,
+              loop: item.vimeoLoop,
+            });
             const paddingTop = item.vimeoPaddingTop ?? '56.25%';
             return (
               <div key={`${vid}-${vi}`} className="min-w-0">
@@ -530,8 +554,11 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
     if (section.type === 'vimeo' && section.vimeoId) {
       const vid = section.vimeoId;
       const iframeTitle = section.iframeTitle || 'Vimeo video';
-      const autoplay = section.vimeoAutoplay === true ? '&autoplay=1' : '';
-      const src = `https://player.vimeo.com/video/${vid}?badge=0&autopause=0&muted=1&loop=1${autoplay}`;
+      const src = buildVimeoEmbedSrc(vid, {
+        autoplay: section.vimeoAutoplay === true,
+        muted: section.vimeoMuted,
+        loop: section.vimeoLoop,
+      });
       const paddingTop = section.vimeoPaddingTop ?? '56.25%';
       sectionNodes.push(
         <div key={`case-vimeo-${si}`} className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop }}>

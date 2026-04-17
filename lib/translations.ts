@@ -42,6 +42,8 @@ export const translations = {
     ],
     animationTitles: {
       nekorobka: 'Animation for a hobby matching test',
+      homePersonalProject: 'Home. Personal project',
+      logoSocialMediaAnimation: 'Logo & Social Media Animation',
       learnWithMochi: 'Animated opening for Learn With Mochi app',
       shcha7sec: 'Short videos for the Shcha7sec festival',
       allstations: 'Animation for a music video by ALLSTATIONS',
@@ -138,6 +140,8 @@ export const translations = {
     ],
     animationTitles: {
       nekorobka: 'Анимация для теста по подбору хобби',
+      homePersonalProject: 'Home. Личный проект',
+      logoSocialMediaAnimation: 'Анимация логотипа и соцсетей',
       learnWithMochi: 'Анимационный опенинг для приложения Learn With Mochi',
       shcha7sec: 'Короткие ролики для фестивалей shcha7sec',
       allstations: 'Анимация для клипа группы ALLSTATIONS',
@@ -234,6 +238,8 @@ export const translations = {
     ],
     animationTitles: {
       nekorobka: 'Animation pour un test de mise en correspondance des loisirs',
+      homePersonalProject: 'Home. Projet personnel',
+      logoSocialMediaAnimation: 'Animation logo et réseaux sociaux',
       learnWithMochi: 'Générique animé pour l\'app Learn With Mochi',
       shcha7sec: 'Courtes vidéos pour le festival Shcha7sec',
       allstations: 'Animation pour un clip du groupe ALLSTATIONS',
