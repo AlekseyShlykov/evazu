@@ -92,6 +92,7 @@ export const translations = {
       submit: 'Subscribe',
       sending: 'Subscribing…',
       thanks: "Thank you — you're subscribed.",
+      error: 'Something went wrong. Please try again in a moment.',
     },
     about: {
       tagline: 'Illustrator, 2D Animator, Graphic Designer',
@@ -190,6 +191,7 @@ export const translations = {
       submit: 'Подписаться',
       sending: 'Отправка…',
       thanks: 'Спасибо — вы в списке рассылки.',
+      error: 'Не получилось отправить. Попробуйте ещё раз чуть позже.',
     },
     about: {
       tagline: 'Иллюстратор, 2D аниматор, графический дизайнер',
@@ -288,6 +290,7 @@ export const translations = {
       submit: 'S’abonner',
       sending: 'Envoi…',
       thanks: 'Merci — inscription enregistrée.',
+      error: 'Une erreur s’est produite. Réessayez dans un instant.',
     },
     about: {
       tagline: 'Illustratrice, Animatrice 2D, Graphiste',
