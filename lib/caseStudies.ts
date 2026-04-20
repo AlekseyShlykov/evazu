@@ -1454,20 +1454,6 @@ const learnWithMochiAnimationEn: CaseStudy = {
       ],
     },
     {
-      type: 'paragraph',
-      text:
-        'I also explored two animation approaches: frame-by-frame hand-drawn animation and puppet animation in After Effects. Due to time constraints, the client chose the puppet approach, as frame-by-frame animation requires significantly more time.',
-    },
-    {
-      type: 'heading',
-      text: 'Compilation MP4',
-    },
-    {
-      type: 'nativeVideo',
-      videoSrc: '/images/Compilation.mp4',
-      videoMuted: true,
-    },
-    {
       type: 'nativeVideo',
       videoSrc: '/images/LWM меньше.mp4',
       videoMuted: true,
@@ -1510,20 +1496,6 @@ const learnWithMochiAnimationRu: CaseStudy = {
         { src: '/images/LWM 2.jpg', alt: 'Learn With Mochi — персонажи и окружение' },
         { src: '/images/LWM 3.jpg', alt: 'Learn With Mochi — цветные кадры опенинга' },
       ],
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Я сравнивала два подхода к анимации: покадровую отрисовку от руки и «кукольную» анимацию в After Effects. Из‑за сроков заказчик выбрал второй вариант: покадровая анимация требует заметно больше времени.',
-    },
-    {
-      type: 'heading',
-      text: 'Compilation MP4',
-    },
-    {
-      type: 'nativeVideo',
-      videoSrc: '/images/Compilation.mp4',
-      videoMuted: true,
     },
     {
       type: 'nativeVideo',

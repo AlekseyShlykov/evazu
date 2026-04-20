@@ -51,13 +51,6 @@ export function AnimationVideoCard({
           Video: vimeo.com/{vimeoId}
         </div>
       )}
-      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors pointer-events-none">
-        <div className="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-          <svg className="w-6 h-6 text-neutral-900 ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </div>
-      </div>
     </ProjectHoverCard>
   );
 }
