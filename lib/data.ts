@@ -191,6 +191,16 @@ export const brandingProjects = [
     href: 'https://www.notion.so/Illustrations-for-Foxy-Roasters-a-coffee-roaster-and-a-cozy-coffee-shop-305b2b33972b8079a197c7d929da137e?pvs=21',
     image: 'Foxy Roasters.webp',
   },
+  {
+    title: 'Music covers',
+    href: 'https://www.notion.so/Music-Visuals-Design-by-Ekaterina-Zueva-19930e5485884177b52f4472709efeb2?pvs=21',
+    image: 'Musicals.webp',
+  },
+  {
+    title: 'Animation for a hobby test',
+    href: 'https://ekaterinazueva.notion.site/Nekorobka-animation-for-a-web-service-with-a-hobby-matching-test-14db2b33972b8142b3efca6356c3f70c?pvs=25',
+    image: 'Result mokup.jpg',
+  },
 ];
 
 export const howIWork = [
@@ -239,8 +249,10 @@ export const ruIllustrationHrefs: (string | null)[] = [
   'https://ekaterinazueva.notion.site/nekorobka-b4ed62aec5474c0ab94e9447c13191ed?pvs=25',
 ];
 
-export const ruBrandingHrefs: string[] = [
+export const ruBrandingHrefs: (string | null)[] = [
   'https://ekaterinazueva.notion.site/12eb2b33972b80cda8fde10509921267?pvs=25',
   'https://ekaterinazueva.notion.site/Nekorobka-12eb2b33972b806ab1d9c3e18c2a8845?pvs=25',
   'https://ekaterinazueva.notion.site/Foxy-Roasters-305b2b33972b80ff8b5ec2e3d7a8b30c?pvs=25',
+  null,
+  null,
 ];

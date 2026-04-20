@@ -14,6 +14,14 @@ const CaseStudyModal = dynamic(
   { ssr: false },
 );
 
+const designCaseStudyByIndex: Record<number, string> = {
+  0: 'tea-branding',
+  1: 'nekorobka-hobby-kits',
+  2: 'foxy-roasters',
+  3: 'music-visuals',
+  4: 'hobby-matching-animation',
+};
+
 function DesignPageContent() {
   const { locale } = useLanguage();
   const t = translations[locale];
@@ -34,6 +42,7 @@ function DesignPageContent() {
           <div className="grid gap-6 sm:grid-cols-2">
             {brandingProjects.map((project, i) => {
               const href = locale === 'ru' && ruBrandingHrefs[i] != null ? ruBrandingHrefs[i]! : project.href;
+              const caseId = designCaseStudyByIndex[i];
               return (
                 <ProjectCard
                   key={project.href}
@@ -42,15 +51,7 @@ function DesignPageContent() {
                   category={t.categoryBrandingDesign}
                   aspectRatio="wide"
                   image={project.image}
-                  onClick={
-                    i === 0
-                      ? () => openCaseStudyModal('tea-branding')
-                      : i === 1
-                        ? () => openCaseStudyModal('nekorobka-hobby-kits')
-                        : i === 2
-                          ? () => openCaseStudyModal('foxy-roasters')
-                          : undefined
-                  }
+                  onClick={caseId ? () => openCaseStudyModal(caseId) : undefined}
                 />
               );
             })}
