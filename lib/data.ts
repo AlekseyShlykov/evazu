@@ -150,6 +150,28 @@ export const animationItems: AnimationItem[] = [
     vimeoId: '1183729388',
     caseStudyId: 'learn-with-mochi-animation',
     animationTitleKey: 'learnWithMochi',
+    coverImage: 'LWM 2.jpg',
+  },
+  {
+    type: 'video',
+    vimeoId: '1184036381',
+    caseStudyId: 'line-animation-frame-by-frame',
+    animationTitleKey: 'lineFrameByFrame',
+    coverImage: 'Line prew.jpg',
+  },
+  {
+    type: 'video',
+    vimeoId: '469486289',
+    caseStudyId: 'mixed-media-animation',
+    animationTitleKey: 'mixedMediaAnimation',
+    coverImage: 'Mix media prew.jpg',
+  },
+  {
+    type: 'video',
+    vimeoId: '505248946',
+    caseStudyId: 'animation-over-video',
+    animationTitleKey: 'animationOverVideo',
+    coverImage: 'Video prew.jpg',
   },
 ];
 

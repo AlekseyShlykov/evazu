@@ -1432,12 +1432,54 @@ const learnWithMochiAnimationEn: CaseStudy = {
     {
       type: 'paragraph',
       text:
-        'Learn with Mochi company made educational kits for children, teaching the basics of programming through simple and usually engaging stories.\n\nMy task was to create an animated opening for the app, using the company\u2019s existing characters, from scripting to the final implementation.',
+        'Learn With Mochi develops educational kits for children, teaching the basics of programming through simple, engaging stories.',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'My task was to create an animated opening for the app using the existing characters, from scripting to final implementation.',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'I started with rough sketches for the scenes, then illustrated the characters and environments in full color as they appear in the final animation (all rights to the characters belong to Learn With Mochi).',
+    },
+    {
+      type: 'imageGrid',
+      singleColumn: true,
+      images: [
+        { src: '/images/LWM 1.jpg', alt: 'Learn With Mochi — rough sketches and scene development' },
+        { src: '/images/LWM 2.jpg', alt: 'Learn With Mochi — character and environment illustration' },
+        { src: '/images/LWM 3.jpg', alt: 'Learn With Mochi — full-color frames for the opening' },
+      ],
+    },
+    {
+      type: 'paragraph',
+      text:
+        'I also explored two animation approaches: frame-by-frame hand-drawn animation and puppet animation in After Effects. Due to time constraints, the client chose the puppet approach, as frame-by-frame animation requires significantly more time.',
+    },
+    {
+      type: 'heading',
+      text: 'Compilation MP4',
+    },
+    {
+      type: 'nativeVideo',
+      videoSrc: '/images/Compilation.mp4',
+      videoMuted: true,
     },
     {
       type: 'nativeVideo',
       videoSrc: '/images/LWM меньше.mp4',
       videoMuted: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'Additionally, I designed an app icon to complement the project.',
+    },
+    {
+      type: 'image',
+      src: '/images/LWM 4.jpg',
+      alt: 'Learn With Mochi — app icon',
     },
   ],
 };
@@ -1448,14 +1490,166 @@ const learnWithMochiAnimationRu: CaseStudy = {
     {
       type: 'paragraph',
       text:
-        'Компания Learn with Mochi выпускала обучающие наборы для детей: основы программирования через простые и обычно увлекательные истории.\n\nМоя задача — сделать анимационный опенинг для приложения на базе уже существующих персонажей компании: от сценария до финальной реализации.',
+        'Learn With Mochi выпускает образовательные наборы для детей и знакомит с основами программирования через простые и увлекательные истории.',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Моя задача — сделать анимированный опенинг для приложения на базе уже существующих персонажей: от сценария до финальной реализации.',
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Сначала я сделала грубые эскизы сцен, затем проиллюстрировала персонажей и окружение в полном цвете так, как они выглядят в финальной анимации (все права на персонажей принадлежат Learn With Mochi).',
+    },
+    {
+      type: 'imageGrid',
+      singleColumn: true,
+      images: [
+        { src: '/images/LWM 1.jpg', alt: 'Learn With Mochi — эскизы и разработка сцен' },
+        { src: '/images/LWM 2.jpg', alt: 'Learn With Mochi — персонажи и окружение' },
+        { src: '/images/LWM 3.jpg', alt: 'Learn With Mochi — цветные кадры опенинга' },
+      ],
+    },
+    {
+      type: 'paragraph',
+      text:
+        'Я сравнивала два подхода к анимации: покадровую отрисовку от руки и «кукольную» анимацию в After Effects. Из‑за сроков заказчик выбрал второй вариант: покадровая анимация требует заметно больше времени.',
+    },
+    {
+      type: 'heading',
+      text: 'Compilation MP4',
+    },
+    {
+      type: 'nativeVideo',
+      videoSrc: '/images/Compilation.mp4',
+      videoMuted: true,
     },
     {
       type: 'nativeVideo',
       videoSrc: '/images/LWM меньше.mp4',
       videoMuted: true,
     },
+    {
+      type: 'paragraph',
+      text: 'Отдельно я разработала иконку приложения в рамках проекта.',
+    },
+    {
+      type: 'image',
+      src: '/images/LWM 4.jpg',
+      alt: 'Learn With Mochi — иконка приложения',
+    },
   ],
+};
+
+const lineFrameByFrameAnimationEn: CaseStudy = {
+  title: 'Line animation (frame-by-frame)',
+  sections: [
+    {
+      type: 'vimeo',
+      vimeoId: '1184036381',
+      iframeTitle: 'Eating yourself alive',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '946257606',
+      iframeTitle: 'Peace, Sand, Wawes',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '819939401',
+      iframeTitle: 'Work',
+      vimeoPaddingTop: '93.75%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '1184870227',
+      iframeTitle: 'Metamorphoses',
+      vimeoPaddingTop: '100%',
+      vimeoAutoplay: true,
+    },
+  ],
+};
+
+const lineFrameByFrameAnimationRu: CaseStudy = {
+  title: 'Анимация линией (покадрово)',
+  sections: lineFrameByFrameAnimationEn.sections,
+};
+
+const mixedMediaAnimationEn: CaseStudy = {
+  title: 'Mixed-media animation',
+  sections: [
+    {
+      type: 'vimeo',
+      vimeoId: '469486289',
+      iframeTitle: "Thro' the rye",
+      vimeoPaddingTop: '68.53%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '456562473',
+      iframeTitle: 'Are the trees drinking tea?',
+      vimeoPaddingTop: '137.01%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '469497693',
+      iframeTitle: 'Salmon',
+      vimeoPaddingTop: '119.63%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '456544241',
+      iframeTitle: 'Mountain breath',
+      vimeoPaddingTop: '141.45%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '841664288',
+      iframeTitle: 'The opposite window',
+      vimeoPaddingTop: '56.07%',
+      vimeoAutoplay: true,
+    },
+  ],
+};
+
+const mixedMediaAnimationRu: CaseStudy = {
+  title: 'Смешанная медиа-анимация',
+  sections: mixedMediaAnimationEn.sections,
+};
+
+const animationOverVideoEn: CaseStudy = {
+  title: 'Animation over video',
+  sections: [
+    {
+      type: 'vimeo',
+      vimeoId: '505248946',
+      iframeTitle: 'When are you a character',
+      vimeoPaddingTop: '56.25%',
+      vimeoAutoplay: true,
+    },
+    {
+      type: 'vimeo',
+      vimeoId: '380339662',
+      iframeTitle: 'ALLSTATIONS "With me"',
+      vimeoPaddingTop: '56.25%',
+      vimeoAutoplay: true,
+    },
+  ],
+};
+
+const animationOverVideoRu: CaseStudy = {
+  title: 'Анимация поверх видео',
+  sections: animationOverVideoEn.sections,
 };
 
 const hobbyMatchingAnimationRu: CaseStudy = {
@@ -1627,5 +1821,20 @@ export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
     en: learnWithMochiAnimationEn,
     ru: learnWithMochiAnimationRu,
     fr: learnWithMochiAnimationEn,
+  },
+  'line-animation-frame-by-frame': {
+    en: lineFrameByFrameAnimationEn,
+    ru: lineFrameByFrameAnimationRu,
+    fr: lineFrameByFrameAnimationEn,
+  },
+  'mixed-media-animation': {
+    en: mixedMediaAnimationEn,
+    ru: mixedMediaAnimationRu,
+    fr: mixedMediaAnimationEn,
+  },
+  'animation-over-video': {
+    en: animationOverVideoEn,
+    ru: animationOverVideoRu,
+    fr: animationOverVideoEn,
   },
 };
