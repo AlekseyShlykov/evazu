@@ -21,6 +21,13 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'vumbnail.com',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

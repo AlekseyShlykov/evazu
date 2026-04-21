@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { ProjectHoverCard } from './ProjectHoverCard';
 
@@ -38,12 +39,14 @@ export function AnimationVideoCard({
       onClick={onOpenCaseStudy}
     >
       {!thumbError ? (
-        <img
+        <Image
           src={thumbnailUrl}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-200"
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-[1.02] transition-transform duration-200"
+          sizes="(max-width: 640px) 100vw, 50vw"
           loading="lazy"
-          decoding="async"
+          unoptimized
           onError={() => setThumbError(true)}
         />
       ) : (

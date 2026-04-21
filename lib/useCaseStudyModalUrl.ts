@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { caseStudies } from '@/lib/caseStudies';
+import { isValidCaseStudyId } from '@/lib/caseStudyIds';
 
 /** Query key for deep links to an open case study modal, e.g. /illustration/?case=brutalist-belgrade */
 export const CASE_STUDY_QUERY = 'case';
@@ -19,14 +19,14 @@ export function useCaseStudyModalUrl() {
 
   const openCaseStudy = useMemo(() => {
     const id = searchParams.get(CASE_STUDY_QUERY);
-    return id && id in caseStudies ? id : null;
+    return id && isValidCaseStudyId(id) ? id : null;
   }, [searchParams]);
 
   const basePath = useCallback(() => pathWithTrailingSlash(pathname), [pathname]);
 
   const openCaseStudyModal = useCallback(
     (id: string) => {
-      if (!(id in caseStudies)) return;
+      if (!isValidCaseStudyId(id)) return;
       const params = new URLSearchParams(searchParams.toString());
       params.set(CASE_STUDY_QUERY, id);
       const qs = params.toString();

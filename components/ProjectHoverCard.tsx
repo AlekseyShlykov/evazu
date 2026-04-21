@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import type { ReactNode } from 'react';
+import Image from 'next/image';
+import { memo, type ReactNode } from 'react';
 
 type AspectRatio = 'landscape' | 'square' | 'portrait' | 'video' | 'wide';
 
@@ -12,6 +13,8 @@ const aspectClassMap: Record<AspectRatio, string> = {
   square: 'aspect-square',
   video: 'aspect-video',
 };
+
+const cardImageSizes = '(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 40vw';
 
 export interface ProjectHoverCardProps {
   title: string;
@@ -27,7 +30,7 @@ export interface ProjectHoverCardProps {
   hoverFooter?: ReactNode;
 }
 
-export function ProjectHoverCard({
+function ProjectHoverCardInner({
   title,
   category,
   image,
@@ -46,22 +49,30 @@ export function ProjectHoverCard({
   const visual = children ?? (
     showImage ? (
       thumbnailUrl ? (
-        <img
-          src={thumbnailUrl}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
-        />
+        <div className="absolute inset-0">
+          <Image
+            src={thumbnailUrl}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes={cardImageSizes}
+            loading="lazy"
+            unoptimized
+            referrerPolicy="no-referrer"
+          />
+        </div>
       ) : (
-        <img
-          src={`${basePath}/images/${encodeURIComponent(image!)}`}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
+        <div className="absolute inset-0">
+          <Image
+            src={`${basePath}/images/${encodeURIComponent(image!)}`}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes={cardImageSizes}
+            loading="lazy"
+            unoptimized
+          />
+        </div>
       )
     ) : (
       <div className="absolute inset-0 bg-neutral-100 flex items-center justify-center text-neutral-400 text-xs text-center px-4">
@@ -117,3 +128,5 @@ export function ProjectHoverCard({
     </Link>
   );
 }
+
+export const ProjectHoverCard = memo(ProjectHoverCardInner);

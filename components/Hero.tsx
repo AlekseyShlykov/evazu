@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/app/LanguageContext';
-import { site, heroImage } from '@/lib/data';
+import { heroImage } from '@/lib/data';
 import { translations } from '@/lib/translations';
 
 export function Hero() {
@@ -45,7 +45,7 @@ export function Hero() {
           <div className="min-w-0">
             <img
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
-              alt=""
+              alt={t.name}
               className="w-full max-w-full aspect-square object-cover rounded-sm"
             />
           </div>

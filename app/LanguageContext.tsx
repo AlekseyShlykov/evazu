@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect, useMemo } from 'react';
 import type { Locale } from '@/lib/translations';
 
 const STORAGE_KEY = 'evazu-locale';
@@ -44,11 +44,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  return (
-    <LanguageContext.Provider value={{ locale: mounted ? locale : 'en', setLocale }}>
-      {children}
-    </LanguageContext.Provider>
+  const contextValue = useMemo(
+    () => ({ locale: mounted ? locale : 'en', setLocale }),
+    [mounted, locale, setLocale],
   );
+
+  return <LanguageContext.Provider value={contextValue}>{children}</LanguageContext.Provider>;
 }
 
 export function useLanguage() {

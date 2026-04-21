@@ -1,9 +1,11 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { site } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
-import { ContactFormspree } from './ContactFormspree';
+
+const ContactFormspree = dynamic(() => import('./ContactFormspree').then((m) => m.ContactFormspree));
 
 export function ContactCard() {
   const { locale } = useLanguage();

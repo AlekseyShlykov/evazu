@@ -1,4 +1,5 @@
 import type { CaseStudy } from '@/components/CaseStudyModal';
+import type { CaseStudyId } from './caseStudyIds';
 import type { Locale } from './translations';
 
 const teaBrandingEn: CaseStudy = {
@@ -957,7 +958,7 @@ const animationOverVideoEn: CaseStudy = {
   ],
 };
 
-export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
+export const caseStudies = {
   'tea-branding': {
     en: teaBrandingEn,
     fr: teaBrandingEn,
@@ -1022,4 +1023,4 @@ export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
     en: animationOverVideoEn,
     fr: animationOverVideoEn,
   },
-};
+} satisfies Record<CaseStudyId, Record<Locale, CaseStudy>>;

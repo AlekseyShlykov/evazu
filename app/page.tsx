@@ -2,16 +2,16 @@
 
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import { ContactCard, NewsletterSubscribe, SectionTitle, ProjectHoverCard } from '@/components';
+import Image from 'next/image';
+import { ContactCard, SectionTitle, ProjectHoverCard } from '@/components';
+import { CaseStudyModalGate } from '@/components/CaseStudyModalGate';
 import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
-import { caseStudies } from '@/lib/caseStudies';
 import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
-const CaseStudyModal = dynamic(
-  () => import('@/components/CaseStudyModal').then((m) => m.CaseStudyModal),
-  { ssr: false },
+const NewsletterSubscribe = dynamic(() =>
+  import('@/components/NewsletterSubscribe').then((m) => m.NewsletterSubscribe),
 );
 
 const featuredProjects = [
@@ -48,11 +48,8 @@ function HomePageContent() {
 
   return (
     <div className="w-full min-w-0 max-w-full overflow-x-hidden">
-      {openCaseStudy && caseStudies[openCaseStudy] && (
-        <CaseStudyModal
-          study={caseStudies[openCaseStudy][locale]}
-          onClose={closeCaseStudyModal}
-        />
+      {openCaseStudy && (
+        <CaseStudyModalGate studyId={openCaseStudy} locale={locale} onClose={closeCaseStudyModal} />
       )}
 
       <section id="home" className="pt-8 pb-16 md:pt-12 md:pb-24">
@@ -67,26 +64,31 @@ function HomePageContent() {
               </p>
             </div>
             <div className="hidden md:block min-w-0 w-64 md:w-72 shrink-0">
-              <img
+              <Image
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
-                alt=""
+                alt={t.hero.name}
                 className="w-full aspect-square object-cover rounded-lg"
-                fetchPriority="high"
-                decoding="async"
                 width={288}
                 height={288}
+                priority
+                sizes="288px"
+                unoptimized
               />
             </div>
           </div>
         </div>
         <div className="mt-8 px-3 w-full max-w-[100vw] box-border md:hidden">
-          <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
-            alt=""
-            className="w-full aspect-square object-cover rounded-lg"
-            fetchPriority="high"
-            decoding="async"
-          />
+          <div className="relative aspect-square w-full overflow-hidden rounded-lg">
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
+            alt={t.hero.name}
+            className="object-cover"
+              fill
+              priority
+              sizes="100vw"
+              unoptimized
+            />
+          </div>
         </div>
       </section>
 

@@ -1,43 +1,73 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Commissioner } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { SeoJsonLd } from '@/components/SeoJsonLd';
 import { LanguageProvider } from './LanguageContext';
 import { LocaleContent } from './LocaleContent';
+import { defaultSiteDescription } from '@/lib/pageMetadata';
+import { translations } from '@/lib/translations';
+import { absoluteOgImageUrl, getMetadataBase, siteBase, siteCanonicalUrl } from '@/lib/seo';
 
 const commissioner = Commissioner({
-  subsets: ['latin', 'latin-ext', 'cyrillic'],
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-sans',
+  adjustFontFallback: true,
 });
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://evazu.art';
-const ogImagePath = `${basePath}/images/Twitter%20post%20-%201.png`;
+const homeTitle = 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator';
+const faviconUrl = `${siteBase()}/images/Favicon%2092x92.jpg`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator',
-  description:
-    'Portfolio of Ekaterina Zueva. Illustration, 2D animation, branding, and graphic design. Over 10 years of experience.',
+  metadataBase: getMetadataBase(),
+  title: {
+    default: homeTitle,
+    template: '%s — Ekaterina Zueva',
+  },
+  description: defaultSiteDescription,
+  applicationName: translations.en.hero.name,
+  alternates: {
+    canonical: siteCanonicalUrl('/'),
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   icons: {
-    icon: [{ url: '/images/Favicon%2092x92.jpg', type: 'image/jpeg' }],
-    apple: [{ url: '/images/Favicon%2092x92.jpg', type: 'image/jpeg' }],
+    icon: [{ url: faviconUrl, type: 'image/jpeg' }],
+    apple: [{ url: faviconUrl, type: 'image/jpeg' }],
   },
   openGraph: {
     type: 'website',
-    title: 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator',
-    description:
-      'Portfolio of Ekaterina Zueva. Illustration, 2D animation, branding, and graphic design. Over 10 years of experience.',
-    images: [{ url: ogImagePath, type: 'image/png' }],
+    locale: 'en_US',
+    alternateLocale: ['fr_FR'],
+    siteName: translations.en.hero.name,
+    url: siteCanonicalUrl('/'),
+    title: homeTitle,
+    description: defaultSiteDescription,
+    images: [{ url: absoluteOgImageUrl(), type: 'image/png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator',
-    description:
-      'Portfolio of Ekaterina Zueva. Illustration, 2D animation, branding, and graphic design. Over 10 years of experience.',
-    images: [ogImagePath],
+    site: '@katya_evazu',
+    creator: '@katya_evazu',
+    title: homeTitle,
+    description: defaultSiteDescription,
+    images: [absoluteOgImageUrl()],
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -58,6 +88,7 @@ export default function RootLayout({
       <body
         className={`${commissioner.variable} font-sans antialiased bg-neutral-50 text-neutral-900 min-h-screen`}
       >
+        <SeoJsonLd />
         <LanguageProvider>
           <a
             href="#home"

@@ -1,9 +1,15 @@
 'use client';
 
-import { SectionTitle, ContactCard, NewsletterSubscribe } from '@/components';
-import { heroImage } from '@/lib/data';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { useLanguage } from '@/app/LanguageContext';
+import { SectionTitle, ContactCard } from '@/components';
+import { heroImage } from '@/lib/data';
 import { translations } from '@/lib/translations';
+
+const NewsletterSubscribe = dynamic(() =>
+  import('@/components/NewsletterSubscribe').then((m) => m.NewsletterSubscribe),
+);
 
 export default function AboutPage() {
   const { locale } = useLanguage();
@@ -16,14 +22,15 @@ export default function AboutPage() {
         <div className="mx-auto max-w-content px-4 md:px-6">
           <div className="grid gap-10 md:grid-cols-[auto_1fr] md:gap-14 md:items-start">
             <div className="min-w-0 w-64 md:w-80 shrink-0">
-              <img
+              <Image
                 src={`${basePath}/images/${encodeURIComponent(heroImage)}`}
-                alt=""
+                alt={t.hero.name}
                 className="w-full aspect-square object-cover rounded-lg"
-                fetchPriority="high"
-                decoding="async"
                 width={320}
                 height={320}
+                priority
+                sizes="(max-width: 768px) 256px, 320px"
+                unoptimized
               />
             </div>
             <div>
