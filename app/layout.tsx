@@ -7,7 +7,12 @@ import { Footer } from '@/components/Footer';
 import { SeoJsonLd } from '@/components/SeoJsonLd';
 import { LanguageProvider } from './LanguageContext';
 import { LocaleContent } from './LocaleContent';
-import { defaultDocumentTitle, defaultSiteDescription, sharePreviewTitle } from '@/lib/pageMetadata';
+import {
+  defaultDocumentTitle,
+  defaultSiteDescription,
+  shareHomeOgDescription,
+  sharePreviewTitle,
+} from '@/lib/pageMetadata';
 import { translations } from '@/lib/translations';
 import { absoluteOgImageUrl, getMetadataBase, siteBase, siteCanonicalUrl } from '@/lib/seo';
 
@@ -54,7 +59,7 @@ export const metadata: Metadata = {
     siteName: translations.en.hero.name,
     url: siteCanonicalUrl('/'),
     title: sharePreviewTitle,
-    description: defaultSiteDescription,
+    description: shareHomeOgDescription,
     images: [{ url: absoluteOgImageUrl(), type: 'image/png', width: 1200, height: 630 }],
   },
   twitter: {
@@ -62,7 +67,7 @@ export const metadata: Metadata = {
     site: '@katya_evazu',
     creator: '@katya_evazu',
     title: sharePreviewTitle,
-    description: defaultSiteDescription,
+    description: shareHomeOgDescription,
     images: [absoluteOgImageUrl()],
   },
 };

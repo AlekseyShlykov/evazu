@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { defaultSiteDescription } from '@/lib/pageMetadata';
+import { defaultSiteDescription, shareHomeOgDescription } from '@/lib/pageMetadata';
 import { translations } from '@/lib/translations';
 import { siteCanonicalUrl } from '@/lib/seo';
 
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   openGraph: {
     url: siteCanonicalUrl('/'),
     title: notFoundTitleSegment,
-    description: defaultSiteDescription,
+    description: shareHomeOgDescription,
   },
   twitter: {
     card: 'summary_large_image',
     title: notFoundTitleSegment,
-    description: defaultSiteDescription,
+    description: shareHomeOgDescription,
   },
 };
 

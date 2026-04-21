@@ -21,6 +21,12 @@ function excerpt(text: string, max = 160): string {
 const greetingParts = en.hero.greeting.split('\n\n');
 const illustrationBody = greetingParts[1] ?? greetingParts[0] ?? en.hero.greeting;
 
+/**
+ * Home page OG/Twitter description only — must not repeat `siteName` + `sharePreviewTitle`
+ * (Telegram and others show all three; duplicating the two-line blurb looks like repeated text).
+ */
+export const shareHomeOgDescription = excerpt(en.hero.intro, 160);
+
 /** English excerpts from existing site strings for meta descriptions (no new copy). */
 export const seoPageDescriptions = {
   about: excerpt(en.about.bio),
