@@ -89,11 +89,6 @@ export const translations = {
       { title: 'Structured Creative Process', text: 'I enjoy bringing structure to creative work. This includes clarifying tasks, organizing visual materials, and maintaining a clear workflow throughout the project so ideas can develop into coherent results.' },
       { title: 'Turning Ideas Into Visual Solutions', text: "Many projects begin with abstract ideas or loosely defined requests. I'm comfortable working in this space — researching, experimenting, and developing concepts until they become clear visual outcomes." },
     ],
-    languages: [
-      { name: 'English', level: 'B2' },
-      { name: 'Russian', level: 'Native' },
-      { name: 'French', level: 'A2' },
-    ],
     contact: {
       intro: "Reach out for commissions, collaborations, or any project ideas. I'd be glad to hear from you.",
       email: 'Email',
@@ -210,11 +205,6 @@ export const translations = {
       { title: 'Communication claire', text: "Avec plus de 10 ans de freelance, j'ai appris que de bons résultats viennent d'une bonne communication. Je travaille en étroite collaboration avec les clients — du brief et de la recherche au feedback et à la livraison — pour garder le cap du projet clair et aligné." },
       { title: 'Processus créatif structuré', text: "J'aime apporter de la structure au travail créatif : clarifier les tâches, organiser les visuels et maintenir un flux de travail clair pour que les idées deviennent des résultats cohérents." },
       { title: 'Des idées aux solutions visuelles', text: "Beaucoup de projets commencent par des idées abstraites ou des demandes floues. Je suis à l'aise dans cet espace — recherche, expérimentation et développement de concepts jusqu'à des résultats visuels clairs." },
-    ],
-    languages: [
-      { name: 'Anglais', level: 'B2' },
-      { name: 'Russe', level: 'Langue maternelle' },
-      { name: 'Français', level: 'A2' },
     ],
     contact: {
       intro: 'Écrivez-moi pour des commandes, collaborations ou idées de projet. Je serai ravie de vous répondre.',

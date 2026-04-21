@@ -220,9 +220,3 @@ export const howIWork = [
     text: "Many projects begin with abstract ideas or loosely defined requests. I'm comfortable working in this space — researching, experimenting, and developing concepts until they become clear visual outcomes.",
   },
 ];
-
-export const languages = [
-  { name: 'English', level: 'B2' },
-  { name: 'Russian', level: 'Native' },
-  { name: 'French', level: 'A2' },
-];

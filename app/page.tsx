@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import { ContactCard, SectionTitle, ProjectHoverCard } from '@/components';
+import { ContactCard, NewsletterSubscribe, SectionTitle, ProjectHoverCard } from '@/components';
 import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
@@ -90,7 +90,7 @@ function HomePageContent() {
         </div>
       </section>
 
-      <section className="py-section bg-white border-y border-neutral-100">
+      <section className="py-section bg-white border-t border-neutral-100">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle>{t.sectionTitles.selectedProjects}</SectionTitle>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -116,6 +116,16 @@ function HomePageContent() {
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle id="contact">{t.sectionTitles.contact}</SectionTitle>
           <ContactCard />
+        </div>
+      </section>
+
+      <section id="newsletter" className="py-16 md:py-24 bg-white border-t border-neutral-200">
+        <div className="mx-auto max-w-content px-4 md:px-6">
+          <SectionTitle>{t.sectionTitles.newsletter}</SectionTitle>
+          <div className="max-w-6xl space-y-8">
+            <p className="text-neutral-600 text-lg leading-relaxed">{t.newsletter.intro}</p>
+            <NewsletterSubscribe />
+          </div>
         </div>
       </section>
     </div>

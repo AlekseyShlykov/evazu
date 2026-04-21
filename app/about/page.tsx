@@ -38,20 +38,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-section bg-white border-y border-neutral-100 content-auto">
-        <div className="mx-auto max-w-content px-4 md:px-6">
-          <SectionTitle>{t.sectionTitles.languages}</SectionTitle>
-          <ul className="flex flex-wrap gap-x-6 gap-y-1 text-neutral-600 max-w-4xl">
-            {t.languages.map((lang) => (
-              <li key={lang.name}>
-                <span className="font-medium text-neutral-900">{lang.name}:</span>{' '}
-                {lang.level}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <section id="contact" className="py-16 md:py-24 bg-neutral-100 border-t border-neutral-200 content-auto">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle id="contact">{t.sectionTitles.contact}</SectionTitle>
