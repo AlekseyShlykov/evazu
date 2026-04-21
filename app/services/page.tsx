@@ -13,21 +13,13 @@ export default function ServicesPage() {
       <section className="py-section">
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle>{t.sectionTitles.services}</SectionTitle>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
             {t.services.map((service, i) => (
               <ServiceCard
                 key={service.title}
                 title={service.title}
                 items={[...service.items]}
-                href={
-                  i === 0
-                    ? '/illustration'
-                    : i === 1
-                      ? '/animation'
-                      : i === 2 || i === 3
-                        ? '/design'
-                        : undefined
-                }
+                href={i === 0 ? '/illustration' : i === 1 ? '/animation' : '/design'}
               />
             ))}
           </div>

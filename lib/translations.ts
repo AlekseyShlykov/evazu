@@ -25,10 +25,31 @@ export const translations = {
       contact: 'Contact',
     },
     services: [
-      { title: 'Illustration', items: ['Commercial illustration (for brands, advertising, and media, websites)', 'Specialized illustration (games, podcasts, music covers)', 'Applied illustration (diagrams and visual guides for instructions)', 'Artistic and personal projects'] },
-      { title: '2D Animation', items: ['Music videos', 'Animation for web resources (app openers, short animations for illustrations and logos)', 'Independent and festival projects'] },
-      { title: 'Branding', items: ['Development of a brand book (brand platform, values, mission, etc.)', 'Design of logos, corporate identity, and additional graphics', 'Creation of guidelines, including branded assets, layout rules, and all necessary instructions'] },
-      { title: 'Graphic Design', items: ['Print materials: design, layout, and preparation for printing', 'Packaging design', 'Digital Design in Figma (website banners, social media graphics, icons, and other web visuals)', 'Presentation design for various purposes (product presentations, pitch decks, etc.)'] },
+      {
+        title: 'Illustration',
+        items: [
+          'Visuals for brands, products, and digital platforms',
+          'Editorial & educational illustrations to explain ideas clearly',
+          'Atmosphere artworks for music, culture and personal projects',
+        ],
+      },
+      {
+        title: '2D Animation',
+        items: [
+          'Short animated videos (frame-by-frame / After Effects)',
+          'Bringing illustrations to life through motion',
+          'Animation for apps, websites, and digital products',
+        ],
+      },
+      {
+        title: 'Graphic Design',
+        items: [
+          'Illustration-led visual systems for brands and products',
+          'Packaging, print, and digital applications',
+          'Print-ready layouts and production files',
+          'Visual systems for content and communication',
+        ],
+      },
     ],
     illustrationProjectTitles: [
       'A series of illustrations about the brutalist architecture of Belgrade',
@@ -128,10 +149,31 @@ export const translations = {
       contact: 'Контакты',
     },
     services: [
-      { title: 'Иллюстрация', items: ['Коммерческая иллюстрация (для брендов, рекламы и медиа, сайтов)', 'Нишевая (игры, подкасты, музыкальные обложки)', 'Прикладная (схемы и наглядные иллюстрации для инструкций)', 'Авторская, личные проекты'] },
-      { title: '2D анимация', items: ['Музыкальные клипы', 'Анимация для веб-ресурсов (опенинги для приложений, короткая анимация для иллюстраций и логотипов)', 'Авторские и фестивальные проекты'] },
-      { title: 'Брендинг', items: ['Разработка брендбука (платформа бренда, ценности, миссия и т.д.)', 'Разработка логотипа, фирменного стиля, дополнительной графики', 'Разработка гайдлайна с носителями фирменного стиля, правилами оформления макетов и всеми необходимыми инструкциями'] },
-      { title: 'Графический дизайн', items: ['Работа с полиграфией: дизайн, верстка, подготовка макетов к печати', 'Оформление упаковки', 'Работа с Figma (простые интерфейсы, баннеры для сайтов, оформление соцсетей, иконки и графика для веб-ресурсов)', 'Оформление презентаций под разные цели (презентация продукта, pitch deck и т.д.)'] },
+      {
+        title: 'Иллюстрация',
+        items: [
+          'Визуалы для брендов, продуктов и digital-платформ',
+          'Редакционные и образовательные иллюстрации, чтобы ясно объяснять идеи',
+          'Атмосферные работы для музыки, культуры и личных проектов',
+        ],
+      },
+      {
+        title: '2D анимация',
+        items: [
+          'Короткие анимационные ролики (покадрово / After Effects)',
+          'Оживление иллюстраций через движение',
+          'Анимация для приложений, сайтов и digital-продуктов',
+        ],
+      },
+      {
+        title: 'Графический дизайн',
+        items: [
+          'Иллюстрационные визуальные системы для брендов и продуктов',
+          'Упаковка, печать и digital-применения',
+          'Макеты под печать и production-файлы',
+          'Визуальные системы для контента и коммуникаций',
+        ],
+      },
     ],
     illustrationProjectTitles: [
       'Серия иллюстраций про бруталистскую архитектуру Белграда',
@@ -231,10 +273,31 @@ export const translations = {
       contact: 'Contact',
     },
     services: [
-      { title: 'Illustration', items: ['Illustration commerciale (marques, publicité, médias, sites)', 'Illustration spécialisée (jeux, podcasts, pochettes)', 'Illustration appliquée (schémas et guides visuels)', 'Projets artistiques et personnels'] },
-      { title: 'Animation 2D', items: ['Clips musicaux', 'Animation pour le web (génériques, courtes animations)', 'Projets indépendants et festivaliers'] },
-      { title: 'Branding', items: ['Brand book (plateforme, valeurs, mission)', 'Logos, identité visuelle, graphismes', 'Guidelines et instructions'] },
-      { title: 'Design graphique', items: ['Print : conception, mise en page, préparation à l\'impression', 'Emballage', 'Figma (bannières, réseaux sociaux, icônes)', 'Présentations (produit, pitch deck)'] },
+      {
+        title: 'Illustration',
+        items: [
+          'Visuels pour marques, produits et plateformes numériques',
+          'Illustrations éditoriales et pédagogiques pour expliquer clairement les idées',
+          'Œuvres d’ambiance pour la musique, la culture et les projets personnels',
+        ],
+      },
+      {
+        title: 'Animation 2D',
+        items: [
+          'Vidéos animées courtes (image par image / After Effects)',
+          'Donner vie aux illustrations par le mouvement',
+          'Animation pour apps, sites et produits numériques',
+        ],
+      },
+      {
+        title: 'Design graphique',
+        items: [
+          'Systèmes visuels portés par l’illustration pour marques et produits',
+          'Packaging, print et déclinaisons numériques',
+          'Mises en page prêtes à l’impression et fichiers de production',
+          'Systèmes visuels pour le contenu et la communication',
+        ],
+      },
     ],
     illustrationProjectTitles: [
       'Série d\'illustrations sur l\'architecture brutaliste de Belgrade',

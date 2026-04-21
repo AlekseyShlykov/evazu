@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   title: 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator',
   description:
     'Portfolio of Ekaterina Zueva. Illustration, 2D animation, branding, and graphic design. Over 10 years of experience.',
+  icons: {
+    icon: [{ url: '/images/Favicon%2092x92.jpg', type: 'image/jpeg' }],
+    apple: [{ url: '/images/Favicon%2092x92.jpg', type: 'image/jpeg' }],
+  },
 };
 
 export default function RootLayout({
