@@ -11,13 +11,32 @@ const commissioner = Commissioner({
   variable: '--font-sans',
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://evazu.art';
+const ogImagePath = `${basePath}/images/Twitter%20post%20-%201.png`;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator',
   description:
     'Portfolio of Ekaterina Zueva. Illustration, 2D animation, branding, and graphic design. Over 10 years of experience.',
   icons: {
     icon: [{ url: '/images/Favicon%2092x92.jpg', type: 'image/jpeg' }],
     apple: [{ url: '/images/Favicon%2092x92.jpg', type: 'image/jpeg' }],
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator',
+    description:
+      'Portfolio of Ekaterina Zueva. Illustration, 2D animation, branding, and graphic design. Over 10 years of experience.',
+    images: [{ url: ogImagePath, type: 'image/png' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator',
+    description:
+      'Portfolio of Ekaterina Zueva. Illustration, 2D animation, branding, and graphic design. Over 10 years of experience.',
+    images: [ogImagePath],
   },
 };
 

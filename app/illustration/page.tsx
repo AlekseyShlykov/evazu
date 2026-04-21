@@ -3,7 +3,7 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { SectionTitle, ProjectCard } from '@/components';
-import { illustrationProjects, ruIllustrationHrefs } from '@/lib/data';
+import { illustrationProjects } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { caseStudies } from '@/lib/caseStudies';
@@ -36,7 +36,7 @@ function IllustrationPageContent() {
               <ProjectCard
                 key={project.href}
                 title={t.illustrationProjectTitles[i] ?? project.title}
-                href={locale === 'ru' && ruIllustrationHrefs[i] != null ? ruIllustrationHrefs[i]! : project.href}
+                href={project.href}
                 category={t.categoryIllustration}
                 aspectRatio="wide"
                 image={project.image}

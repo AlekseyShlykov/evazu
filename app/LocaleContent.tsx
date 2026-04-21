@@ -11,7 +11,7 @@ export function LocaleContent({ children }: { children: React.ReactNode }) {
   const { locale } = useLanguage();
 
   useEffect(() => {
-    document.documentElement.lang = locale === 'ru' ? 'ru' : locale === 'fr' ? 'fr' : 'en';
+    document.documentElement.lang = locale === 'fr' ? 'fr' : 'en';
   }, [locale]);
 
   return <div className="contents">{children}</div>;

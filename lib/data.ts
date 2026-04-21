@@ -7,7 +7,6 @@ export const site = {
     'Illustrator, Graphic Designer, and 2D Animator with over 10 years of experience.',
   resumeUrl:
     'https://drive.google.com/file/d/1qCuJbGmUzd4aAEDShPzynxy9NtKS0skw/view?usp=sharing',
-  notionRu: 'https://www.notion.so/e9023e38cd6b4b00a4b50df22aeb131e?pvs=21',
   email: 'evazu.art@gmail.com',
   telegram: 'https://t.me/Evazu_K',
   telegramLabel: 'Telegram',
@@ -222,37 +221,8 @@ export const howIWork = [
   },
 ];
 
-export const tools = [
-  'Adobe Photoshop',
-  'Adobe Illusatrator',
-  'Adobe InDesign',
-  'Adobe After Effects',
-  'Figma',
-  'Power Point',
-];
-
 export const languages = [
   { name: 'English', level: 'B2' },
   { name: 'Russian', level: 'Native' },
   { name: 'French', level: 'A2' },
-];
-
-/** Ссылки на кейсы для русской версии (ekaterinazueva.notion.site) */
-export const ruIllustrationHrefs: (string | null)[] = [
-  'https://ekaterinazueva.notion.site/12eb2b33972b8066a050ccf0dbc49ed6?pvs=25',
-  'https://ekaterinazueva.notion.site/12eb2b33972b806b9969fb27d6ee3a48?pvs=25',
-  'https://ekaterinazueva.notion.site/Foxy-Roasters-305b2b33972b80ff8b5ec2e3d7a8b30c?pvs=25',
-  'https://ekaterinazueva.notion.site/105b2b33972b80068d9cc96c4f693703?pvs=25',
-  'https://ekaterinazueva.notion.site/265de66fe8bc45b6aeb50c94d472f9ae?pvs=25',
-  null,
-  null,
-  'https://ekaterinazueva.notion.site/nekorobka-b4ed62aec5474c0ab94e9447c13191ed?pvs=25',
-];
-
-export const ruBrandingHrefs: (string | null)[] = [
-  'https://ekaterinazueva.notion.site/12eb2b33972b80cda8fde10509921267?pvs=25',
-  'https://ekaterinazueva.notion.site/Nekorobka-12eb2b33972b806ab1d9c3e18c2a8845?pvs=25',
-  'https://ekaterinazueva.notion.site/Foxy-Roasters-305b2b33972b80ff8b5ec2e3d7a8b30c?pvs=25',
-  null,
-  null,
 ];

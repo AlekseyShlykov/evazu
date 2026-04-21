@@ -14,11 +14,13 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 function getInitialLocale(): Locale {
   if (typeof window === 'undefined') return 'en';
-  const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-  if (stored === 'ru' || stored === 'fr') return stored;
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored === 'ru') return 'en';
+  if (stored === 'fr') return stored;
   const params = new URLSearchParams(window.location.search);
   const lang = params.get('lang');
-  if (lang === 'ru' || lang === 'fr') return lang;
+  if (lang === 'ru') return 'en';
+  if (lang === 'fr') return lang;
   return 'en';
 }
 

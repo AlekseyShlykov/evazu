@@ -109,113 +109,6 @@ const teaBrandingEn: CaseStudy = {
   ],
 };
 
-const teaBrandingRu: CaseStudy = {
-  title: 'Фирменный стиль для наборов китайского чая',
-  sections: [
-    {
-      type: 'paragraph',
-      text: 'Задача — разработать фирменный стиль для наборов китайского чая: это не только подарочные наборы или ассортименты, а полноценное знакомство с миром китайского чая. В каждый набор входит всё необходимое для чайной церемонии: посуда, чай, базовые аксессуары, видеоурок с чайным мастером и простая, наглядная информация о сортах чая и способах заваривания.',
-    },
-    {
-      type: 'image',
-      src: '/images/TW1.jpg',
-      alt: 'Фирменный стиль для наборов китайского чая — общий вид',
-    },
-    {
-      type: 'paragraph',
-      text: 'Сначала я составила бриф с вопросами, чтобы прояснить характер бренда, его ценности и видение. Затем перешла к эскизам. Вот мои первые наброски.',
-    },
-    {
-      type: 'image',
-      src: '/images/TW2.jpg',
-      alt: 'Первые эскизы для бренда китайского чая',
-    },
-    {
-      type: 'paragraph',
-      text: 'Для логотипа я выбрала образ гайвани (чашки с крышкой, в которой традиционно заваривают китайский чай). Название бренда расположено так, как будто гайвань говорит — живой, дружелюбный персонаж, приглашающий в свой мир. Выбрала минимальную цветовую палитру и простые, но изящные шрифты Paratype (открытая лицензия).',
-    },
-    {
-      type: 'image',
-      src: '/images/TW3.jpg',
-      alt: 'Логотип и типографика бренда китайского чая',
-    },
-    {
-      type: 'paragraph',
-      text: 'В основе фирменного стиля — иллюстрация. Один из референсов — традиционный китайский теневой театр: силуэты, лёгкие текстуры и всплески цвета составляют основу визуального стиля. Ещё источник вдохновения — названия китайских чаёв: они часто образны и очень «иллюстративны», например «Золотые брови», «Белый пион» или «Большой красный халат».',
-    },
-    {
-      type: 'image',
-      src: '/images/TW1.jpg',
-      alt: 'Фирменный стиль — иллюстративный стиль',
-    },
-    {
-      type: 'image',
-      src: '/images/TW4.jpg',
-      alt: 'Иллюстрации для фирменного стиля китайского чая',
-    },
-    {
-      type: 'image',
-      src: '/images/TW5.jpg',
-      alt: 'Иллюстрации и применения бренда',
-    },
-    {
-      type: 'paragraph',
-      text: 'Я создала лифлет, который описывает основные типы китайского чая. Печатный лифлет складывается «гармошкой», так что компактно помещается в любую коробку.',
-    },
-    {
-      type: 'image',
-      src: '/images/TW6.jpg',
-      alt: 'Лифлет о сортах китайского чая',
-    },
-    {
-      type: 'image',
-      src: '/images/TW7.jpg',
-      alt: 'Лифлет-гармошка для наборов',
-    },
-    {
-      type: 'paragraph',
-      text: 'В набор также входит краткий гайд с базовыми инструкциями по завариванию. Я разработала вёрстку с понятной, наглядной структурой и простыми схематичными линейными иллюстрациями.',
-    },
-    {
-      type: 'image',
-      src: '/images/TW8.jpg',
-      alt: 'Гайд по завариванию со схематичными иллюстрациями',
-    },
-    {
-      type: 'paragraph',
-      text: 'Мы также сделали адаптированную версию гайда для онлайна — в виде простых инфографик.',
-    },
-    {
-      type: 'image',
-      src: '/images/TW9.jpg',
-      alt: 'Онлайн-гайд в формате инфографики',
-    },
-    {
-      type: 'paragraph',
-      text: 'На основе ключевой иллюстрации бренда я создала разнообразную дополнительную графику.',
-    },
-    {
-      type: 'image',
-      src: '/images/TW10.jpg',
-      alt: 'Дополнительная графика бренда',
-    },
-    {
-      type: 'image',
-      src: '/images/TW11.jpg',
-      alt: 'Ещё графика для бренда китайского чая',
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '787983811',
-      iframeTitle: 'Te with logo',
-    },
-    {
-      type: 'image',
-      src: '/images/TW12.jpg',
-      alt: 'Фирменный стиль — финальное применение',
-    },
-  ],
-};
 
 const belgradePairs: { src: string; alt?: string }[] = [
   { src: '/images/1 Backpack.jpg', alt: 'Day 1 — Backpack' },
@@ -290,41 +183,6 @@ const belgradeCaseEn: CaseStudy = {
   ],
 };
 
-const belgradeCaseRu: CaseStudy = {
-  title: '\u0418\u043b\u043b\u044e\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0435 \u0438\u0441\u0442\u043e\u0440\u0438\u0438 \u0432 \u043a\u043e\u043c\u0438\u043a\u0441\u043d\u043e\u043c \u0441\u0442\u0438\u043b\u0435',
-  sections: [
-    {
-      type: 'paragraph',
-      text: '\u042d\u0442\u043e\u0442 \u043f\u0440\u043e\u0435\u043a\u0442 \u043d\u0430\u0447\u0430\u043b\u0441\u044f \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u043e\u0433\u043e \u043e\u043d\u043b\u0430\u0439\u043d-\u0430\u0440\u0442-\u0447\u0435\u043b\u043b\u0435\u043d\u0434\u0436\u0430 Inktober. \u041e\u043d \u043f\u0440\u043e\u0445\u043e\u0434\u0438\u0442 \u043a\u0430\u0436\u0434\u044b\u0439 \u043e\u043a\u0442\u044f\u0431\u0440\u044c \u0438 \u043e\u0431\u044a\u0435\u0434\u0438\u043d\u044f\u0435\u0442 \u0445\u0443\u0434\u043e\u0436\u043d\u0438\u043a\u043e\u0432 \u0441\u043e \u0432\u0441\u0435\u0433\u043e \u043c\u0438\u0440\u0430, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0440\u0438\u0441\u0443\u044e\u0442 \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u0432 \u0442\u0435\u0447\u0435\u043d\u0438\u0435 \u043c\u0435\u0441\u044f\u0446\u0430. \u041a\u0430\u0436\u0434\u044b\u0439 \u0433\u043e\u0434 \u043f\u0443\u0431\u043b\u0438\u043a\u0443\u0435\u0442\u0441\u044f \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u043f\u0438\u0441\u043e\u043a \u043f\u0440\u043e\u043c\u043f\u0442\u043e\u0432 \u2014 31 \u0441\u043b\u043e\u0432\u043e, \u043f\u043e \u043e\u0434\u043d\u043e\u043c\u0443 \u043d\u0430 \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u043e\u043a\u0442\u044f\u0431\u0440\u044f.',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0412\u0434\u043e\u0445\u043d\u043e\u0432\u0438\u0432\u0448\u0438\u0441\u044c \u043f\u0440\u043e\u043c\u043f\u0442\u0430\u043c\u0438, \u044f \u0441\u043e\u0437\u0434\u0430\u043b\u0430 \u0441\u043a\u0435\u0442\u0447\u0438 \u0438 \u0440\u0430\u0441\u0441\u043a\u0430\u0437\u0430\u043b\u0430 \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u0438\u0441\u0442\u043e\u0440\u0438\u0438, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u0435 \u0441 \u043c\u043e\u0435\u0439 \u0436\u0438\u0437\u043d\u044c\u044e \u0432 \u0421\u0435\u0440\u0431\u0438\u0438 \u0438 \u0411\u0435\u043b\u0433\u0440\u0430\u0434\u0435. \u041f\u043e\u043b\u0443\u0447\u0438\u043b\u0430\u0441\u044c \u0441\u0435\u0440\u0438\u044f \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0439.',
-    },
-    {
-      type: 'imageGrid',
-      images: belgradePairs,
-      columns: 2,
-      fixedTwoColumns: true,
-    },
-    {
-      type: 'paragraph',
-      text: '\u042f \u0442\u0430\u043a\u0436\u0435 \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u043b\u0430 \u0440\u0438\u0441\u043e\u0432\u0430\u0442\u044c \u043f\u043e\u0441\u043b\u0435 \u043e\u043a\u043e\u043d\u0447\u0430\u043d\u0438\u044f \u0447\u0435\u043b\u043b\u0435\u043d\u0434\u0436\u0430 \u0438 \u043d\u0430\u043f\u0435\u0447\u0430\u0442\u0430\u043b\u0430 \u0441\u0435\u0440\u0438\u044e \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u043a \u0441 \u044d\u0442\u0438\u043c\u0438 \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u044f\u043c\u0438.',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0418\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0442\u0430\u043a\u0436\u0435 \u0431\u044b\u043b\u0438 \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u044b \u043d\u0430 \u0444\u0435\u0441\u0442\u0438\u0432\u0430\u043b\u0435 \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 Ilustrofest 2025.',
-    },
-    {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/\u0444\u043e\u0442\u043e1.jpg', alt: '\u041d\u0430\u043f\u0435\u0447\u0430\u0442\u0430\u043d\u043d\u044b\u0435 \u043e\u0442\u043a\u0440\u044b\u0442\u043a\u0438 \u2014 \u0444\u043e\u0442\u043e' },
-        { src: '/images/\u0444\u043e\u0442\u043e2.jpg', alt: 'Ilustrofest 2025 \u2014 \u0444\u043e\u0442\u043e' },
-      ],
-      fixedTwoColumns: true,
-    },
-  ],
-};
 
 const brutalistBelgradeEn: CaseStudy = {
   title: 'A series of illustrations about the brutalist architecture of Belgrade',
@@ -360,39 +218,6 @@ const brutalistBelgradeEn: CaseStudy = {
   ],
 };
 
-const brutalistBelgradeRu: CaseStudy = {
-  title: 'Серия иллюстраций про бруталистскую архитектуру Белграда',
-  sections: [
-    {
-      type: 'paragraph',
-      text: 'Меня глубоко впечатляют масштаб, разнообразие и экспериментальный, смелый характер архитектуры во многих районах Белграда. Через стиль, цвет и композицию я старалась передать свои эмоции, уникальную атмосферу, характер и индивидуальность этих зданий. Каждая иллюстрация основана на исследовании, изучении на месте и фотодокументации.',
-    },
-    {
-      type: 'image',
-      src: '/images/BB 1.jpg',
-      alt: 'Бруталистская архитектура Белграда — иллюстрация',
-    },
-    {
-      type: 'image',
-      src: '/images/BB 2.jpg',
-      alt: 'Бруталистская архитектура Белграда — иллюстрация',
-    },
-    {
-      type: 'image',
-      src: '/images/BB 3.jpg',
-      alt: 'Бруталистская архитектура Белграда — иллюстрация',
-    },
-    {
-      type: 'paragraph',
-      text: 'Эскизы и фотографии: материалы, с которыми я работала',
-    },
-    {
-      type: 'image',
-      src: '/images/BB 4.jpg',
-      alt: 'Эскизы и фотографии — референсы',
-    },
-  ],
-};
 
 const yerevanEn: CaseStudy = {
   title: 'Yerevan',
@@ -415,26 +240,6 @@ const yerevanEn: CaseStudy = {
   ],
 };
 
-const yerevanRu: CaseStudy = {
-  title: 'Ереван',
-  sections: [
-    {
-      type: 'image',
-      src: '/images/Yerevan1.jpg',
-      alt: 'Иллюстрация Еревана',
-      fullWidth: true,
-    },
-    {
-      type: 'paragraph',
-      text: 'Я какое-то время жила в Ереване и очень полюбила город. На иллюстрации — место, которое я захотела запечатлеть, и его атмосфера.\n\nНиже — процесс, эскизы и референсы.',
-    },
-    {
-      type: 'image',
-      src: '/images/Yerevan2.jpg',
-      alt: 'Ереван — процесс, эскизы и референсы',
-    },
-  ],
-};
 
 const belgradeAtmosphereEn: CaseStudy = {
   title: 'Belgrade Atmosphere, Illustration Series',
@@ -508,77 +313,6 @@ const belgradeAtmosphereEn: CaseStudy = {
   ],
 };
 
-const belgradeAtmosphereRu: CaseStudy = {
-  title: 'Белградская атмосфера, иллюстрационная серия',
-  sections: [
-    {
-      type: 'paragraph',
-      text: 'Эту серию можно воспринимать как продолжение моей работы над архитектурой Белграда, но здесь фокус шире, чем отдельные здания. Это зарисовки с улиц и из пригородов: я хотела передать красоту повседневной жизни и моменты, полные энергии, с характерной атмосферой Белграда, к которой я успела привыкнуть.',
-    },
-    {
-      type: 'image',
-      src: '/images/BA1.jpg',
-      alt: 'Белградская атмосфера — иллюстрация',
-    },
-    {
-      type: 'image',
-      src: '/images/BA2.jpg',
-      alt: 'Белградская атмосфера — иллюстрация',
-    },
-    {
-      type: 'image',
-      src: '/images/BA3.jpg',
-      alt: 'Белградская атмосфера — иллюстрация',
-    },
-    {
-      type: 'image',
-      src: '/images/BA4.jpg',
-      alt: 'Белградская атмосфера — иллюстрация',
-    },
-    {
-      type: 'image',
-      src: '/images/BA5.jpg',
-      alt: 'Белградская атмосфера — иллюстрация',
-    },
-    {
-      type: 'paragraph',
-      text: 'Я хотела оживить эти истории не только в цифре, но и в реальности. Поэтому сделала серию открыток — для всех, кто хотел бы сохранить маленький кусочек Белграда, увиденного моими глазами.',
-    },
-    {
-      type: 'image',
-      src: '/images/BA6.jpg',
-      alt: 'Белградская атмосфера — открытки',
-    },
-    {
-      type: 'paragraph',
-      text: 'Я создала их как статичные изображения, добавив лёгкую анимацию, чтобы усилить ощущение атмосферы.',
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '1180511669',
-      iframeTitle: 'Автобусная остановка в пригороде',
-      vimeoPaddingTop: '70.69%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '1180515350',
-      iframeTitle: 'The Spirit of Christmas Past',
-      vimeoPaddingTop: '74.06%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'link',
-      label: 'Instagram reel',
-      href: 'https://www.instagram.com/reel/DJOfA_qCrUF/?igsh=bnd1YjAzZms0MjMy',
-    },
-    {
-      type: 'link',
-      label: 'Instagram reel',
-      href: 'https://www.instagram.com/reel/DK_2BfrIqKr/?igsh=cTk1bjFrbTJtb2py',
-    },
-  ],
-};
 
 const musicVisualsEn: CaseStudy = {
   title: 'Music Visuals Design',
@@ -709,134 +443,6 @@ const musicVisualsEn: CaseStudy = {
   ],
 };
 
-const musicVisualsRu: CaseStudy = {
-  title: 'Music Visuals Design',
-  sections: [
-    {
-      type: 'paragraph',
-      text: '\u042f \u0447\u0430\u0441\u0442\u043e \u0441\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u0447\u0430\u044e \u0441 \u043c\u0443\u0437\u044b\u043a\u0430\u043d\u0442\u0430\u043c\u0438: \u0434\u0435\u043b\u0430\u044e \u043e\u0431\u043b\u043e\u0436\u043a\u0438, \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435 \u0430\u043b\u044c\u0431\u043e\u043c\u043e\u0432 \u0438 \u0430\u0440\u0442. \u0417\u0434\u0435\u0441\u044c \u0441\u043e\u0431\u0440\u0430\u043b\u0430 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0438\u0437 \u043b\u044e\u0431\u0438\u043c\u044b\u0445 \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432. \u0420\u0430\u0431\u043e\u0442\u0430 \u043d\u0430\u0434 \u043e\u0431\u043b\u043e\u0436\u043a\u0430\u043c\u0438 \u0434\u0430\u0451\u0442 \u043c\u043d\u043e\u0433\u043e \u0442\u0432\u043e\u0440\u0447\u0435\u0441\u043a\u043e\u0439 \u0441\u0432\u043e\u0431\u043e\u0434\u044b, \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u044f \u043b\u044e\u0431\u043b\u044e \u044d\u043a\u0441\u043f\u0435\u0440\u0438\u043c\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0441 \u0440\u0430\u0437\u043d\u044b\u043c\u0438 \u0442\u0435\u0445\u043d\u0438\u043a\u0430\u043c\u0438.',
-    },
-    {
-      type: 'imageHalf',
-      imageHalfLayout: 'single',
-      src: '/images/COV1.jpg',
-      alt: '\u041c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u0438\u0437\u0443\u0430\u043b\u0438\u043a\u0430 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430',
-    },
-    {
-      type: 'image',
-      src: '/images/COV2.jpg',
-      alt: '\u041c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0432\u0438\u0437\u0443\u0430\u043b\u0438\u043a\u0430 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430',
-      fullWidth: true,
-      imageWideBanner: true,
-    },
-    {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/COV3.jpg', alt: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430' },
-        { src: '/images/COV4.jpg', alt: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430' },
-      ],
-      fixedTwoColumns: true,
-    },
-    {
-      type: 'paragraph',
-      text: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430 \u0434\u043b\u044f \u043f\u043e\u0434\u043a\u0430\u0441\u0442\u0430 \u043e \u0440\u0443\u0441\u0441\u043a\u043e\u0439 \u043f\u043e\u0434\u043f\u043e\u043b\u044c\u043d\u043e\u0439 \u043c\u0443\u0437\u044b\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0441\u0446\u0435\u043d\u0435.',
-    },
-    {
-      type: 'imageHalf',
-      imageHalfLayout: 'single',
-      src: '/images/COV6.jpg',
-      alt: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430 \u043f\u043e\u0434\u043a\u0430\u0441\u0442\u0430',
-    },
-    {
-      type: 'paragraph',
-      text: '\u041c\u0430\u043a\u0435\u0442 \u043e\u0431\u043b\u043e\u0436\u043a\u0438 \u0430\u043b\u044c\u0431\u043e\u043c\u0430 \u043a \u043f\u0435\u0447\u0430\u0442\u0438 \u0438 \u0441\u0435\u0440\u0438\u044f \u0440\u0430\u0431\u043e\u0442 \u0434\u043b\u044f \u0433\u0440\u0443\u043f\u043f\u044b Marsohod 1. \u041f\u043e\u043c\u0438\u043c\u043e \u043e\u0431\u043b\u043e\u0436\u043a\u0438 \u044f \u0441\u043e\u0437\u0434\u0430\u043b\u0430 \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u044e \u043d\u0430 \u043b\u0438\u0441\u0442\u0435 \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u043e 1 \u043d\u0430 1,5 \u043c\u0435\u0442\u0440\u0430 \u2014 \u043f\u043e\u0442\u043e\u043c \u043e\u043d\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0430\u0441\u044c \u0432 \u043f\u0440\u043e\u043c\u043e-\u0432\u0438\u0437\u0443\u0430\u043b\u0430\u0445 \u0438 \u043c\u0435\u0440\u0447\u0435.',
-    },
-    {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/COV7.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
-        { src: '/images/COV8.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
-      ],
-      fixedTwoColumns: true,
-    },
-    {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/COV9.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
-        { src: '/images/COV10.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
-        { src: '/images/COV11.jpg', alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442' },
-      ],
-      singleColumn: true,
-    },
-    {
-      type: 'paragraph',
-      text: '\u0415\u0449\u0451 \u0440\u0430\u0431\u043e\u0442\u044b \u0434\u043b\u044f \u0433\u0440\u0443\u043f\u043f\u044b Marsohod 1',
-    },
-    {
-      type: 'imageHalf',
-      imageHalfLayout: 'single',
-      src: '/images/COV12.jpg',
-      alt: 'Marsohod 1 \u2014 \u0430\u0440\u0442',
-    },
-    {
-      type: 'paragraph',
-      text: '\u042d\u0442\u043e \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u043c\u043c\u0430, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u044f \u0441\u0434\u0435\u043b\u0430\u043b\u0430 \u0443 \u0441\u0435\u0431\u044f \u0432 \u0432\u0430\u043d\u043d\u043e\u0439.',
-    },
-    {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/COV13.jpg', alt: '\u0424\u043e\u0442\u043e\u0433\u0440\u0430\u043c\u043c\u0430' },
-        { src: '/images/COV14.jpg', alt: '\u0424\u043e\u0442\u043e\u0433\u0440\u0430\u043c\u043c\u0430' },
-      ],
-      fixedTwoColumns: true,
-    },
-    {
-      type: 'imageHalf',
-      imageHalfLayout: 'single',
-      src: '/images/COV15.jpg',
-      alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436',
-    },
-    {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/COV16.jpg', alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436' },
-        { src: '/images/COV17.jpg', alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436' },
-      ],
-      fixedTwoColumns: true,
-    },
-    {
-      type: 'paragraph',
-      text: '\u0411\u043e\u043b\u044c\u0448\u0443\u044e \u0447\u0430\u0441\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u044b \u044f \u0434\u0435\u043b\u0430\u043b\u0430 \u0432 \u043c\u0430\u0442\u0435\u0440\u0438\u0438, \u0432 \u0442\u0435\u0445\u043d\u0438\u043a\u0435 \u043a\u043e\u043b\u043b\u0430\u0436\u0430.',
-    },
-    {
-      type: 'imageGrid',
-      images: [{ src: '/images/COV18.jpg', alt: 'Marsohod 1 \u2014 \u043a\u043e\u043b\u043b\u0430\u0436' }],
-      singleColumn: true,
-    },
-    {
-      type: 'paragraph',
-      text: '\u041e\u0431\u043b\u043e\u0436\u043a\u0438 \u0434\u043b\u044f \u043c\u0443\u0437\u044b\u043a\u0430\u043d\u0442\u0430 \u0414\u043c\u0438\u0442\u0440\u0438\u044f \u0420\u0430\u043a\u043e\u0432\u0430.',
-    },
-    {
-      type: 'imageHalf',
-      imageHalfLayout: 'pair',
-      images: [
-        { src: '/images/COV19.jpg', alt: '\u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0420\u0430\u043a\u043e\u0432 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430' },
-        { src: '/images/COV20.jpg', alt: '\u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0420\u0430\u043a\u043e\u0432 \u2014 \u043e\u0431\u043b\u043e\u0436\u043a\u0430' },
-      ],
-    },
-    {
-      type: 'paragraph',
-      text: '\u0418\u043d\u043e\u0433\u0434\u0430 \u044f \u0434\u0435\u043b\u0430\u044e \u043e\u0431\u043b\u043e\u0436\u043a\u0438 \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 \u043b\u0438\u0447\u043d\u043e\u0433\u043e \u0447\u0435\u043b\u043b\u0435\u043d\u0434\u0436\u0430, \u0432\u0434\u043e\u0445\u043d\u043e\u0432\u043b\u0451\u043d\u043d\u043e\u0433\u043e \u043b\u044e\u0431\u0438\u043c\u044b\u043c\u0438 \u0442\u0440\u0435\u043a\u0430\u043c\u0438. \u042d\u0442\u0430 \u2014 \u043f\u043e\u0441\u0432\u044f\u0449\u0435\u043d\u0430 \u0442\u0440\u0435\u043a\u0443 The Sleepless \u0433\u0440\u0443\u043f\u043f\u044b Red Snapper.',
-    },
-    {
-      type: 'imageHalf',
-      imageHalfLayout: 'single',
-      src: '/images/COV21.jpg',
-      alt: '\u041e\u0431\u043b\u043e\u0436\u043a\u0430 \u043f\u043e \u043c\u043e\u0442\u0438\u0432\u0430\u043c Red Snapper \u2014 The Sleepless',
-    },
-  ],
-};
 
 const foxyRoastersEn: CaseStudy = {
   title: 'Illustrations & Design for Foxy Roasters',
@@ -898,65 +504,6 @@ const foxyRoastersEn: CaseStudy = {
   ],
 };
 
-const foxyRoastersRu: CaseStudy = {
-  title: '\u0418\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0438 \u0434\u0438\u0437\u0430\u0439\u043d \u0434\u043b\u044f Foxy Roasters',
-  sections: [
-    {
-      type: 'paragraph',
-      text: '\u0421\u0435\u0440\u0438\u044f \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0439 \u0434\u043b\u044f \u043e\u0431\u0436\u0430\u0440\u0449\u0438\u043a\u0430 \u043a\u043e\u0444\u0435 \u0441 \u0441\u043e\u0431\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u043c \u043a\u0430\u0444\u0435. \u041a \u041d\u043e\u0432\u043e\u043c\u0443 \u0433\u043e\u0434\u0443 \u043a\u043b\u0438\u0435\u043d\u0442 \u0445\u043e\u0442\u0435\u043b \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u043f\u043e\u0434\u0430\u0440\u043e\u0447\u043d\u044b\u0435 \u043d\u0430\u0431\u043e\u0440\u044b \u0441 \u043e\u0442\u043a\u0440\u044b\u0442\u043a\u0430\u043c\u0438 \u0438 \u0431\u0440\u0435\u043d\u0434\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u043c\u0438 \u0441\u0442\u0438\u043a\u0435\u0440\u0430\u043c\u0438 \u0434\u043b\u044f \u043a\u043e\u0444\u0435. \u0417\u0430\u0434\u0430\u0447\u0430 \u2014 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0438 \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u043c\u0430\u043a\u0435\u0442\u044b \u043a \u043f\u0435\u0447\u0430\u0442\u0438.',
-    },
-    {
-      type: 'paragraph',
-      text: '\u041a\u043b\u044e\u0447\u0435\u0432\u044b\u043c \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u0436\u0435\u043c \u0431\u044b\u043b \u0432\u044b\u0431\u0440\u0430\u043d \u043c\u0430\u0441\u043a\u043e\u0442 \u0431\u0440\u0435\u043d\u0434\u0430 \u2014 \u043b\u0438\u0441\u0430. \u041f\u0435\u0440\u0441\u043e\u043d\u0430\u0436 \u043d\u0443\u0436\u0434\u0430\u043b\u0441\u044f \u0432 \u0434\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0435, \u0442\u0430\u043a \u043a\u0430\u043a \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0435 \u0432\u0435\u0440\u0441\u0438\u0438 \u0431\u044b\u043b\u0438 \u043d\u0435\u043a\u043e\u043d\u0441\u0438\u0441\u0442\u0435\u043d\u0442\u043d\u044b \u0438 \u043d\u0435 \u0438\u043c\u0435\u043b\u0438 \u0435\u0434\u0438\u043d\u043e\u0433\u043e \u0434\u0438\u0437\u0430\u0439\u043d\u0430. \u041f\u043e\u0441\u043b\u0435 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0438\u0442\u0435\u0440\u0430\u0446\u0438\u0439 \u044d\u0441\u043a\u0438\u0437\u043e\u0432 \u044f \u0441\u043e\u0437\u0434\u0430\u043b\u0430 \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u043e\u0431\u0440\u0430\u0437 \u0438 \u043f\u043e\u043c\u0435\u0441\u0442\u0438\u043b\u0430 \u043b\u0438\u0441\u0443 \u0432 \u0441\u0446\u0435\u043d\u044b, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u0435 \u0441 \u043a\u043e\u0444\u0435, \u043e\u0431\u0436\u0430\u0440\u043a\u043e\u0439 \u0438 \u0436\u0438\u0437\u043d\u044c\u044e \u043a\u0430\u0444\u0435.',
-    },
-    {
-      type: 'image',
-      src: '/images/FR 1.jpg',
-      alt: '\u0418\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 Foxy Roasters',
-    },
-    {
-      type: 'image',
-      src: '/images/FR 2.jpg',
-      alt: '\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u0436\u0430',
-    },
-    {
-      type: 'image',
-      src: '/images/FR 3.jpg',
-      alt: '\u0421\u0446\u0435\u043d\u044b \u0441 \u043b\u0438\u0441\u043e\u0439',
-    },
-    {
-      type: 'paragraph',
-      text: '\u0422\u0430\u043a\u0436\u0435 \u044f \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043b\u0430 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0432\u0438\u0434\u043e\u0432 \u0441\u0442\u0438\u043a\u0435\u0440\u043e\u0432 \u0438 \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u043a \u0438 \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u0438\u043b\u0430 \u043c\u0430\u043a\u0435\u0442\u044b \u043a \u043f\u0435\u0447\u0430\u0442\u0438.',
-    },
-    {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04381.jpg', alt: '\u0421\u0442\u0438\u043a\u0435\u0440\u044b Foxy Roasters \u2014 \u043b\u0438\u0441\u0442 1' },
-        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04382.jpg', alt: '\u0421\u0442\u0438\u043a\u0435\u0440\u044b Foxy Roasters \u2014 \u043b\u0438\u0441\u0442 2' },
-      ],
-      singleColumn: true,
-    },
-    {
-      type: 'image',
-      src: '/images/\u0444\u043e\u0442\u043e 1.jpg',
-      alt: '\u0424\u043e\u0442\u043e \u043d\u0430\u043f\u0435\u0447\u0430\u0442\u0430\u043d\u043d\u044b\u0445 \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u043a',
-    },
-    {
-      type: 'paragraph',
-      text: '\u041a\u0430\u0436\u0434\u0430\u044f \u043e\u0442\u043a\u0440\u044b\u0442\u043a\u0430 \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u043c\u0430\u043b\u0435\u043d\u044c\u043a\u0443\u044e \u0430\u0432\u0442\u043e\u0440\u0441\u043a\u0443\u044e \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u044e, \u0440\u0430\u0437\u043c\u0435\u0449\u0451\u043d\u043d\u0443\u044e \u0432 \u043e\u0431\u043b\u0430\u0441\u0442\u0438 \u043c\u0430\u0440\u043a\u0438.',
-    },
-    {
-      type: 'image',
-      src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04383.jpg',
-      alt: '\u0414\u0435\u0442\u0430\u043b\u044c \u0438\u043b\u043b\u044e\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u0432 \u0437\u043e\u043d\u0435 \u043c\u0430\u0440\u043a\u0438',
-    },
-    {
-      type: 'image',
-      src: '/images/\u0444\u043e\u0442\u043e 2.jpg',
-      alt: '\u0424\u043e\u0442\u043e \u043d\u0430\u043f\u0435\u0447\u0430\u0442\u0430\u043d\u043d\u044b\u0445 \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u043a \u0438 \u0441\u0442\u0438\u043a\u0435\u0440\u043e\u0432',
-    },
-  ],
-};
 
 const nekorobkaHobbyKitsEn: CaseStudy = {
   title: 'Nekorobka hobby kits',
@@ -1072,119 +619,6 @@ const nekorobkaHobbyKitsEn: CaseStudy = {
   ],
 };
 
-const nekorobkaHobbyKitsRu: CaseStudy = {
-  title: 'Nekorobka наборы для хобби',
-  sections: [
-    {
-      type: 'paragraph',
-      text:
-        'В 2020 году я присоединилась к стартапу, который разрабатывал наборы для хобби. Каждый набор задумывался как полноценный первый шаг в новое увлечение: в коробке — все нужные материалы, видеоурок, понятные инструкции и доступ в чат поддержки.\nНаша цель — популяризировать идею хобби, побуждать пробовать разные занятия, преодолевать страх эксперимента и расширять горизонты.',
-    },
-    {
-      type: 'image',
-      src: '/images/N1.jpg',
-      alt: 'Nekorobka — наборы для хобби',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Я вошла в проект как дизайнер-основательница: разрабатывала визуальную айдентику, иллюстрации, упаковку и сопутствующие материалы. Мы выпустили девять наборов, сделали веб-сервис для подбора хобби и продали более 10 000 наборов.',
-    },
-    {
-      type: 'image',
-      src: '/images/N5.jpg',
-      alt: 'Nekorobka — упаковка',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Задача была построить систему, которая выдержит множество разных наборов с собственным характером и при этом сохранит цельный продуктовый опыт. Часть экспертов хотела оформлять наборы сама — тогда я направляла визуально, координировала процесс и доводила макеты до единого стиля. Семь из девяти наборов спроектировала я.',
-    },
-    {
-      type: 'heading',
-      text: 'Набор tie-dye',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'С самого начала было ясно: в дизайне должны быть яркие всплески краски, перетекающие друг в друга, с ассоциациями на творчество и эксперимент.',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Финальный дизайн для печати я нарисовала от руки на бумаге, затем отсканировала, обработала и подготовила к производству.',
-    },
-    {
-      type: 'image',
-      src: '/images/N2.jpg',
-      alt: 'Набор tie-dye — дизайн',
-    },
-    {
-      type: 'paragraph',
-      text: 'Мы также сделали мини-набор — визуально он опирается на основную версию.',
-    },
-    {
-      type: 'image',
-      src: '/images/N3.jpg',
-      alt: 'Мини-набор tie-dye',
-    },
-    {
-      type: 'heading',
-      text: 'Набор с полимерной глиной',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'В этом наборе пользователь лепит из полимерной глины декоративные элементы для кружки — в виде разных сладостей. Я опиралась на фото от эксперта, на цвета глины и на тему сладостей.',
-    },
-    {
-      type: 'image',
-      src: '/images/N4.jpg',
-      alt: 'Набор с полимерной глиной — дизайн',
-    },
-    {
-      type: 'heading',
-      text: 'Дополнительная графика, материалы и фото',
-    },
-    {
-      type: 'image',
-      src: '/images/N6.jpg',
-      alt: 'Nekorobka — дополнительная графика и материалы',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Нужна была разнообразная графика для соцсетей, карточек на маркетплейсах, онлайн-каналов и печатных материалов — например, подарочных сертификатов.',
-    },
-    {
-      type: 'image',
-      src: '/images/N7.jpg',
-      alt: 'Nekorobka — графика и фото',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Чтобы разнообразить присутствие в соцсетях, я делала простые развлекательные анимации.',
-    },
-    {
-      type: 'vimeoRow',
-      vimeoItems: [
-        {
-          vimeoId: '1182644854',
-          iframeTitle: 'mini soap video',
-          vimeoPaddingTop: '100%',
-          vimeoAutoplay: true,
-        },
-        {
-          vimeoId: '1182642161',
-          iframeTitle: 'Nekorobka certificate',
-          vimeoPaddingTop: '100%',
-          vimeoAutoplay: true,
-        },
-      ],
-    },
-  ],
-};
 
 const nekorobkaInfographicsSeries1: { src: string; alt: string }[] = [
   { src: '/images/I1.jpg', alt: 'Infographic — benefits of hobbies, 1 of 6' },
@@ -1202,24 +636,6 @@ const nekorobkaInfographicsSeries2: { src: string; alt: string }[] = [
   { src: '/images/I10.jpg', alt: 'Infographic — hobbies of literary characters, 4 of 6' },
   { src: '/images/I11.jpg', alt: 'Infographic — hobbies of literary characters, 5 of 6' },
   { src: '/images/I12.jpg', alt: 'Infographic — hobbies of literary characters, 6 of 6' },
-];
-
-const nekorobkaInfographicsSeries1Ru: { src: string; alt: string }[] = [
-  { src: '/images/I1.jpg', alt: 'Инфографика — польза хобби, 1 из 6' },
-  { src: '/images/I2.jpg', alt: 'Инфографика — польза хобби, 2 из 6' },
-  { src: '/images/I3.jpg', alt: 'Инфографика — польза хобби, 3 из 6' },
-  { src: '/images/I4.jpg', alt: 'Инфографика — польза хобби, 4 из 6' },
-  { src: '/images/I5.jpg', alt: 'Инфографика — польза хобби, 5 из 6' },
-  { src: '/images/I6.jpg', alt: 'Инфографика — польза хобби, 6 из 6' },
-];
-
-const nekorobkaInfographicsSeries2Ru: { src: string; alt: string }[] = [
-  { src: '/images/I7.jpg', alt: 'Инфографика — хобби литературных персонажей, 1 из 6' },
-  { src: '/images/I8.jpg', alt: 'Инфографика — хобби литературных персонажей, 2 из 6' },
-  { src: '/images/I9.jpg', alt: 'Инфографика — хобби литературных персонажей, 3 из 6' },
-  { src: '/images/I10.jpg', alt: 'Инфографика — хобби литературных персонажей, 4 из 6' },
-  { src: '/images/I11.jpg', alt: 'Инфографика — хобби литературных персонажей, 5 из 6' },
-  { src: '/images/I12.jpg', alt: 'Инфографика — хобби литературных персонажей, 6 из 6' },
 ];
 
 const nekorobkaInfographicsEn: CaseStudy = {
@@ -1343,22 +759,6 @@ const homePersonalProjectEn: CaseStudy = {
   ],
 };
 
-const homePersonalProjectRu: CaseStudy = {
-  title: 'Home. Личный проект',
-  sections: [
-    {
-      type: 'paragraph',
-      text: 'Личный проект о идее дома. Создан в Ереване весной 2022 года.',
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '710275696',
-      iframeTitle: 'Home',
-      vimeoMuted: false,
-      vimeoLoop: false,
-    },
-  ],
-};
 
 const logoSocialMediaAnimationEn: CaseStudy = {
   title: 'Logo & Social Media Animation',
@@ -1393,38 +793,6 @@ const logoSocialMediaAnimationEn: CaseStudy = {
   ],
 };
 
-const logoSocialMediaAnimationRu: CaseStudy = {
-  title: 'Анимация логотипа и соцсетей',
-  sections: [
-    {
-      type: 'vimeo',
-      vimeoId: '1184035324',
-      iframeTitle: 'The Fennec Box logo',
-      vimeoPaddingTop: '75%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '787983811',
-      iframeTitle: 'Te with logo',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '1182644854',
-      iframeTitle: 'mini soap video',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '1182642161',
-      iframeTitle: 'Nekorobka certificate',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
-    },
-  ],
-};
 
 const learnWithMochiAnimationEn: CaseStudy = {
   title: 'Animation for Learn With Mochi app',
@@ -1470,49 +838,6 @@ const learnWithMochiAnimationEn: CaseStudy = {
   ],
 };
 
-const learnWithMochiAnimationRu: CaseStudy = {
-  title: 'Анимация для приложения Learn With Mochi',
-  sections: [
-    {
-      type: 'paragraph',
-      text:
-        'Learn With Mochi выпускает образовательные наборы для детей и знакомит с основами программирования через простые и увлекательные истории.',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Моя задача — сделать анимированный опенинг для приложения на базе уже существующих персонажей: от сценария до финальной реализации.',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Сначала я сделала грубые эскизы сцен, затем проиллюстрировала персонажей и окружение в полном цвете так, как они выглядят в финальной анимации (все права на персонажей принадлежат Learn With Mochi).',
-    },
-    {
-      type: 'imageGrid',
-      singleColumn: true,
-      images: [
-        { src: '/images/LWM 1.jpg', alt: 'Learn With Mochi — эскизы и разработка сцен' },
-        { src: '/images/LWM 2.jpg', alt: 'Learn With Mochi — персонажи и окружение' },
-        { src: '/images/LWM 3.jpg', alt: 'Learn With Mochi — цветные кадры опенинга' },
-      ],
-    },
-    {
-      type: 'nativeVideo',
-      videoSrc: '/images/LWM меньше.mp4',
-      videoMuted: true,
-    },
-    {
-      type: 'paragraph',
-      text: 'Отдельно я разработала иконку приложения в рамках проекта.',
-    },
-    {
-      type: 'image',
-      src: '/images/LWM 4.jpg',
-      alt: 'Learn With Mochi — иконка приложения',
-    },
-  ],
-};
 
 const lineFrameByFrameAnimationEn: CaseStudy = {
   title: 'Line animation (frame-by-frame)',
@@ -1556,10 +881,6 @@ const lineFrameByFrameAnimationEn: CaseStudy = {
   ],
 };
 
-const lineFrameByFrameAnimationRu: CaseStudy = {
-  title: 'Анимация линией (покадрово)',
-  sections: lineFrameByFrameAnimationEn.sections,
-};
 
 const mixedMediaAnimationEn: CaseStudy = {
   title: 'Mixed-media animation',
@@ -1615,10 +936,6 @@ const mixedMediaAnimationEn: CaseStudy = {
   ],
 };
 
-const mixedMediaAnimationRu: CaseStudy = {
-  title: 'Смешанная медиа-анимация',
-  sections: mixedMediaAnimationEn.sections,
-};
 
 const animationOverVideoEn: CaseStudy = {
   title: 'Animation over video',
@@ -1640,194 +957,69 @@ const animationOverVideoEn: CaseStudy = {
   ],
 };
 
-const animationOverVideoRu: CaseStudy = {
-  title: 'Анимация поверх видео',
-  sections: animationOverVideoEn.sections,
-};
-
-const hobbyMatchingAnimationRu: CaseStudy = {
-  title: 'Анимация для теста по подбору хобби',
-  sections: [
-    {
-      type: 'paragraph',
-      text:
-        'Этот кейс сделан для Nekorobka — компании, которая разрабатывает наборы для хобби.',
-    },
-    {
-      type: 'link',
-      label: 'Nekorobka наборы для хобби',
-      href: 'https://evazu.art/design/?case=nekorobka-hobby-kits',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Мы разработали веб-сервис для подбора хобби с тестом на основе модели «Большой пятёрки» (Big Five). Помимо наборов, этот тест самооценки помогал тем, кто не уверен, какое хобби попробовать.',
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Моя задача — создать персонажа, который станет «лицом» теста: дружелюбного, понятного, с лёгкими отсылками к поп-культуре. Персонаж ведёт пользователя по тесту и делает опыт живее и проще в навигации.',
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '845322690',
-      iframeTitle: 'Hello',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Финальный персонаж согласован с цветовой палитрой и стилем отрисовки сайта. Контур хорошо сочетается с текстовыми блоками, а мягкие градиентные заливки перекликаются с цветными элементами и кнопками интерфейса.',
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '845353993',
-      iframeTitle: 'Hobby imp',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '845346353',
-      iframeTitle: 'Info',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '845340641',
-      iframeTitle: 'The result',
-      vimeoPaddingTop: '52.08%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'paragraph',
-      text:
-        'Я также сделала несколько простых анимаций — для подсказок и чтобы наглядно показать, как устроен тест.',
-    },
-    {
-      type: 'image',
-      src: '/images/GIF.gif',
-      alt: 'Анимации подсказок в интерфейсе теста',
-    },
-    {
-      type: 'nativeVideo',
-      videoSrc: '/images/MP4.mp4',
-      videoAutoplay: true,
-      videoLoop: true,
-      videoMuted: true,
-    },
-  ],
-};
-
-const nekorobkaInfographicsRu: CaseStudy = {
-  title: 'Иллюстрированная инфографика для проекта nekorobka',
-  sections: [
-    {
-      type: 'paragraph',
-      text:
-        'В стартапе nekorobka мы делали наборы для разных хобби. Это были не просто коробки, а полноценный первый шаг в знакомство с увлечением, о котором потенциальные клиенты могли знать мало или только слышать. Мы углублялись в каждое хобби и старались сделать его понятнее и привлекательнее.\nВ рамках этого я делала инфографику в таком формате: интересные и полезные факты — просто и с запоминающимися иллюстрациями.',
-    },
-    {
-      type: 'heading',
-      text: 'Серия 1: польза хобби',
-    },
-    {
-      type: 'imageGrid',
-      images: nekorobkaInfographicsSeries1Ru,
-      columns: 2,
-      fixedTwoColumns: true,
-    },
-    {
-      type: 'heading',
-      text: 'Серия 2: хобби литературных персонажей',
-    },
-    {
-      type: 'imageGrid',
-      images: nekorobkaInfographicsSeries2Ru,
-      columns: 2,
-      fixedTwoColumns: true,
-    },
-  ],
-};
-
 export const caseStudies: Record<string, Record<Locale, CaseStudy>> = {
   'tea-branding': {
     en: teaBrandingEn,
-    ru: teaBrandingRu,
     fr: teaBrandingEn,
   },
   'belgrade-stories': {
     en: belgradeCaseEn,
-    ru: belgradeCaseRu,
     fr: belgradeCaseEn,
   },
   'belgrade-atmosphere': {
     en: belgradeAtmosphereEn,
-    ru: belgradeAtmosphereRu,
     fr: belgradeAtmosphereEn,
   },
   'brutalist-belgrade': {
     en: brutalistBelgradeEn,
-    ru: brutalistBelgradeRu,
     fr: brutalistBelgradeEn,
   },
   'yerevan': {
     en: yerevanEn,
-    ru: yerevanRu,
     fr: yerevanEn,
   },
   'foxy-roasters': {
     en: foxyRoastersEn,
-    ru: foxyRoastersRu,
     fr: foxyRoastersEn,
   },
   'music-visuals': {
     en: musicVisualsEn,
-    ru: musicVisualsRu,
     fr: musicVisualsEn,
   },
   'nekorobka-hobby-kits': {
     en: nekorobkaHobbyKitsEn,
-    ru: nekorobkaHobbyKitsRu,
     fr: nekorobkaHobbyKitsEn,
   },
   'nekorobka-infographics': {
     en: nekorobkaInfographicsEn,
-    ru: nekorobkaInfographicsRu,
     fr: nekorobkaInfographicsEn,
   },
   'hobby-matching-animation': {
     en: hobbyMatchingAnimationEn,
-    ru: hobbyMatchingAnimationRu,
     fr: hobbyMatchingAnimationEn,
   },
   'home-personal-project': {
     en: homePersonalProjectEn,
-    ru: homePersonalProjectRu,
     fr: homePersonalProjectEn,
   },
   'logo-social-media-animation': {
     en: logoSocialMediaAnimationEn,
-    ru: logoSocialMediaAnimationRu,
     fr: logoSocialMediaAnimationEn,
   },
   'learn-with-mochi-animation': {
     en: learnWithMochiAnimationEn,
-    ru: learnWithMochiAnimationRu,
     fr: learnWithMochiAnimationEn,
   },
   'line-animation-frame-by-frame': {
     en: lineFrameByFrameAnimationEn,
-    ru: lineFrameByFrameAnimationRu,
     fr: lineFrameByFrameAnimationEn,
   },
   'mixed-media-animation': {
     en: mixedMediaAnimationEn,
-    ru: mixedMediaAnimationRu,
     fr: mixedMediaAnimationEn,
   },
   'animation-over-video': {
     en: animationOverVideoEn,
-    ru: animationOverVideoRu,
     fr: animationOverVideoEn,
   },
 };

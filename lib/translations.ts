@@ -1,4 +1,4 @@
-export type Locale = 'en' | 'ru' | 'fr';
+export type Locale = 'en' | 'fr';
 
 export const translations = {
   en: {
@@ -18,8 +18,6 @@ export const translations = {
       animation: '2D Animation',
       branding: 'Design',
       howIWork: 'How I Work',
-      toolsAndLanguages: 'Tools & Languages',
-      tools: 'Tools',
       languages: 'Languages',
       selectedProjects: 'Selected Projects',
       newsletter: 'Newsletter',
@@ -91,7 +89,6 @@ export const translations = {
       { title: 'Structured Creative Process', text: 'I enjoy bringing structure to creative work. This includes clarifying tasks, organizing visual materials, and maintaining a clear workflow throughout the project so ideas can develop into coherent results.' },
       { title: 'Turning Ideas Into Visual Solutions', text: "Many projects begin with abstract ideas or loosely defined requests. I'm comfortable working in this space — researching, experimenting, and developing concepts until they become clear visual outcomes." },
     ],
-    tools: ['Adobe Photoshop', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe After Effects', 'Figma', 'Power Point'],
     languages: [
       { name: 'English', level: 'B2' },
       { name: 'Russian', level: 'Native' },
@@ -126,131 +123,6 @@ export const translations = {
     },
     footer: { email: 'Email', telegram: 'Telegram', instagram: 'Instagram' },
   },
-  ru: {
-    nav: { illustration: 'Иллюстрация', animation: '2D анимация', design: 'Дизайн', services: 'Услуги', about: 'Обо мне' },
-    hero: {
-      name: 'Екатерина Зуева',
-      tagline: 'Иллюстратор, графический дизайнер, 2D аниматор с опытом более 10 лет.',
-      intro: 'Мой опыт работы разнообразен: стартапы, маркетинговое агентство, фриланс, аутсорс и опыт работы в компании. Благодаря этому опыту, я приобрела навык самостоятельности, работы с абстрактными задачами, проведения исследований и глубинных интервью, выстраивания взаимодействия с заказчиками и с коллегами.\n\nЯ назвала бы себя мультидисциплинарным дизайнером, так как работала с очень разными задачами, и не боюсь погружаться в новые незнакомые сферы. А благодаря опыту в стартапе и на фрилансе, я могу практически заменить собой небольшое дизайнерское бюро, ведя проекты с нуля и до физического воплощения и запуска. И я люблю эти процессы.',
-      viewPortfolio: 'Портфолио',
-      contact: 'Контакты',
-      greeting:
-        'Привет, я Екатерина Зуева (Katya Evazu).\n\nЯ иллюстратор, работаю в 2D-анимации и графическом дизайне. Создаю как отдельные изображения, так и комплексные визуальные решения — от отдельных иллюстраций до полностью реализованных продуктов.',
-    },
-    sectionTitles: {
-      services: 'Скиллы',
-      illustration: 'Иллюстрация',
-      animation: '2D анимация',
-      branding: 'Дизайн',
-      howIWork: 'Как я работаю',
-      toolsAndLanguages: 'Софт и язык',
-      tools: 'Софт',
-      languages: 'Язык',
-      selectedProjects: 'Избранные проекты',
-      newsletter: 'Рассылка',
-      contact: 'Контакты',
-    },
-    services: [
-      {
-        title: 'Иллюстрация',
-        items: [
-          'Визуалы для брендов, продуктов и digital-платформ',
-          'Редакционные и образовательные иллюстрации, чтобы ясно объяснять идеи',
-          'Атмосферные работы для музыки, культуры и личных проектов',
-        ],
-      },
-      {
-        title: '2D анимация',
-        items: [
-          'Короткие анимационные ролики (покадрово / After Effects)',
-          'Оживление иллюстраций через движение',
-          'Анимация для приложений, сайтов и digital-продуктов',
-        ],
-      },
-      {
-        title: 'Графический дизайн',
-        items: [
-          'Иллюстрационные визуальные системы для брендов и продуктов',
-          'Упаковка, печать и digital-применения',
-          'Макеты под печать и production-файлы',
-          'Визуальные системы для контента и коммуникаций',
-        ],
-      },
-    ],
-    illustrationProjectTitles: [
-      'Серия иллюстраций про бруталистскую архитектуру Белграда',
-      'Иллюстрированные истории в комиксном стиле',
-      'Иллюстрации и дизайн для Foxy Roasters — подарочные наборы, открытки и стикеры',
-      'Ереван',
-      'Иллюстрации для проекта, посвященного китайскому чаю',
-      'Белградская атмосфера, иллюстрационная серия',
-      'Music Visuals Design',
-      'Иллюстрированная инфографика для проекта nekorobka',
-    ],
-    animationTitles: {
-      nekorobka: 'Анимация для теста по подбору хобби',
-      homePersonalProject: 'Home. Личный проект',
-      logoSocialMediaAnimation: 'Анимация логотипа и соцсетей',
-      learnWithMochi: 'Анимация для приложения Learn With Mochi',
-      lineFrameByFrame: 'Анимация линией (покадрово)',
-      mixedMediaAnimation: 'Смешанная медиа-анимация',
-      animationOverVideo: 'Анимация поверх видео',
-      shcha7sec: 'Короткие ролики для фестивалей shcha7sec',
-      allstations: 'Анимация для клипа группы ALLSTATIONS',
-      moreAnimation: 'Ещё больше анимационных роликов на отдельной странице: Animation',
-    },
-    learnWithMochiCopyright: 'All rights and characters reserved to Learn with Mochi company. Unauthorized copying, downloading, or use prohibited.',
-    brandingProjectTitles: [
-      'Фирменный стиль для наборов китайского чая',
-      'Nekorobka наборы для хобби',
-      'Иллюстрации и дизайн для Foxy Roasters — подарочные наборы, открытки и стикеры',
-      'Музыкальные обложки',
-      'Анимация для теста по подбору хобби',
-    ],
-    categoryIllustration: 'Иллюстрация',
-    categoryBrandingDesign: 'Брендинг и дизайн',
-    categoryAnimation: 'Анимация',
-    howIWork: [
-      { title: 'Осознанный дизайн', text: 'Осознанный дизайн, всегда держу в голове, что и зачем делается.' },
-      { title: 'Коммуникация', text: 'Опыт взаимодействия с заказчиками, накопленный за 10 лет фриланса. От основательного брифа до глубинных интервью, общения в процессе. Умею слушать и понимать, что нужно заказчику.' },
-      { title: 'Системность', text: 'Системность: люблю наводить и соблюдать порядок в проектах, как в плане постоянного прояснения и уточнения задач, так и в плане содержания, хранения, организации контента.' },
-      { title: 'От идеи к результату', text: 'Превращаю абстрактные мысли и запросы заказчика в конкретный результат.' },
-    ],
-    tools: ['Adobe Photoshop', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe After Effects', 'Figma', 'Power Point'],
-    languages: [
-      { name: 'Русский', level: 'родной' },
-      { name: 'Английский', level: 'B2' },
-      { name: 'Французский', level: 'A2' },
-    ],
-    contact: {
-      intro: 'Напишите для заказов, коллабораций или идей проектов. Буду рада ответить.',
-      email: 'Email',
-      telegram: 'Telegram',
-      instagram: 'Instagram',
-      formTitle: 'Написать сообщение',
-      formEmailLabel: 'Ваш email',
-      formEmailPlaceholder: 'you@example.com',
-      formMessageLabel: 'Сообщение',
-      formMessagePlaceholder: 'Tell me about your project',
-      formSend: 'Отправить',
-      formSending: 'Отправка…',
-      formThanks: 'Спасибо за сообщение. Отвечу, как только смогу.',
-    },
-    newsletter: {
-      intro:
-        'Здесь я делюсь процессом, новостями и свежими работами. Подпишитесь, если хотите быть на связи.',
-      emailLabel: 'Ваш email',
-      emailPlaceholder: 'you@example.com',
-      submit: 'Подписаться',
-      sending: 'Отправка…',
-      thanks: 'Спасибо — вы в списке рассылки.',
-    },
-    about: {
-      tagline: 'Иллюстратор, 2D аниматор, графический дизайнер',
-      bio: 'Привет, я Екатерина Зуева, меня также знают как Katya Evazu.\n\nЯ работаю в иллюстрации, 2D-анимации и графическом дизайне. Создаю как отдельные изображения, так и комплексные визуальные решения — от отдельных иллюстраций до полностью реализованных продуктов.\n\nПомогаю найти подходящий визуальный язык для разных проектов: иллюстрации для брендов, цифровых продуктов, упаковки и печатных материалов, а также независимые работы. Сотрудничаю в музыкальных проектах и образовательных форматах — наглядно объясняю сложные идеи и создаю выразительные иллюстрации для текстов и лонгридов. Параллельно развиваю собственные личные проекты.\n\nМоя работа строится на внимании и погружении. Я глубоко вникаю в каждую задачу, чтобы создать иллюстрацию или готовый продукт со своим голосом, атмосферой и историей. Работаю в традиционных и цифровых техниках, выбирая форму, которая лучше всего подходит проекту.',
-    },
-    footer: { email: 'Email', telegram: 'Telegram', instagram: 'Instagram' },
-  },
   fr: {
     nav: { illustration: 'Illustration', animation: 'Animation 2D', design: 'Design', services: 'Services', about: 'À propos' },
     hero: {
@@ -268,8 +140,6 @@ export const translations = {
       animation: 'Animation 2D',
       branding: 'Design',
       howIWork: 'Comment je travaille',
-      toolsAndLanguages: 'Outils et langues',
-      tools: 'Outils',
       languages: 'Langues',
       selectedProjects: 'Projets sélectionnés',
       newsletter: 'Lettre d’information',
@@ -341,7 +211,6 @@ export const translations = {
       { title: 'Processus créatif structuré', text: "J'aime apporter de la structure au travail créatif : clarifier les tâches, organiser les visuels et maintenir un flux de travail clair pour que les idées deviennent des résultats cohérents." },
       { title: 'Des idées aux solutions visuelles', text: "Beaucoup de projets commencent par des idées abstraites ou des demandes floues. Je suis à l'aise dans cet espace — recherche, expérimentation et développement de concepts jusqu'à des résultats visuels clairs." },
     ],
-    tools: ['Adobe Photoshop', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe After Effects', 'Figma', 'Power Point'],
     languages: [
       { name: 'Anglais', level: 'B2' },
       { name: 'Russe', level: 'Langue maternelle' },

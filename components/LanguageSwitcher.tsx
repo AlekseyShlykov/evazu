@@ -5,7 +5,6 @@ import type { Locale } from '@/lib/translations';
 
 const locales: { code: Locale; label: string }[] = [
   { code: 'en', label: 'EN' },
-  { code: 'ru', label: 'RU' },
   { code: 'fr', label: 'FR' },
 ];
 

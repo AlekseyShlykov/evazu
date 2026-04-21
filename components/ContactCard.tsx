@@ -10,8 +10,8 @@ export function ContactCard() {
   const t = translations[locale].contact;
 
   return (
-    <div className="w-full rounded-2xl border border-neutral-200 bg-white p-8 md:p-10 shadow-sm">
-      <p className="text-neutral-600 text-lg mb-8 w-full max-w-none">
+    <div className="w-full max-w-6xl space-y-8">
+      <p className="text-neutral-600 text-lg leading-relaxed w-full max-w-none">
         {t.intro}
       </p>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -53,8 +53,8 @@ export function ContactCard() {
           </span>
         </a>
       </div>
-      <div className="mt-10 border-t border-neutral-200 pt-10">
-        <h2 className="mb-6 text-sm font-medium uppercase tracking-wider text-neutral-500">{t.formTitle}</h2>
+      <div className="space-y-6">
+        <h2 className="text-sm font-medium uppercase tracking-wider text-neutral-500">{t.formTitle}</h2>
         <ContactFormspree />
       </div>
     </div>
