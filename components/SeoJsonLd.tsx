@@ -1,5 +1,4 @@
 import { site } from '@/lib/data';
-import { shareHomeOgDescription } from '@/lib/pageMetadata';
 import { translations } from '@/lib/translations';
 import { absoluteOgImageUrl, siteCanonicalUrl } from '@/lib/seo';
 
@@ -17,7 +16,6 @@ export function SeoJsonLd() {
       '@id': `${url}#website`,
       url,
       name: en.hero.name,
-      description: shareHomeOgDescription,
       inLanguage: ['en', 'fr'],
       publisher: { '@id': `${url}#person` },
     },
@@ -36,7 +34,6 @@ export function SeoJsonLd() {
       '@id': `${url}#portfolio`,
       name: en.hero.name,
       url,
-      description: shareHomeOgDescription,
       author: { '@id': `${url}#person` },
       inLanguage: ['en', 'fr'],
     },
