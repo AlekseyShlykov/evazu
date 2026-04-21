@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { defaultSiteDescription } from '@/lib/pageMetadata';
 import { translations } from '@/lib/translations';
-import { fullSiteTitle, siteCanonicalUrl } from '@/lib/seo';
+import { siteCanonicalUrl } from '@/lib/seo';
 
 const notFoundTitleSegment = '404';
 
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   alternates: { canonical: siteCanonicalUrl('/') },
   openGraph: {
     url: siteCanonicalUrl('/'),
-    title: fullSiteTitle(notFoundTitleSegment),
+    title: notFoundTitleSegment,
     description: defaultSiteDescription,
   },
   twitter: {
     card: 'summary_large_image',
-    title: fullSiteTitle(notFoundTitleSegment),
+    title: notFoundTitleSegment,
     description: defaultSiteDescription,
   },
 };

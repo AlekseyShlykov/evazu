@@ -1,8 +1,14 @@
 import { translations } from '@/lib/translations';
 
-/** Same default as root layout / OG (existing site summary). */
+/** Meta + OG/Twitter description (line break for previews that support it). */
 export const defaultSiteDescription =
-  'Portfolio of Ekaterina Zueva. Illustration, 2D animation, branding, and graphic design. Over 10 years of experience.';
+  'Ekaterina Zueva\nIllustration, 2D animation, graphic design';
+
+/** OG/Twitter title only — site name is set separately to avoid repeating the name in link previews. */
+export const sharePreviewTitle = 'Illustration, 2D animation, graphic design';
+
+/** Default `<title>` for the home page (name once). */
+export const defaultDocumentTitle = 'Ekaterina Zueva — Illustration, 2D animation, graphic design';
 
 const en = translations.en;
 

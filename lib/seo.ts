@@ -42,11 +42,6 @@ export function sitemapFileUrl(): string {
 
 export const SEO_ROUTES = ['/', '/about', '/illustration', '/animation', '/design', '/services'] as const;
 
-/** Matches visible title pattern (em dash) for inner pages. */
-export function fullSiteTitle(segment: string): string {
-  return `${segment} — Ekaterina Zueva`;
-}
-
 /** Base URL for metadata resolution (includes path when NEXT_PUBLIC_BASE_PATH is set). */
 export function getMetadataBase(): URL {
   const bp = getBasePath();

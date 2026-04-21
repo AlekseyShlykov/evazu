@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import { translations } from '@/lib/translations';
-import { fullSiteTitle, siteCanonicalUrl } from '@/lib/seo';
+import { siteCanonicalUrl } from '@/lib/seo';
 import { seoPageDescriptions } from '@/lib/pageMetadata';
 
 const segment = translations.en.sectionTitles.branding;
 const canonical = siteCanonicalUrl('/design');
-const title = fullSiteTitle(segment);
 const description = seoPageDescriptions.design;
 
 export const metadata: Metadata = {
@@ -14,12 +13,12 @@ export const metadata: Metadata = {
   alternates: { canonical },
   openGraph: {
     url: canonical,
-    title,
+    title: segment,
     description,
   },
   twitter: {
     card: 'summary_large_image',
-    title,
+    title: segment,
     description,
   },
 };

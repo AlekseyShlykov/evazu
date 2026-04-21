@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from 'next';
 import { Commissioner } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SeoJsonLd } from '@/components/SeoJsonLd';
 import { LanguageProvider } from './LanguageContext';
 import { LocaleContent } from './LocaleContent';
-import { defaultSiteDescription } from '@/lib/pageMetadata';
+import { defaultDocumentTitle, defaultSiteDescription, sharePreviewTitle } from '@/lib/pageMetadata';
 import { translations } from '@/lib/translations';
 import { absoluteOgImageUrl, getMetadataBase, siteBase, siteCanonicalUrl } from '@/lib/seo';
 
@@ -16,13 +17,14 @@ const commissioner = Commissioner({
   adjustFontFallback: true,
 });
 
-const homeTitle = 'Ekaterina Zueva — Illustrator, Graphic Designer, 2D Animator';
 const faviconUrl = `${siteBase()}/images/Favicon%2092x92.jpg`;
+
+const GA_MEASUREMENT_ID = 'G-7QW6TXT2TR';
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
   title: {
-    default: homeTitle,
+    default: defaultDocumentTitle,
     template: '%s — Ekaterina Zueva',
   },
   description: defaultSiteDescription,
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     alternateLocale: ['fr_FR'],
     siteName: translations.en.hero.name,
     url: siteCanonicalUrl('/'),
-    title: homeTitle,
+    title: sharePreviewTitle,
     description: defaultSiteDescription,
     images: [{ url: absoluteOgImageUrl(), type: 'image/png', width: 1200, height: 630 }],
   },
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@katya_evazu',
     creator: '@katya_evazu',
-    title: homeTitle,
+    title: sharePreviewTitle,
     description: defaultSiteDescription,
     images: [absoluteOgImageUrl()],
   },
@@ -84,10 +86,23 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://vumbnail.com" />
         <link rel="dns-prefetch" href="https://player.vimeo.com" />
         <link rel="dns-prefetch" href="https://drive.google.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body
         className={`${commissioner.variable} font-sans antialiased bg-neutral-50 text-neutral-900 min-h-screen`}
       >
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <SeoJsonLd />
         <LanguageProvider>
           <a
