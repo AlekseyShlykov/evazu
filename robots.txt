@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: evazu.art
+Sitemap: https://evazu.art/sitemap.xml
