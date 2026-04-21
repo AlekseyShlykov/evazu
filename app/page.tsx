@@ -1,7 +1,6 @@
 'use client';
 
 import { Suspense } from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { ContactCard, SectionTitle, ProjectHoverCard } from '@/components';
 import { CaseStudyModalGate } from '@/components/CaseStudyModalGate';
@@ -9,10 +8,6 @@ import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
-
-const NewsletterSubscribe = dynamic(() =>
-  import('@/components/NewsletterSubscribe').then((m) => m.NewsletterSubscribe),
-);
 
 const featuredProjects = [
   {
@@ -81,8 +76,8 @@ function HomePageContent() {
           <div className="relative aspect-square w-full overflow-hidden rounded-lg">
             <Image
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
-            alt={t.hero.name}
-            className="object-cover"
+              alt={t.hero.name}
+              className="object-cover"
               fill
               priority
               sizes="100vw"
@@ -118,16 +113,6 @@ function HomePageContent() {
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle id="contact">{t.sectionTitles.contact}</SectionTitle>
           <ContactCard />
-        </div>
-      </section>
-
-      <section id="newsletter" className="py-16 md:py-24 bg-white border-t border-neutral-200">
-        <div className="mx-auto max-w-content px-4 md:px-6">
-          <SectionTitle>{t.sectionTitles.newsletter}</SectionTitle>
-          <div className="max-w-6xl space-y-8">
-            <p className="text-neutral-600 text-lg leading-relaxed">{t.newsletter.intro}</p>
-            <NewsletterSubscribe />
-          </div>
         </div>
       </section>
     </div>
