@@ -33,7 +33,7 @@ export function siteCanonicalUrl(path: string): string {
 }
 
 export function absoluteOgImageUrl(): string {
-  return `${siteBase()}/images/Twitter%20post%20-%201.png`;
+  return `${siteBase()}/images/preview.png`;
 }
 
 export function sitemapFileUrl(): string {
