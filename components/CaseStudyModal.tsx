@@ -39,6 +39,8 @@ export interface CaseStudySection {
     vimeoMuted?: boolean;
     vimeoLoop?: boolean;
   }[];
+  /** Extra classes on the vimeoRow wrapper (e.g. max width so embeds stay fully visible) */
+  vimeoRowWrapperClassName?: string;
   /** If true (type image), span full modal width instead of half when image reads as square */
   fullWidth?: boolean;
   /** With type image + fullWidth: show in a wide 2:1 frame (object-cover) for a rectangular banner */
@@ -521,9 +523,15 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
       continue;
     }
     if (section.type === 'vimeoRow' && section.vimeoItems && section.vimeoItems.length > 0) {
+      const items = section.vimeoItems;
+      const singleInRow = items.length === 1;
+      const rowClass = singleInRow
+        ? 'flex w-full justify-center'
+        : 'grid w-full grid-cols-1 gap-4 sm:grid-cols-2';
+      const wrapperClass = [rowClass, section.vimeoRowWrapperClassName].filter(Boolean).join(' ');
       sectionNodes.push(
-        <div key={`case-vimeo-row-${si}`} className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {section.vimeoItems.map((item, vi) => {
+        <div key={`case-vimeo-row-${si}`} className={wrapperClass}>
+          {items.map((item, vi) => {
             const vid = item.vimeoId;
             const iframeTitle = item.iframeTitle || 'Vimeo video';
             const src = buildVimeoEmbedSrc(vid, {
@@ -532,8 +540,11 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
               loop: item.vimeoLoop,
             });
             const paddingTop = item.vimeoPaddingTop ?? '56.25%';
+            const cellClass = singleInRow
+              ? 'min-w-0 w-full max-w-[min(100%,calc((100%-1rem)/2))]'
+              : 'min-w-0';
             return (
-              <div key={`${vid}-${vi}`} className="min-w-0">
+              <div key={`${vid}-${vi}`} className={cellClass}>
                 <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop }}>
                   <iframe
                     src={src}

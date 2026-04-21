@@ -9,7 +9,8 @@ export const translations = {
       intro: "My professional background is diverse: I have worked with startups, marketing agencies, as a freelancer, on outsourcing projects, and within a company environment. This experience has equipped me with skills in independence, handling abstract tasks, conducting research and in-depth interviews, and building effective communication with clients and colleagues.\n\nI consider myself a multidisciplinary designer because I've tackled a wide range of tasks and am not afraid to dive into unfamiliar areas. Thanks to my experience with startups and freelancing, I can effectively take on the role of a small design studio, managing projects from concept to physical implementation and launch. And I genuinely enjoy these processes.",
       viewPortfolio: 'View Portfolio',
       contact: 'Contact',
-      greeting: "Hi, I'm Ekaterina Zueva, also working under the name Katya Evazu.\n\nI'm an illustrator, and I also work in 2D animation and graphic design. I create both standalone images and complete visual solutions — from individual illustrations to fully realized products.",
+      greeting:
+        "Hi, I'm Ekaterina Zueva (Katya Evazu).\n\nI'm an illustrator, working in 2D animation and graphic design. I create both standalone images and complete visual solutions, from individual illustrations to fully realized products.",
     },
     sectionTitles: {
       services: 'Services',
@@ -121,7 +122,7 @@ export const translations = {
     },
     about: {
       tagline: 'Illustrator, 2D Animator, Graphic Designer',
-      bio: "Hi, I'm Ekaterina Zueva, also working under the name Katya Evazu.\n\nI'm an illustrator, and I also work in 2D animation and graphic design. I create both standalone images and complete visual solutions — from individual illustrations to fully realized products.\n\nI help find the right visual language for a variety of projects: creating illustrations for brands, digital products, packaging, and print materials, as well as independent works. I collaborate on music projects and educational formats — explaining complex ideas visually and producing expressive illustrations for texts and longreads. At the same time, I develop my own personal projects.\n\nMy work is based on attention and immersion. I dive deep into each task to create an illustration or complete product with its own voice, atmosphere, and story. I work with both traditional and digital techniques, selecting the form that best fits the project.",
+      bio: "Hi, I'm Ekaterina Zueva, also go by Katya Evazu.\n\nI work in illustration, 2D animation and graphic design. I create both standalone images and complete visual solutions, from individual illustrations to fully realized products.\n\nI help find the right visual language for a variety of projects: creating illustrations for brands, digital products, packaging, and print materials, as well as independent works. I collaborate on music projects and educational formats, explaining complex ideas visually and producing expressive illustrations for texts and longreads. At the same time, I develop my own personal projects.\n\nMy work is based on attention and immersion. I dive deep into each task to create an illustration or complete product with its own voice, atmosphere, and story. I work with both traditional and digital techniques, selecting the form that best fits the project.",
     },
     footer: { email: 'Email', telegram: 'Telegram', instagram: 'Instagram' },
   },
@@ -133,7 +134,8 @@ export const translations = {
       intro: 'Мой опыт работы разнообразен: стартапы, маркетинговое агентство, фриланс, аутсорс и опыт работы в компании. Благодаря этому опыту, я приобрела навык самостоятельности, работы с абстрактными задачами, проведения исследований и глубинных интервью, выстраивания взаимодействия с заказчиками и с коллегами.\n\nЯ назвала бы себя мультидисциплинарным дизайнером, так как работала с очень разными задачами, и не боюсь погружаться в новые незнакомые сферы. А благодаря опыту в стартапе и на фрилансе, я могу практически заменить собой небольшое дизайнерское бюро, ведя проекты с нуля и до физического воплощения и запуска. И я люблю эти процессы.',
       viewPortfolio: 'Портфолио',
       contact: 'Контакты',
-      greeting: 'Привет, я Екатерина Зуева, также работаю под именем Katya Evazu.\n\nЯ иллюстратор, а также работаю в 2D-анимации и графическом дизайне. Создаю как отдельные изображения, так и комплексные визуальные решения — от иллюстраций до полностью реализованных продуктов.',
+      greeting:
+        'Привет, я Екатерина Зуева (Katya Evazu).\n\nЯ иллюстратор, работаю в 2D-анимации и графическом дизайне. Создаю как отдельные изображения, так и комплексные визуальные решения — от отдельных иллюстраций до полностью реализованных продуктов.',
     },
     sectionTitles: {
       services: 'Скиллы',
@@ -245,7 +247,7 @@ export const translations = {
     },
     about: {
       tagline: 'Иллюстратор, 2D аниматор, графический дизайнер',
-      bio: 'Привет, я Екатерина Зуева, также работаю под именем Katya Evazu.\n\nЯ иллюстратор, а также работаю в 2D-анимации и графическом дизайне. Создаю как отдельные изображения, так и комплексные визуальные решения — от иллюстраций до полностью реализованных продуктов.\n\nЯ помогаю найти правильный визуальный язык для различных проектов: создаю иллюстрации для брендов, цифровых продуктов, упаковки и печатных материалов, а также независимые работы. Сотрудничаю в музыкальных проектах и образовательных форматах — объясняю сложные идеи визуально и создаю выразительные иллюстрации для текстов и лонгридов. Параллельно развиваю собственные авторские проекты.\n\nМоя работа основана на внимании и погружении. Я глубоко вникаю в каждую задачу, чтобы создать иллюстрацию или готовый продукт со своим голосом, атмосферой и историей. Работаю как в традиционных, так и в цифровых техниках, выбирая форму, которая лучше всего подходит проекту.',
+      bio: 'Привет, я Екатерина Зуева, меня также знают как Katya Evazu.\n\nЯ работаю в иллюстрации, 2D-анимации и графическом дизайне. Создаю как отдельные изображения, так и комплексные визуальные решения — от отдельных иллюстраций до полностью реализованных продуктов.\n\nПомогаю найти подходящий визуальный язык для разных проектов: иллюстрации для брендов, цифровых продуктов, упаковки и печатных материалов, а также независимые работы. Сотрудничаю в музыкальных проектах и образовательных форматах — наглядно объясняю сложные идеи и создаю выразительные иллюстрации для текстов и лонгридов. Параллельно развиваю собственные личные проекты.\n\nМоя работа строится на внимании и погружении. Я глубоко вникаю в каждую задачу, чтобы создать иллюстрацию или готовый продукт со своим голосом, атмосферой и историей. Работаю в традиционных и цифровых техниках, выбирая форму, которая лучше всего подходит проекту.',
     },
     footer: { email: 'Email', telegram: 'Telegram', instagram: 'Instagram' },
   },
@@ -257,7 +259,8 @@ export const translations = {
       intro: "Mon parcours professionnel est varié : startups, agences marketing, freelance, externalisation et poste en entreprise. Cette expérience m'a donné des compétences en autonomie, gestion de tâches abstraites, recherche et entretiens approfondis, et en construction d'une communication efficace avec les clients et les collègues.\n\nJe me considère comme une designer multidisciplinaire car j'ai abordé des missions très diverses et n'ai pas peur de plonger dans des domaines inconnus. Grâce à mon expérience en startup et en freelance, je peux efficacement endosser le rôle d'un petit studio de design, en menant des projets du concept jusqu'à la réalisation et au lancement. Et j'aime vraiment ces processus.",
       viewPortfolio: 'Voir le portfolio',
       contact: 'Contact',
-      greeting: "Bonjour, je suis Ekaterina Zueva, également connue sous le nom de Katya Evazu.\n\nJe suis illustratrice et je travaille aussi en animation 2D et design graphique. Je crée des images isolées comme des solutions visuelles complètes — de l'illustration individuelle au produit finalisé.",
+      greeting:
+        "Bonjour, je suis Ekaterina Zueva (Katya Evazu).\n\nJe suis illustratrice et je travaille en animation 2D et design graphique. Je crée des images isolées comme des solutions visuelles complètes, de l'illustration individuelle au produit entièrement réalisé.",
     },
     sectionTitles: {
       services: 'Services',
@@ -369,7 +372,7 @@ export const translations = {
     },
     about: {
       tagline: 'Illustratrice, Animatrice 2D, Graphiste',
-      bio: "Bonjour, je suis Ekaterina Zueva, également connue sous le nom de Katya Evazu.\n\nJe suis illustratrice et je travaille aussi en animation 2D et design graphique. Je crée des images isolées comme des solutions visuelles complètes — de l'illustration individuelle au produit finalisé.\n\nJ'aide à trouver le bon langage visuel pour une variété de projets : illustrations pour des marques, produits numériques, packaging et supports imprimés, ainsi que des travaux indépendants. Je collabore sur des projets musicaux et éducatifs — expliquant des idées complexes visuellement et produisant des illustrations expressives pour des textes et des longreads. En parallèle, je développe mes propres projets personnels.\n\nMon travail repose sur l'attention et l'immersion. Je m'immerge profondément dans chaque tâche pour créer une illustration ou un produit complet avec sa propre voix, son atmosphère et son histoire. Je travaille avec des techniques traditionnelles et numériques, en choisissant la forme qui convient le mieux au projet.",
+      bio: "Bonjour, je suis Ekaterina Zueva ; on me connaît aussi sous le nom de Katya Evazu.\n\nJe travaille en illustration, animation 2D et design graphique. Je crée des images isolées comme des solutions visuelles complètes, de l'illustration individuelle au produit entièrement réalisé.\n\nJ'aide à trouver le bon langage visuel pour une grande variété de projets : illustrations pour des marques, produits numériques, packaging et supports imprimés, ainsi que des travaux indépendants. Je collabore sur des projets musicaux et éducatifs, j'explique des idées complexes visuellement et je produis des illustrations expressives pour des textes et des longreads. En parallèle, je développe mes propres projets personnels.\n\nMon travail repose sur l'attention et l'immersion. Je m'immerge profondément dans chaque tâche pour créer une illustration ou un produit complet avec sa propre voix, son atmosphère et son histoire. Je travaille avec des techniques traditionnelles et numériques, en choisissant la forme qui convient le mieux au projet.",
     },
     footer: { email: 'Email', telegram: 'Telegram', instagram: 'Instagram' },
   },

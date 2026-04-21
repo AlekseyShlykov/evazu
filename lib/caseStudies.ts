@@ -1518,32 +1518,40 @@ const lineFrameByFrameAnimationEn: CaseStudy = {
   title: 'Line animation (frame-by-frame)',
   sections: [
     {
-      type: 'vimeo',
-      vimeoId: '1184036381',
-      iframeTitle: 'Eating yourself alive',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
+      type: 'vimeoRow',
+      vimeoRowWrapperClassName: 'mx-auto max-w-3xl',
+      vimeoItems: [
+        {
+          vimeoId: '1184036381',
+          iframeTitle: 'Eating yourself alive',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+        {
+          vimeoId: '946257606',
+          iframeTitle: 'Peace, Sand, Wawes',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+      ],
     },
     {
-      type: 'vimeo',
-      vimeoId: '946257606',
-      iframeTitle: 'Peace, Sand, Wawes',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '819939401',
-      iframeTitle: 'Work',
-      vimeoPaddingTop: '93.75%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '1184870227',
-      iframeTitle: 'Metamorphoses',
-      vimeoPaddingTop: '100%',
-      vimeoAutoplay: true,
+      type: 'vimeoRow',
+      vimeoRowWrapperClassName: 'mx-auto max-w-3xl',
+      vimeoItems: [
+        {
+          vimeoId: '819939401',
+          iframeTitle: 'Work',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+        {
+          vimeoId: '1184870227',
+          iframeTitle: 'Metamorphoses',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+      ],
     },
   ],
 };
@@ -1557,39 +1565,52 @@ const mixedMediaAnimationEn: CaseStudy = {
   title: 'Mixed-media animation',
   sections: [
     {
-      type: 'vimeo',
-      vimeoId: '469486289',
-      iframeTitle: "Thro' the rye",
-      vimeoPaddingTop: '68.53%',
-      vimeoAutoplay: true,
+      type: 'vimeoRow',
+      vimeoRowWrapperClassName: 'mx-auto max-w-3xl',
+      vimeoItems: [
+        {
+          vimeoId: '469486289',
+          iframeTitle: "Thro' the rye",
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+        {
+          vimeoId: '456562473',
+          iframeTitle: 'Are the trees drinking tea?',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+      ],
     },
     {
-      type: 'vimeo',
-      vimeoId: '456562473',
-      iframeTitle: 'Are the trees drinking tea?',
-      vimeoPaddingTop: '137.01%',
-      vimeoAutoplay: true,
+      type: 'vimeoRow',
+      vimeoRowWrapperClassName: 'mx-auto max-w-3xl',
+      vimeoItems: [
+        {
+          vimeoId: '469497693',
+          iframeTitle: 'Salmon',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+        {
+          vimeoId: '456544241',
+          iframeTitle: 'Mountain breath',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+      ],
     },
     {
-      type: 'vimeo',
-      vimeoId: '469497693',
-      iframeTitle: 'Salmon',
-      vimeoPaddingTop: '119.63%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '456544241',
-      iframeTitle: 'Mountain breath',
-      vimeoPaddingTop: '141.45%',
-      vimeoAutoplay: true,
-    },
-    {
-      type: 'vimeo',
-      vimeoId: '841664288',
-      iframeTitle: 'The opposite window',
-      vimeoPaddingTop: '56.07%',
-      vimeoAutoplay: true,
+      type: 'vimeoRow',
+      vimeoRowWrapperClassName: 'mx-auto max-w-3xl',
+      vimeoItems: [
+        {
+          vimeoId: '841664288',
+          iframeTitle: 'The opposite window',
+          vimeoPaddingTop: '100%',
+          vimeoAutoplay: true,
+        },
+      ],
     },
   ],
 };
