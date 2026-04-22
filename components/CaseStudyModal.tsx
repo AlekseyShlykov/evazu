@@ -83,10 +83,12 @@ function VimeoAspectFrame({
   children: React.ReactNode;
 }) {
   if (paddingTop.trim() === '100%') {
-    return <div className="relative w-full aspect-square overflow-hidden rounded-lg">{children}</div>;
+    return (
+      <div className="relative w-full min-w-0 aspect-square overflow-hidden rounded-lg">{children}</div>
+    );
   }
   return (
-    <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop }}>
+    <div className="relative w-full min-w-0 overflow-hidden rounded-lg" style={{ paddingTop }}>
       {children}
     </div>
   );
@@ -546,11 +548,12 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
     }
     if (section.type === 'vimeoRow' && section.vimeoItems && section.vimeoItems.length > 0) {
       const items = section.vimeoItems;
-      const singleInRow = items.length === 1;
-      const rowClass = singleInRow
-        ? 'flex w-full justify-center'
-        : 'grid w-full grid-cols-1 gap-4 sm:grid-cols-2';
-      const wrapperClass = [rowClass, section.vimeoRowWrapperClassName, 'w-full min-w-0'].filter(Boolean).join(' ');
+      /* Same layout model for 1 or 2 embeds: one column until md so phones in landscape (640–767px) stay full width like portrait. */
+      const rowClass =
+        items.length === 1
+          ? 'grid w-full grid-cols-1 gap-4'
+          : 'grid w-full grid-cols-1 gap-4 md:grid-cols-2';
+      const wrapperClass = [rowClass, section.vimeoRowWrapperClassName, 'w-full min-w-0 items-stretch'].filter(Boolean).join(' ');
       sectionNodes.push(
         <div key={`case-vimeo-row-${si}`} className={wrapperClass}>
           {items.map((item, vi) => {
@@ -562,10 +565,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
               loop: item.vimeoLoop,
             });
             const paddingTop = item.vimeoPaddingTop ?? '56.25%';
-            /* One video in a row: on small screens match full-width grid rows; half-width only from sm up (pairs column width). */
-            const cellClass = singleInRow
-              ? 'min-w-0 w-full max-w-full sm:max-w-[min(100%,calc((100%-1rem)/2))]'
-              : 'min-w-0 w-full';
+            const cellClass = 'min-w-0 w-full max-w-full';
             return (
               <div key={`${vid}-${vi}`} className={cellClass}>
                 <VimeoAspectFrame paddingTop={paddingTop}>
@@ -595,15 +595,17 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
       });
       const paddingTop = section.vimeoPaddingTop ?? '56.25%';
       sectionNodes.push(
-        <VimeoAspectFrame key={`case-vimeo-${si}`} paddingTop={paddingTop}>
-          <iframe
-            src={src}
-            title={iframeTitle}
-            className="absolute inset-0 h-full w-full border-0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-          />
-        </VimeoAspectFrame>,
+        <div key={`case-vimeo-${si}`} className="min-w-0 w-full max-w-full">
+          <VimeoAspectFrame paddingTop={paddingTop}>
+            <iframe
+              src={src}
+              title={iframeTitle}
+              className="absolute inset-0 h-full w-full border-0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </VimeoAspectFrame>
+        </div>,
       );
       si++;
       continue;
