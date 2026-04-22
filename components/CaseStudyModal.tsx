@@ -74,7 +74,21 @@ function buildVimeoEmbedSrc(
   return `https://player.vimeo.com/video/${vid}?${params.toString()}`;
 }
 
-/** 1:1 embeds often use `paddingTop: '100%'`. `aspect-square` avoids mobile WebKit sizing bugs vs. padding %. */
+/** `mx-auto max-w-3xl` on small screens can make the grid shrink to iframe intrinsic width — cap only from `md` up. */
+function normalizeVimeoRowWrapperClassName(className?: string): string {
+  if (!className?.trim()) return '';
+  return className
+    .trim()
+    .split(/\s+/)
+    .map((token) => {
+      if (token === 'mx-auto') return 'md:mx-auto';
+      if (token === 'max-w-3xl') return 'md:max-w-3xl';
+      return token;
+    })
+    .join(' ');
+}
+
+/** Square embeds: padding-top % gives stable height from width (works with border-box + overflow hidden). */
 function VimeoAspectFrame({
   paddingTop,
   children,
@@ -84,15 +98,20 @@ function VimeoAspectFrame({
 }) {
   if (paddingTop.trim() === '100%') {
     return (
-      <div className="relative w-full min-w-0 aspect-square overflow-hidden rounded-lg">{children}</div>
+      <div className="relative isolate w-full min-w-0 overflow-hidden rounded-lg pt-[100%] [contain:layout]">
+        {children}
+      </div>
     );
   }
   return (
-    <div className="relative w-full min-w-0 overflow-hidden rounded-lg" style={{ paddingTop }}>
+    <div className="relative isolate w-full min-w-0 overflow-hidden rounded-lg" style={{ paddingTop }}>
       {children}
     </div>
   );
 }
+
+const vimeoIframeClassName =
+  'absolute inset-0 box-border m-0 h-full w-full min-h-0 min-w-0 max-w-none border-0';
 
 interface CaseStudyModalProps {
   study: CaseStudy;
@@ -553,7 +572,13 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
         items.length === 1
           ? 'grid w-full grid-cols-1 gap-4'
           : 'grid w-full grid-cols-1 gap-4 md:grid-cols-2';
-      const wrapperClass = [rowClass, section.vimeoRowWrapperClassName, 'w-full min-w-0 items-stretch'].filter(Boolean).join(' ');
+      const wrapperClass = [
+        rowClass,
+        normalizeVimeoRowWrapperClassName(section.vimeoRowWrapperClassName),
+        'w-full min-w-0 items-stretch',
+      ]
+        .filter(Boolean)
+        .join(' ');
       sectionNodes.push(
         <div key={`case-vimeo-row-${si}`} className={wrapperClass}>
           {items.map((item, vi) => {
@@ -572,7 +597,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
                   <iframe
                     src={src}
                     title={iframeTitle}
-                    className="absolute inset-0 h-full w-full border-0"
+                    className={vimeoIframeClassName}
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                   />
@@ -600,7 +625,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
             <iframe
               src={src}
               title={iframeTitle}
-              className="absolute inset-0 h-full w-full border-0"
+              className={vimeoIframeClassName}
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
             />
