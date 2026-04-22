@@ -64,7 +64,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full max-w-[100vw] border-b border-neutral-200 bg-neutral-50/95 backdrop-blur supports-[backdrop-filter]:bg-neutral-50/80">
       <nav
         className="mx-auto flex max-w-content min-w-0 items-center justify-between gap-2 md:gap-4 px-4 py-4 md:px-6"
-        aria-label="Main navigation"
+        aria-label={t.a11y.mainNav}
       >
         <Link
           href="/"
@@ -80,7 +80,7 @@ export function Header() {
           onClick={() => setMobileOpen((v) => !v)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav-panel"
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileOpen ? t.a11y.closeMenu : t.a11y.openMenu}
         >
           <MenuIcon open={mobileOpen} />
         </button>
@@ -119,7 +119,7 @@ export function Header() {
                 className="pointer-events-auto mobile-nav-panel-animate w-[90vw] max-h-[min(90dvh,90vh)] overflow-y-auto overflow-x-hidden rounded-b-2xl bg-white pt-[env(safe-area-inset-top,0px)] shadow-2xl"
                 role="dialog"
                 aria-modal="true"
-                aria-label="Menu"
+                aria-label={t.a11y.mobileMenu}
                 onClick={(e) => e.stopPropagation()}
               >
               <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-neutral-200 bg-white/95 px-4 py-4 backdrop-blur supports-[backdrop-filter]:bg-white/90">
@@ -128,7 +128,7 @@ export function Header() {
                   type="button"
                   onClick={closeMobile}
                   className="shrink-0 rounded-full p-2 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-colors"
-                  aria-label="Close menu"
+                  aria-label={t.a11y.closeMenu}
                 >
                   <MenuIcon open />
                 </button>

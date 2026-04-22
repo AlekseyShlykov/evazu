@@ -114,9 +114,25 @@ export const translations = {
     },
     about: {
       tagline: 'Illustrator, 2D Animator, Graphic Designer',
-      bio: "Hi, I'm Ekaterina Zueva, also go by Katya Evazu.\n\nI work in illustration, 2D animation and graphic design. I create both standalone images and complete visual solutions, from individual illustrations to fully realized products.\n\nI help find the right visual language for a variety of projects: creating illustrations for brands, digital products, packaging, and print materials, as well as independent works. I collaborate on music projects and educational formats, explaining complex ideas visually and producing expressive illustrations for texts and longreads. At the same time, I develop my own personal projects.\n\nMy work is based on attention and immersion. I dive deep into each task to create an illustration or complete product with its own voice, atmosphere, and story. I work with both traditional and digital techniques, selecting the form that best fits the project.",
+      bio: "Hi, I'm Ekaterina Zueva, also go by Katya Evazu. Currently based in France.\n\nI work in illustration, 2D animation and graphic design. I create both standalone images and complete visual solutions, from individual illustrations to fully realized products.\n\nI help find the right visual language for a variety of projects: creating illustrations for brands, digital products, packaging, and print materials, as well as independent works. I collaborate on music projects and educational formats, explaining complex ideas visually and producing expressive illustrations for texts and longreads. At the same time, I develop my own personal projects.\n\nMy work is based on attention and immersion. I dive deep into each task to create an illustration or complete product with its own voice, atmosphere, and story. I work with both traditional and digital techniques, selecting the form that best fits the project.",
     },
     footer: { email: 'Email', telegram: 'Telegram', instagram: 'Instagram' },
+    a11y: {
+      skipToContent: 'Skip to content',
+      mainNav: 'Main navigation',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      mobileMenu: 'Menu',
+      close: 'Close',
+      closeImage: 'Close image',
+      previousImage: 'Previous image',
+      nextImage: 'Next image',
+      imagePreview: 'Image preview',
+      vimeoVideo: 'Vimeo video',
+      switchToEnglish: 'Switch to English',
+      switchToFrench: 'Switch to French',
+    },
+    notFound: { backHome: 'Back to home' },
   },
   fr: {
     nav: { illustration: 'Illustration', animation: 'Animation 2D', design: 'Design', services: 'Services', about: 'À propos' },
@@ -173,8 +189,8 @@ export const translations = {
       'Illustrations et design pour Foxy Roasters — coffrets, cartes postales et stickers',
       'Erevan',
       'Illustrations pour un projet dédié au thé chinois',
-      'Belgrade Atmosphere, série d\'illustrations',
-      'Music Visuals Design',
+      'Atmosphère de Belgrade, série d\'illustrations',
+      'Visuels pour la musique',
       'Infographies illustrées pour le projet nekorobka',
     ],
     animationTitles: {
@@ -189,16 +205,17 @@ export const translations = {
       allstations: 'Animation pour un clip du groupe ALLSTATIONS',
       moreAnimation: 'Plus de projets d\'animation sur une page dédiée : Animation',
     },
-    learnWithMochiCopyright: 'All rights and characters reserved to Learn with Mochi company. Unauthorized copying, downloading, or use prohibited.',
+    learnWithMochiCopyright:
+      'Tous droits et personnages réservés à la société Learn with Mochi. Toute copie, téléchargement ou utilisation non autorisés sont interdits.',
     brandingProjectTitles: [
       'Identité visuelle pour coffrets de thé chinois',
       'Kits loisirs Nekorobka',
       'Illustrations et design pour Foxy Roasters — coffrets, cartes postales et stickers',
-      'Covers musicaux',
+      'Pochettes et visuels musicaux',
       'Animation pour un test de loisirs',
     ],
     categoryIllustration: 'Illustration',
-    categoryBrandingDesign: 'Branding & Design',
+    categoryBrandingDesign: 'Identité de marque et design',
     categoryAnimation: 'Animation',
     howIWork: [
       { title: 'Design orienté objectif', text: 'Chaque décision visuelle part de la compréhension du but du projet. Je me concentre sur le message à transmettre et choisis des solutions visuelles qui servent cet objectif plutôt que la décoration pour elle-même.' },
@@ -215,7 +232,7 @@ export const translations = {
       formEmailLabel: 'Votre e-mail',
       formEmailPlaceholder: 'vous@exemple.com',
       formMessageLabel: 'Message',
-      formMessagePlaceholder: 'Tell me about your project',
+      formMessagePlaceholder: 'Parlez-moi de votre projet',
       formSend: 'Envoyer',
       formSending: 'Envoi…',
       formThanks: 'Merci pour votre message. Je vous répondrai dès que possible.',
@@ -231,10 +248,29 @@ export const translations = {
     },
     about: {
       tagline: 'Illustratrice, Animatrice 2D, Graphiste',
-      bio: "Bonjour, je suis Ekaterina Zueva ; on me connaît aussi sous le nom de Katya Evazu.\n\nJe travaille en illustration, animation 2D et design graphique. Je crée des images isolées comme des solutions visuelles complètes, de l'illustration individuelle au produit entièrement réalisé.\n\nJ'aide à trouver le bon langage visuel pour une grande variété de projets : illustrations pour des marques, produits numériques, packaging et supports imprimés, ainsi que des travaux indépendants. Je collabore sur des projets musicaux et éducatifs, j'explique des idées complexes visuellement et je produis des illustrations expressives pour des textes et des longreads. En parallèle, je développe mes propres projets personnels.\n\nMon travail repose sur l'attention et l'immersion. Je m'immerge profondément dans chaque tâche pour créer une illustration ou un produit complet avec sa propre voix, son atmosphère et son histoire. Je travaille avec des techniques traditionnelles et numériques, en choisissant la forme qui convient le mieux au projet.",
+      bio: "Bonjour, je suis Ekaterina Zueva ; on me connaît aussi sous le nom de Katya Evazu. Actuellement basée en France.\n\nJe travaille en illustration, animation 2D et design graphique. Je crée des images isolées comme des solutions visuelles complètes, de l'illustration individuelle au produit entièrement réalisé.\n\nJ'aide à trouver le bon langage visuel pour une grande variété de projets : illustrations pour des marques, produits numériques, packaging et supports imprimés, ainsi que des travaux indépendants. Je collabore sur des projets musicaux et éducatifs, j'explique des idées complexes visuellement et je produis des illustrations expressives pour des textes et des longreads. En parallèle, je développe mes propres projets personnels.\n\nMon travail repose sur l'attention et l'immersion. Je m'immerge profondément dans chaque tâche pour créer une illustration ou un produit complet avec sa propre voix, son atmosphère et son histoire. Je travaille avec des techniques traditionnelles et numériques, en choisissant la forme qui convient le mieux au projet.",
     },
     footer: { email: 'Email', telegram: 'Telegram', instagram: 'Instagram' },
+    a11y: {
+      skipToContent: 'Aller au contenu',
+      mainNav: 'Navigation principale',
+      openMenu: 'Ouvrir le menu',
+      closeMenu: 'Fermer le menu',
+      mobileMenu: 'Menu',
+      close: 'Fermer',
+      closeImage: "Fermer l'image",
+      previousImage: 'Image précédente',
+      nextImage: 'Image suivante',
+      imagePreview: "Aperçu de l'image",
+      vimeoVideo: 'Vidéo Vimeo',
+      switchToEnglish: 'Passer en anglais',
+      switchToFrench: 'Passer en français',
+    },
+    notFound: { backHome: "Retour à l'accueil" },
   },
 } as const;
 
 export type TranslationSet = typeof translations.en;
+
+/** Localized accessibility strings (same keys as `TranslationSet['a11y']`). */
+export type A11yStrings = (typeof translations)[Locale]['a11y'];

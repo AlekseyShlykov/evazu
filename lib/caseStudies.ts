@@ -1,6 +1,24 @@
 import type { CaseStudy } from '@/components/CaseStudyModal';
 import type { CaseStudyId } from './caseStudyIds';
 import type { Locale } from './translations';
+import {
+  animationOverVideoFr,
+  belgradeAtmosphereFr,
+  belgradeStoriesFr,
+  brutalistBelgradeFr,
+  foxyRoastersFr,
+  hobbyMatchingAnimationFr,
+  homePersonalProjectFr,
+  learnWithMochiAnimationFr,
+  lineFrameByFrameAnimationFr,
+  logoSocialMediaAnimationFr,
+  mixedMediaAnimationFr,
+  musicVisualsFr,
+  nekorobkaHobbyKitsFr,
+  nekorobkaInfographicsFr,
+  teaBrandingFr,
+  yerevanFr,
+} from './caseStudiesFr';
 
 const teaBrandingEn: CaseStudy = {
   title: 'Visual identity for Chinese tea sets',
@@ -961,66 +979,66 @@ const animationOverVideoEn: CaseStudy = {
 export const caseStudies = {
   'tea-branding': {
     en: teaBrandingEn,
-    fr: teaBrandingEn,
+    fr: teaBrandingFr,
   },
   'belgrade-stories': {
     en: belgradeCaseEn,
-    fr: belgradeCaseEn,
+    fr: belgradeStoriesFr,
   },
   'belgrade-atmosphere': {
     en: belgradeAtmosphereEn,
-    fr: belgradeAtmosphereEn,
+    fr: belgradeAtmosphereFr,
   },
   'brutalist-belgrade': {
     en: brutalistBelgradeEn,
-    fr: brutalistBelgradeEn,
+    fr: brutalistBelgradeFr,
   },
   'yerevan': {
     en: yerevanEn,
-    fr: yerevanEn,
+    fr: yerevanFr,
   },
   'foxy-roasters': {
     en: foxyRoastersEn,
-    fr: foxyRoastersEn,
+    fr: foxyRoastersFr,
   },
   'music-visuals': {
     en: musicVisualsEn,
-    fr: musicVisualsEn,
+    fr: musicVisualsFr,
   },
   'nekorobka-hobby-kits': {
     en: nekorobkaHobbyKitsEn,
-    fr: nekorobkaHobbyKitsEn,
+    fr: nekorobkaHobbyKitsFr,
   },
   'nekorobka-infographics': {
     en: nekorobkaInfographicsEn,
-    fr: nekorobkaInfographicsEn,
+    fr: nekorobkaInfographicsFr,
   },
   'hobby-matching-animation': {
     en: hobbyMatchingAnimationEn,
-    fr: hobbyMatchingAnimationEn,
+    fr: hobbyMatchingAnimationFr,
   },
   'home-personal-project': {
     en: homePersonalProjectEn,
-    fr: homePersonalProjectEn,
+    fr: homePersonalProjectFr,
   },
   'logo-social-media-animation': {
     en: logoSocialMediaAnimationEn,
-    fr: logoSocialMediaAnimationEn,
+    fr: logoSocialMediaAnimationFr,
   },
   'learn-with-mochi-animation': {
     en: learnWithMochiAnimationEn,
-    fr: learnWithMochiAnimationEn,
+    fr: learnWithMochiAnimationFr,
   },
   'line-animation-frame-by-frame': {
     en: lineFrameByFrameAnimationEn,
-    fr: lineFrameByFrameAnimationEn,
+    fr: lineFrameByFrameAnimationFr,
   },
   'mixed-media-animation': {
     en: mixedMediaAnimationEn,
-    fr: mixedMediaAnimationEn,
+    fr: mixedMediaAnimationFr,
   },
   'animation-over-video': {
     en: animationOverVideoEn,
-    fr: animationOverVideoEn,
+    fr: animationOverVideoFr,
   },
 } satisfies Record<CaseStudyId, Record<Locale, CaseStudy>>;

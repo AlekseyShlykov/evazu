@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { CaseStudyId } from '@/lib/caseStudyIds';
 import type { Locale } from '@/lib/translations';
+import { translations } from '@/lib/translations';
 import type { CaseStudy } from './CaseStudyModal';
 
 const CaseStudyModal = dynamic(
@@ -40,5 +41,5 @@ export function CaseStudyModalGate({ studyId, locale, onClose }: CaseStudyModalG
 
   if (!studyId || !study) return null;
 
-  return <CaseStudyModal study={study} onClose={onClose} />;
+  return <CaseStudyModal study={study} onClose={onClose} a11y={translations[locale].a11y} />;
 }

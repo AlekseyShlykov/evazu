@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical },
   openGraph: {
     url: canonical,
+    siteName: translations.en.hero.name,
     title: segment,
     description,
   },

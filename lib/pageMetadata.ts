@@ -1,10 +1,13 @@
 import { translations } from '@/lib/translations';
 
-/**
- * Subtitle for OG/Twitter title (site name is `applicationName` / `og:site_name`).
- * Intentionally no `og:description` on the home page so Telegram etc. show only name + this line.
- */
+/** First line for OG/Twitter title (same as visible site name). */
+export const shareOgTitle = translations.en.hero.name;
+
+/** Second line for OG/Twitter description and browser meta description. */
 export const sharePreviewTitle = 'Illustration, 2D animation, graphic design';
+
+/** `<meta name="description">` — both lines for search snippets (no duplicate with og:title + og:description pair). */
+export const shareMetaDescription = `${shareOgTitle}\n${sharePreviewTitle}`;
 
 /** Default `<title>` for the home page (name once). */
 export const defaultDocumentTitle = 'Ekaterina Zueva — Illustration, 2D animation, graphic design';

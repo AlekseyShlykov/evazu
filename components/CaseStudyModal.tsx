@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useCallback, useState } from 'react';
+import type { A11yStrings } from '@/lib/translations';
 
 export interface CaseStudySection {
   type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow' | 'nativeVideo';
@@ -73,9 +74,28 @@ function buildVimeoEmbedSrc(
   return `https://player.vimeo.com/video/${vid}?${params.toString()}`;
 }
 
+/** 1:1 embeds often use `paddingTop: '100%'`. `aspect-square` avoids mobile WebKit sizing bugs vs. padding %. */
+function VimeoAspectFrame({
+  paddingTop,
+  children,
+}: {
+  paddingTop: string;
+  children: React.ReactNode;
+}) {
+  if (paddingTop.trim() === '100%') {
+    return <div className="relative w-full aspect-square overflow-hidden rounded-lg">{children}</div>;
+  }
+  return (
+    <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop }}>
+      {children}
+    </div>
+  );
+}
+
 interface CaseStudyModalProps {
   study: CaseStudy;
   onClose: () => void;
+  a11y: A11yStrings;
 }
 
 /** All images in a case study in on-screen order (for lightbox navigation). */
@@ -278,11 +298,13 @@ function CaseStudyImageGalleryLightbox({
   index,
   onClose,
   onIndexChange,
+  a11y,
 }: {
   items: { src: string; alt: string }[];
   index: number;
   onClose: () => void;
   onIndexChange: (next: number) => void;
+  a11y: A11yStrings;
 }) {
   const n = items.length;
   const safeIndex = n === 0 ? 0 : Math.min(Math.max(0, index), n - 1);
@@ -329,13 +351,13 @@ function CaseStudyImageGalleryLightbox({
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label={current.alt || 'Image preview'}
+      aria-label={current.alt || a11y.imagePreview}
     >
       <button
         type="button"
         onClick={onClose}
         className="absolute top-4 right-4 z-10 rounded-full bg-black/50 p-2 text-white hover:bg-black/70 transition-colors"
-        aria-label="Close image"
+        aria-label={a11y.closeImage}
       >
         <svg width="24" height="24" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
           <path d="M5 5l10 10M15 5L5 15" />
@@ -351,7 +373,7 @@ function CaseStudyImageGalleryLightbox({
               goPrev();
             }}
             className="absolute left-2 md:left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-3 text-white hover:bg-black/70 transition-colors md:p-3.5"
-            aria-label="Previous image"
+            aria-label={a11y.previousImage}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M15 6l-6 6 6 6" />
@@ -364,7 +386,7 @@ function CaseStudyImageGalleryLightbox({
               goNext();
             }}
             className="absolute right-2 md:right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-3 text-white hover:bg-black/70 transition-colors md:p-3.5"
-            aria-label="Next image"
+            aria-label={a11y.nextImage}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M9 6l6 6-6 6" />
@@ -390,7 +412,7 @@ function CaseStudyImageGalleryLightbox({
   );
 }
 
-export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
+export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -528,24 +550,25 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
       const rowClass = singleInRow
         ? 'flex w-full justify-center'
         : 'grid w-full grid-cols-1 gap-4 sm:grid-cols-2';
-      const wrapperClass = [rowClass, section.vimeoRowWrapperClassName].filter(Boolean).join(' ');
+      const wrapperClass = [rowClass, section.vimeoRowWrapperClassName, 'w-full min-w-0'].filter(Boolean).join(' ');
       sectionNodes.push(
         <div key={`case-vimeo-row-${si}`} className={wrapperClass}>
           {items.map((item, vi) => {
             const vid = item.vimeoId;
-            const iframeTitle = item.iframeTitle || 'Vimeo video';
+            const iframeTitle = item.iframeTitle || a11y.vimeoVideo;
             const src = buildVimeoEmbedSrc(vid, {
               autoplay: item.vimeoAutoplay === true,
               muted: item.vimeoMuted,
               loop: item.vimeoLoop,
             });
             const paddingTop = item.vimeoPaddingTop ?? '56.25%';
+            /* One video in a row: on small screens match full-width grid rows; half-width only from sm up (pairs column width). */
             const cellClass = singleInRow
-              ? 'min-w-0 w-full max-w-[min(100%,calc((100%-1rem)/2))]'
-              : 'min-w-0';
+              ? 'min-w-0 w-full max-w-full sm:max-w-[min(100%,calc((100%-1rem)/2))]'
+              : 'min-w-0 w-full';
             return (
               <div key={`${vid}-${vi}`} className={cellClass}>
-                <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop }}>
+                <VimeoAspectFrame paddingTop={paddingTop}>
                   <iframe
                     src={src}
                     title={iframeTitle}
@@ -553,7 +576,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                   />
-                </div>
+                </VimeoAspectFrame>
               </div>
             );
           })}
@@ -564,7 +587,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
     }
     if (section.type === 'vimeo' && section.vimeoId) {
       const vid = section.vimeoId;
-      const iframeTitle = section.iframeTitle || 'Vimeo video';
+      const iframeTitle = section.iframeTitle || a11y.vimeoVideo;
       const src = buildVimeoEmbedSrc(vid, {
         autoplay: section.vimeoAutoplay === true,
         muted: section.vimeoMuted,
@@ -572,7 +595,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
       });
       const paddingTop = section.vimeoPaddingTop ?? '56.25%';
       sectionNodes.push(
-        <div key={`case-vimeo-${si}`} className="relative w-full overflow-hidden rounded-lg" style={{ paddingTop }}>
+        <VimeoAspectFrame key={`case-vimeo-${si}`} paddingTop={paddingTop}>
           <iframe
             src={src}
             title={iframeTitle}
@@ -580,7 +603,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
           />
-        </div>,
+        </VimeoAspectFrame>,
       );
       si++;
       continue;
@@ -656,6 +679,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
           index={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onIndexChange={setLightboxIndex}
+          a11y={a11y}
         />
       )}
 
@@ -671,7 +695,7 @@ export function CaseStudyModal({ study, onClose }: CaseStudyModalProps) {
             type="button"
             onClick={onClose}
             className="shrink-0 rounded-full p-2 text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
-            aria-label="Close"
+            aria-label={a11y.close}
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M5 5l10 10M15 5L5 15" />
