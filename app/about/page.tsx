@@ -34,7 +34,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <p className="text-sm font-medium text-neutral-600 tracking-wide mb-4 max-w-2xl">
+              <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">
                 {t.about.tagline}
               </p>
               <div className="text-neutral-600 text-lg max-w-2xl whitespace-pre-line">
