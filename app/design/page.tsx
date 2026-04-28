@@ -1,6 +1,5 @@
 'use client';
 
-import { Suspense } from 'react';
 import { SectionTitle, ProjectCard } from '@/components';
 import { CaseStudyModalGate } from '@/components/CaseStudyModalGate';
 import { brandingProjects } from '@/lib/data';
@@ -16,7 +15,7 @@ const designCaseStudyByIndex: Record<number, string> = {
   4: 'hobby-matching-animation',
 };
 
-function DesignPageContent() {
+export default function DesignPage() {
   const { locale } = useLanguage();
   const t = translations[locale];
   const { openCaseStudy, openCaseStudyModal, closeCaseStudyModal } = useCaseStudyModalUrl();
@@ -41,6 +40,7 @@ function DesignPageContent() {
                   category={t.categoryBrandingDesign}
                   aspectRatio="wide"
                   image={project.image}
+                  priority={i === 0}
                   onClick={caseId ? () => openCaseStudyModal(caseId) : undefined}
                 />
               );
@@ -49,13 +49,5 @@ function DesignPageContent() {
         </div>
       </section>
     </div>
-  );
-}
-
-export default function DesignPage() {
-  return (
-    <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
-      <DesignPageContent />
-    </Suspense>
   );
 }

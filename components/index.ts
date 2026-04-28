@@ -1,5 +1,4 @@
 export { Header } from './Header';
-export { Hero } from './Hero';
 export { Footer } from './Footer';
 export { LanguageSwitcher } from './LanguageSwitcher';
 export { SectionTitle } from './SectionTitle';
@@ -9,10 +8,7 @@ export { ProjectHoverCard } from './ProjectHoverCard';
 export type { ProjectHoverCardProps } from './ProjectHoverCard';
 export { ContactCard } from './ContactCard';
 export { NewsletterSubscribe } from './NewsletterSubscribe';
-export { PlaceholderImage } from './PlaceholderImage';
 export { AnimationVideoCard } from './AnimationVideoCard';
-export { DriveVideoCard } from './DriveVideoCard';
-export { EmbedDriveCard } from './EmbedDriveCard';
 export { CaseStudyModal } from './CaseStudyModal';
 export type { CaseStudy, CaseStudySection } from './CaseStudyModal';
 export { CaseStudyModalGate } from './CaseStudyModalGate';

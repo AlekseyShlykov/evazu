@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { memo, type ReactNode } from 'react';
+import { encodePublicPath, webpSrcFor } from '@/lib/imageSources';
 
 type AspectRatio = 'landscape' | 'square' | 'portrait' | 'video' | 'wide';
 
@@ -13,8 +13,6 @@ const aspectClassMap: Record<AspectRatio, string> = {
   square: 'aspect-square',
   video: 'aspect-video',
 };
-
-const cardImageSizes = '(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 40vw';
 
 export interface ProjectHoverCardProps {
   title: string;
@@ -28,6 +26,8 @@ export interface ProjectHoverCardProps {
   children?: ReactNode;
   /** Small text below title in hover overlay (e.g. copyright) */
   hoverFooter?: ReactNode;
+  /** When true (the first card in a grid), eagerly load to improve LCP. */
+  priority?: boolean;
 }
 
 function ProjectHoverCardInner({
@@ -40,38 +40,43 @@ function ProjectHoverCardInner({
   aspectRatio = 'wide',
   children,
   hoverFooter,
+  priority,
 }: ProjectHoverCardProps) {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const aspectClass = aspectClassMap[aspectRatio];
 
   const showImage = thumbnailUrl || image;
 
+  const localSrc = image ? `${basePath}${encodePublicPath('/images/' + image)}` : null;
+  const localWebp = localSrc ? webpSrcFor(localSrc) : null;
+
   const visual = children ?? (
     showImage ? (
       thumbnailUrl ? (
         <div className="absolute inset-0">
-          <Image
+          <img
             src={thumbnailUrl}
             alt={title}
-            fill
-            className="object-cover"
-            sizes={cardImageSizes}
-            loading="lazy"
-            unoptimized
+            className="absolute inset-0 h-full w-full object-cover"
+            loading={priority ? 'eager' : 'lazy'}
+            decoding={priority ? 'sync' : 'async'}
+            fetchPriority={priority ? 'high' : 'auto'}
             referrerPolicy="no-referrer"
           />
         </div>
       ) : (
         <div className="absolute inset-0">
-          <Image
-            src={`${basePath}/images/${encodeURIComponent(image!)}`}
-            alt={title}
-            fill
-            className="object-cover"
-            sizes={cardImageSizes}
-            loading="lazy"
-            unoptimized
-          />
+          <picture>
+            {localWebp && <source srcSet={localWebp} type="image/webp" />}
+            <img
+              src={localSrc!}
+              alt={title}
+              className="absolute inset-0 h-full w-full object-cover"
+              loading={priority ? 'eager' : 'lazy'}
+              decoding={priority ? 'sync' : 'async'}
+              fetchPriority={priority ? 'high' : 'auto'}
+            />
+          </picture>
         </div>
       )
     ) : (

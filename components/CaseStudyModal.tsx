@@ -3,6 +3,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useCallback, useState } from 'react';
 import type { A11yStrings } from '@/lib/translations';
+import { webpSrcFor } from '@/lib/imageSources';
 
 export interface CaseStudySection {
   type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow' | 'nativeVideo';
@@ -92,19 +93,28 @@ function normalizeVimeoRowWrapperClassName(className?: string): string {
 function VimeoAspectFrame({
   paddingTop,
   children,
+  innerRef,
 }: {
   paddingTop: string;
   children: React.ReactNode;
+  innerRef?: React.Ref<HTMLDivElement>;
 }) {
   if (paddingTop.trim() === '100%') {
     return (
-      <div className="relative isolate w-full min-w-0 overflow-hidden rounded-lg pt-[100%] [contain:layout]">
+      <div
+        ref={innerRef}
+        className="relative isolate w-full min-w-0 overflow-hidden rounded-lg pt-[100%] [contain:layout]"
+      >
         {children}
       </div>
     );
   }
   return (
-    <div className="relative isolate w-full min-w-0 overflow-hidden rounded-lg" style={{ paddingTop }}>
+    <div
+      ref={innerRef}
+      className="relative isolate w-full min-w-0 overflow-hidden rounded-lg"
+      style={{ paddingTop }}
+    >
       {children}
     </div>
   );
@@ -112,6 +122,128 @@ function VimeoAspectFrame({
 
 const vimeoIframeClassName =
   'absolute inset-0 box-border m-0 h-full w-full min-h-0 min-w-0 max-w-none border-0';
+
+/**
+ * Vimeo embed that only mounts the heavy iframe once it's near the viewport.
+ * The iframe network/parse cost (Vimeo player is several hundred KB of JS)
+ * is what made the case-study modal slow to open. Deferring it until needed
+ * keeps the modal snappy.
+ */
+function LazyVimeoEmbed({
+  src,
+  iframeTitle,
+  paddingTop,
+}: {
+  src: string;
+  iframeTitle: string;
+  paddingTop: string;
+}) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [shouldMount, setShouldMount] = useState(false);
+
+  useEffect(() => {
+    if (shouldMount) return;
+    const el = wrapperRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      setShouldMount(true);
+      return;
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setShouldMount(true);
+            obs.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: '300px 0px' },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [shouldMount]);
+
+  return (
+    <VimeoAspectFrame paddingTop={paddingTop} innerRef={wrapperRef}>
+      {shouldMount && (
+        <iframe
+          src={src}
+          title={iframeTitle}
+          className={vimeoIframeClassName}
+          loading="lazy"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
+      )}
+    </VimeoAspectFrame>
+  );
+}
+
+/**
+ * Native HTML5 video that defers downloading metadata/poster until it's near
+ * the viewport. The `LWM` clip is ~19 MB so even `preload="metadata"` would
+ * have triggered a costly initial range request when the modal opened.
+ */
+function LazyNativeVideo({
+  src,
+  autoplay,
+  loop,
+  muted,
+}: {
+  src: string;
+  autoplay: boolean;
+  loop: boolean;
+  muted: boolean;
+}) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [shouldMount, setShouldMount] = useState(false);
+
+  useEffect(() => {
+    if (shouldMount) return;
+    const el = wrapperRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      setShouldMount(true);
+      return;
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setShouldMount(true);
+            obs.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: '300px 0px' },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [shouldMount]);
+
+  return (
+    <div
+      ref={wrapperRef}
+      className="min-w-0 w-full overflow-hidden rounded-lg bg-neutral-100 aspect-video"
+    >
+      {shouldMount && (
+        <video
+          src={src}
+          controls
+          playsInline
+          className="h-full w-full max-w-full object-contain"
+          preload={autoplay ? 'auto' : 'metadata'}
+          autoPlay={autoplay}
+          loop={loop}
+          muted={muted}
+        />
+      )}
+    </div>
+  );
+}
 
 interface CaseStudyModalProps {
   study: CaseStudy;
@@ -169,6 +301,43 @@ function isSquareAspect(naturalWidth: number, naturalHeight: number): boolean {
   return Math.abs(r - 1) <= SQUARE_ASPECT_TOLERANCE;
 }
 
+/**
+ * `<img>` inside `<picture>` so WebP companions are used when present.
+ * Browsers that don't understand WebP fall through to the original src.
+ */
+function PictureImage({
+  src,
+  alt,
+  className,
+  imgRef,
+  onLoad,
+  onClick,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  imgRef?: React.Ref<HTMLImageElement>;
+  onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
+  onClick?: () => void;
+}) {
+  const webp = webpSrcFor(src);
+  return (
+    <picture>
+      {webp && <source srcSet={webp} type="image/webp" />}
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        className={className}
+        loading="lazy"
+        decoding="async"
+        onLoad={onLoad}
+        onClick={onClick}
+      />
+    </picture>
+  );
+}
+
 function CaseStudyAspectImage({
   src,
   alt,
@@ -203,13 +372,11 @@ function CaseStudyAspectImage({
     return (
       <div className="min-w-0 col-span-2">
         <div className="aspect-[2/1] w-full overflow-hidden rounded-lg">
-          <img
-            ref={imgRef}
+          <PictureImage
+            imgRef={imgRef}
             src={src}
             alt={alt}
             className="h-full w-full object-cover cursor-zoom-in"
-            loading="lazy"
-            decoding="async"
             onLoad={(e) => applySpan(e.currentTarget)}
             onClick={onClick}
           />
@@ -220,13 +387,11 @@ function CaseStudyAspectImage({
 
   return (
     <div className={`min-w-0 ${colClass}`}>
-      <img
-        ref={imgRef}
+      <PictureImage
+        imgRef={imgRef}
         src={src}
         alt={alt}
         className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
-        loading="lazy"
-        decoding="async"
         onLoad={(e) => applySpan(e.currentTarget)}
         onClick={onClick}
       />
@@ -245,12 +410,10 @@ function CaseStudyFixedCellImage({
 }) {
   return (
     <div className="min-w-0 col-span-1">
-      <img
+      <PictureImage
         src={src}
         alt={alt}
         className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
-        loading="lazy"
-        decoding="async"
         onClick={onClick}
       />
     </div>
@@ -278,12 +441,10 @@ function CaseStudyImageRun({
           const onClick = () => onImageClick(resolved, img.alt);
           return (
             <div key={`${img.src}-${j}`} className="min-w-0 w-full">
-              <img
+              <PictureImage
                 src={resolved}
                 alt={img.alt}
                 className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
-                loading="lazy"
-                decoding="async"
                 onClick={onClick}
               />
             </div>
@@ -422,13 +583,16 @@ function CaseStudyImageGalleryLightbox({
         </>
       )}
 
-      <img
-        key={current.src}
-        src={current.src}
-        alt={current.alt}
-        className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl cursor-default"
-        onClick={(e) => e.stopPropagation()}
-      />
+      <picture key={current.src}>
+        {webpSrcFor(current.src) && <source srcSet={webpSrcFor(current.src) as string} type="image/webp" />}
+        <img
+          src={current.src}
+          alt={current.alt}
+          className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl cursor-default"
+          decoding="async"
+          onClick={(e) => e.stopPropagation()}
+        />
+      </picture>
     </div>
   );
 }
@@ -492,12 +656,10 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
         const alt = section.alt || '';
         sectionNodes.push(
           <div key={`case-image-half-${si}`} className="flex w-full justify-center">
-            <img
+            <PictureImage
               src={resolved}
               alt={alt}
               className="h-auto w-full max-w-[50%] rounded-lg cursor-zoom-in object-contain"
-              loading="lazy"
-              decoding="async"
               onClick={() => openLightbox(resolved, alt)}
             />
           </div>,
@@ -511,12 +673,10 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
               const alt = img.alt || '';
               return (
                 <div key={`${img.src}-${ji}`} className="min-w-0 flex justify-center">
-                  <img
+                  <PictureImage
                     src={resolved}
                     alt={alt}
                     className="h-auto w-full max-w-full rounded-lg cursor-zoom-in object-contain"
-                    loading="lazy"
-                    decoding="async"
                     onClick={() => openLightbox(resolved, alt)}
                   />
                 </div>
@@ -593,15 +753,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
             const cellClass = 'min-w-0 w-full max-w-full';
             return (
               <div key={`${vid}-${vi}`} className={cellClass}>
-                <VimeoAspectFrame paddingTop={paddingTop}>
-                  <iframe
-                    src={src}
-                    title={iframeTitle}
-                    className={vimeoIframeClassName}
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  />
-                </VimeoAspectFrame>
+                <LazyVimeoEmbed src={src} iframeTitle={iframeTitle} paddingTop={paddingTop} />
               </div>
             );
           })}
@@ -621,15 +773,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
       const paddingTop = section.vimeoPaddingTop ?? '56.25%';
       sectionNodes.push(
         <div key={`case-vimeo-${si}`} className="min-w-0 w-full max-w-full">
-          <VimeoAspectFrame paddingTop={paddingTop}>
-            <iframe
-              src={src}
-              title={iframeTitle}
-              className={vimeoIframeClassName}
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </VimeoAspectFrame>
+          <LazyVimeoEmbed src={src} iframeTitle={iframeTitle} paddingTop={paddingTop} />
         </div>,
       );
       si++;
@@ -641,18 +785,13 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
       const loop = section.videoLoop === true;
       const muted = autoplay ? section.videoMuted !== false : section.videoMuted === true;
       sectionNodes.push(
-        <div key={`case-native-video-${si}`} className="min-w-0 w-full overflow-hidden rounded-lg bg-neutral-100">
-          <video
-            src={resolved}
-            controls
-            playsInline
-            className="h-auto w-full max-w-full"
-            preload={autoplay ? 'auto' : 'metadata'}
-            autoPlay={autoplay}
-            loop={loop}
-            muted={muted}
-          />
-        </div>,
+        <LazyNativeVideo
+          key={`case-native-video-${si}`}
+          src={resolved}
+          autoplay={autoplay}
+          loop={loop}
+          muted={muted}
+        />,
       );
       si++;
       continue;

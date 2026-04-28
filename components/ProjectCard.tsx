@@ -8,6 +8,7 @@ export interface ProjectCardProps {
   image?: string;
   thumbnailUrl?: string | null;
   onClick?: () => void;
+  priority?: boolean;
 }
 
 export function ProjectCard(props: ProjectCardProps) {

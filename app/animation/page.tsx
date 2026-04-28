@@ -1,6 +1,5 @@
 'use client';
 
-import { Suspense } from 'react';
 import { SectionTitle, AnimationVideoCard } from '@/components';
 import { CaseStudyModalGate } from '@/components/CaseStudyModalGate';
 import { animationItems } from '@/lib/data';
@@ -8,7 +7,7 @@ import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
-function AnimationPageContent() {
+export default function AnimationPage() {
   const { locale } = useLanguage();
   const t = translations[locale];
   const { openCaseStudy, openCaseStudyModal, closeCaseStudyModal } = useCaseStudyModalUrl();
@@ -42,13 +41,5 @@ function AnimationPageContent() {
         </div>
       </section>
     </div>
-  );
-}
-
-export default function AnimationPage() {
-  return (
-    <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
-      <AnimationPageContent />
-    </Suspense>
   );
 }

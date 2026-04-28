@@ -1,13 +1,12 @@
 'use client';
 
-import { Suspense } from 'react';
-import Image from 'next/image';
 import { ContactCard, SectionTitle, ProjectHoverCard } from '@/components';
 import { CaseStudyModalGate } from '@/components/CaseStudyModalGate';
 import { heroImage } from '@/lib/data';
 import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
+import { encodePublicPath, webpSrcFor } from '@/lib/imageSources';
 
 const featuredProjects = [
   {
@@ -36,10 +35,13 @@ const featuredProjects = [
   },
 ];
 
-function HomePageContent() {
+export default function HomePage() {
   const { locale } = useLanguage();
   const t = translations[locale];
   const { openCaseStudy, openCaseStudyModal, closeCaseStudyModal } = useCaseStudyModalUrl();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const heroSrc = `${basePath}${encodePublicPath('/images/' + heroImage)}`;
+  const heroWebp = webpSrcFor(heroSrc);
 
   return (
     <div className="w-full min-w-0 max-w-full overflow-x-hidden">
@@ -59,30 +61,35 @@ function HomePageContent() {
               </p>
             </div>
             <div className="hidden md:block min-w-0 w-64 md:w-72 shrink-0">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
-                alt={t.hero.name}
-                className="w-full aspect-square object-cover rounded-lg"
-                width={288}
-                height={288}
-                priority
-                sizes="288px"
-                unoptimized
-              />
+              <picture>
+                {heroWebp && <source srcSet={heroWebp} type="image/webp" />}
+                <img
+                  src={heroSrc}
+                  alt={t.hero.name}
+                  className="w-full aspect-square object-cover rounded-lg"
+                  width={288}
+                  height={288}
+                  loading="eager"
+                  decoding="sync"
+                  fetchPriority="high"
+                />
+              </picture>
             </div>
           </div>
         </div>
         <div className="mt-8 px-3 w-full max-w-[100vw] box-border md:hidden">
           <div className="relative aspect-square w-full overflow-hidden rounded-lg">
-            <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/${encodeURIComponent(heroImage)}`}
-              alt={t.hero.name}
-              className="object-cover"
-              fill
-              priority
-              sizes="100vw"
-              unoptimized
-            />
+            <picture>
+              {heroWebp && <source srcSet={heroWebp} type="image/webp" />}
+              <img
+                src={heroSrc}
+                alt={t.hero.name}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="eager"
+                decoding="sync"
+                fetchPriority="high"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -91,7 +98,7 @@ function HomePageContent() {
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle>{t.sectionTitles.selectedProjects}</SectionTitle>
           <div className="grid gap-6 sm:grid-cols-2">
-            {featuredProjects.map((project) => {
+            {featuredProjects.map((project, idx) => {
               const title =
                 project.titleSource === 'illustration'
                   ? t.illustrationProjectTitles[project.titleIndex]
@@ -101,6 +108,7 @@ function HomePageContent() {
                   key={project.caseStudyId}
                   title={title}
                   image={project.image}
+                  priority={idx === 0}
                   onClick={() => openCaseStudyModal(project.caseStudyId)}
                 />
               );
@@ -116,13 +124,5 @@ function HomePageContent() {
         </div>
       </section>
     </div>
-  );
-}
-
-export default function HomePage() {
-  return (
-    <Suspense fallback={<div className="min-h-[50vh]" aria-hidden />}>
-      <HomePageContent />
-    </Suspense>
   );
 }

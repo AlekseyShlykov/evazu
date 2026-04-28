@@ -14,6 +14,8 @@ import {
   sharePreviewTitle,
 } from '@/lib/pageMetadata';
 import { absoluteOgImageUrl, getMetadataBase, siteBase, siteCanonicalUrl } from '@/lib/seo';
+import { heroImage } from '@/lib/data';
+import { encodePublicPath, webpSrcFor } from '@/lib/imageSources';
 
 const commissioner = Commissioner({
   subsets: ['latin', 'latin-ext'],
@@ -79,25 +81,43 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // The portrait used as the hero on `/` and `/about/` is rendered above the
+  // fold and is the LCP element on those pages, so we hint the browser to
+  // start fetching it as early as possible. We preload the WebP variant and
+  // the JPG fallback with `imageSrcSet`/`imageType` so the browser only picks
+  // the format it can render.
+  const heroSrc = encodePublicPath('/images/' + heroImage);
+  const heroWebp = webpSrcFor(heroSrc);
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {heroWebp && (
+          <link
+            rel="preload"
+            as="image"
+            href={heroWebp}
+            type="image/webp"
+            // @ts-expect-error – fetchpriority is a valid HTML attribute, missing from React types
+            fetchpriority="high"
+          />
+        )}
         <link rel="preconnect" href="https://vumbnail.com" />
         <link rel="preconnect" href="https://player.vimeo.com" />
         <link rel="preconnect" href="https://drive.google.com" />
         <link rel="dns-prefetch" href="https://vumbnail.com" />
         <link rel="dns-prefetch" href="https://player.vimeo.com" />
         <link rel="dns-prefetch" href="https://drive.google.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body
         className={`${commissioner.variable} font-sans antialiased bg-neutral-50 text-neutral-900 min-h-screen`}
       >
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

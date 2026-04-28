@@ -1,11 +1,11 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import { useLanguage } from '@/app/LanguageContext';
 import { SectionTitle, ContactCard } from '@/components';
 import { heroImage } from '@/lib/data';
 import { translations } from '@/lib/translations';
+import { encodePublicPath, webpSrcFor } from '@/lib/imageSources';
 
 const NewsletterSubscribe = dynamic(() =>
   import('@/components/NewsletterSubscribe').then((m) => m.NewsletterSubscribe),
@@ -15,6 +15,8 @@ export default function AboutPage() {
   const { locale } = useLanguage();
   const t = translations[locale];
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const heroSrc = `${basePath}${encodePublicPath('/images/' + heroImage)}`;
+  const heroWebp = webpSrcFor(heroSrc);
 
   return (
     <div className="w-full min-w-0 max-w-full overflow-x-hidden">
@@ -22,16 +24,19 @@ export default function AboutPage() {
         <div className="mx-auto max-w-content px-4 md:px-6">
           <div className="grid gap-10 md:grid-cols-[auto_1fr] md:gap-14 md:items-start">
             <div className="min-w-0 w-64 md:w-80 shrink-0">
-              <Image
-                src={`${basePath}/images/${encodeURIComponent(heroImage)}`}
-                alt={t.hero.name}
-                className="w-full aspect-square object-cover rounded-lg"
-                width={320}
-                height={320}
-                priority
-                sizes="(max-width: 768px) 256px, 320px"
-                unoptimized
-              />
+              <picture>
+                {heroWebp && <source srcSet={heroWebp} type="image/webp" />}
+                <img
+                  src={heroSrc}
+                  alt={t.hero.name}
+                  className="w-full aspect-square object-cover rounded-lg"
+                  width={320}
+                  height={320}
+                  loading="eager"
+                  decoding="sync"
+                  fetchPriority="high"
+                />
+              </picture>
             </div>
             <div>
               <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">

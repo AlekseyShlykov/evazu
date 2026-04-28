@@ -1,6 +1,5 @@
 'use client';
 
-import { Suspense } from 'react';
 import { SectionTitle, ProjectCard } from '@/components';
 import { CaseStudyModalGate } from '@/components/CaseStudyModalGate';
 import { illustrationProjects } from '@/lib/data';
@@ -8,7 +7,18 @@ import { useLanguage } from '@/app/LanguageContext';
 import { translations } from '@/lib/translations';
 import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
-function IllustrationPageContent() {
+const illustrationCaseStudyByIndex: Record<number, string> = {
+  0: 'brutalist-belgrade',
+  1: 'belgrade-stories',
+  2: 'foxy-roasters',
+  3: 'yerevan',
+  4: 'tea-branding',
+  5: 'belgrade-atmosphere',
+  6: 'music-visuals',
+  7: 'nekorobka-infographics',
+};
+
+export default function IllustrationPage() {
   const { locale } = useLanguage();
   const t = translations[locale];
   const { openCaseStudy, openCaseStudyModal, closeCaseStudyModal } = useCaseStudyModalUrl();
@@ -23,46 +33,24 @@ function IllustrationPageContent() {
         <div className="mx-auto max-w-content px-4 md:px-6">
           <SectionTitle>{t.sectionTitles.illustration}</SectionTitle>
           <div className="grid gap-6 sm:grid-cols-2">
-            {illustrationProjects.map((project, i) => (
-              <ProjectCard
-                key={project.href}
-                title={t.illustrationProjectTitles[i] ?? project.title}
-                href={project.href}
-                category={t.categoryIllustration}
-                aspectRatio="wide"
-                image={project.image}
-                onClick={
-                  i === 0
-                    ? () => openCaseStudyModal('brutalist-belgrade')
-                    : i === 1
-                      ? () => openCaseStudyModal('belgrade-stories')
-                      : i === 2
-                        ? () => openCaseStudyModal('foxy-roasters')
-                        : i === 3
-                          ? () => openCaseStudyModal('yerevan')
-                          : i === 4
-                            ? () => openCaseStudyModal('tea-branding')
-                            : i === 5
-                              ? () => openCaseStudyModal('belgrade-atmosphere')
-                              : i === 6
-                                ? () => openCaseStudyModal('music-visuals')
-                                : i === 7
-                                  ? () => openCaseStudyModal('nekorobka-infographics')
-                                  : undefined
-                }
-              />
-            ))}
+            {illustrationProjects.map((project, i) => {
+              const caseId = illustrationCaseStudyByIndex[i];
+              return (
+                <ProjectCard
+                  key={project.href}
+                  title={t.illustrationProjectTitles[i] ?? project.title}
+                  href={project.href}
+                  category={t.categoryIllustration}
+                  aspectRatio="wide"
+                  image={project.image}
+                  priority={i === 0}
+                  onClick={caseId ? () => openCaseStudyModal(caseId) : undefined}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
     </div>
-  );
-}
-
-export default function IllustrationPage() {
-  return (
-    <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
-      <IllustrationPageContent />
-    </Suspense>
   );
 }
