@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useCallback, useState } from 'react';
 import type { A11yStrings } from '@/lib/translations';
-import { webpSrcFor } from '@/lib/imageSources';
+import { encodePublicPath, webpSrcFor } from '@/lib/imageSources';
 
 export interface CaseStudySection {
   type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow' | 'nativeVideo';
@@ -624,11 +624,16 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
 
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
-  const resolveImgSrc = (src: string) =>
-    src.startsWith('/') ? `${basePath}${src}` : src;
+  const resolveImgSrc = (src: string) => {
+    if (!src.startsWith('/')) return src;
+    return `${basePath}${encodePublicPath(src)}`;
+  };
 
   const imageGallery = useMemo(() => {
-    const resolve = (src: string) => (src.startsWith('/') ? `${basePath}${src}` : src);
+    const resolve = (src: string) => {
+      if (!src.startsWith('/')) return src;
+      return `${basePath}${encodePublicPath(src)}`;
+    };
     return collectCaseStudyImages(study, resolve);
   }, [study, basePath]);
 

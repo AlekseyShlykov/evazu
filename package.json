@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predev": "node scripts/generate-webp-manifest.mjs",
+    "prebuild": "node scripts/generate-webp-manifest.mjs",
+    "generate-webp-manifest": "node scripts/generate-webp-manifest.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
