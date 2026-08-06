@@ -72,11 +72,14 @@ The project uses static export only:
 
 ### 4. GitHub Actions (автодеплой)
 
-В репозитории есть workflow **`.github/workflows/deploy.yml`**: при каждом пуше в `main` он собирает сайт и публикует его через **GitHub Pages (Actions)**.
+В репозитории есть workflow **`.github/workflows/deploy.yml`**: при каждом пуше в `main` он собирает сайт и выкладывает его в ветку `gh-pages`.
 
 1. В репозитории: **Settings → Pages → Build and deployment**
-2. **Source:** выберите **GitHub Actions** (не «Deploy from a branch»).
-3. После первого успешного запуска workflow сайт будет на кастомном домене (например `https://evazu.art/`) или по адресу вида `https://<логин>.github.io/<repo>/`.
+2. **Source:** выберите **Deploy from a branch**
+3. **Branch:** **`gh-pages`** / **`/ (root)`**
+4. После успешного workflow сайт будет на `https://evazu.art/` (или `https://<логин>.github.io/<repo>/`).
+
+В `public/` лежит `.nojekyll`, чтобы GitHub Pages не обрабатывал папку `_next` через Jekyll.
 
 ## Project structure
 

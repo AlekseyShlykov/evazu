@@ -1,5 +1,5 @@
-# Builds the static site and deploys via the official GitHub Pages Actions path.
-# Settings → Pages → Build and deployment → Source: GitHub Actions
+# Builds the static site and publishes it to the gh-pages branch.
+# Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: gh-pages / (root)
 
 name: Deploy to GitHub Pages
 
@@ -9,23 +9,22 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
@@ -36,21 +35,13 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Ensure Pages ignores Jekyll
+        run: touch out/.nojekyll
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ./out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          enable_jekyll: false
+          cname: evazu.art
