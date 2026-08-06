@@ -15,11 +15,14 @@ export interface CaseStudySection {
   images?: { src: string; alt?: string }[];
   /** For type imageHalf: one image at 50% width centered, or two images side by side (~half width each) */
   imageHalfLayout?: 'single' | 'pair';
+  /** For type imageGrid: number of equal columns (e.g. 4 for a comic strip). Defaults to 2 when fixedTwoColumns. */
   columns?: number;
   /** If true, every image stays one column (two per row) regardless of aspect ratio */
   fixedTwoColumns?: boolean;
   /** If true with imageGrid, stack images vertically at full width */
   singleColumn?: boolean;
+  /** Behance-style uneven packing for mixed aspect ratios (CSS multi-column masonry) */
+  masonry?: boolean;
   /** Vimeo video ID for type "vimeo" */
   vimeoId?: string;
   /** iframe title (accessibility) */
@@ -420,18 +423,29 @@ function CaseStudyFixedCellImage({
   );
 }
 
+const EQUAL_COL_CLASS: Record<number, string> = {
+  2: 'grid-cols-2',
+  3: 'grid-cols-2 md:grid-cols-3',
+  /** Comic strips stay 4-across even on small screens */
+  4: 'grid-cols-4',
+};
+
 function CaseStudyImageRun({
   images,
   resolveImgSrc,
   onImageClick,
   fixedTwoColumns = false,
   singleColumn = false,
+  columns,
+  masonry = false,
 }: {
   images: { src: string; alt: string; fullWidth?: boolean; imageWideBanner?: boolean }[];
   resolveImgSrc: (src: string) => string;
   onImageClick: (resolvedSrc: string, alt: string) => void;
   fixedTwoColumns?: boolean;
   singleColumn?: boolean;
+  columns?: number;
+  masonry?: boolean;
 }) {
   if (singleColumn) {
     return (
@@ -453,14 +467,50 @@ function CaseStudyImageRun({
       </div>
     );
   }
+
+  if (masonry) {
+    return (
+      <div className="w-full columns-2 gap-3 sm:gap-4 lg:columns-3 [column-fill:_balance]">
+        {images.map((img, j) => {
+          const resolved = resolveImgSrc(img.src);
+          const onClick = () => onImageClick(resolved, img.alt);
+          return (
+            <div key={`${img.src}-${j}`} className="mb-3 break-inside-avoid sm:mb-4">
+              <PictureImage
+                src={resolved}
+                alt={img.alt}
+                className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
+                onClick={onClick}
+              />
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  const equalCols = columns && columns >= 2 ? Math.min(columns, 4) : fixedTwoColumns ? 2 : null;
+  if (equalCols != null) {
+    const colClass = EQUAL_COL_CLASS[equalCols] ?? 'grid-cols-2';
+    return (
+      <div className={`grid w-full gap-3 md:gap-4 ${colClass}`}>
+        {images.map((img, j) => {
+          const resolved = resolveImgSrc(img.src);
+          const onClick = () => onImageClick(resolved, img.alt);
+          return (
+            <CaseStudyFixedCellImage key={`${img.src}-${j}`} src={resolved} alt={img.alt} onClick={onClick} />
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
     <div className="grid w-full grid-cols-2 gap-4">
       {images.map((img, j) => {
         const resolved = resolveImgSrc(img.src);
         const onClick = () => onImageClick(resolved, img.alt);
-        return fixedTwoColumns ? (
-          <CaseStudyFixedCellImage key={`${img.src}-${j}`} src={resolved} alt={img.alt} onClick={onClick} />
-        ) : (
+        return (
           <CaseStudyAspectImage
             key={`${img.src}-${j}`}
             src={resolved}
@@ -725,6 +775,8 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
           onImageClick={(resolved, alt) => openLightbox(resolved, alt)}
           fixedTwoColumns={section.fixedTwoColumns === true}
           singleColumn={section.singleColumn === true}
+          columns={section.columns}
+          masonry={section.masonry === true}
         />,
       );
       si++;

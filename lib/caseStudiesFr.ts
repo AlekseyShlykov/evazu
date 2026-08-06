@@ -216,6 +216,52 @@ export const brutalistBelgradeFr: CaseStudy = {
   ],
 };
 
+export const handmadePhotoComicFr: CaseStudy = {
+  title: 'Comic photo artisanal',
+  sections: [
+    {
+      type: 'heading',
+      text: 'À propos du projet',
+    },
+    {
+      type: 'image',
+      src: '/images/Comic all g.jpg',
+      alt: 'Comic photo artisanal — Comment survivre à une canicule',
+      fullWidth: true,
+    },
+    {
+      type: 'paragraph',
+      text: "Je voulais explorer une nouvelle façon de raconter une histoire : à travers des objets physiques, la lumière, la profondeur et les angles de caméra. J'étais curieuse de voir comment le travail en trois dimensions pouvait transformer la manière de raconter une histoire.",
+    },
+    {
+      type: 'imageGrid',
+      columns: 4,
+      images: [
+        { src: '/images/Comic 1.jpg', alt: 'Case 1 — Comment survivre à une canicule' },
+        { src: '/images/Comic 2.jpg', alt: 'Case 2 — Essayer de ne pas brûler au travail' },
+        { src: '/images/Comic 3.jpg', alt: 'Case 3 — Prendre une douche froide' },
+        { src: '/images/Comic 4.jpg', alt: 'Case 4 — Se rafraîchir après le coucher du soleil' },
+      ],
+    },
+    {
+      type: 'paragraph',
+      text: "J'ai écrit l'histoire, fabriqué à la main chaque personnage, accessoire et décor miniature, dirigé l'éclairage, photographié chaque scène, retouché les images et ajouté le lettrage dessiné à la main. Le résultat est une petite bande dessinée inspirée de quelque chose que j'ai vécu moi-même cet été : une vague de chaleur (ou la canicule, comme on l'appelle en France, où je vis actuellement).",
+    },
+    {
+      type: 'imageGrid',
+      masonry: true,
+      images: [
+        { src: '/images/F1.jpg', alt: 'Coulisses — décor miniature du bureau' },
+        { src: '/images/F2.jpg', alt: "Coulisses — éclairage et cadrage" },
+        { src: '/images/F3.jpg', alt: 'Coulisses — détail de la scène de douche' },
+        { src: '/images/F4.jpg', alt: 'Coulisses — personnage et accessoires' },
+        { src: '/images/F5.jpg', alt: 'Coulisses — scène du balcon' },
+        { src: '/images/F6.jpg', alt: 'Coulisses — making of' },
+      ],
+    },
+  ],
+};
+
 export const yerevanFr: CaseStudy = {
   title: 'Erevan',
   sections: [

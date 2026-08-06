@@ -51,6 +51,7 @@ export const translations = {
       },
     ],
     illustrationProjectTitles: [
+      'Handmade Photo Comic',
       'A series of illustrations about the brutalist architecture of Belgrade',
       'Illustrated Stories in Comic Style',
       'Illustrations & Design for Foxy Roasters — gift sets, postcards, and stickers',
@@ -184,6 +185,7 @@ export const translations = {
       },
     ],
     illustrationProjectTitles: [
+      'Comic photo artisanal',
       'Série d\'illustrations sur l\'architecture brutaliste de Belgrade',
       'Histoires illustrées en style BD',
       'Illustrations et design pour Foxy Roasters — coffrets, cartes postales et stickers',

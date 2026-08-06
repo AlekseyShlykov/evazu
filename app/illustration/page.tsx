@@ -8,14 +8,15 @@ import { translations } from '@/lib/translations';
 import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
 const illustrationCaseStudyByIndex: Record<number, string> = {
-  0: 'brutalist-belgrade',
-  1: 'belgrade-stories',
-  2: 'foxy-roasters',
-  3: 'yerevan',
-  4: 'tea-branding',
-  5: 'belgrade-atmosphere',
-  6: 'music-visuals',
-  7: 'nekorobka-infographics',
+  0: 'handmade-photo-comic',
+  1: 'brutalist-belgrade',
+  2: 'belgrade-stories',
+  3: 'foxy-roasters',
+  4: 'yerevan',
+  5: 'tea-branding',
+  6: 'belgrade-atmosphere',
+  7: 'music-visuals',
+  8: 'nekorobka-infographics',
 };
 
 export default function IllustrationPage() {

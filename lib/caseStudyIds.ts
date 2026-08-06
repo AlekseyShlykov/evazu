@@ -8,6 +8,7 @@ export const CASE_STUDY_IDS = [
   'belgrade-stories',
   'brutalist-belgrade',
   'foxy-roasters',
+  'handmade-photo-comic',
   'hobby-matching-animation',
   'home-personal-project',
   'learn-with-mochi-animation',

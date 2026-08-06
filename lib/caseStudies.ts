@@ -7,6 +7,7 @@ import {
   belgradeStoriesFr,
   brutalistBelgradeFr,
   foxyRoastersFr,
+  handmadePhotoComicFr,
   hobbyMatchingAnimationFr,
   homePersonalProjectFr,
   learnWithMochiAnimationFr,
@@ -233,6 +234,52 @@ const brutalistBelgradeEn: CaseStudy = {
       type: 'image',
       src: '/images/BB 4.jpg',
       alt: 'Sketches and photographs — reference materials',
+    },
+  ],
+};
+
+const handmadePhotoComicEn: CaseStudy = {
+  title: 'Handmade Photo Comic',
+  sections: [
+    {
+      type: 'heading',
+      text: 'About the project',
+    },
+    {
+      type: 'image',
+      src: '/images/Comic all g.jpg',
+      alt: 'Handmade photo comic — How to survive a heatwave',
+      fullWidth: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'I wanted to explore a new way of storytelling: through physical objects, light, depth, and camera angles. I was curious to see how working in three dimensions could change the way a story is told.',
+    },
+    {
+      type: 'imageGrid',
+      columns: 4,
+      images: [
+        { src: '/images/Comic 1.jpg', alt: 'Comic panel 1 — How to survive a heatwave' },
+        { src: '/images/Comic 2.jpg', alt: 'Comic panel 2 — Try not to burn at work' },
+        { src: '/images/Comic 3.jpg', alt: 'Comic panel 3 — Take a cold shower' },
+        { src: '/images/Comic 4.jpg', alt: 'Comic panel 4 — Cool off after sunset' },
+      ],
+    },
+    {
+      type: 'paragraph',
+      text: 'I wrote the story, handcrafted every character, prop, and miniature set, directed the lighting, photographed each scene, edited the images, and added hand-drawn lettering. The result is a small comic inspired by something I experienced myself this summer: a heatwave (or la canicule, as it\u2019s called in France, where I currently live).',
+    },
+    {
+      type: 'imageGrid',
+      masonry: true,
+      images: [
+        { src: '/images/F1.jpg', alt: 'Behind the scenes — miniature desk set' },
+        { src: '/images/F2.jpg', alt: 'Behind the scenes — lighting and camera setup' },
+        { src: '/images/F3.jpg', alt: 'Behind the scenes — shower scene detail' },
+        { src: '/images/F4.jpg', alt: 'Behind the scenes — character and props' },
+        { src: '/images/F5.jpg', alt: 'Behind the scenes — balcony scene' },
+        { src: '/images/F6.jpg', alt: 'Behind the scenes — making of' },
+      ],
     },
   ],
 };
@@ -1000,6 +1047,10 @@ export const caseStudies = {
   'foxy-roasters': {
     en: foxyRoastersEn,
     fr: foxyRoastersFr,
+  },
+  'handmade-photo-comic': {
+    en: handmadePhotoComicEn,
+    fr: handmadePhotoComicFr,
   },
   'music-visuals': {
     en: musicVisualsEn,

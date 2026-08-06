@@ -62,6 +62,11 @@ export const services = [
 
 export const illustrationProjects = [
   {
+    title: 'Handmade Photo Comic',
+    href: 'https://www.behance.net/gallery/253779349/Handmade-Photo-Comic',
+    image: 'Comic all g.jpg',
+  },
+  {
     title: 'A series of illustrations about the brutalist architecture of Belgrade',
     href: 'https://www.notion.so/A-series-of-illustrations-about-the-brutalist-architecture-of-Belgrade-14db2b33972b8177bc76f9c630c1ec58?pvs=21',
     image: 'belgrade.webp',
