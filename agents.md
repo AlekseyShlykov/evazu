@@ -90,7 +90,7 @@ Color palette:
 * Fast loading images
 * Simple scroll flow
 
----
+--
 
 ## Technical Preferences
 
