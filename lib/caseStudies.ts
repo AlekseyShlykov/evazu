@@ -246,12 +246,6 @@ const handmadePhotoComicEn: CaseStudy = {
       text: 'About the project',
     },
     {
-      type: 'image',
-      src: '/images/Comic all g.jpg',
-      alt: 'Handmade photo comic — How to survive a heatwave',
-      fullWidth: true,
-    },
-    {
       type: 'paragraph',
       text: 'I wanted to explore a new way of storytelling: through physical objects, light, depth, and camera angles. I was curious to see how working in three dimensions could change the way a story is told.',
     },
@@ -268,6 +262,14 @@ const handmadePhotoComicEn: CaseStudy = {
     {
       type: 'paragraph',
       text: 'I wrote the story, handcrafted every character, prop, and miniature set, directed the lighting, photographed each scene, edited the images, and added hand-drawn lettering. The result is a small comic inspired by something I experienced myself this summer: a heatwave (or la canicule, as it\u2019s called in France, where I currently live).',
+    },
+    {
+      type: 'heading',
+      text: 'Materials',
+    },
+    {
+      type: 'paragraph',
+      text: 'The project was made using cardboard, paper, twine, pieces of packaging, thread, baking paper, a piece of mesh I found at home, and even dental floss. All lettering was drawn by hand digitally.',
     },
     {
       type: 'imageGrid',

@@ -21,7 +21,7 @@ export interface CaseStudySection {
   fixedTwoColumns?: boolean;
   /** If true with imageGrid, stack images vertically at full width */
   singleColumn?: boolean;
-  /** Behance-style uneven packing for mixed aspect ratios (CSS multi-column masonry) */
+  /** Behance-style justified rows: equal row height, widths follow aspect ratio */
   masonry?: boolean;
   /** Vimeo video ID for type "vimeo" */
   vimeoId?: string;
@@ -430,6 +430,189 @@ const EQUAL_COL_CLASS: Record<number, string> = {
   4: 'grid-cols-4',
 };
 
+const MASONRY_GAP_PX = 12;
+/** Ideal row height before fitting; lower → more images per row (Behance-like). */
+const MASONRY_TARGET_ROW_HEIGHT = 200;
+
+type MasonryItem = { src: string; alt: string; aspect: number };
+
+function buildJustifiedRows(
+  items: MasonryItem[],
+  containerWidth: number,
+  gap: number,
+  targetRowHeight: number,
+): { items: MasonryItem[]; height: number }[] {
+  if (containerWidth <= 0 || items.length === 0) return [];
+
+  const rows: { items: MasonryItem[]; height: number }[] = [];
+  let row: MasonryItem[] = [];
+  let aspectSum = 0;
+
+  const flush = () => {
+    if (row.length === 0) return;
+    const gaps = gap * Math.max(0, row.length - 1);
+    const height = Math.max(80, (containerWidth - gaps) / aspectSum);
+    rows.push({ items: row, height });
+    row = [];
+    aspectSum = 0;
+  };
+
+  for (const item of items) {
+    row.push(item);
+    aspectSum += item.aspect;
+    const gaps = gap * Math.max(0, row.length - 1);
+    const rowWidthAtTarget = aspectSum * targetRowHeight + gaps;
+    if (rowWidthAtTarget >= containerWidth) {
+      flush();
+    }
+  }
+  flush();
+  return rows;
+}
+
+/** Behance-like desktop layout: rows of equal height, widths from aspect ratios. */
+function CaseStudyJustifiedMasonry({
+  images,
+  resolveImgSrc,
+  onImageClick,
+}: {
+  images: { src: string; alt: string }[];
+  resolveImgSrc: (src: string) => string;
+  onImageClick: (resolvedSrc: string, alt: string) => void;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [aspectBySrc, setAspectBySrc] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => setContainerWidth(el.clientWidth);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    const resolvedList = images.map((img) => ({
+      key: img.src,
+      resolved: resolveImgSrc(img.src),
+    }));
+    resolvedList.forEach(({ resolved }) => {
+      const probe = new Image();
+      probe.onload = () => {
+        if (cancelled || probe.naturalWidth <= 0 || probe.naturalHeight <= 0) return;
+        const aspect = probe.naturalWidth / probe.naturalHeight;
+        setAspectBySrc((prev) => (prev[resolved] === aspect ? prev : { ...prev, [resolved]: aspect }));
+      };
+      probe.src = resolved;
+    });
+    return () => {
+      cancelled = true;
+    };
+    // Intentionally key off src list — resolveImgSrc is stable in behavior
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [images.map((img) => img.src).join('|')]);
+
+  const prepared: MasonryItem[] = images.map((img) => {
+    const resolved = resolveImgSrc(img.src);
+    return {
+      src: resolved,
+      alt: img.alt,
+      aspect: aspectBySrc[resolved] ?? 1.2,
+    };
+  });
+
+  const allMeasured = prepared.every((item) => aspectBySrc[item.src] != null);
+  const isNarrow = containerWidth > 0 && containerWidth < 640;
+
+  if (isNarrow) {
+    return (
+      <div ref={containerRef} className="flex w-full flex-col gap-3">
+        {images.map((img, j) => {
+          const resolved = resolveImgSrc(img.src);
+          return (
+            <div key={`${img.src}-${j}`} className="min-w-0 w-full">
+              <PictureImage
+                src={resolved}
+                alt={img.alt}
+                className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
+                onClick={() => onImageClick(resolved, img.alt)}
+              />
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  const rows =
+    containerWidth > 0 && allMeasured
+      ? buildJustifiedRows(prepared, containerWidth, MASONRY_GAP_PX, MASONRY_TARGET_ROW_HEIGHT)
+      : [];
+
+  return (
+    <div ref={containerRef} className="flex w-full min-w-0 flex-col gap-3 overflow-x-hidden">
+      {!allMeasured || rows.length === 0
+        ? (
+          <div className="grid w-full grid-cols-2 gap-3">
+            {images.map((img, j) => {
+              const resolved = resolveImgSrc(img.src);
+              return (
+                <div key={`masonry-pending-${img.src}-${j}`} className="min-w-0">
+                  <PictureImage
+                    src={resolved}
+                    alt={img.alt}
+                    className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
+                    onClick={() => onImageClick(resolved, img.alt)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )
+        : rows.map((row, ri) => (
+            <div
+              key={`masonry-row-${ri}`}
+              className="flex w-full min-w-0 overflow-hidden"
+              style={{ height: row.height, gap: MASONRY_GAP_PX }}
+            >
+              {row.items.map((item, ji) => {
+                const isLast = ji === row.items.length - 1;
+                // Last item takes remaining width so subpixel rounding doesn't leave a gap
+                const width = isLast
+                  ? undefined
+                  : item.aspect * row.height;
+                return (
+                  <button
+                    key={`${item.src}-${ji}`}
+                    type="button"
+                    className={`h-full overflow-hidden rounded-lg p-0 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                      isLast ? 'min-w-0 flex-1' : 'shrink-0'
+                    }`}
+                    style={
+                      isLast
+                        ? { height: row.height }
+                        : { width, height: row.height }
+                    }
+                    onClick={() => onImageClick(item.src, item.alt)}
+                  >
+                    <PictureImage
+                      src={item.src}
+                      alt={item.alt}
+                      className="h-full w-full object-cover"
+                    />
+                  </button>
+                );
+              })}
+            </div>
+          ))}
+    </div>
+  );
+}
+
 function CaseStudyImageRun({
   images,
   resolveImgSrc,
@@ -470,22 +653,11 @@ function CaseStudyImageRun({
 
   if (masonry) {
     return (
-      <div className="w-full columns-2 gap-3 sm:gap-4 lg:columns-3 [column-fill:_balance]">
-        {images.map((img, j) => {
-          const resolved = resolveImgSrc(img.src);
-          const onClick = () => onImageClick(resolved, img.alt);
-          return (
-            <div key={`${img.src}-${j}`} className="mb-3 break-inside-avoid sm:mb-4">
-              <PictureImage
-                src={resolved}
-                alt={img.alt}
-                className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
-                onClick={onClick}
-              />
-            </div>
-          );
-        })}
-      </div>
+      <CaseStudyJustifiedMasonry
+        images={images}
+        resolveImgSrc={resolveImgSrc}
+        onImageClick={onImageClick}
+      />
     );
   }
 

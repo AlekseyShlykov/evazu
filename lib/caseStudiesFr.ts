@@ -224,12 +224,6 @@ export const handmadePhotoComicFr: CaseStudy = {
       text: 'À propos du projet',
     },
     {
-      type: 'image',
-      src: '/images/Comic all g.jpg',
-      alt: 'Comic photo artisanal — Comment survivre à une canicule',
-      fullWidth: true,
-    },
-    {
       type: 'paragraph',
       text: "Je voulais explorer une nouvelle façon de raconter une histoire : à travers des objets physiques, la lumière, la profondeur et les angles de caméra. J'étais curieuse de voir comment le travail en trois dimensions pouvait transformer la manière de raconter une histoire.",
     },
@@ -246,6 +240,14 @@ export const handmadePhotoComicFr: CaseStudy = {
     {
       type: 'paragraph',
       text: "J'ai écrit l'histoire, fabriqué à la main chaque personnage, accessoire et décor miniature, dirigé l'éclairage, photographié chaque scène, retouché les images et ajouté le lettrage dessiné à la main. Le résultat est une petite bande dessinée inspirée de quelque chose que j'ai vécu moi-même cet été : une vague de chaleur (ou la canicule, comme on l'appelle en France, où je vis actuellement).",
+    },
+    {
+      type: 'heading',
+      text: 'Matériaux',
+    },
+    {
+      type: 'paragraph',
+      text: "Le projet a été réalisé avec du carton, du papier, de la ficelle, des morceaux d'emballage, du fil, du papier sulfurisé, un filet trouvé à la maison, et même du fil dentaire. Tout le lettrage a été dessiné à la main en numérique.",
     },
     {
       type: 'imageGrid',
