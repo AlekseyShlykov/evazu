@@ -426,8 +426,8 @@ function CaseStudyFixedCellImage({
 const EQUAL_COL_CLASS: Record<number, string> = {
   2: 'grid-cols-2',
   3: 'grid-cols-2 md:grid-cols-3',
-  /** Comic strips stay 4-across even on small screens */
-  4: 'grid-cols-4',
+  /** One per row on mobile; 4-across from md up */
+  4: 'grid-cols-1 md:grid-cols-4',
 };
 
 const MASONRY_GAP_PX = 12;
