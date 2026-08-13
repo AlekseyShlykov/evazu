@@ -543,17 +543,9 @@ const foxyRoastersEn: CaseStudy = {
       text: 'I also designed several types of stickers and postcards and prepared print-ready layouts.',
     },
     {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04381.jpg', alt: 'Foxy Roasters stickers — sheet 1' },
-        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04382.jpg', alt: 'Foxy Roasters stickers — sheet 2' },
-      ],
-      singleColumn: true,
-    },
-    {
       type: 'image',
-      src: '/images/\u0444\u043e\u0442\u043e 1.jpg',
-      alt: 'Printed postcards photo',
+      src: '/images/FR 4.jpg',
+      alt: 'Foxy Roasters coffee sticker layouts',
     },
     {
       type: 'paragraph',
@@ -561,13 +553,8 @@ const foxyRoastersEn: CaseStudy = {
     },
     {
       type: 'image',
-      src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04383.jpg',
+      src: '/images/FR5.jpg',
       alt: 'Foxy Roasters — stamp area illustration detail',
-    },
-    {
-      type: 'image',
-      src: '/images/\u0444\u043e\u0442\u043e 2.jpg',
-      alt: 'Printed postcards and stickers — photo',
     },
   ],
 };

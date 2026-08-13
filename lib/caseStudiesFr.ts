@@ -517,17 +517,9 @@ export const foxyRoastersFr: CaseStudy = {
       text: "J'ai aussi conçu plusieurs types de stickers et de cartes postales, avec mises en page prêtes à l'impression.",
     },
     {
-      type: 'imageGrid',
-      images: [
-        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04381.jpg', alt: 'Foxy Roasters — planche de stickers 1' },
-        { src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04382.jpg', alt: 'Foxy Roasters — planche de stickers 2' },
-      ],
-      singleColumn: true,
-    },
-    {
       type: 'image',
-      src: '/images/\u0444\u043e\u0442\u043e 1.jpg',
-      alt: 'Photo des cartes postales imprimées',
+      src: '/images/FR 4.jpg',
+      alt: 'Maquettes des stickers de café Foxy Roasters',
     },
     {
       type: 'paragraph',
@@ -535,13 +527,8 @@ export const foxyRoastersFr: CaseStudy = {
     },
     {
       type: 'image',
-      src: '/images/\u041d\u0430\u043a\u043b\u0435\u0439\u043a\u04383.jpg',
+      src: '/images/FR5.jpg',
       alt: 'Foxy Roasters — détail de la zone timbre',
-    },
-    {
-      type: 'image',
-      src: '/images/\u0444\u043e\u0442\u043e 2.jpg',
-      alt: 'Photo des cartes postales et stickers',
     },
   ],
 };
