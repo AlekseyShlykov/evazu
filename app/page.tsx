@@ -42,7 +42,7 @@ const featuredProjects = [
   {
     titleIndex: 1,
     titleSource: 'illustration' as const,
-    image: 'Media226 01.jpg',
+    image: '226preview.jpg',
     caseStudyId: 'media-226-editorial',
   },
 ];

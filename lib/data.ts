@@ -69,7 +69,7 @@ export const illustrationProjects = [
   {
     title: 'Editorial illustrations for Media 226',
     href: 'https://media226.ru/voices/85-ne-vaznye-teksty-tat-any-hudakovoj',
-    image: 'Media226 01.jpg',
+    image: '226preview.jpg',
   },
   {
     title: 'A series of illustrations about the brutalist architecture of Belgrade',
