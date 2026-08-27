@@ -898,12 +898,14 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
         const widthClass = section.imageHalfWidth === 'twoThirds' ? 'max-w-[66.666667%]' : 'max-w-[50%]';
         sectionNodes.push(
           <div key={`case-image-half-${si}`} className="flex w-full justify-center">
-            <PictureImage
-              src={resolved}
-              alt={alt}
-              className={`h-auto w-full ${widthClass} rounded-lg cursor-zoom-in object-contain`}
-              onClick={() => openLightbox(resolved, alt)}
-            />
+            <div className={`w-full ${widthClass}`}>
+              <PictureImage
+                src={resolved}
+                alt={alt}
+                className="block h-auto w-full rounded-lg cursor-zoom-in object-contain"
+                onClick={() => openLightbox(resolved, alt)}
+              />
+            </div>
           </div>,
         );
       } else if (layout === 'pair' && section.images && section.images.length >= 2) {
@@ -1110,14 +1112,24 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
         ref={contentRef}
         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl"
       >
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur px-6 py-4 md:px-10">
-          <h2 className="text-lg md:text-xl font-semibold text-neutral-900 pr-8 line-clamp-2">
+        <div
+          className={study.coverImage
+            ? 'absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 py-4 md:px-10'
+            : 'sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur px-6 py-4 md:px-10'}
+        >
+          <h2 className={`text-lg md:text-xl font-semibold pr-8 line-clamp-2 ${
+            study.coverImage ? 'text-white [text-shadow:0_1px_4px_rgb(0_0_0/0.65)]' : 'text-neutral-900'
+          }`}>
             {study.title}
           </h2>
           <button
             type="button"
             onClick={onClose}
-            className="shrink-0 rounded-full p-2 text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
+            className={`shrink-0 rounded-full p-2 transition-colors ${
+              study.coverImage
+                ? 'bg-black/25 text-white hover:bg-black/45'
+                : 'text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100'
+            }`}
             aria-label={a11y.close}
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
