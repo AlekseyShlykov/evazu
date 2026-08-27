@@ -8,13 +8,19 @@ import { encodePublicPath, webpSrcFor } from '@/lib/imageSources';
 export interface CaseStudySection {
   type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow' | 'nativeVideo';
   text?: string;
+  /** Optional bold lead-in rendered at the same size as paragraph text. */
+  boldPrefix?: string;
   src?: string;
   alt?: string;
   href?: string;
   label?: string;
+  /** Optional plain-text lead-in before a colored inline link. */
+  linkPrefix?: string;
   images?: { src: string; alt?: string }[];
   /** For type imageHalf: one image at 50% width centered, or two images side by side (~half width each) */
   imageHalfLayout?: 'single' | 'pair';
+  /** Width of a centered single imageHalf. Defaults to one half. */
+  imageHalfWidth?: 'half' | 'twoThirds';
   /** For type imageGrid: number of equal columns (e.g. 4 for a comic strip). Defaults to 2 when fixedTwoColumns. */
   columns?: number;
   /** If true, every image stays one column (two per row) regardless of aspect ratio */
@@ -60,6 +66,8 @@ export interface CaseStudySection {
 
 export interface CaseStudy {
   title: string;
+  /** Optional full-bleed cover directly below the modal title bar. */
+  coverImage?: { src: string; alt?: string };
   sections: CaseStudySection[];
 }
 
@@ -260,6 +268,12 @@ function collectCaseStudyImages(
   resolveImgSrc: (src: string) => string,
 ): { src: string; alt: string }[] {
   const items: { src: string; alt: string }[] = [];
+  if (study.coverImage) {
+    items.push({
+      src: resolveImgSrc(study.coverImage.src),
+      alt: study.coverImage.alt || '',
+    });
+  }
   let si = 0;
   while (si < study.sections.length) {
     const section = study.sections[si];
@@ -881,12 +895,13 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
       if (layout === 'single' && section.src) {
         const resolved = resolveImgSrc(section.src);
         const alt = section.alt || '';
+        const widthClass = section.imageHalfWidth === 'twoThirds' ? 'max-w-[66.666667%]' : 'max-w-[50%]';
         sectionNodes.push(
           <div key={`case-image-half-${si}`} className="flex w-full justify-center">
             <PictureImage
               src={resolved}
               alt={alt}
-              className="h-auto w-full max-w-[50%] rounded-lg cursor-zoom-in object-contain"
+              className={`h-auto w-full ${widthClass} rounded-lg cursor-zoom-in object-contain`}
               onClick={() => openLightbox(resolved, alt)}
             />
           </div>,
@@ -1036,12 +1051,25 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
       case 'paragraph':
         sectionNodes.push(
           <p key={si} className="text-base text-neutral-700 leading-relaxed whitespace-pre-line">
+            {section.boldPrefix && <strong className="font-semibold text-neutral-900">{section.boldPrefix}</strong>}
             {section.text}
           </p>,
         );
         break;
       case 'link':
-        sectionNodes.push(
+        sectionNodes.push(section.linkPrefix ? (
+          <p key={si} className="text-base text-neutral-700 leading-relaxed break-words">
+            {section.linkPrefix}
+            <a
+              href={section.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline"
+            >
+              {section.label || section.href}
+            </a>
+          </p>
+        ) : (
           <a
             key={si}
             href={section.href}
@@ -1050,8 +1078,8 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
             className="flex w-fit max-w-full items-center gap-1 text-left text-base text-accent hover:underline font-medium"
           >
             {section.label || section.href} →
-          </a>,
-        );
+          </a>
+        ));
         break;
       default:
         break;
@@ -1097,6 +1125,19 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
             </svg>
           </button>
         </div>
+
+        {study.coverImage && (() => {
+          const resolved = resolveImgSrc(study.coverImage.src);
+          const alt = study.coverImage.alt || '';
+          return (
+            <PictureImage
+              src={resolved}
+              alt={alt}
+              className="block h-auto w-full cursor-zoom-in object-contain"
+              onClick={() => openLightbox(resolved, alt)}
+            />
+          );
+        })()}
 
         <div className="px-6 py-8 md:px-10 md:py-10 space-y-6 text-left">{sectionNodes}</div>
       </div>

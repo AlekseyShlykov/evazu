@@ -67,6 +67,11 @@ export const illustrationProjects = [
     image: 'Comic all g.jpg',
   },
   {
+    title: 'Editorial illustrations for Media 226',
+    href: 'https://media226.ru/voices/85-ne-vaznye-teksty-tat-any-hudakovoj',
+    image: 'Media226 01.jpg',
+  },
+  {
     title: 'A series of illustrations about the brutalist architecture of Belgrade',
     href: 'https://www.notion.so/A-series-of-illustrations-about-the-brutalist-architecture-of-Belgrade-14db2b33972b8177bc76f9c630c1ec58?pvs=21',
     image: 'belgrade.webp',

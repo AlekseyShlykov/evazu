@@ -511,6 +511,7 @@ export const foxyRoastersFr: CaseStudy = {
       type: 'image',
       src: '/images/FR 3.jpg',
       alt: 'Foxy Roasters — scènes',
+      fullWidth: true,
     },
     {
       type: 'paragraph',
@@ -520,6 +521,7 @@ export const foxyRoastersFr: CaseStudy = {
       type: 'image',
       src: '/images/FR 4.jpg',
       alt: 'Maquettes des stickers de café Foxy Roasters',
+      fullWidth: true,
     },
     {
       type: 'paragraph',
@@ -529,6 +531,7 @@ export const foxyRoastersFr: CaseStudy = {
       type: 'image',
       src: '/images/FR5.jpg',
       alt: 'Foxy Roasters — détail de la zone timbre',
+      fullWidth: true,
     },
   ],
 };

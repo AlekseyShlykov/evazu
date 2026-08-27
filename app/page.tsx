@@ -12,17 +12,23 @@ const featuredProjects = [
   {
     titleIndex: 0,
     titleSource: 'illustration' as const,
+    image: 'Comic all g.jpg',
+    caseStudyId: 'handmade-photo-comic',
+  },
+  {
+    titleIndex: 2,
+    titleSource: 'illustration' as const,
     image: 'belgrade.webp',
     caseStudyId: 'brutalist-belgrade',
   },
   {
-    titleIndex: 1,
+    titleIndex: 3,
     titleSource: 'illustration' as const,
     image: 'Stories Belgrade.webp',
     caseStudyId: 'belgrade-stories',
   },
   {
-    titleIndex: 2,
+    titleIndex: 4,
     titleSource: 'illustration' as const,
     image: 'Foxy Roasters.webp',
     caseStudyId: 'foxy-roasters',
@@ -32,6 +38,12 @@ const featuredProjects = [
     titleSource: 'branding' as const,
     image: 'TW1.jpg',
     caseStudyId: 'tea-branding',
+  },
+  {
+    titleIndex: 1,
+    titleSource: 'illustration' as const,
+    image: 'Media226 01.jpg',
+    caseStudyId: 'media-226-editorial',
   },
 ];
 

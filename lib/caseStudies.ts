@@ -537,6 +537,7 @@ const foxyRoastersEn: CaseStudy = {
       type: 'image',
       src: '/images/FR 3.jpg',
       alt: 'Foxy Roasters scenes',
+      fullWidth: true,
     },
     {
       type: 'paragraph',
@@ -546,6 +547,7 @@ const foxyRoastersEn: CaseStudy = {
       type: 'image',
       src: '/images/FR 4.jpg',
       alt: 'Foxy Roasters coffee sticker layouts',
+      fullWidth: true,
     },
     {
       type: 'paragraph',
@@ -555,6 +557,98 @@ const foxyRoastersEn: CaseStudy = {
       type: 'image',
       src: '/images/FR5.jpg',
       alt: 'Foxy Roasters — stamp area illustration detail',
+      fullWidth: true,
+    },
+  ],
+};
+
+const media226EditorialEn: CaseStudy = {
+  title: 'Editorial illustrations for Media 226',
+  coverImage: {
+    src: '/images/Media226 01.jpg',
+    alt: 'Editorial illustrations for Media 226',
+  },
+  sections: [
+    {
+      type: 'paragraph',
+      boldPrefix: 'Client: ',
+      text: 'Смысловая 226, an online literary magazine',
+    },
+    {
+      type: 'paragraph',
+      text: 'These illustrations were made for an article about Russian horror literature. The author of the text is Tatiana Khudyakova.',
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'The brief ',
+      text: 'was to create a series of collage illustrations with strong energy and a touch of humour. I was inspired by the article, the books it mentioned, and some thematic music I like.',
+    },
+    {
+      type: 'paragraph',
+      text: 'I use photographs from different sources as raw material, transforming and combining them until the original images become a completely new visual statement.',
+    },
+    {
+      type: 'heading',
+      text: 'Final illustrations',
+    },
+    {
+      type: 'image',
+      src: '/images/Media 226 1.jpg',
+      alt: 'Final editorial illustration for Media 226',
+      fullWidth: true,
+    },
+    {
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      imageHalfWidth: 'twoThirds',
+      src: '/images/Media 226 2.jpg',
+      alt: 'Vertical editorial illustration for Media 226',
+    },
+    {
+      type: 'image',
+      src: '/images/Media 226 3.jpg',
+      alt: 'Final editorial illustration for Media 226',
+      fullWidth: true,
+    },
+    {
+      type: 'paragraph',
+      text: 'The process started with rough sketches, all in a horizontal format. One of the compositions was later adapted to a vertical format for the publication.\nThe irregular edges and protruding elements were part of the original idea, allowing the illustrations to interact more freely with the layout.',
+    },
+    {
+      type: 'image',
+      src: '/images/Media 226 4.jpg',
+      alt: 'Media 226 illustration process',
+      fullWidth: true,
+    },
+    {
+      type: 'heading',
+      text: 'In the publication',
+    },
+    {
+      type: 'image',
+      src: '/images/Media 226 5.jpg',
+      alt: 'Media 226 illustration in the publication',
+      fullWidth: true,
+    },
+    {
+      type: 'image',
+      src: '/images/Media 226 6.jpg',
+      alt: 'Media 226 illustration in the publication',
+      fullWidth: true,
+    },
+    {
+      type: 'imageHalf',
+      imageHalfLayout: 'pair',
+      images: [
+        { src: '/images/Media 226 7.jpg', alt: 'Media 226 mobile publication layout' },
+        { src: '/images/Media 226 8.jpg', alt: 'Media 226 mobile publication layout' },
+      ],
+    },
+    {
+      type: 'link',
+      linkPrefix: 'A link to the article: ',
+      label: 'https://media226.ru/voices/85-ne-vaznye-teksty-tat-any-hudakovoj',
+      href: 'https://media226.ru/voices/85-ne-vaznye-teksty-tat-any-hudakovoj',
     },
   ],
 };
@@ -1036,6 +1130,10 @@ export const caseStudies = {
   'foxy-roasters': {
     en: foxyRoastersEn,
     fr: foxyRoastersFr,
+  },
+  'media-226-editorial': {
+    en: media226EditorialEn,
+    fr: media226EditorialEn,
   },
   'handmade-photo-comic': {
     en: handmadePhotoComicEn,

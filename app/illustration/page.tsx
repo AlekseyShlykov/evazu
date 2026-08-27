@@ -9,14 +9,15 @@ import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
 const illustrationCaseStudyByIndex: Record<number, string> = {
   0: 'handmade-photo-comic',
-  1: 'brutalist-belgrade',
-  2: 'belgrade-stories',
-  3: 'foxy-roasters',
-  4: 'yerevan',
-  5: 'tea-branding',
-  6: 'belgrade-atmosphere',
-  7: 'music-visuals',
-  8: 'nekorobka-infographics',
+  1: 'media-226-editorial',
+  2: 'brutalist-belgrade',
+  3: 'belgrade-stories',
+  4: 'foxy-roasters',
+  5: 'yerevan',
+  6: 'tea-branding',
+  7: 'belgrade-atmosphere',
+  8: 'music-visuals',
+  9: 'nekorobka-infographics',
 };
 
 export default function IllustrationPage() {
