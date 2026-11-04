@@ -88,15 +88,19 @@ const menopauseResearchEn: CaseStudy = {
       type: 'imageGrid',
       singleColumn: true,
       imageShadow: true,
+      imageRadius15: true,
       images: [{ src: '/images/ill12.png', alt: 'Landing page hero screenshot' }],
     },
     {
       type: 'imageGrid',
       fixedTwoColumns: true,
       imageShadow: true,
+      imageRadius15: true,
       images: [
         { src: '/images/ill13.png', alt: 'Landing page research topics screenshot' },
-        { src: '/images/ill14.png', alt: 'Landing page interactive stories screenshot' },
+        { src: '/images/ill13 1.png', alt: 'Landing page interactive stories screenshot' },
+        { src: '/images/ill14.png', alt: 'Landing page research overview screenshot' },
+        { src: '/images/ill14 1.png', alt: 'Landing page research findings screenshot' },
       ],
     },
     {

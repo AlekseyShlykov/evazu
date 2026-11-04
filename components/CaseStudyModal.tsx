@@ -350,6 +350,7 @@ function PictureImage({
   imgRef,
   onLoad,
   onClick,
+  eager = false,
 }: {
   src: string;
   alt: string;
@@ -357,6 +358,7 @@ function PictureImage({
   imgRef?: React.Ref<HTMLImageElement>;
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
   onClick?: () => void;
+  eager?: boolean;
 }) {
   const webp = webpSrcFor(src);
   return (
@@ -367,7 +369,8 @@ function PictureImage({
         src={src}
         alt={alt}
         className={className}
-        loading="lazy"
+        loading={eager ? 'eager' : 'lazy'}
+        fetchPriority={eager ? 'high' : undefined}
         decoding="async"
         onLoad={onLoad}
         onClick={onClick}
@@ -456,7 +459,7 @@ function CaseStudyFixedCellImage({
         src={src}
         alt={alt}
         className={`w-full h-auto max-w-full cursor-zoom-in ${radius15 ? 'rounded-[15px]' : 'rounded-lg'} ${
-          shadow ? '[box-shadow:0_0_14px_rgba(0,0,0,0.25)]' : ''
+          shadow ? '[box-shadow:0_2px_7px_rgba(0,0,0,0.18)]' : ''
         }`}
         onClick={onClick}
       />
@@ -678,7 +681,7 @@ function CaseStudyImageRun({
   radius15?: boolean;
 }) {
   const imageClassName = `w-full h-auto max-w-full cursor-zoom-in ${radius15 ? 'rounded-[15px]' : 'rounded-lg'} ${
-    shadow ? '[box-shadow:0_0_14px_rgba(0,0,0,0.25)]' : ''
+    shadow ? '[box-shadow:0_2px_7px_rgba(0,0,0,0.18)]' : ''
   }`;
 
   if (singleColumn) {
@@ -802,10 +805,10 @@ function CaseStudyImageCarousel({
   };
 
   return (
-    <div className="relative -mr-6 md:-mr-10">
+    <div className="relative -mx-2 md:-mx-3">
       <div
         ref={scrollerRef}
-        className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-6 [scrollbar-width:none] md:gap-4 md:pr-10 [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-2 py-3 [scrollbar-width:none] md:gap-4 md:px-3 [&::-webkit-scrollbar]:hidden"
       >
         {images.map((img, index) => {
           const resolved = resolveImgSrc(img.src);
@@ -814,7 +817,7 @@ function CaseStudyImageCarousel({
               key={`${img.src}-${index}`}
               type="button"
               data-carousel-card
-              className="basis-[calc((100%-1.5rem)/2.5)] shrink-0 snap-start overflow-hidden rounded-[15px] p-0 text-left [box-shadow:0_0_14px_rgba(0,0,0,0.25)] md:basis-[calc((100%-3rem)/3.5)]"
+              className="basis-[calc((100%-1.5rem)/2.5)] shrink-0 snap-start overflow-hidden rounded-[15px] p-0 text-left [box-shadow:0_2px_7px_rgba(0,0,0,0.18)] md:basis-[calc((100%-3rem)/3.5)]"
               onClick={() => onImageClick(resolved, img.alt)}
               aria-label={img.alt}
             >
@@ -844,7 +847,7 @@ function CaseStudyImageCarousel({
         <button
           type="button"
           onClick={() => move(1)}
-          className="absolute right-3 top-1/2 z-[1] -translate-y-1/2 rounded-full bg-white/90 p-2 text-neutral-900 shadow-md transition hover:bg-white md:right-5"
+          className="absolute right-2 top-1/2 z-[1] -translate-y-1/2 rounded-full bg-white/90 p-2 text-neutral-900 shadow-md transition hover:bg-white md:right-3"
           aria-label="Next carousel images"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -1312,6 +1315,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
               src={resolved}
               alt={alt}
               className="block h-auto w-full cursor-zoom-in object-contain"
+              eager
               onClick={() => openLightbox(resolved, alt)}
             />
           );

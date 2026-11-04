@@ -12,7 +12,7 @@ const featuredProjects = [
   {
     titleIndex: 0,
     titleSource: 'illustration' as const,
-    image: 'ill1.png',
+    image: 'Cover.png',
     caseStudyId: 'menopause-research',
   },
   {
@@ -120,8 +120,6 @@ export default function HomePage() {
                   key={project.caseStudyId}
                   title={title}
                   image={project.image}
-                  imageFit={project.caseStudyId === 'menopause-research' ? 'contain' : undefined}
-                  imageBackground={project.caseStudyId === 'menopause-research' ? '#FCF4E9' : undefined}
                   priority={idx === 0}
                   onClick={() => openCaseStudyModal(project.caseStudyId)}
                 />
