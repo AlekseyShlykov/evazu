@@ -6,7 +6,7 @@ import type { A11yStrings } from '@/lib/translations';
 import { encodePublicPath, webpSrcFor } from '@/lib/imageSources';
 
 export interface CaseStudySection {
-  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow' | 'nativeVideo';
+  type: 'heading' | 'paragraph' | 'image' | 'imageGrid' | 'imageCarousel' | 'imageHalf' | 'link' | 'vimeo' | 'vimeoRow' | 'nativeVideo';
   text?: string;
   /** Optional bold lead-in rendered at the same size as paragraph text. */
   boldPrefix?: string;
@@ -20,15 +20,23 @@ export interface CaseStudySection {
   /** For type imageHalf: one image at 50% width centered, or two images side by side (~half width each) */
   imageHalfLayout?: 'single' | 'pair';
   /** Width of a centered single imageHalf. Defaults to one half. */
-  imageHalfWidth?: 'half' | 'twoThirds';
+  imageHalfWidth?: 'twoFifths' | 'half' | 'twoThirds';
   /** For type imageGrid: number of equal columns (e.g. 4 for a comic strip). Defaults to 2 when fixedTwoColumns. */
   columns?: number;
+  /** Optional mobile column count for an equal-column image grid. */
+  mobileColumns?: number;
   /** If true, every image stays one column (two per row) regardless of aspect ratio */
   fixedTwoColumns?: boolean;
   /** If true with imageGrid, stack images vertically at full width */
   singleColumn?: boolean;
   /** Behance-style justified rows: equal row height, widths follow aspect ratio */
   masonry?: boolean;
+  /** Add the subtle portfolio-card shadow used by website and social screenshots. */
+  imageShadow?: boolean;
+  /** Use a 15px radius instead of the default 8px image radius. */
+  imageRadius15?: boolean;
+  /** Center a standalone link within the case-study content column. */
+  centered?: boolean;
   /** Vimeo video ID for type "vimeo" */
   vimeoId?: string;
   /** iframe title (accessibility) */
@@ -68,6 +76,12 @@ export interface CaseStudy {
   title: string;
   /** Optional full-bleed cover directly below the modal title bar. */
   coverImage?: { src: string; alt?: string };
+  /** When the cover artwork already contains the title, keep the semantic title visually hidden. */
+  titleInCover?: boolean;
+  /** Optional case-specific page background. */
+  backgroundColor?: string;
+  /** Increase vertical rhythm for long, editorial case studies. */
+  spacious?: boolean;
   sections: CaseStudySection[];
 }
 
@@ -304,6 +318,13 @@ function collectCaseStudyImages(
       si++;
       continue;
     }
+    if (section.type === 'imageCarousel') {
+      for (const img of section.images || []) {
+        items.push({ src: resolveImgSrc(img.src), alt: img.alt || '' });
+      }
+      si++;
+      continue;
+    }
     si++;
   }
   return items;
@@ -420,17 +441,23 @@ function CaseStudyFixedCellImage({
   src,
   alt,
   onClick,
+  shadow = false,
+  radius15 = false,
 }: {
   src: string;
   alt: string;
   onClick: () => void;
+  shadow?: boolean;
+  radius15?: boolean;
 }) {
   return (
     <div className="min-w-0 col-span-1">
       <PictureImage
         src={src}
         alt={alt}
-        className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
+        className={`w-full h-auto max-w-full cursor-zoom-in ${radius15 ? 'rounded-[15px]' : 'rounded-lg'} ${
+          shadow ? '[box-shadow:0_0_14px_rgba(0,0,0,0.25)]' : ''
+        }`}
         onClick={onClick}
       />
     </div>
@@ -634,7 +661,10 @@ function CaseStudyImageRun({
   fixedTwoColumns = false,
   singleColumn = false,
   columns,
+  mobileColumns,
   masonry = false,
+  shadow = false,
+  radius15 = false,
 }: {
   images: { src: string; alt: string; fullWidth?: boolean; imageWideBanner?: boolean }[];
   resolveImgSrc: (src: string) => string;
@@ -642,8 +672,15 @@ function CaseStudyImageRun({
   fixedTwoColumns?: boolean;
   singleColumn?: boolean;
   columns?: number;
+  mobileColumns?: number;
   masonry?: boolean;
+  shadow?: boolean;
+  radius15?: boolean;
 }) {
+  const imageClassName = `w-full h-auto max-w-full cursor-zoom-in ${radius15 ? 'rounded-[15px]' : 'rounded-lg'} ${
+    shadow ? '[box-shadow:0_0_14px_rgba(0,0,0,0.25)]' : ''
+  }`;
+
   if (singleColumn) {
     return (
       <div className="flex w-full flex-col gap-4">
@@ -655,7 +692,7 @@ function CaseStudyImageRun({
               <PictureImage
                 src={resolved}
                 alt={img.alt}
-                className="w-full h-auto max-w-full rounded-lg cursor-zoom-in"
+                className={imageClassName}
                 onClick={onClick}
               />
             </div>
@@ -677,14 +714,23 @@ function CaseStudyImageRun({
 
   const equalCols = columns && columns >= 2 ? Math.min(columns, 4) : fixedTwoColumns ? 2 : null;
   if (equalCols != null) {
-    const colClass = EQUAL_COL_CLASS[equalCols] ?? 'grid-cols-2';
+    const colClass = mobileColumns === 2 && equalCols === 4
+      ? 'grid-cols-2 md:grid-cols-4'
+      : EQUAL_COL_CLASS[equalCols] ?? 'grid-cols-2';
     return (
       <div className={`grid w-full gap-3 md:gap-4 ${colClass}`}>
         {images.map((img, j) => {
           const resolved = resolveImgSrc(img.src);
           const onClick = () => onImageClick(resolved, img.alt);
           return (
-            <CaseStudyFixedCellImage key={`${img.src}-${j}`} src={resolved} alt={img.alt} onClick={onClick} />
+            <CaseStudyFixedCellImage
+              key={`${img.src}-${j}`}
+              src={resolved}
+              alt={img.alt}
+              onClick={onClick}
+              shadow={shadow}
+              radius15={radius15}
+            />
           );
         })}
       </div>
@@ -707,6 +753,105 @@ function CaseStudyImageRun({
           />
         );
       })}
+    </div>
+  );
+}
+
+function CaseStudyImageCarousel({
+  images,
+  resolveImgSrc,
+  onImageClick,
+}: {
+  images: { src: string; alt: string }[];
+  resolveImgSrc: (src: string) => string;
+  onImageClick: (resolvedSrc: string, alt: string) => void;
+}) {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateControls = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 2);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 2);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    updateControls();
+    const resizeObserver = new ResizeObserver(updateControls);
+    resizeObserver.observe(el);
+    el.addEventListener('scroll', updateControls, { passive: true });
+    return () => {
+      resizeObserver.disconnect();
+      el.removeEventListener('scroll', updateControls);
+    };
+  }, [updateControls]);
+
+  const move = (direction: -1 | 1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const firstCard = el.querySelector<HTMLElement>('[data-carousel-card]');
+    const gap = window.innerWidth >= 768 ? 16 : 12;
+    el.scrollBy({
+      left: direction * ((firstCard?.offsetWidth ?? el.clientWidth * 0.4) + gap),
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <div className="relative -mr-6 md:-mr-10">
+      <div
+        ref={scrollerRef}
+        className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-5 pr-6 [scrollbar-width:none] md:gap-4 md:pr-10 [&::-webkit-scrollbar]:hidden"
+      >
+        {images.map((img, index) => {
+          const resolved = resolveImgSrc(img.src);
+          return (
+            <button
+              key={`${img.src}-${index}`}
+              type="button"
+              data-carousel-card
+              className="basis-[calc((100%-1.5rem)/2.5)] shrink-0 snap-start overflow-hidden rounded-[15px] p-0 text-left [box-shadow:0_0_14px_rgba(0,0,0,0.25)] md:basis-[calc((100%-3rem)/3.5)]"
+              onClick={() => onImageClick(resolved, img.alt)}
+              aria-label={img.alt}
+            >
+              <PictureImage
+                src={resolved}
+                alt={img.alt}
+                className="block h-auto w-full cursor-zoom-in"
+              />
+            </button>
+          );
+        })}
+      </div>
+
+      {canScrollLeft && (
+        <button
+          type="button"
+          onClick={() => move(-1)}
+          className="absolute left-2 top-1/2 z-[1] -translate-y-1/2 rounded-full bg-white/90 p-2 text-neutral-900 shadow-md transition hover:bg-white"
+          aria-label="Previous carousel images"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </button>
+      )}
+      {canScrollRight && (
+        <button
+          type="button"
+          onClick={() => move(1)}
+          className="absolute right-3 top-1/2 z-[1] -translate-y-1/2 rounded-full bg-white/90 p-2 text-neutral-900 shadow-md transition hover:bg-white md:right-5"
+          aria-label="Next carousel images"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }
@@ -895,7 +1040,11 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
       if (layout === 'single' && section.src) {
         const resolved = resolveImgSrc(section.src);
         const alt = section.alt || '';
-        const widthClass = section.imageHalfWidth === 'twoThirds' ? 'max-w-[66.666667%]' : 'max-w-[50%]';
+        const widthClass = section.imageHalfWidth === 'twoThirds'
+          ? 'max-w-[66.666667%]'
+          : section.imageHalfWidth === 'twoFifths'
+            ? 'max-w-[40%]'
+            : 'max-w-[50%]';
         sectionNodes.push(
           <div key={`case-image-half-${si}`} className="flex w-full justify-center">
             <div className={`w-full ${widthClass}`}>
@@ -965,7 +1114,22 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
           fixedTwoColumns={section.fixedTwoColumns === true}
           singleColumn={section.singleColumn === true}
           columns={section.columns}
+          mobileColumns={section.mobileColumns}
           masonry={section.masonry === true}
+          shadow={section.imageShadow === true}
+          radius15={section.imageRadius15 === true}
+        />,
+      );
+      si++;
+      continue;
+    }
+    if (section.type === 'imageCarousel') {
+      sectionNodes.push(
+        <CaseStudyImageCarousel
+          key={`case-carousel-${si}`}
+          images={(section.images || []).map((img) => ({ src: img.src, alt: img.alt || '' }))}
+          resolveImgSrc={resolveImgSrc}
+          onImageClick={(resolved, alt) => openLightbox(resolved, alt)}
         />,
       );
       si++;
@@ -1072,15 +1236,16 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
             </a>
           </p>
         ) : (
-          <a
-            key={si}
-            href={section.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-fit max-w-full items-center gap-1 text-left text-base text-accent hover:underline font-medium"
-          >
-            {section.label || section.href} →
-          </a>
+          <div key={si} className={section.centered ? 'flex justify-center' : ''}>
+            <a
+              href={section.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-fit max-w-full items-center gap-1 text-left text-base text-accent hover:underline font-medium"
+            >
+              {section.label || section.href} →
+            </a>
+          </div>
         ));
         break;
       default:
@@ -1110,14 +1275,15 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
 
       <div
         ref={contentRef}
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-2xl"
+        className="relative min-w-0 w-full max-w-4xl max-h-[90vh] overflow-x-hidden overflow-y-auto rounded-xl bg-white shadow-2xl"
+        style={study.backgroundColor ? { backgroundColor: study.backgroundColor } : undefined}
       >
         <div
           className={study.coverImage
             ? 'absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 py-4 md:px-10'
             : 'sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur px-6 py-4 md:px-10'}
         >
-          <h2 className={`text-lg md:text-xl font-semibold pr-8 line-clamp-2 ${
+          <h2 className={study.titleInCover ? 'sr-only' : `text-lg md:text-xl font-semibold pr-8 line-clamp-2 ${
             study.coverImage ? 'text-white [text-shadow:0_1px_4px_rgb(0_0_0/0.65)]' : 'text-neutral-900'
           }`}>
             {study.title}
@@ -1151,7 +1317,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
           );
         })()}
 
-        <div className="px-6 py-8 md:px-10 md:py-10 space-y-6 text-left">{sectionNodes}</div>
+        <div className={`px-6 py-8 md:px-10 md:py-10 text-left ${study.spacious ? 'space-y-10 md:space-y-12' : 'space-y-6'}`}>{sectionNodes}</div>
       </div>
     </div>
   );

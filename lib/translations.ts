@@ -51,6 +51,7 @@ export const translations = {
       },
     ],
     illustrationProjectTitles: [
+      'Illustrations and design for research on support for women in perimenopause and menopause',
       'Handmade Photo Comic',
       'Editorial illustrations for Media 226',
       'A series of illustrations about the brutalist architecture of Belgrade',
@@ -76,6 +77,7 @@ export const translations = {
     },
     learnWithMochiCopyright: 'All rights and characters reserved to Learn with Mochi company. Unauthorized copying, downloading, or use prohibited.',
     brandingProjectTitles: [
+      'Illustrations and design for research on support for women in perimenopause and menopause',
       'Visual identity for Chinese tea sets',
       'Nekorobka hobby kits',
       'Illustrations & Design for Foxy Roasters — gift sets, postcards, and stickers',
@@ -186,6 +188,7 @@ export const translations = {
       },
     ],
     illustrationProjectTitles: [
+      'Illustrations and design for research on support for women in perimenopause and menopause',
       'Comic photo artisanal',
       'Editorial illustrations for Media 226',
       'Série d\'illustrations sur l\'architecture brutaliste de Belgrade',
@@ -212,6 +215,7 @@ export const translations = {
     learnWithMochiCopyright:
       'Tous droits et personnages réservés à la société Learn with Mochi. Toute copie, téléchargement ou utilisation non autorisés sont interdits.',
     brandingProjectTitles: [
+      'Illustrations and design for research on support for women in perimenopause and menopause',
       'Identité visuelle pour coffrets de thé chinois',
       'Kits loisirs Nekorobka',
       'Illustrations et design pour Foxy Roasters — coffrets, cartes postales et stickers',

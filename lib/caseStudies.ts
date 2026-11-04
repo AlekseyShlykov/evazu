@@ -21,6 +21,112 @@ import {
   yerevanFr,
 } from './caseStudiesFr';
 
+const menopauseResearchEn: CaseStudy = {
+  title: 'Illustrations and design for research on support for women in perimenopause and menopause',
+  coverImage: {
+    src: '/images/ill1.png',
+    alt: 'Illustrations and design for research on support for women in perimenopause and menopause',
+  },
+  titleInCover: true,
+  backgroundColor: '#FCF4E9',
+  sections: [
+    {
+      type: 'paragraph',
+      boldPrefix: 'Task\n',
+      text: 'To design a landing page for the research, introduce the project, present its key findings and provide access to the full report.',
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'Created by\n',
+      text: '“Vse Inache”, an educational project about menopause, and Femtech Force, a media and research project focused on technology in women\'s health.',
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'My role\n',
+      text: 'I designed the characters and created a series of illustrations for the landing page. I also brought together a colour palette based on the brand guidelines of both projects, selected typefaces and created additional graphics for the page.',
+    },
+    {
+      type: 'paragraph',
+      text: 'Using quotes from the research and visual references, I created the characters featured in the illustrations.',
+    },
+    ...[2, 3, 4, 5, 6].map((number) => ({
+      type: 'imageGrid' as const,
+      singleColumn: true,
+      images: [{
+        src: `/images/ill${number}.png`,
+        alt: `Character illustration ${number - 1} for the menopause research landing page`,
+      }],
+    })),
+    {
+      type: 'paragraph',
+      text: 'For the landing page, I combined colours from the existing brand palettes of both projects, and expanded the palette for the illustrations.\nBased on the team\'s brief, I also created a background with winding lines that resemble roads. They represent the different paths taken by women and healthcare professionals.\nThe typefaces were taken from the Femtech Force brand guidelines.',
+    },
+    {
+      type: 'imageGrid',
+      singleColumn: true,
+      images: [{ src: '/images/ill7.png', alt: 'Colour palette, typography and winding-line background system' }],
+    },
+    {
+      type: 'heading',
+      text: 'Illustrations adapted into small section icons',
+    },
+    {
+      type: 'imageGrid',
+      columns: 4,
+      mobileColumns: 2,
+      images: [8, 9, 10, 11].map((number) => ({
+        src: `/images/ill${number}.png`,
+        alt: `Section icon ${number - 7}`,
+      })),
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'Landing page screenshots\n',
+      text: 'Page made by: Masha Muller',
+    },
+    {
+      type: 'imageGrid',
+      singleColumn: true,
+      imageShadow: true,
+      images: [{ src: '/images/ill12.png', alt: 'Landing page hero screenshot' }],
+    },
+    {
+      type: 'imageGrid',
+      fixedTwoColumns: true,
+      imageShadow: true,
+      images: [
+        { src: '/images/ill13.png', alt: 'Landing page research topics screenshot' },
+        { src: '/images/ill14.png', alt: 'Landing page interactive stories screenshot' },
+      ],
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'Social media card design\n',
+      text: 'Text: Sasha Belyanina, design and illustrations: me',
+    },
+    {
+      type: 'imageCarousel',
+      images: Array.from({ length: 9 }, (_, index) => ({
+        src: `/images/ill${index + 15}.png`,
+        alt: `Social media card ${index + 1}`,
+      })),
+    },
+    {
+      type: 'link',
+      label: 'Visit the website',
+      href: 'https://vse-inache.com/menopause_research2026',
+      centered: true,
+    },
+    {
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      imageHalfWidth: 'twoFifths',
+      src: '/images/ill24.png',
+      alt: 'Woman reading the menopause research report',
+    },
+  ],
+};
+
 const teaBrandingEn: CaseStudy = {
   title: 'Visual identity for Chinese tea sets',
   sections: [
@@ -1107,6 +1213,10 @@ const animationOverVideoEn: CaseStudy = {
 };
 
 export const caseStudies = {
+  'menopause-research': {
+    en: menopauseResearchEn,
+    fr: menopauseResearchEn,
+  },
   'tea-branding': {
     en: teaBrandingEn,
     fr: teaBrandingFr,

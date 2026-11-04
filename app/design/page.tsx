@@ -8,11 +8,12 @@ import { translations } from '@/lib/translations';
 import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
 const designCaseStudyByIndex: Record<number, string> = {
-  0: 'tea-branding',
-  1: 'nekorobka-hobby-kits',
-  2: 'foxy-roasters',
-  3: 'music-visuals',
-  4: 'hobby-matching-animation',
+  0: 'menopause-research',
+  1: 'tea-branding',
+  2: 'nekorobka-hobby-kits',
+  3: 'foxy-roasters',
+  4: 'music-visuals',
+  5: 'hobby-matching-animation',
 };
 
 export default function DesignPage() {

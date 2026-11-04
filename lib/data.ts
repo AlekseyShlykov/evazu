@@ -62,6 +62,11 @@ export const services = [
 
 export const illustrationProjects = [
   {
+    title: 'Illustrations and design for research on support for women in perimenopause and menopause',
+    href: 'https://vse-inache.com/menopause_research2026',
+    image: 'ill1.png',
+  },
+  {
     title: 'Handmade Photo Comic',
     href: 'https://www.behance.net/gallery/253779349/Handmade-Photo-Comic',
     image: 'Comic all g.jpg',
@@ -185,6 +190,11 @@ export const animationItems: AnimationItem[] = [
 ];
 
 export const brandingProjects = [
+  {
+    title: 'Illustrations and design for research on support for women in perimenopause and menopause',
+    href: 'https://vse-inache.com/menopause_research2026',
+    image: 'ill1.png',
+  },
   {
     title: 'Visual identity for Chinese tea sets',
     href: 'https://www.notion.so/Branding-and-visual-identity-for-Chinese-tea-gift-sets-14db2b33972b81e09e44d8f7cc8db433?pvs=21',

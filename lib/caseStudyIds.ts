@@ -15,6 +15,7 @@ export const CASE_STUDY_IDS = [
   'line-animation-frame-by-frame',
   'logo-social-media-animation',
   'media-226-editorial',
+  'menopause-research',
   'mixed-media-animation',
   'music-visuals',
   'nekorobka-hobby-kits',

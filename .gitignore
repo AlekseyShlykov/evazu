@@ -32,3 +32,6 @@ next-env.d.ts
 
 # Local backups of optimized assets (originals before recompression)
 /.backups/
+
+# Local layout reference for the menopause research case study
+/public/images/Frame 2087326391.png

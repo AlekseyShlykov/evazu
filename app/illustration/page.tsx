@@ -8,16 +8,17 @@ import { translations } from '@/lib/translations';
 import { useCaseStudyModalUrl } from '@/lib/useCaseStudyModalUrl';
 
 const illustrationCaseStudyByIndex: Record<number, string> = {
-  0: 'handmade-photo-comic',
-  1: 'media-226-editorial',
-  2: 'brutalist-belgrade',
-  3: 'belgrade-stories',
-  4: 'foxy-roasters',
-  5: 'yerevan',
-  6: 'tea-branding',
-  7: 'belgrade-atmosphere',
-  8: 'music-visuals',
-  9: 'nekorobka-infographics',
+  0: 'menopause-research',
+  1: 'handmade-photo-comic',
+  2: 'media-226-editorial',
+  3: 'brutalist-belgrade',
+  4: 'belgrade-stories',
+  5: 'foxy-roasters',
+  6: 'yerevan',
+  7: 'tea-branding',
+  8: 'belgrade-atmosphere',
+  9: 'music-visuals',
+  10: 'nekorobka-infographics',
 };
 
 export default function IllustrationPage() {
