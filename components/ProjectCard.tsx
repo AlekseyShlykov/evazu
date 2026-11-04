@@ -5,6 +5,8 @@ export interface ProjectCardProps {
   href: string;
   category?: string;
   aspectRatio?: 'landscape' | 'square' | 'portrait' | 'video' | 'wide';
+  imageFit?: 'cover' | 'contain';
+  imageBackground?: string;
   image?: string;
   thumbnailUrl?: string | null;
   onClick?: () => void;

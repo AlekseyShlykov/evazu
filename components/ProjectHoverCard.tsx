@@ -22,6 +22,10 @@ export interface ProjectHoverCardProps {
   href?: string;
   onClick?: () => void;
   aspectRatio?: AspectRatio;
+  /** How a local project image is fitted inside the preview frame. */
+  imageFit?: 'cover' | 'contain';
+  /** Background shown around a contained local image. */
+  imageBackground?: string;
   /** When set, replaces the default image / placeholder area */
   children?: ReactNode;
   /** Small text below title in hover overlay (e.g. copyright) */
@@ -38,6 +42,8 @@ function ProjectHoverCardInner({
   href,
   onClick,
   aspectRatio = 'wide',
+  imageFit = 'cover',
+  imageBackground,
   children,
   hoverFooter,
   priority,
@@ -65,13 +71,13 @@ function ProjectHoverCardInner({
           />
         </div>
       ) : (
-        <div className="absolute inset-0">
+        <div className="absolute inset-0" style={imageBackground ? { backgroundColor: imageBackground } : undefined}>
           <picture>
             {localWebp && <source srcSet={localWebp} type="image/webp" />}
             <img
               src={localSrc!}
               alt={title}
-              className="absolute inset-0 h-full w-full object-cover"
+              className={`absolute inset-0 h-full w-full ${imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
               loading={priority ? 'eager' : 'lazy'}
               decoding={priority ? 'sync' : 'async'}
               fetchPriority={priority ? 'high' : 'auto'}

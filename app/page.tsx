@@ -120,6 +120,8 @@ export default function HomePage() {
                   key={project.caseStudyId}
                   title={title}
                   image={project.image}
+                  imageFit={project.caseStudyId === 'menopause-research' ? 'contain' : undefined}
+                  imageBackground={project.caseStudyId === 'menopause-research' ? '#FCF4E9' : undefined}
                   priority={idx === 0}
                   onClick={() => openCaseStudyModal(project.caseStudyId)}
                 />

@@ -41,6 +41,8 @@ export default function DesignPage() {
                   category={t.categoryBrandingDesign}
                   aspectRatio="wide"
                   image={project.image}
+                  imageFit={i === 0 ? 'contain' : undefined}
+                  imageBackground={i === 0 ? '#FCF4E9' : undefined}
                   priority={i === 0}
                   onClick={caseId ? () => openCaseStudyModal(caseId) : undefined}
                 />
