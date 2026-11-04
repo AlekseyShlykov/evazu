@@ -13,6 +13,7 @@ import {
   learnWithMochiAnimationFr,
   lineFrameByFrameAnimationFr,
   logoSocialMediaAnimationFr,
+  menopauseResearchFr,
   mixedMediaAnimationFr,
   musicVisualsFr,
   nekorobkaHobbyKitsFr,
@@ -1219,7 +1220,7 @@ const animationOverVideoEn: CaseStudy = {
 export const caseStudies = {
   'menopause-research': {
     en: menopauseResearchEn,
-    fr: menopauseResearchEn,
+    fr: menopauseResearchFr,
   },
   'tea-branding': {
     en: teaBrandingEn,

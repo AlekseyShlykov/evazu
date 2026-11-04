@@ -1,6 +1,116 @@
 import type { CaseStudy } from '@/components/CaseStudyModal';
 
 /** French case study bodies — used when locale is `fr`. */
+export const menopauseResearchFr: CaseStudy = {
+  title: 'Illustrations et design pour une étude sur l’accompagnement des femmes en périménopause et à la ménopause',
+  coverImage: {
+    src: '/images/ill1.png',
+    alt: 'Illustrations et design pour une étude sur l’accompagnement des femmes en périménopause et à la ménopause',
+  },
+  titleInCover: true,
+  backgroundColor: '#FCF4E9',
+  sections: [
+    {
+      type: 'paragraph',
+      boldPrefix: 'Mission\n',
+      text: 'Concevoir une landing page pour présenter l’étude et le projet, mettre en avant ses principaux résultats et donner accès au rapport complet.',
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'Une initiative de\n',
+      text: '« Vse Inache », un projet éducatif consacré à la ménopause, et Femtech Force, un média et projet de recherche dédié aux technologies appliquées à la santé des femmes.',
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'Mon rôle\n',
+      text: 'J’ai conçu les personnages et réalisé une série d’illustrations pour la landing page. J’ai également élaboré une palette de couleurs à partir des identités visuelles des deux projets, choisi les typographies et créé des éléments graphiques complémentaires pour la page.',
+    },
+    {
+      type: 'paragraph',
+      text: 'À partir de citations issues de l’étude et de références visuelles, j’ai créé les personnages représentés dans les illustrations.',
+    },
+    ...[2, 3, 4, 5, 6].map((number) => ({
+      type: 'imageGrid' as const,
+      singleColumn: true,
+      images: [{
+        src: `/images/ill${number}.png`,
+        alt: `Illustration de personnage ${number - 1} pour la landing page de l’étude sur la ménopause`,
+      }],
+    })),
+    {
+      type: 'paragraph',
+      text: 'Pour la landing page, j’ai associé des couleurs issues des palettes existantes des deux projets et enrichi la palette destinée aux illustrations.\nÀ partir du brief de l’équipe, j’ai également créé un fond composé de lignes sinueuses évoquant des routes. Elles représentent les différents parcours des femmes et des professionnels de santé.\nLes typographies sont issues de la charte graphique de Femtech Force.',
+    },
+    {
+      type: 'imageGrid',
+      singleColumn: true,
+      images: [{ src: '/images/ill7.png', alt: 'Palette de couleurs, typographies et système graphique de lignes sinueuses' }],
+    },
+    {
+      type: 'heading',
+      text: 'Illustrations adaptées en petites icônes de section',
+    },
+    {
+      type: 'imageGrid',
+      columns: 4,
+      mobileColumns: 2,
+      images: [8, 9, 10, 11].map((number) => ({
+        src: `/images/ill${number}.png`,
+        alt: `Icône de section ${number - 7}`,
+      })),
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'Captures d’écran de la landing page\n',
+      text: 'Page réalisée par : Masha Muller',
+    },
+    {
+      type: 'imageGrid',
+      singleColumn: true,
+      imageShadow: true,
+      imageRadius15: true,
+      images: [{ src: '/images/ill12.png', alt: 'Capture de l’écran d’accueil de la landing page' }],
+    },
+    {
+      type: 'imageGrid',
+      fixedTwoColumns: true,
+      imageShadow: true,
+      imageRadius15: true,
+      images: [
+        { src: '/images/ill13.png', alt: 'Capture des thèmes de recherche de la landing page' },
+        { src: '/images/ill13 1.png', alt: 'Capture des récits interactifs de la landing page' },
+        { src: '/images/ill14.png', alt: 'Capture de la présentation de l’étude sur la landing page' },
+        { src: '/images/ill14 1.png', alt: 'Capture des résultats de l’étude sur la landing page' },
+      ],
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'Design des visuels pour les réseaux sociaux\n',
+      text: 'Textes : Sasha Belyanina ; design et illustrations : moi',
+    },
+    {
+      type: 'imageCarousel',
+      images: Array.from({ length: 9 }, (_, index) => ({
+        src: `/images/ill${index + 15}.png`,
+        alt: `Visuel pour les réseaux sociaux ${index + 1}`,
+      })),
+    },
+    {
+      type: 'link',
+      label: 'Voir le site',
+      href: 'https://vse-inache.com/menopause_research2026',
+      centered: true,
+    },
+    {
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      imageHalfWidth: 'twoFifths',
+      src: '/images/ill24.png',
+      alt: 'Femme lisant le rapport de l’étude sur la ménopause',
+    },
+  ],
+};
+
 export const teaBrandingFr: CaseStudy = {
   title: 'Identité visuelle pour coffrets de thé chinois',
   sections: [

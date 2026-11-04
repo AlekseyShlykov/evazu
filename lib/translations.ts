@@ -188,7 +188,7 @@ export const translations = {
       },
     ],
     illustrationProjectTitles: [
-      'Illustrations and design for research on support for women in perimenopause and menopause',
+      'Illustrations et design pour une étude sur l’accompagnement des femmes en périménopause et à la ménopause',
       'Comic photo artisanal',
       'Editorial illustrations for Media 226',
       'Série d\'illustrations sur l\'architecture brutaliste de Belgrade',
@@ -215,7 +215,7 @@ export const translations = {
     learnWithMochiCopyright:
       'Tous droits et personnages réservés à la société Learn with Mochi. Toute copie, téléchargement ou utilisation non autorisés sont interdits.',
     brandingProjectTitles: [
-      'Illustrations and design for research on support for women in perimenopause and menopause',
+      'Illustrations et design pour une étude sur l’accompagnement des femmes en périménopause et à la ménopause',
       'Identité visuelle pour coffrets de thé chinois',
       'Kits loisirs Nekorobka',
       'Illustrations et design pour Foxy Roasters — coffrets, cartes postales et stickers',
