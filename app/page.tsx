@@ -12,7 +12,7 @@ const featuredProjects = [
   {
     titleIndex: 0,
     titleSource: 'illustration' as const,
-    image: 'Cover.png',
+    image: 'ill 1 new.png',
     caseStudyId: 'menopause-research',
   },
   {

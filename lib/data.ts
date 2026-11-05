@@ -64,7 +64,7 @@ export const illustrationProjects = [
   {
     title: 'Illustrations and design for research on support for women in perimenopause and menopause',
     href: 'https://vse-inache.com/menopause_research2026',
-    image: 'Cover.png',
+    image: 'ill 1 new.png',
   },
   {
     title: 'Handmade Photo Comic',
@@ -193,7 +193,7 @@ export const brandingProjects = [
   {
     title: 'Illustrations and design for research on support for women in perimenopause and menopause',
     href: 'https://vse-inache.com/menopause_research2026',
-    image: 'Cover.png',
+    image: 'ill 1 new.png',
   },
   {
     title: 'Visual identity for Chinese tea sets',

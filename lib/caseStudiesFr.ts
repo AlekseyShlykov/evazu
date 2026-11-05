@@ -4,7 +4,7 @@ import type { CaseStudy } from '@/components/CaseStudyModal';
 export const menopauseResearchFr: CaseStudy = {
   title: 'Illustrations et design pour une étude sur l’accompagnement des femmes en périménopause et à la ménopause',
   coverImage: {
-    src: '/images/ill1.png',
+    src: '/images/ill 1 new.png',
     alt: 'Illustrations et design pour une étude sur l’accompagnement des femmes en périménopause et à la ménopause',
   },
   titleInCover: true,
@@ -32,8 +32,9 @@ export const menopauseResearchFr: CaseStudy = {
     ...[2, 3, 4, 5, 6].map((number) => ({
       type: 'imageGrid' as const,
       singleColumn: true,
+      extraSpaceBefore: number === 2,
       images: [{
-        src: `/images/ill${number}.png`,
+        src: `/images/ill${number} new.png`,
         alt: `Illustration de personnage ${number - 1} pour la landing page de l’étude sur la ménopause`,
       }],
     })),
@@ -44,11 +45,14 @@ export const menopauseResearchFr: CaseStudy = {
     {
       type: 'imageGrid',
       singleColumn: true,
-      images: [{ src: '/images/ill7.png', alt: 'Palette de couleurs, typographies et système graphique de lignes sinueuses' }],
+      extraSpaceBefore: true,
+      images: [{ src: '/images/ill7 new.png', alt: 'Palette de couleurs, typographies et système graphique de lignes sinueuses' }],
     },
     {
       type: 'heading',
       text: 'Illustrations adaptées en petites icônes de section',
+      extraSpaceBefore: true,
+      extraSpaceAfter: true,
     },
     {
       type: 'imageGrid',
@@ -62,7 +66,9 @@ export const menopauseResearchFr: CaseStudy = {
     {
       type: 'paragraph',
       boldPrefix: 'Captures d’écran de la landing page\n',
-      text: 'Page réalisée par : Masha Muller',
+      text: 'Page créée par : Masha Muller',
+      extraSpaceBefore: true,
+      extraSpaceAfter: true,
     },
     {
       type: 'imageGrid',
@@ -78,15 +84,16 @@ export const menopauseResearchFr: CaseStudy = {
       imageRadius15: true,
       images: [
         { src: '/images/ill13.png', alt: 'Capture des thèmes de recherche de la landing page' },
+        { src: '/images/ill14 1.png', alt: 'Capture des résultats de l’étude sur la landing page' },
         { src: '/images/ill13 1.png', alt: 'Capture des récits interactifs de la landing page' },
         { src: '/images/ill14.png', alt: 'Capture de la présentation de l’étude sur la landing page' },
-        { src: '/images/ill14 1.png', alt: 'Capture des résultats de l’étude sur la landing page' },
       ],
     },
     {
       type: 'paragraph',
       boldPrefix: 'Design des visuels pour les réseaux sociaux\n',
       text: 'Textes : Sasha Belyanina ; design et illustrations : moi',
+      extraSpaceBefore: true,
     },
     {
       type: 'imageCarousel',
@@ -97,9 +104,11 @@ export const menopauseResearchFr: CaseStudy = {
     },
     {
       type: 'link',
-      label: 'Voir le site',
+      label: 'Découvrir le projet',
       href: 'https://vse-inache.com/menopause_research2026',
       centered: true,
+      extraSpaceBefore: true,
+      extraSpaceAfter: true,
     },
     {
       type: 'imageHalf',

@@ -37,6 +37,10 @@ export interface CaseStudySection {
   imageRadius15?: boolean;
   /** Center a standalone link within the case-study content column. */
   centered?: boolean;
+  /** Add one line-height of extra breathing room before this section. */
+  extraSpaceBefore?: boolean;
+  /** Add one line-height of extra breathing room after this section. */
+  extraSpaceAfter?: boolean;
   /** Vimeo video ID for type "vimeo" */
   vimeoId?: string;
   /** iframe title (accessibility) */
@@ -83,6 +87,12 @@ export interface CaseStudy {
   /** Increase vertical rhythm for long, editorial case studies. */
   spacious?: boolean;
   sections: CaseStudySection[];
+}
+
+function sectionSpacingClass(section: CaseStudySection): string {
+  return [section.extraSpaceBefore ? 'pt-4' : '', section.extraSpaceAfter ? 'pb-4' : '']
+    .filter(Boolean)
+    .join(' ');
 }
 
 function buildVimeoEmbedSrc(
@@ -1109,31 +1119,33 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
     }
     if (section.type === 'imageGrid') {
       sectionNodes.push(
-        <CaseStudyImageRun
-          key={`case-grid-${si}`}
-          images={(section.images || []).map((img) => ({ src: img.src, alt: img.alt || '' }))}
-          resolveImgSrc={resolveImgSrc}
-          onImageClick={(resolved, alt) => openLightbox(resolved, alt)}
-          fixedTwoColumns={section.fixedTwoColumns === true}
-          singleColumn={section.singleColumn === true}
-          columns={section.columns}
-          mobileColumns={section.mobileColumns}
-          masonry={section.masonry === true}
-          shadow={section.imageShadow === true}
-          radius15={section.imageRadius15 === true}
-        />,
+        <div key={`case-grid-${si}`} className={sectionSpacingClass(section)}>
+          <CaseStudyImageRun
+            images={(section.images || []).map((img) => ({ src: img.src, alt: img.alt || '' }))}
+            resolveImgSrc={resolveImgSrc}
+            onImageClick={(resolved, alt) => openLightbox(resolved, alt)}
+            fixedTwoColumns={section.fixedTwoColumns === true}
+            singleColumn={section.singleColumn === true}
+            columns={section.columns}
+            mobileColumns={section.mobileColumns}
+            masonry={section.masonry === true}
+            shadow={section.imageShadow === true}
+            radius15={section.imageRadius15 === true}
+          />
+        </div>,
       );
       si++;
       continue;
     }
     if (section.type === 'imageCarousel') {
       sectionNodes.push(
-        <CaseStudyImageCarousel
-          key={`case-carousel-${si}`}
-          images={(section.images || []).map((img) => ({ src: img.src, alt: img.alt || '' }))}
-          resolveImgSrc={resolveImgSrc}
-          onImageClick={(resolved, alt) => openLightbox(resolved, alt)}
-        />,
+        <div key={`case-carousel-${si}`} className={sectionSpacingClass(section)}>
+          <CaseStudyImageCarousel
+            images={(section.images || []).map((img) => ({ src: img.src, alt: img.alt || '' }))}
+            resolveImgSrc={resolveImgSrc}
+            onImageClick={(resolved, alt) => openLightbox(resolved, alt)}
+          />
+        </div>,
       );
       si++;
       continue;
@@ -1212,14 +1224,14 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
     switch (section.type) {
       case 'heading':
         sectionNodes.push(
-          <h3 key={si} className="text-base font-semibold text-neutral-900 leading-relaxed">
+          <h3 key={si} className={`text-base font-semibold text-neutral-900 leading-relaxed ${sectionSpacingClass(section)}`}>
             {section.text}
           </h3>,
         );
         break;
       case 'paragraph':
         sectionNodes.push(
-          <p key={si} className="text-base text-neutral-700 leading-relaxed whitespace-pre-line">
+          <p key={si} className={`text-base text-neutral-700 leading-relaxed whitespace-pre-line ${sectionSpacingClass(section)}`}>
             {section.boldPrefix && <strong className="font-semibold text-neutral-900">{section.boldPrefix}</strong>}
             {section.text}
           </p>,
@@ -1227,7 +1239,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
         break;
       case 'link':
         sectionNodes.push(section.linkPrefix ? (
-          <p key={si} className="text-base text-neutral-700 leading-relaxed break-words">
+          <p key={si} className={`text-base text-neutral-700 leading-relaxed break-words ${sectionSpacingClass(section)}`}>
             {section.linkPrefix}
             <a
               href={section.href}
@@ -1239,7 +1251,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
             </a>
           </p>
         ) : (
-          <div key={si} className={section.centered ? 'flex justify-center' : ''}>
+          <div key={si} className={`${section.centered ? 'flex justify-center' : ''} ${sectionSpacingClass(section)}`}>
             <a
               href={section.href}
               target="_blank"
