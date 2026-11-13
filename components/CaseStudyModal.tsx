@@ -21,6 +21,8 @@ export interface CaseStudySection {
   imageHalfLayout?: 'single' | 'pair';
   /** Width of a centered single imageHalf. Defaults to one half. */
   imageHalfWidth?: 'twoFifths' | 'half' | 'twoThirds' | 'fiveSixths';
+  /** Let a centered illustration fill the content column on mobile. */
+  imageHalfMobileFullWidth?: boolean;
   /** For type imageGrid: number of equal columns (e.g. 4 for a comic strip). Defaults to 2 when fixedTwoColumns. */
   columns?: number;
   /** Optional mobile column count for an equal-column image grid. */
@@ -1075,7 +1077,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
               : 'max-w-[50%]';
         sectionNodes.push(
           <div key={`case-image-half-${si}`} className={`flex w-full justify-center ${sectionSpacingClass(section)}`}>
-            <div className={`w-full ${widthClass}`}>
+            <div className={`w-full ${widthClass} ${section.imageHalfMobileFullWidth ? 'max-md:!max-w-full' : ''}`}>
               <PictureImage
                 src={resolved}
                 alt={alt}
@@ -1316,7 +1318,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
             : 'sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur px-6 py-4 md:px-10'}
           style={multilineTitle ? { containerType: 'inline-size' } : undefined}
         >
-          <h2 className={study.titleInCover ? 'sr-only' : `text-lg md:text-xl font-semibold pr-8 ${multilineTitle ? 'whitespace-pre' : 'line-clamp-2'} ${
+          <h2 className={study.titleInCover ? 'sr-only' : `text-lg md:text-xl font-semibold pr-8 ${multilineTitle ? 'whitespace-pre leading-[1.35] md:leading-7' : 'line-clamp-2'} ${
             study.coverImage ? 'text-white [text-shadow:0_1px_4px_rgb(0_0_0/0.65)]' : 'text-neutral-900'
           }`}
             style={multilineTitle ? { fontSize: 'min(1.25rem, calc((100cqw - 4.25rem) / 17))' } : undefined}

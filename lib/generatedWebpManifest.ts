@@ -42,6 +42,7 @@ export const webpManifest: ReadonlySet<string> = new Set([
   "aut 4.webp",
   "aut 5.webp",
   "aut 6.webp",
+  "aut 7 new.webp",
   "aut 7.webp",
   "aut 8.webp",
   "BA1.webp",

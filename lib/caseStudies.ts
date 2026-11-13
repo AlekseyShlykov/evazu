@@ -688,7 +688,7 @@ const media226AutofictionEn: CaseStudy = {
     src: '/images/aut 1.png',
     alt: 'Collage illustration for Media 226 about Russian autofiction',
   },
-  backgroundColor: '#F7F1E8',
+  backgroundColor: '#FBF2E3',
   sections: [
     {
       type: 'paragraph',
@@ -712,6 +712,7 @@ const media226AutofictionEn: CaseStudy = {
       type: 'imageHalf',
       imageHalfLayout: 'single',
       imageHalfWidth: 'twoThirds',
+      imageHalfMobileFullWidth: true,
       imageBorderRadius: 0,
       extraSpaceBefore: true,
       extraSpaceAfter: true,
@@ -722,6 +723,7 @@ const media226AutofictionEn: CaseStudy = {
       type: 'imageHalf',
       imageHalfLayout: 'single',
       imageHalfWidth: 'fiveSixths',
+      imageHalfMobileFullWidth: true,
       imageBorderRadius: 0,
       extraSpaceBefore: true,
       extraSpaceAfter: true,
@@ -732,6 +734,7 @@ const media226AutofictionEn: CaseStudy = {
       type: 'imageHalf',
       imageHalfLayout: 'single',
       imageHalfWidth: 'fiveSixths',
+      imageHalfMobileFullWidth: true,
       imageBorderRadius: 0,
       extraSpaceBefore: true,
       extraSpaceAfter: true,
@@ -765,7 +768,7 @@ const media226AutofictionEn: CaseStudy = {
       imageShadow: true,
       imageBorderRadius: 3.75,
       images: [
-        { src: '/images/aut 7.png', alt: 'Collage portrait alongside the autofiction article text' },
+        { src: '/images/aut 7 new.png', alt: 'Collage portrait alongside the autofiction article text' },
         { src: '/images/aut 8.png', alt: 'Closing collage illustration in the Media 226 article' },
       ],
     },
@@ -773,6 +776,7 @@ const media226AutofictionEn: CaseStudy = {
       type: 'link',
       label: 'Read the article',
       href: 'https://media226.ru/voices/167-ne-vaznye-teksty-tat-any-hudakovoj-1',
+      centered: true,
     },
   ],
 };

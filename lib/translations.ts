@@ -10,7 +10,7 @@ export const translations = {
       viewPortfolio: 'View Portfolio',
       contact: 'Contact',
       greeting:
-        "Hi, I'm Ekaterina Zueva (Katya Evazu).\n\nI'm an illustrator and graphic designer, and I also work in 2D animation. I create visual design for brands, editorial and advertising projects, in both print and digital formats. My work ranges from standalone illustrations to complete visual solutions for different projects.",
+        "Hi, I'm Ekaterina Zueva (Katya Evazu).\n\nI'm an illustrator and graphic designer, and I also work in 2D animation.\nI create visual design for brands, editorial and advertising projects, in both print and digital formats. My work ranges from standalone illustrations to complete visual solutions for different projects.",
     },
     sectionTitles: {
       services: 'Services',
