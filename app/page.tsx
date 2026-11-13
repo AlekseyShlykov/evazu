@@ -40,10 +40,10 @@ const featuredProjects = [
     caseStudyId: 'tea-branding',
   },
   {
-    titleIndex: 2,
+    titleIndex: 11,
     titleSource: 'illustration' as const,
-    image: '226preview.jpg',
-    caseStudyId: 'media-226-editorial',
+    image: 'Cover aut.png',
+    caseStudyId: 'media-226-autofiction',
   },
 ];
 

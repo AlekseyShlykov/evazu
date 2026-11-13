@@ -682,6 +682,101 @@ const foxyRoastersEn: CaseStudy = {
   ],
 };
 
+const media226AutofictionEn: CaseStudy = {
+  title: 'Editorial illustrations for Media 226\nAutofiction',
+  coverImage: {
+    src: '/images/aut 1.png',
+    alt: 'Collage illustration for Media 226 about Russian autofiction',
+  },
+  backgroundColor: '#F7F1E8',
+  sections: [
+    {
+      type: 'paragraph',
+      boldPrefix: 'Client: ',
+      text: 'Media 226, an online literary magazine',
+    },
+    {
+      type: 'paragraph',
+      boldPrefix: 'The brief ',
+      text: 'was to create a series of collage illustrations for an article about Russian autofiction by Tatiana Khudyakova.',
+    },
+    {
+      type: 'paragraph',
+      text: "While researching the topic, I came across an interview with writer Oksana Vasyakina. She spoke about the author's sense of self as something fluid, taking shape in the process of writing. It made me think about the idea behind my illustrations: a character with no fixed form, whose shape keeps changing and who is made up of fragments of memory. Collage seemed perfect for this.",
+    },
+    {
+      type: 'heading',
+      text: 'Final illustrations',
+    },
+    {
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      imageHalfWidth: 'twoThirds',
+      imageBorderRadius: 0,
+      extraSpaceBefore: true,
+      extraSpaceAfter: true,
+      src: '/images/aut 2.png',
+      alt: 'Autofiction collage portrait assembled from fragments of memory',
+    },
+    {
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      imageHalfWidth: 'fiveSixths',
+      imageBorderRadius: 0,
+      extraSpaceBefore: true,
+      extraSpaceAfter: true,
+      src: '/images/aut 3.png',
+      alt: 'Autofiction collage of a shifting figure and overlapping landscapes',
+    },
+    {
+      type: 'imageHalf',
+      imageHalfLayout: 'single',
+      imageHalfWidth: 'fiveSixths',
+      imageBorderRadius: 0,
+      extraSpaceBefore: true,
+      extraSpaceAfter: true,
+      src: '/images/aut 4.png',
+      alt: 'Autofiction collage of a fragmented figure against remembered scenes',
+    },
+    {
+      type: 'paragraph',
+      text: 'I start with rough sketches, but collage is always closely connected to the materials I find for each project. I usually work out the composition and idea first, then develop the illustrations using the images I have collected.',
+    },
+    {
+      type: 'imageGrid',
+      singleColumn: true,
+      imageBorderRadius: 0,
+      images: [{ src: '/images/aut 5.png', alt: 'Rough composition sketches for the autofiction illustrations' }],
+    },
+    {
+      type: 'heading',
+      text: 'In the publication',
+    },
+    {
+      type: 'imageGrid',
+      singleColumn: true,
+      imageShadow: true,
+      imageBorderRadius: 7.5,
+      images: [{ src: '/images/aut 6.png', alt: 'Autofiction illustration on the Media 226 article page' }],
+    },
+    {
+      type: 'imageGrid',
+      fixedTwoColumns: true,
+      imageShadow: true,
+      imageBorderRadius: 3.75,
+      images: [
+        { src: '/images/aut 7.png', alt: 'Collage portrait alongside the autofiction article text' },
+        { src: '/images/aut 8.png', alt: 'Closing collage illustration in the Media 226 article' },
+      ],
+    },
+    {
+      type: 'link',
+      label: 'Read the article',
+      href: 'https://media226.ru/voices/167-ne-vaznye-teksty-tat-any-hudakovoj-1',
+    },
+  ],
+};
+
 const media226EditorialEn: CaseStudy = {
   title: 'Editorial illustrations for Media 226',
   coverImage: {
@@ -1254,6 +1349,10 @@ export const caseStudies = {
   'foxy-roasters': {
     en: foxyRoastersEn,
     fr: foxyRoastersFr,
+  },
+  'media-226-autofiction': {
+    en: media226AutofictionEn,
+    fr: media226AutofictionEn,
   },
   'media-226-editorial': {
     en: media226EditorialEn,

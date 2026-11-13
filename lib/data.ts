@@ -116,6 +116,11 @@ export const illustrationProjects = [
     href: 'https://www.notion.so/Illustrated-Infographics-for-the-nekorobka-Project-14db2b33972b81caba4bdb8f9103f409?pvs=21',
     image: 'Infographics.webp',
   },
+  {
+    title: 'Editorial illustrations for Media 226\nAutofiction',
+    href: 'https://media226.ru/voices/167-ne-vaznye-teksty-tat-any-hudakovoj-1',
+    image: 'Cover aut.png',
+  },
 ];
 
 export type AnimationItem =

@@ -44,6 +44,7 @@ function ProjectHoverCardInner({
 }: ProjectHoverCardProps) {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const aspectClass = aspectClassMap[aspectRatio];
+  const multilineTitle = title.includes('\n');
 
   const showImage = thumbnailUrl || image;
 
@@ -95,7 +96,10 @@ function ProjectHoverCardInner({
             {category}
           </span>
         )}
-        <h3 className="text-white text-lg md:text-xl font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-3">
+        <h3
+          className={`text-white text-lg md:text-xl font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${multilineTitle ? 'whitespace-pre' : 'line-clamp-3'}`}
+          style={multilineTitle ? { fontSize: 'min(1.25rem, calc((100cqw - 3rem) / 17))' } : undefined}
+        >
           {title}
         </h3>
         {hoverFooter && (
@@ -109,7 +113,10 @@ function ProjectHoverCardInner({
 
   const inner = (
     <>
-      <div className={`relative w-full ${aspectClass} overflow-hidden bg-neutral-100`}>
+      <div
+        className={`relative w-full ${aspectClass} overflow-hidden bg-neutral-100`}
+        style={multilineTitle ? { containerType: 'inline-size' } : undefined}
+      >
         {visual}
         {overlay}
       </div>

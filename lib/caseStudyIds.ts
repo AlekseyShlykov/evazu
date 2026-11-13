@@ -14,6 +14,7 @@ export const CASE_STUDY_IDS = [
   'learn-with-mochi-animation',
   'line-animation-frame-by-frame',
   'logo-social-media-animation',
+  'media-226-autofiction',
   'media-226-editorial',
   'menopause-research',
   'mixed-media-animation',

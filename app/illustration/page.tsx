@@ -19,6 +19,7 @@ const illustrationCaseStudyByIndex: Record<number, string> = {
   8: 'belgrade-atmosphere',
   9: 'music-visuals',
   10: 'nekorobka-infographics',
+  11: 'media-226-autofiction',
 };
 
 export default function IllustrationPage() {

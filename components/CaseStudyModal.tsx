@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useCallback, useState } from 'react';
 import type { A11yStrings } from '@/lib/translations';
 import { encodePublicPath, webpSrcFor } from '@/lib/imageSources';
@@ -20,7 +20,7 @@ export interface CaseStudySection {
   /** For type imageHalf: one image at 50% width centered, or two images side by side (~half width each) */
   imageHalfLayout?: 'single' | 'pair';
   /** Width of a centered single imageHalf. Defaults to one half. */
-  imageHalfWidth?: 'twoFifths' | 'half' | 'twoThirds';
+  imageHalfWidth?: 'twoFifths' | 'half' | 'twoThirds' | 'fiveSixths';
   /** For type imageGrid: number of equal columns (e.g. 4 for a comic strip). Defaults to 2 when fixedTwoColumns. */
   columns?: number;
   /** Optional mobile column count for an equal-column image grid. */
@@ -35,6 +35,8 @@ export interface CaseStudySection {
   imageShadow?: boolean;
   /** Use a 15px radius instead of the default 8px image radius. */
   imageRadius15?: boolean;
+  /** Override the image corner radius in pixels, including zero for unframed artwork. */
+  imageBorderRadius?: number;
   /** Center a standalone link within the case-study content column. */
   centered?: boolean;
   /** Add one line-height of extra breathing room before this section. */
@@ -357,6 +359,7 @@ function PictureImage({
   src,
   alt,
   className,
+  style,
   imgRef,
   onLoad,
   onClick,
@@ -365,6 +368,7 @@ function PictureImage({
   src: string;
   alt: string;
   className?: string;
+  style?: CSSProperties;
   imgRef?: React.Ref<HTMLImageElement>;
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
   onClick?: () => void;
@@ -379,6 +383,7 @@ function PictureImage({
         src={src}
         alt={alt}
         className={className}
+        style={style}
         loading={eager ? 'eager' : 'lazy'}
         fetchPriority={eager ? 'high' : undefined}
         decoding="async"
@@ -456,12 +461,14 @@ function CaseStudyFixedCellImage({
   onClick,
   shadow = false,
   radius15 = false,
+  borderRadius,
 }: {
   src: string;
   alt: string;
   onClick: () => void;
   shadow?: boolean;
   radius15?: boolean;
+  borderRadius?: number;
 }) {
   return (
     <div className="min-w-0 col-span-1">
@@ -471,6 +478,7 @@ function CaseStudyFixedCellImage({
         className={`w-full h-auto max-w-full cursor-zoom-in ${radius15 ? 'rounded-[15px]' : 'rounded-lg'} ${
           shadow ? '[box-shadow:0_2px_7px_rgba(0,0,0,0.18)]' : ''
         }`}
+        style={borderRadius !== undefined ? { borderRadius } : undefined}
         onClick={onClick}
       />
     </div>
@@ -678,6 +686,7 @@ function CaseStudyImageRun({
   masonry = false,
   shadow = false,
   radius15 = false,
+  borderRadius,
 }: {
   images: { src: string; alt: string; fullWidth?: boolean; imageWideBanner?: boolean }[];
   resolveImgSrc: (src: string) => string;
@@ -689,6 +698,7 @@ function CaseStudyImageRun({
   masonry?: boolean;
   shadow?: boolean;
   radius15?: boolean;
+  borderRadius?: number;
 }) {
   const imageClassName = `w-full h-auto max-w-full cursor-zoom-in ${radius15 ? 'rounded-[15px]' : 'rounded-lg'} ${
     shadow ? '[box-shadow:0_2px_7px_rgba(0,0,0,0.18)]' : ''
@@ -706,6 +716,7 @@ function CaseStudyImageRun({
                 src={resolved}
                 alt={img.alt}
                 className={imageClassName}
+                style={borderRadius !== undefined ? { borderRadius } : undefined}
                 onClick={onClick}
               />
             </div>
@@ -743,6 +754,7 @@ function CaseStudyImageRun({
               onClick={onClick}
               shadow={shadow}
               radius15={radius15}
+              borderRadius={borderRadius}
             />
           );
         })}
@@ -995,6 +1007,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const multilineTitle = study.title.includes('\n');
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -1055,16 +1068,19 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
         const alt = section.alt || '';
         const widthClass = section.imageHalfWidth === 'twoThirds'
           ? 'max-w-[66.666667%]'
-          : section.imageHalfWidth === 'twoFifths'
-            ? 'max-w-[40%]'
-            : 'max-w-[50%]';
+          : section.imageHalfWidth === 'fiveSixths'
+            ? 'max-w-[83.333333%]'
+            : section.imageHalfWidth === 'twoFifths'
+              ? 'max-w-[40%]'
+              : 'max-w-[50%]';
         sectionNodes.push(
-          <div key={`case-image-half-${si}`} className="flex w-full justify-center">
+          <div key={`case-image-half-${si}`} className={`flex w-full justify-center ${sectionSpacingClass(section)}`}>
             <div className={`w-full ${widthClass}`}>
               <PictureImage
                 src={resolved}
                 alt={alt}
                 className="block h-auto w-full rounded-lg cursor-zoom-in object-contain"
+                style={section.imageBorderRadius !== undefined ? { borderRadius: section.imageBorderRadius } : undefined}
                 onClick={() => openLightbox(resolved, alt)}
               />
             </div>
@@ -1131,6 +1147,7 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
             masonry={section.masonry === true}
             shadow={section.imageShadow === true}
             radius15={section.imageRadius15 === true}
+            borderRadius={section.imageBorderRadius}
           />
         </div>,
       );
@@ -1297,10 +1314,13 @@ export function CaseStudyModal({ study, onClose, a11y }: CaseStudyModalProps) {
           className={study.coverImage
             ? 'absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 py-4 md:px-10'
             : 'sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white/95 backdrop-blur px-6 py-4 md:px-10'}
+          style={multilineTitle ? { containerType: 'inline-size' } : undefined}
         >
-          <h2 className={study.titleInCover ? 'sr-only' : `text-lg md:text-xl font-semibold pr-8 line-clamp-2 ${
+          <h2 className={study.titleInCover ? 'sr-only' : `text-lg md:text-xl font-semibold pr-8 ${multilineTitle ? 'whitespace-pre' : 'line-clamp-2'} ${
             study.coverImage ? 'text-white [text-shadow:0_1px_4px_rgb(0_0_0/0.65)]' : 'text-neutral-900'
-          }`}>
+          }`}
+            style={multilineTitle ? { fontSize: 'min(1.25rem, calc((100cqw - 4.25rem) / 17))' } : undefined}
+          >
             {study.title}
           </h2>
           <button

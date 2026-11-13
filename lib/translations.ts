@@ -10,7 +10,7 @@ export const translations = {
       viewPortfolio: 'View Portfolio',
       contact: 'Contact',
       greeting:
-        "Hi, I'm Ekaterina Zueva (Katya Evazu).\n\nI'm an illustrator, working in 2D animation and graphic design. I create both standalone images and complete visual solutions, from individual illustrations to fully realized products.",
+        "Hi, I'm Ekaterina Zueva (Katya Evazu).\n\nI'm an illustrator and graphic designer, and I also work in 2D animation. I create visual design for brands, editorial and advertising projects, in both print and digital formats. My work ranges from standalone illustrations to complete visual solutions for different projects.",
     },
     sectionTitles: {
       services: 'Services',
@@ -62,6 +62,7 @@ export const translations = {
       'Belgrade Atmosphere, Illustration Series',
       'Music Visuals Design',
       'Illustrated Infographics for the nekorobka Project',
+      'Editorial illustrations for Media 226\nAutofiction',
     ],
     animationTitles: {
       nekorobka: 'Animation for a hobby matching test',
@@ -199,6 +200,7 @@ export const translations = {
       'Atmosphère de Belgrade, série d\'illustrations',
       'Visuels pour la musique',
       'Infographies illustrées pour le projet nekorobka',
+      'Editorial illustrations for Media 226\nAutofiction',
     ],
     animationTitles: {
       nekorobka: 'Animation pour un test de mise en correspondance des loisirs',
